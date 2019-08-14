@@ -5,7 +5,7 @@ From the root directory
 ````sh
 make
 ````
-with optional pre-step (after unsuccessful)
+with optional pre-step (e.g. after unsuccessful build)
 ````sh
 make clean (optional)
 ````

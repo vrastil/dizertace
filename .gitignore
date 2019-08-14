@@ -1,5 +1,6 @@
 # Latex output files
-*.pdf
+thesis.pdf
+example.pdf
 *.out
 *.aux
 *.bbl
