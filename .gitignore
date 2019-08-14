@@ -1,0 +1,16 @@
+# Latex output files
+*.pdf
+*.out
+*.aux
+*.bbl
+*.blg
+*.log
+*.toc
+*.ptb
+*.tod
+*.fls
+*.lot
+*.lof
+*.fdb_latexmk
+*.synctex.gz
+pdfa.xmpi
