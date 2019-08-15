@@ -25,9 +25,6 @@
 % \setlength\headheight{0mm}
 % \let\openright=\cleardoublepage
 
-%% Generate PDF/A-2u
-\usepackage[a-2u]{pdfx}
-
 %% Character encoding: usually latin2, cp1250 or utf8:
 \usepackage[utf8]{inputenc}
 
@@ -93,6 +90,17 @@ Abstract.
 \def\Keywords{%
 {key} {words}
 }
+
+%% Generate PDF/A-2u
+\usepackage{filecontents}
+\begin{filecontents}{\jobname.xmpdata}
+\Title{\ThesisTitle}
+\Author{\ThesisAuthor}
+\Keywords{keyword1\sep keyword2\sep keyword3}
+\Subject{\Abstract}
+\Publisher{Charles University}
+\end{filecontents}
+\usepackage[a-2u]{pdfx}
 
 %% The hyperref package for clickable links in PDF and also for storing
 %% metadata to PDF (including the table of contents).
