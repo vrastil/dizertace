@@ -6,3 +6,13 @@ cache:
     - $HOME/.texlive
 script:
 - make
+- mkdir doc
+- cp .travis/index.html doc/
+- cp thesis.pdf doc/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: doc
+  github_token: $GH_REPO_TOKEN
+  on:
+    branch: master
