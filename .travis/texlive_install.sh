@@ -47,6 +47,7 @@ tlmgr install   \
   ms            \
   xmpincl       \
   lm            \
+  filecontents  \
   xcolor
 
 # Keep no backups (not required, simply makes cache bigger)

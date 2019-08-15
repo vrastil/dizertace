@@ -25,9 +25,6 @@
 % \setlength\headheight{0mm}
 % \let\openright=\cleardoublepage
 
-%% Generate PDF/A-2u
-\usepackage[a-2u]{pdfx}
-
 %% Character encoding: usually latin2, cp1250 or utf8:
 \usepackage[utf8]{inputenc}
 
@@ -38,7 +35,6 @@
 \usepackage{amsmath}        % extensions for typesetting of math
 \usepackage{amsfonts}       % math fonts
 \usepackage{amsthm}         % theorems, definitions, etc.
-\usepackage{bbding}         % various symbols (squares, asterisks, scissors, ...)
 \usepackage{bm}             % boldface symbols (\bm)
 \usepackage{graphicx}       % embedding of pictures
 \usepackage{fancyvrb}       % improved verbatim environment
@@ -53,31 +49,31 @@
 %%% Basic information on the thesis
 
 % Thesis title in English (exactly as in the formal assignment)
-\def\ThesisTitle{Thesis title}
+\def\ThesisTitle{Study of dark energy and modified gravity and their influence on the cosmological parameters of the universe}
 
 % Author of the thesis
-\def\ThesisAuthor{Name Surname}
+\def\ThesisAuthor{Michal Vra\v{s}til}
 
 % Year when the thesis is submitted
-\def\YearSubmitted{YEAR}
+\def\YearSubmitted{2020}
 
 % Name of the department or institute, where the work was officially assigned
 % (according to the Organizational Structure of MFF UK in English,
 % or a full name of a department outside MFF)
-\def\Department{Name of the department}
+\def\Department{Institute of Physics of the Czech Academy of Sciences}
 
 % Is it a department (katedra), or an institute (ústav)?
-\def\DeptType{Department}
+\def\DeptType{Institute}
 
 % Thesis supervisor: name, surname and titles
-\def\Supervisor{Supervisor's Name}
+\def\Supervisor{RNDr. Michael Prouza, Ph.D.}
 
 % Supervisor's department (again according to Organizational structure of MFF)
-\def\SupervisorsDepartment{department}
+\def\SupervisorsDepartment{Institute of Physics of the Czech Academy of Sciences}
 
 % Study programme and specialization
-\def\StudyProgramme{study programme}
-\def\StudyBranch{study branch}
+\def\StudyProgramme{Theoretical Physics, Astronomy\\&and Astrophysics}
+\def\StudyBranch{Theoretical Physics, Astronomy\\&and Astrophysics}
 
 % An optional dedication: you can thank whomever you wish (your supervisor,
 % consultant, a person who lent the software, etc.)
@@ -94,6 +90,17 @@ Abstract.
 \def\Keywords{%
 {key} {words}
 }
+
+%% Generate PDF/A-2u
+\usepackage{filecontents}
+\begin{filecontents}{\jobname.xmpdata}
+\Title{\ThesisTitle}
+\Author{\ThesisAuthor}
+\Keywords{keyword1\sep keyword2\sep keyword3}
+\Subject{\Abstract}
+\Publisher{Charles University}
+\end{filecontents}
+\usepackage[a-2u]{pdfx}
 
 %% The hyperref package for clickable links in PDF and also for storing
 %% metadata to PDF (including the table of contents).
@@ -117,8 +124,11 @@ Abstract.
 
 %%% Each chapter is kept in a separate file
 \include{chapters/preface}
-\include{chapters/chap01}
-\include{chapters/chap02}
+\include{chapters/cosmo_surveys}
+\include{chapters/cosmo_evol}
+\include{chapters/modif_grav}
+\include{chapters/cosmo_sim}
+\include{chapters/approx_schemes}
 
 \include{chapters/epilog}
 
@@ -126,15 +136,15 @@ Abstract.
 \include{bibliography/bibliography}
 
 %%% Figures used in the thesis (consider if this is needed)
-\listoffigures
+%\listoffigures
 
 %%% Tables used in the thesis (consider if this is needed)
 %%% In mathematical theses, it could be better to move the list of tables to the beginning of the thesis.
-\listoftables
+%\listoftables
 
 %%% Abbreviations used in the thesis, if any, including their explanation
 %%% In mathematical theses, it could be better to move the list of abbreviations to the beginning of the thesis.
-\chapwithtoc{List of Abbreviations}
+%\chapwithtoc{List of Abbreviations}
 
 %%% Doctoral theses must contain a list of author's publications
 \chapwithtoc{List of publications}
@@ -150,10 +160,10 @@ Abstract.
 %%% source code, data files, interactive charts, etc.). Electronic attachments
 %%% should be uploaded to SIS and optionally also included in the thesis on a~CD/DVD.
 %%% Allowed file formats are specified in provision of the rector no. 72/2017.
-\appendix
-\chapter{Attachments}
+%\appendix
+%\chapter{Attachments}
 
-\section{First Attachment}
+%\section{First Attachment}
 
 \openright
 \end{document}
