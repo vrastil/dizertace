@@ -1,10 +1,13 @@
 # Latex output files
 thesis.pdf
+thesis-blx.bib
+thesis.run.xml
 example.pdf
 *.out
 *.aux
 *.bbl
 *.blg
+*.bcf
 *.log
 *.toc
 *.ptb
