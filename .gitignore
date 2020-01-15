@@ -19,3 +19,6 @@ example.pdf
 *.synctex.gz
 *.xmpdata
 pdfa.xmpi
+
+# XMIND
+*.xmind
