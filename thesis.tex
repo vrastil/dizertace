@@ -33,6 +33,7 @@
 
 %% Further useful packages (included in most LaTeX distributions)
 \usepackage{amsmath}        % extensions for typesetting of math
+\usepackage{amssymb}
 \usepackage{amsfonts}       % math fonts
 \usepackage{amsthm}         % theorems, definitions, etc.
 \usepackage{bm}             % boldface symbols (\bm)
@@ -42,6 +43,8 @@
 %%% Bibliography
 \usepackage[backend=bibtex,style=authoryear]{biblatex}
 \addbibresource{bibliography/cosmo_surveys}
+\addbibresource{bibliography/overview}
+\addbibresource{bibliography/cosmo_evol}
 \renewcommand{\bibname}{Bibliography}
 
 \usepackage[nottoc]{tocbibind} % makes sure that bibliography and the lists
@@ -136,10 +139,10 @@ Abstract.
 \include{chapters/modif_grav}
 \include{chapters/cosmo_sim}
 \include{chapters/approx_schemes}
-\include{chapters/simulations_approx.tex}
-\include{chapters/simulations_gadget.tex}
-
+\include{chapters/simulations_approx}
+\include{chapters/simulations_gadget}
 \include{chapters/epilog}
+
 
 %%% Bibliography
 \printbibliography

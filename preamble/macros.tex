@@ -61,10 +61,6 @@
 
 \DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small, frame=single}
 
-%%% The field of all real and natural numbers
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-
 %%% Useful operators for statistics and probability
 \DeclareMathOperator{\pr}{\textsf{P}}
 \DeclareMathOperator{\E}{\textsf{E}\,}
@@ -87,12 +83,42 @@
 \newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
 
 %% my macros
-\newcommand{\LCDM}{$\Lambda$CDM}
-\newcommand{\Nbody}{$N$-body simulation}
-
 \newcommand{\um}{$\mu$m\ }
 \newcommand{\unith}{km$\cdot$ s$^{-1}$ Mpc$^{-1}$}
 
 \newcommand{\mins}{^{-1}}
 \newcommand{\sq}{$^2$}
 
+\newcommand{\eq}[1]{\begin{align}#1\end{align}}
+\newcommand{\eqq}[1]{\begin{equation}\begin{aligned}#1\end{aligned}\end{equation}}
+\newcommand{\seq}[1]{\begin{subequations}\eq{#1}\end{subequations}}
+\newcommand{\mb}{\mathbf}
+
+
+\newcommand{\dd}{\mbox{d}}  
+\newcommand{\partpart}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dddd}[2]{\frac{\dd #1}{\dd #2}}
+
+\newcommand{\nbody}{\textit{N}-body simulation}
+\newcommand{\ZA}{_\textsc{\tiny ZA}}
+\newcommand{\FFA}{_\textsc{\tiny FFA}}
+\newcommand{\FPA}{_\textsc{\tiny FPA}}
+\newcommand{\eff}{_\text{\tiny eff}}
+\newcommand{\lin}{_\text{\tiny lin}}
+\newcommand{\vel}{_\text{\tiny vel}}
+
+\newcommand{\LCDM}{$\Lambda$CDM}
+\newcommand{\MPl}{M_{\text{\scriptsize Pl}}}
+\newcommand{\dg}{\sqrt{-g}}
+\newcommand{\dgt}{\sqrt{-\tilde{g}}}
+\newcommand{\uv}{{\mu\nu}}
+\newcommand{\R}{_{,R}}
+\newcommand{\RR}{_{,RR}}
+\newcommand{\tR}{{\tilde{R}}}
+\newcommand{\fR}{$f(R)$}
+\newcommand{\GB}{\mathcal{G}}
+\newcommand{\Phiscr}{\Phi_{\text{\scriptsize scr}}}
+\newcommand{\Phiscrz}{\Phi_{0,\text{\scriptsize scr}}}
+\newcommand{\Phiscra}{\Phi_{a,\text{\scriptsize scr}}}
+\newcommand{\hMpc}{h\text{Mpc}^{-1}}
+\newcommand{\Mpch}{h^{-1}\text{Mpc}}
