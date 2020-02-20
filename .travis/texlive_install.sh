@@ -21,6 +21,9 @@ if ! command -v texlua > /dev/null; then
   cd ..
 fi
 
+# Update the TL install
+tlmgr update --self --all
+
 # Just including texlua so the cache check above works
 # Needed for any use of texlua even if not testing LuaTeX
 tlmgr install luatex
@@ -33,14 +36,10 @@ tlmgr install   \
   stmaryrd      \
   amsmath       \
   pdfx          \
-  inputenc      \
   bbding        \
-  bm            \
-  graphicx      \
   fancyvrb      \
   natbib        \
   tocbibind     \
-  dcolumn       \
   booktabs      \
   paralist      \
   iftex         \
@@ -54,8 +53,3 @@ tlmgr install   \
   letltxmacro   \
   bitset
 
-# Keep no backups (not required, simply makes cache bigger)
-tlmgr option -- autobackup 0
-
-# Update the TL install but add nothing new
-tlmgr update --self --all --no-auto-install
