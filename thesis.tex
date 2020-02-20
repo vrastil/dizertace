@@ -14,6 +14,9 @@
 % \openright makes the following text appear on a right-hand page
 \let\openright=\clearpage
 
+% set bigger padding in tables
+\renewcommand{\arraystretch}{1.5}
+
 %% Settings for two-sided (duplex) printing
 % \documentclass[12pt,a4paper,twoside,openright]{report}
 % \setlength\textwidth{145mm}
@@ -132,6 +135,10 @@ Abstract.
 
 \tableofcontents
 
+%%% Abbreviations used in the thesis, if any, including their explanation
+%%% In mathematical theses, it could be better to move the list of abbreviations to the beginning of the thesis.
+\include{preamble/abbrev}
+
 %%% Each chapter is kept in a separate file
 \include{chapters/preface}
 \include{chapters/cosmo_surveys}
@@ -153,10 +160,6 @@ Abstract.
 %%% Tables used in the thesis (consider if this is needed)
 %%% In mathematical theses, it could be better to move the list of tables to the beginning of the thesis.
 %\listoftables
-
-%%% Abbreviations used in the thesis, if any, including their explanation
-%%% In mathematical theses, it could be better to move the list of abbreviations to the beginning of the thesis.
-%\chapwithtoc{List of Abbreviations}
 
 %%% Doctoral theses must contain a list of author's publications
 \chapwithtoc{List of publications}
