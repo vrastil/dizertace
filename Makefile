@@ -1,7 +1,7 @@
 # main file
 MAIN := thesis
 
-all: $(MAIN).pdf
+all: clean $(MAIN).pdf
 
 # LaTeX must be run multiple times to get references right
 TEX_CMD := pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex

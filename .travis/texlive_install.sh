@@ -51,5 +51,6 @@ tlmgr install   \
   biblatex      \
   pdfescape     \
   letltxmacro   \
-  bitset
+  bitset        \
+  soul
 
