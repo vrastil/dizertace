@@ -8,7 +8,7 @@ The homogeneous and isotropic space-time is described by Friedmann-Lema\^{i}tre-
 \eq{
     \dd s^2=g_\uv\dd x^\mu \dd x^\nu=\dd t^2+a^2(t)\left[\frac{\dd r^2}{1-Kr^2} + r^2\left(\dd\theta^2+\sin^2\theta\dd\phi^2 \right) \right]\,,
 }
-where $g_{\mu\nu}$ is a metric tensor, $a(t)$ is a scale factor with cosmic time $t$ and $K=+1,-1,0$ is a curvature that corresponds to closed, open, and flat geometries. In addition to the cosmic time $t$, we also introduce the conformal time $\eta$ defined by
+where $g_{\mu\nu}$ is a metric tensor, $a(t)$ is a scale factor with cosmic time $t$ and $K=+1,-1,0$ is a curvature that corresponds to closed, open, and flat geometries. The scale factor can be arbitrary rescaled and we adopt the common normalization $a_0=0$. In addition to the cosmic time $t$, we also introduce the conformal time $\eta$ defined by
 \eq{
     \eta\equiv\int{a^{-1}\dd t}\,.
 }
@@ -35,7 +35,19 @@ where
 \section{Hubble`s law}
 During the 1920s astronomers Slipher and Hubble found that the observed wavelength $\lambda_o$ of absorption lines of distant galaxies is larger than the wavelength $\lambda$ in the rest frame \cite{1929PNAS...15..168H}. This is due to the fact that the wavelength is stretched in proportion to the scale factor in an expanding Universe. The redshift $z$ is defined as
 \eq{
-    z\equiv\frac{\lambda_0}{\lambda} - 1\,.
+    z\equiv\frac{\lambda_0}{\lambda} - 1=a^{-1}-1\,.
+}
+In an expanding Universe a physical distance $r$ from an observer (at the origin) to an object is given by $r=a(t)x$, where $x$ denotes the comoving distance. For objects which are motionless with respect to the Hubble flow the comoving distance remains constant. Taking the time derivative of $r$ we obtain
+\eq{
+    v_H\equiv\dot r=Hr+a\dot x
+}
+Because of the cosmic expansion, more distant objects are moving faster from us with velocity $v_H$. On the other hand, the peculiar velocity $v_p\equiv a\dot x$ describes the movement of an object with respect to the local Hubble flow. For small peculiar velocities and near objects $(z\ll1)$ we obtain
+\eq{
+    v\sim H_0r\,,
+}
+which is the law Hubble reported in 1929 by plotting the recessional velocity $v$ versus the distance $r$. His measurements were noisy but the current measurements give give the Hubble constant the value \cite{collaboration2018planck}.
+\eq{
+    H_0\equiv100 h \rm{\ km\ s}^{-1}\rm{Mpc}^{-1}=(67.4\pm0.5)\rm{\ km\ s}^{-1}\rm{Mpc}^{-1}
 }
 
 
