@@ -52,5 +52,6 @@ tlmgr install   \
   pdfescape     \
   letltxmacro   \
   bitset        \
+  color         \
   soul
 
