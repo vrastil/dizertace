@@ -42,7 +42,11 @@ The dynamical equations of motion in the expanding Universe can be derived from 
     \frac{\ddot a}{a} &= -\frac{4\pi G}{3}(\rho + 3p)+\frac{\Lambda}{3}\,,\\
     \dot\rho &= -3H(\rho+p)\,,
 }
-where $H\equiv\dot a/a$ is the Hubble parameter, $\Lambda$ the cosmological constant, $\rho(t)$ is energy-density and $p$ pressure. These three equations are not independent and we need to also specify the equation of state, $\rho=\rho(p,t)$. The first equation is usually also written in the form
+where $H\equiv\dot a/a$ is the Hubble parameter, $\Lambda$ the cosmological constant, $\rho(t)$ is energy-density and $p$ pressure. We will be also using the conformal Hubble quantity
+\eq{
+    \mathcal{H}\equiv\frac{1}{a}\frac{\dd a}{\dd\eta}=Ha\,.
+}
+These three equations are not independent and we need to also specify the equation of state, $\rho=\rho(p,t)$. The first equation is usually also written in the form
 \eq{
     \Omega_m+\Omega_\gamma+\Omega_K+\Omega_\Lambda=1\,,
 }
@@ -167,8 +171,42 @@ As the distances depend on the cosmological parameters through the integral $\in
 % \subsubsection{Horizon problem}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%
+% Formation and evolution of LSS
+%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formation and evolution of LSS}
+So far we have considered only equations for smooth, homogeneous and isotropic background. In order to describe the real Universe with its rich structures we must employ perturbation theory for cosmological equations.
+\subsection{Newtonian gauge}
+We will consider first order (linear) perturbations of the metric:
+\eq{
+    g_{\mu\nu}=g_{\mu\nu}^{(0)}+\delta g_{\mu\nu}\,,
+}
+where $g_{\mu\nu}^{(0)}$ is the FLRW metric \autoref{eq:flrw} and all the entries in the perturbed metric $\delta g_{\mu\nu}$ have to be small with respect to the background metric. The general perturbed metric can be written as
+\eq{
+    \delta g_{\mu\nu}=a^2(\eta)
+    \begin{pmatrix}
+        -2\Psi & w_i \\
+        w_i & 2\Phi\delta_{ij}+h_{ij} \\
+    \end{pmatrix}\,,
+}
+where $\Psi(t,x)$ and $\Phi(t,x)$ are spatial scalars, $w_i(t,x)$ is 3-vector, and $h_{ij}(t,x)$ is a traceless 3-tensor. We have a freedom to choose coordinates in which we will describe the equations of motion -- we can choose our \textit{gauge}. We wish to keep our background metric $g_{\mu\nu}^{(0)}$ the same (i.e. FLRW) and only change $\delta g_{\mu\nu}$. Note that unlike ordinary coordinate transformations a gauge transformation (although expressed as a change of coordinates) does not link different observers in the same spacetime but it links two different spacetimes seen by the same observer. For a detailed discussion of gauge choices, see e.g. \cite{PhysRevD.40.1804,10.1143/PTPS.78.1,PhysRevD.22.1882}.
 
+We will choose to attach the observers to the points in the unperturbed frame, the so called \textit{Newtonian} or \textit{longitudinal} or \textit{shear-free} gauge. In this case the observer will detect a velocity field of particles falling into the clumps of matter and will measure a gravitational potential. We can impose up to four conditions on the metric, which corresponds to the four gauge coordinate transformations. The final perturbed metric is:
+\eq{
+    \label{eq:flrw_pert}
+    \dd s^2=a^2(\eta)\left[-(1+2\Psi)\dd\eta^2+(1+2\Phi)\delta_{ij}\dd x^i\dd x^j\right]\,.
+}
+\subsection{Linear perturbations}
+We now decompose the Einstein tensor and the energy-momentum tensor into background and perturbed parts. The background cosmological evolution is obtained by solving the zero-th order Einstein equations and is given by the Friedmann equations. The first order equations are given by the perturbation of the Einstein tensor, i.e. by perturbing the metric \autoref{eq:flrw_pert}, and by the perturbed energy-momentum tensor. The four-velocity $u^\mu$ is up to the first order
+\eq{
+    u^\mu\equiv\dddd{x^\mu}{\tau}=\left[\frac{1}{a}(1-\Psi),\frac{v^i}{a} \right]\,,
+}
+where $\tau$ is the proper time and $v^i=\dd x^i/\dd\eta$ is the matter peculiar velocity with respect to the general expansion.
+
+The first order equations are (for details, see e.g. \cite{2002col.luc..cosmology,10.1143/PTPS.78.1}).
+%%%%%%%%%%%%%%%%%%%%%%%
+% Cosmological observables
+%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cosmological observables}
 Here we present a brief description of cosmological probes which will be used when constraining dark energy. For more details see e.g. \cite{DE_probes} or \cite{DE_probes2}.
 %In shear-shear tomography, the shear of background galaxies, binned in redshift, is cross correlated. 
