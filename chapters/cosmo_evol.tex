@@ -201,9 +201,43 @@ We now decompose the Einstein tensor and the energy-momentum tensor into backgro
 \eq{
     u^\mu\equiv\dddd{x^\mu}{\tau}=\left[\frac{1}{a}(1-\Psi),\frac{v^i}{a} \right]\,,
 }
-where $\tau$ is the proper time and $v^i=\dd x^i/\dd\eta$ is the matter peculiar velocity with respect to the general expansion.
+where $\tau$ is the proper time and $v^i=\dd x^i/\dd\eta$ is the matter peculiar velocity with respect to the general expansion. The energy-momentum tensor for a perfect fluid is
+\eq{
+    T_\uv=(\rho+p)u_\mu u_\nu + Pg_\uv\,.
+}
+We also assume that the perturbed fluid remains perfect fluid. We will use following notation
+\eq{
+    \delta &\equiv\frac{\delta\rho}{\bar{\rho}}\equiv\frac{\rho-\bar{\rho}}{\bar{\rho}}\,,\\
+    \theta &\equiv\nabla\cdot v\,,
+}
+where $\delta$ is the density contrast, the bar represents a mean value (spatial average) and $\theta$ is the velocity divergence. The first order equations are (for details, see e.g. \cite{2002col.luc..cosmology,10.1143/PTPS.78.1})
+\eq{
+    3\mathcal{H}(\mathcal{H}\Psi-\Phi') + \nabla^2\Phi &= -4\pi G a^2 \delta\rho\,,\\
+    \nabla^2(\Phi' - \mathcal{H}\Psi) &= 4\pi G a^2(1+\omega)\rho\theta\,,\\
+    \Psi &=-\Phi\,,\\
+    \Phi''+2\mathcal{H}\Phi'-\mathcal{H}\Psi-(\mathcal{H}^2+2\mathcal{H}')\Psi &=-4\pi Ga^2c^2_s\delta\rho\,,
+}
+where the sound velocity $c_s$ is defined ad
+\eq{
+    c_s^2\equiv\frac{\delta P}{\delta\rho}=\dddd P\rho = \frac{\dot P}{\dot\rho}\,,
+}
+where the last equality are valid only in the FLRW metric at background level. Conservation of the energy-momentum tensor leads to the perturbed continuity equation
+\eq{
+    \delta'+3\mathcal{H}(c_s^2-\omega)\delta=-(1+\omega)(\theta+3\Psi')\,,
+}
+which reduces for non-relativistic matter to
+\eq{
+    \delta'=-\theta-3\Phi'\,.
+}
+Another equation coming from the conservation of the energy-momentum tensor is
+\eq{
+    \theta'+\left[\mathcal{H}(1-3\omega)+\frac{\omega'}{1+\omega}\right]\theta=-\nabla^2\left(\frac{c_s^2}{1+\omega}\delta + \Psi \right)\,,
+}
+which reduces for non-relativistic matter to
+\eq{
+    \theta'+\mathcal{H}\theta=-\nabla^2\Psi-\nabla^2(c_s^2\delta)
+}
 
-The first order equations are (for details, see e.g. \cite{2002col.luc..cosmology,10.1143/PTPS.78.1}).
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
