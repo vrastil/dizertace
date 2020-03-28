@@ -197,15 +197,15 @@ We will choose to attach the observers to the points in the unperturbed frame, t
     \dd s^2=a^2(\eta)\left[-(1+2\Psi)\dd\eta^2+(1+2\Phi)\delta_{ij}\dd x^i\dd x^j\right]\,.
 }
 \subsection{Linear perturbations}
-We now decompose the Einstein tensor and the energy-momentum tensor into background and perturbed parts. The background cosmological evolution is obtained by solving the zero-th order Einstein equations and is given by the Friedmann equations. The first order equations are given by the perturbation of the Einstein tensor, i.e. by perturbing the metric \autoref{eq:flrw_pert}, and by the perturbed energy-momentum tensor. The four-velocity $u^\mu$ is up to the first order
+We now decompose the Einstein tensor and the energy-momentum tensor into background and perturbed parts. The background cosmological evolution is obtained by solving the zero-th order Einstein equations and is given by the Friedmann equations. The first order equations are given by the perturbation of the Einstein tensor, i.e. by perturbing the metric \autoref{eq:flrw_pert}, and by the perturbed energy-momentum tensor $T_\uv$. The energy-momentum tensor for a single perfect fluid is given by
+\eq{
+    T_\uv=\left(\rho+p\right)u_\mu u_\nu + Pg_\uv\,,
+}
+where the four-velocity $u^\mu$ is up to the first order
 \eq{
     u^\mu\equiv\dddd{x^\mu}{\tau}=\left[\frac{1}{a}(1-\Psi),\frac{v^i}{a} \right]\,,
 }
-where $\tau$ is the proper time and $v^i=\dd x^i/\dd\eta$ is the matter peculiar velocity with respect to the general expansion. The energy-momentum tensor for a perfect fluid is
-\eq{
-    T_\uv=(\rho+p)u_\mu u_\nu + Pg_\uv\,.
-}
-We also assume that the perturbed fluid remains perfect fluid. We will use following notation
+where $\tau$ is the proper time and $v^i=\dd x^i/\dd\eta$ is the matter peculiar velocity with respect to the general expansion. We also assume that the perturbed fluid remains perfect fluid. We will use the following notation
 \eq{
     \delta &\equiv\frac{\delta\rho}{\bar{\rho}}\equiv\frac{\rho-\bar{\rho}}{\bar{\rho}}\,,\\
     \theta &\equiv\nabla\cdot v\,,
@@ -238,6 +238,14 @@ which reduces for non-relativistic matter to
     \theta'+\mathcal{H}\theta=-\nabla^2\Psi-\nabla^2(c_s^2\delta)
 }
 
+We will now transform all the equations to the Fourier space. The Fourier transformation is (up to non-relevant pre-factors)
+\eq{
+    f(\bm{x})=\int e^{i\bm{k\cdot x}}\hat{f}(\bm k)\dd^3k\,,
+}
+where $\bm k$ is a wavenumber with modulus $k$ and hat represents quantities in Fourier space. From TODO EQUATIONS we will obtain the following equations in Fourier space:
+\eq{
+    k^2\Phi+3\mathcal{H}\left(\Phi' -\mathcal{H}\Psi\right) &= 4\pi Ga^2\delta\rho\,,
+}
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%

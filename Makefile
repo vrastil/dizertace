@@ -10,6 +10,7 @@ $(MAIN).pdf:
 	bibtex $(MAIN)
 	$(TEX_CMD)
 	$(TEX_CMD)
+	cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/ 
 
 TMP_FILES := $(MAIN).pdf \
 	$(MAIN).aux $(wildcard **/*.aux) \
