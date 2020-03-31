@@ -166,11 +166,6 @@ We can se that up to the first order all the distances are the same and reduce t
 
 As the distances depend on the cosmological parameters through the integral $\int_0^z{\dd\tilde z/E(\tilde z)}$ and through $\Omega_K$ we can measure only those parameters contained in $E(z)$. Moreover, if we had distance measurements only around one particular redshift $z$ any combination of parameters that would produce similar $E(z)$ would be equally acceptable. This degeneracy can be broken by combination of measurements across different redshifts or by using other cosmological probes.
 
-% \subsection{Very early universe}
-
-% \subsubsection{Horizon problem}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%
 % Formation and evolution of LSS
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -221,7 +216,7 @@ where $\delta$ is the density contrast, the bar represents a mean value (spatial
     \label{eq:lin_4}
     \Phi''+2\mathcal{H}\Phi'-\mathcal{H}\Psi-(\mathcal{H}^2+2\mathcal{H}')\Psi &=-4\pi G\bar\rho a^2c^2_s\delta\,,
 }
-where the sound velocity $c_s$ is defined ad
+where the prime now denotes the derivative with respect to the conformal time $\eta$. Sound velocity $c_s$ is defined as
 \eq{
     c_s^2\equiv\frac{\delta P}{\delta\rho}=\dddd P\rho = \frac{\dot P}{\dot\rho}\,,
 }
@@ -250,23 +245,23 @@ We will now transform all the equations to the Fourier space. The Fourier transf
 \eq{
     f(\bm{x})=\int e^{i\bm{k\cdot x}}\hat{f}(\bm k)\dd^3k\,,
 }
-where $\bm k$ is a wavenumber with modulus $k$ and hat represents quantities in Fourier space. Since we are dealing with linear equations the different modes are not coupled and we can solve the equation for each $k$ independently.
+where $\bm k$ is a wavenumber with modulus $k$ and hat represents quantities in Fourier space. If there is no danger of misunderstanding we will drop the hat in the following. Since we are dealing with linear equations the different modes are not coupled and we can solve the equation for each $k$ independently.
  From Eqs. \eqref{eq:lin_1}---\eqref{eq:lin_4}, \eqref{eq:lin_5} and \eqref{eq:lin_6} we will obtain the following equations in Fourier space:
 \eq{
     \label{eq:lin_k_1}
-    k^2\hat\Phi + 3\mathcal{H}(\hat\Phi'-\mathcal{H}\hat\Psi) &= 4\pi G\bar\rho a^2 \hat\delta\,,\\
+    k^2\Phi + 3\mathcal{H}(\Phi'-\mathcal{H}\Psi) &= 4\pi G\bar\rho a^2 \delta\,,\\
     \label{eq:lin_k_2}
-    k^2(\hat\Phi' - \mathcal{H}\hat\Psi) &= -4\pi G\bar\rho a^2(1+\omega)\hat\theta\,,\\
+    k^2(\Phi' - \mathcal{H}\Psi) &= -4\pi G\bar\rho a^2(1+\omega)\theta\,,\\
     \label{eq:lin_k_3}
-    \hat\Psi &=-\hat\Phi\,,\\
+    \Psi &=-\Phi\,,\\
     \label{eq:lin_k_4}
-    \hat\Phi''+2\mathcal{H}\hat\Phi'-\mathcal{H}\hat\Psi-(\mathcal{H}^2+2\mathcal{H}')\hat\Psi &=-4\pi G\bar\rho a^2c^2_s\hat\delta\,,\\
+    \Phi''+2\mathcal{H}\Phi'-\mathcal{H}\Psi-(\mathcal{H}^2+2\mathcal{H}')\Psi &=-4\pi G\bar\rho a^2c^2_s\delta\,,\\
     \label{eq:lin_k_5}
-    \hat\delta'+3\mathcal{H}(c_s^2-\omega)\hat\delta &= -(1+\omega)(\hat\theta+3\hat\Psi')\,,\\
+    \delta'+3\mathcal{H}(c_s^2-\omega)\delta &= -(1+\omega)(\theta+3\Psi')\,,\\
     \label{eq:lin_k_6}
-    \hat\theta'+\left[\mathcal{H}(1-3\omega)+\frac{\omega'}{1+\omega}\right]\hat\theta &= k^2\left(\frac{c_s^2}{1+\omega}\hat\delta + \hat\Psi \right)\,,
+    \theta'+\left[\mathcal{H}(1-3\omega)+\frac{\omega'}{1+\omega}\right]\theta &= k^2\left(\frac{c_s^2}{1+\omega}\delta + \Psi \right)\,,
 }
-where now $\hat\theta=i\bm{k\cdot \hat v}$. Note that these six equations are not independent and $\omega$ and $c_s^2$ are arbitrary functions of time.
+where now $\theta=i\bm{k\cdot  v}$. Note that these six equations are not independent and $\omega$ and $c_s^2$ are arbitrary functions of time.
 \subsubsection{Super-horizon scales}
 In the large-scale limit $k\ll\mathcal{H}$, i.e. when the physical wavelength $\lambda_p=2\pi a/k$ of perturbations is much larger than the Hubble radius $H^{-1}$, and with the barotropic fluid, i.e. when the pressure depends only on the energy density, and with the constant $\omega$, we have $c_s^2=\omega$ and we can get an equation for $\Phi$
 \eq{
@@ -297,10 +292,26 @@ Perturbations on small scales with $(c_s^2k^2-\frac32\mathcal{H})>0$ do not grow
 }
 For the photons and baryons before the decoupling epoch we have $c_S=c/sqrt3$ and the Jeans length is comparable to the Hubble radius $H^{-1}$ and the growth of perturbations is prevented on all scales smaller than that. For a small sound speed $c_sl\ll\mathcal{H}$ the perturbations grow freely (gravitational instability). The resulting equation for a single pressureless fluid becomes
 \eq{
+    \label{eq:lin_evol_m}
     \delta''+\mathcal{H}\delta'-\frac32\mathcal{H}^2\delta=0\,.
 }
 The growing solution during the matter dominated era is $\delta\propto a\propto t^{2/3}$ and the gravitational potential remains constant during this epoch.
 
+%%%%%%%%%%%%%%%%%%%%%%%
+% Growth function
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Growth function and rate}
+In linear perturbation theory the gravitational evolution of fluctuations is separable into time-dependent and spatially-dependent (or wavenumber-dependent) parts, i.e.
+\eq{
+    \delta(a)=\delta_0D(a)\,,
+}
+where $\delta_0$ is present overdensity and the growth function $D$ is normalized as $D(a=1)\equiv1$. A very good approximation of solution to \autoref{eq:lin_evol_m} is
+\eq{
+    f\equiv\dddd{\ln D}{\ln a}\approx|\Omega_m(a)|^\gamma\,,
+}
+where $\gamma\approx0.55-0.6$ depends only weakly on cosmological parameters \parencite{1980_Peebles}.
+
+\subsection{Parametrization of models}
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%

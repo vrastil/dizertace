@@ -2,19 +2,31 @@
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Cosmological observables}
-Here we present a brief description of cosmological probes which will be used when constraining dark energy. For more details see e.g. \cite{DE_probes} or \cite{DE_probes2}.
+Here we present a brief description of cosmological probes which can be used for constraining dark energy. For more details see e.g. \textcite{weinberg_observational_2013} or \textcite{DE_probes2}.
 %In shear-shear tomography, the shear of background galaxies, binned in redshift, is cross correlated. 
 %\ssec{Introduction}
 %http://terapix.phys.cmu.edu/misc/desc\_feb\_2015\_de\_school\_ShirleyHo.pdf \\
 %https://sites.google.com/site/cmucosmos13/lecture-notes \\
 %http://arxiv.org/pdf/1201.2434v2.pdf \\
+%%%%%%%%%%%%%%%%%%%%%%%
+% Supernovae
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Supernovae}
-Supernovae (SNe) are the most straightforward tool for studying cosmic acceleration, as they directly discovered the acceleration in the first place \cite{riess}. Type Ia supernovae (SNe Ia) are exploding stars defined by the lack of hydrogen and the presence of silicon in their early-time spectra \cite{SN}, and are a product of a thermonuclear explosion of a C/O white dwarf. Observations show that SNe Ia have a luminosity peak that is tightly correlated with the shape of their light curves -- supernovae that rise and fall more slowly have higher peak luminosity (first quantified by \cite{SN_lum}). From observations of (multiband) light curve shapes and colors the luminosity at a brightness peak can be predicted.
+Supernovae (SNe) are the most straightforward tool for studying cosmic acceleration, as they directly discovered the acceleration in the first place \parencite{riess}. Type Ia supernovae (SNe Ia) are exploding stars defined by the lack of hydrogen and the presence of silicon in their early-time spectra \parencite{SN}, and are a product of a thermonuclear explosion of a C/O white dwarf. Observations show that SNe Ia have a luminosity peak that is tightly correlated with the shape of their light curves -- supernovae that rise and fall more slowly have higher peak luminosity (first quantified by \cite{SN_lum}). From observations of (multiband) light curve shapes and colors the luminosity at a brightness peak can be predicted.
 
 To measure cosmic expansion with Type Ia SNe, the observed flux and predicted luminosity are compared. From that the supernova's luminosity distance can be measured. An accurate redshift is obtained by measuring the host galaxy (calibrator). Since the distances to the local calibrators are usually determined from the Hubble expansion, this method gives the luminosity distance $D_L$ in units of $h\mins$ Mpc. Measured relation is used to constraint dark energy parameters.
 
-Long-term task of the SN working group within DESC is \textit{Develop theoretical/numerical/empirical SN models to better describe or
-improve the distance indicator}.
+Recent analysis of \textcite{Abbott_2019} uses data from the Dark Energy Survey Supernova Program (DES-SN) -- 207 spectroscopically confirmed SNe Ia from the first three years of DES-SN combined with a low-redshift sample of 122 SNe from the literature. For a flat $\omega$CDM\ model they found a matter density $\Omega_m=0.321\pm0.018$ and an equation of state $\omega=-0.978\pm0.059$, see \autoref{fig:des_sne_results}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\textwidth]{cosmo_evol/DES_SNe_results.png}
+    \caption{Hubble diagram for the DES-SN3YR sample. Top: distance modulus $(\mu =5\log [d_L/10\rm{pc}])$ from ``BEAMS with Bias Corrections'' fit (\cite{Kessler_2017}, black bars, which are used for cosmology fits) and for each SN (red, orange circles). The dashed gray line shows best fit model, while the green and blue dotted lines show models with no dark energy and matter densities $\Omega_m = 0.3$ and $1.0$ respectively. Bottom: residuals to the best fit model; $1\sigma$ error bars show 68\% confidence. \textit{Note:} Reprinted from \parencite{Abbott_2019}.}
+    \label{fig:des_sne_results}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+% BAO
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Baryonic acoustic oscillations}
 Baryonic acoustic oscillations (BAO) provide an entirely independent way of measuring cosmic distance. Sound waves propagating before recombination imprint a characteristic scale on matter clustering. The acoustic length scale can be computed as
 \eq{
@@ -23,6 +35,11 @@ r_s=\int_0^{t_\ast}{\frac{c_s(t)}{a(t)}\dd t}=\int_{z_\ast}^{\infty}{\frac{c_s(z
 where asterisk denotes time (redshift) at recombination and $c_s$ is the sound speed. The behavior of $H(z)$ depends on the ratio of the matter density to radiation density and the sound speed depends on the ratio of radiation pressure to the energy density of the baryon-photon fluid, determined by the baryon-to-photon ratio. Both the matter-to-radiation ratio and the baryon-to-photon ratio can be measured from the CMB anisotropy power spectrum. This gives $r_s\sim150$ Mpc. The scale of the acoustic feature is stable to better than 1\% accuracy, making it an excellent standard ruler.
 
 This effect can be detected in the angular clustering of galaxies in bins of photometric redshift, yielding the angular diameter distance. Furthermore, measuring the BAO scale in a velocity separation allows a direct determination of $H(z)$. The BAO method measures $D(z)$ in absolute units -- Mpc not $h\mins$ Mpc like SNe measurements, and thus BAO measurements to the same redshift carry different information. At low redshift $(z\lesssim0.5)$, the BAO method strongly complements SN measurements, while at higher redshift $(z\gtrsim0.5)$ the BAO method is an powerful probe of dark energy and cosmic geometry.
+
+In \textcite{BAO_results} present a measurement of the BAO from the three-dimensional correlation of Lyman-$\alpha$ forest absorption and quasars from the SDSS Data Release 14 (the first two years of observations by the eBOSS) at redshift $z=2.35$. The position of the BAO peak is used to determine the Hubble distance $d_H$ and the comoving angular diameter distance $d_A$ relative to the sound horizon at the drag epoch $r_s: d_H(z=2.35)/r_s = 9.20\pm0.36$ and $d_M(z=2.35)/r_s = 36.3\pm1.8$. These results are $1.5\sigma$ from the flat \LCDM\ model of TODO cite ({Planck Collaboration, Ade, P. A. R., Aghanim, N., et al. 2016, A\&A, 594, A13}).
+%%%%%%%%%%%%%%%%%%%%%%%
+% WL
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Weak lensing}
 Gravitational lensing is the deflection of light from distant sources due to the bending of space-time by baryonic and dark matter (lenses) along the line of sight (more about lensing in \autoref{appen-lens}). It is a very useful cosmological probe because it is sensitive to all matter regardless of its nature. In the limit of very small deflection angles it is called weak lensing (WL). WL causes tiny distortions ($\sim0.5\%$), or ``shear'', in galaxy sizes and shapes -- see \autoref{fig_WL_Abell}. Intrinsic size or shape of a given galaxy are unknown, but normally, galaxy orientations are assumed to be random ($\sim30\%$ dispersion), so they should not exhibit statistically significant and coherent alignments. In the presence of lensing, small but coherent shears in background galaxy images are induced. This means that WL is statistically detectable by averaging shapes over many lensed galaxies. In principle either the shearing of galaxies (shape distortion) or their magnification (size distortion) can be measured. However, in practice the shape distortions is used much more widely, since the scatter in shapes of galaxies is less than the scatter in their sizes.
 
@@ -39,24 +56,36 @@ dark energy constraints} and \textit{Extend WL data analysis methods from Stage 
 % 	\caption{(Left) Illustrations of the effect of a lensing mass on a circularly symmetric image. Weak lensing elliptically distorts the image, flexion provides an arc-ness and strong lensing creates large arcs and multiple images. (Right) Galaxy cluster Abell 2218, strongly lensed arcs can be seen in around the cluster. Every background galaxy is weakly lensed. From NASA, ESA, and Johan Richard (Caltech, USA).}
 % 	\label{fig_WL_Abell}
 % \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+% Supernovae
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Large-scale structure}
 Studying the large-scale structures (LSS) of the Universe is of a great importance for the cosmology. Since the clustering of matter on scales from galaxies to superclusters came from quantum fluctuations in the very early Universe with important modification by radiation and baryons, the LSS encode critical information about the contents of the Universe, the origin of the fluctuations, and the cosmic expansion background in which the structures evolved.
 
 Measurements of large-scale power spectrum for the spatial distribution of matter as a function of redshift constrain the cosmic expansion history, the cosmological distance scale, the growth rate of structures, the mass of the neutrinos and the abundance of dark matter. This includes BAO measurement of the distance-redshift relation (as a standard ruler). The BAO with the growth of the LSS in the Universe form two robust probes of dark energy, and a potential discriminator between dark energy and modified gravity models. Beyond the dark energy, the large scale power spectrum is a probe of both neutrino mass and primordial non-gaussianity.
 
 Long-term task of the LSS working group within DESC is \textit{Scalable optimal LSS analysis software development}.
+%%%%%%%%%%%%%%%%%%%%%%%
+% Supernovae
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Galaxy clusters}
-The observed number density and clustering of galaxy clusters as a function of mass and redshift provides a powerful toolset to constraining cosmology.  Galaxy clusters provided the first line of evidence for the existence of dark matter \cite{zwicky} and cluster mass-to-light ratio measurements suggested that the matter density in the universe was sub-critical \cite{Gott}. Galaxy clusters measurements are sensitive to both the expansion history and the growth of structure in the Universe enabling to distinguish between dark energy and modified gravity models for cosmic acceleration. Additional probes are measurements of the baryonic mass fraction in clusters, and of the tomographic lensing signatures through clusters.
+The observed number density and clustering of galaxy clusters as a function of mass and redshift provides a powerful toolset to constraining cosmology.  Galaxy clusters provided the first line of evidence for the existence of dark matter \textcite{zwicky} and cluster mass-to-light ratio measurements suggested that the matter density in the universe was sub-critical \textcite{Gott}. Galaxy clusters measurements are sensitive to both the expansion history and the growth of structure in the Universe enabling to distinguish between dark energy and modified gravity models for cosmic acceleration. Additional probes are measurements of the baryonic mass fraction in clusters, and of the tomographic lensing signatures through clusters.
 
-The basic idea of cluster abundance studies is to compare the predicted space density of massive halos to the observed space density of clusters. The basic observables are the richness, the number of galaxies in a specified luminosity and color range. Halo abundance is sensitive to the amplitude of the matter power-spectrum $\sigma_8$\footnote{$\sigma_8$ is a linear fluctuation in the mass distribution on scales of $8h\mins$ Mpc} and the matter density $\Omega_m$, more precisely a combination of a form $\sigma_8\Omega_m^q$, with $q\approx0.4$ \cite{white}. The degeneracy between $\sigma_8$ and $\Omega_m$ can be broken by measuring abundances at a variety of masses.
+The basic idea of cluster abundance studies is to compare the predicted space density of massive halos to the observed space density of clusters. The basic observables are the richness, the number of galaxies in a specified luminosity and color range. Halo abundance is sensitive to the amplitude of the matter power-spectrum $\sigma_8$\footnote{$\sigma_8$ is a linear fluctuation in the mass distribution on scales of $8h\mins$ Mpc} and the matter density $\Omega_m$, more precisely a combination of a form $\sigma_8\Omega_m^q$, with $q\approx0.4$ \textcite{white}. The degeneracy between $\sigma_8$ and $\Omega_m$ can be broken by measuring abundances at a variety of masses.
 
 Long-term task of the Cl working group within DESC is \textit{Optimizing magnification-based cluster mass calibration}.
+%%%%%%%%%%%%%%%%%%%%%%%
+% Supernovae
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strong lensing}
 Strong gravitational lensing (SL) refers to the multiple imaging of a background object due to a massive foreground object (typically clusters of galaxies) -- see \autoref{fig_WL_Abell}. The resulting angular displacement, morphological distortion, and time delay can be used to measure dark energy parameters. Strong gravitational lensing time delays measure a combination of distances that combining with other dark energy probes can further constraint cosmological parameters. The time delays is also expected to test gravity on scales where the screening mechanisms is becoming active (more about screening mechanisms of modified gravities in \autoref{screen}).
 
-Another independent way to measure dark energy parameters with SL is the analysis of systems with multiple sets of multiple images \cite{SL_in_CLGs}. The positions of these multiple images depend strongly on the detailed properties of the lens mass distribution and on the angular diameter distance ratios between the lens, source and observer, they encapsulate information about the underlying cosmology. This dependence on the geometry can be used to derive constraints on the cosmological parameters.
+Another independent way to measure dark energy parameters with SL is the analysis of systems with multiple sets of multiple images \textcite{SL_in_CLGs}. The positions of these multiple images depend strongly on the detailed properties of the lens mass distribution and on the angular diameter distance ratios between the lens, source and observer, they encapsulate information about the underlying cosmology. This dependence on the geometry can be used to derive constraints on the cosmological parameters.
 
 Long-term task of the SN working group within DESC is \textit{Explore multiple source plane cosmography as a competitive DE probe}.
+%%%%%%%%%%%%%%%%%%%%%%%
+% Supernovae
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Redshift-space distortions}
 %(and thus an apparent distance)
 When we observe distant galaxies, two features determine their redshifts -- the Hubble expansion and their peculiar velocities. The peculiar velocities of galaxies thus cause them to appear displaced along the line of sight in redshift space. These displacements lead to redshift distortions in the pattern of clustering of galaxies in redshift space and make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the tremendous advantage of bearing information about the dynamics of galaxies. The strength of the anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the logarithmic growth rate of fluctuations. By modeling the full redshift-space galaxy power spectrum one can obtain combination of the product of the matter clustering amplitude and the growth rate.
