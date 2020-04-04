@@ -20,7 +20,7 @@ Recent analysis of \textcite{Abbott_2019} uses data from the Dark Energy Survey 
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=\textwidth]{cosmo_evol/DES_SNe_results.png}
+    \includegraphics[width=0.7\textwidth]{cosmo_evol/DES_SNe_results.png}
     \caption{Hubble diagram for the DES-SN3YR sample. Top: distance modulus $(\mu =5\log [d_L/10\rm{pc}])$ from ``BEAMS with Bias Corrections'' fit (\cite{Kessler_2017}, black bars, which are used for cosmology fits) and for each SN (red, orange circles). The dashed gray line shows best fit model, while the green and blue dotted lines show models with no dark energy and matter densities $\Omega_m = 0.3$ and $1.0$ respectively. Bottom: residuals to the best fit model; $1\sigma$ error bars show 68\% confidence. \textit{Note:} Reprinted from \parencite{Abbott_2019}.}
     \label{fig:des_sne_results}
 \end{figure}
@@ -36,7 +36,19 @@ where asterisk denotes time (redshift) at recombination and $c_s$ is the sound s
 
 This effect can be detected in the angular clustering of galaxies in bins of photometric redshift, yielding the angular diameter distance. Furthermore, measuring the BAO scale in a velocity separation allows a direct determination of $H(z)$. The BAO method measures $D(z)$ in absolute units -- Mpc not $h\mins$ Mpc like SNe measurements, and thus BAO measurements to the same redshift carry different information. At low redshift $(z\lesssim0.5)$, the BAO method strongly complements SN measurements, while at higher redshift $(z\gtrsim0.5)$ the BAO method is an powerful probe of dark energy and cosmic geometry.
 
-In \textcite{BAO_results} present a measurement of the BAO from the three-dimensional correlation of Lyman-$\alpha$ forest absorption and quasars from the SDSS Data Release 14 (the first two years of observations by the eBOSS) at redshift $z=2.35$. The position of the BAO peak is used to determine the Hubble distance $d_H$ and the comoving angular diameter distance $d_A$ relative to the sound horizon at the drag epoch $r_s: d_H(z=2.35)/r_s = 9.20\pm0.36$ and $d_M(z=2.35)/r_s = 36.3\pm1.8$. These results are $1.5\sigma$ from the flat \LCDM\ model of TODO cite ({Planck Collaboration, Ade, P. A. R., Aghanim, N., et al. 2016, A\&A, 594, A13}).
+BAO can be clearly seen in the correlation function (see e.g. \cite{1993ApJ...412...64L} for definition and estimators). The two-point correlation function $\xi(r)$ is the excess probability $\dd P$ of finding two pairs of galaxies in two volumes $\dd V_1$ and $\dd V_2$ at a given comoving distance $r$
+\eq{
+    \dd P = \bar{n}^2[1+\xi(r)]\dd V_1 \dd V_2\,,
+}
+where $\bar{n}$ is the expected density of the distribution. The distances are usually measured using the redshift in the redshift space where the distortions (see \autoref{sec:rsd}) cause the redshift-space correlation $\xi(s)$ function to vary according to the angle between the separation vector and the line of sight. In \autoref{fig:xi_s} we see the spherically averaged correlation function from \textcite{2005ApJ...633..560E} with the clear bump at $100h^{-1}$ Mpc scale.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\textwidth]{cosmo_evol/bao_rsd.png}
+    \caption{The large-scale redshift-space correlation function of the SDSS LRG sample. The error bars are from the diagonal elements of the mock-catalog covariance matrix; however, the points are correlated. Note that the vertical axis mixes logarithmic and linear scalings. The inset shows an expanded view with a linear vertical axis. The models are $\Omega_mh^2=0.12$ (top, green), $0.13$ (red), and $0.14$ (bottom with peak, blue), all with $\Omega_bh^2=0.024$ and $n=0.89$ and with a mild non-linear prescription folded in. The magenta line shows a pure CDM model ($\Omega_mh^2=0.105$), which lacks the acoustic peak. It is interesting to note that although the data appears higher than the models, the covariance between the points is soft as regards overall shifts in $\xi(s)$. Subtracting $0.002$ from $\xi(s)$ at all scales makes the plot look cosmetically perfect, but changes the best-fit $\chi^2$ by only $1.3$. The bump at$100h^{-1}$ Mpc scale, on the other hand, is statistically significant. \textit{Note:} Reprinted from \parencite{2005ApJ...633..560E}.}
+    \label{fig:xi_s}
+\end{figure}
+
+In \textcite{BAO_results} present a measurement of the BAO from the three-dimensional correlation of Lyman-$\alpha$ forest absorption and quasars from the SDSS Data Release 14 (the first two years of observations by the eBOSS) at redshift $z=2.35$. The position of the BAO peak is used to determine the Hubble distance $d_H$ and the comoving angular diameter distance $d_A$ relative to the sound horizon at the drag epoch $r_s: d_H(z=2.35)/r_s = 9.20\pm0.36$ and $d_M(z=2.35)/r_s = 36.3\pm1.8$. These results are $1.5\sigma$ from the flat \LCDM\ model of \textcite{2016A&A...594A..13P}.
 %%%%%%%%%%%%%%%%%%%%%%%
 % WL
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -78,7 +90,7 @@ Another independent way to measure dark energy parameters with SL is the analysi
 % Supernovae
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Redshift-space distortions}
-%(and thus an apparent distance)
+\label{sec:rsd}
 When we observe distant galaxies, two features determine their redshifts -- the Hubble expansion and their peculiar velocities. The peculiar velocities of galaxies thus cause them to appear displaced along the line of sight in redshift space. These displacements lead to redshift distortions in the pattern of clustering of galaxies in redshift space and make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the tremendous advantage of bearing information about the dynamics of galaxies. The strength of the anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the logarithmic growth rate of fluctuations. By modeling the full redshift-space galaxy power spectrum one can obtain combination of the product of the matter clustering amplitude and the growth rate.
 
 Anisotropy of galaxy clustering offers an alternative to weak lensing and cluster abundances as a tool for measuring the growth of structures. RSD directly measure the rate at which structure is growing at the redshift of observation unlike WL and galaxy cluster measurements  which measure the rate of growth at multiple redshifts. RSD measurements can improve constraints on dark energy models and they can be used to constrain departures from GR by testing consistency of the growth and expansion histories. The key challenge in modeling RSD is accounting for nonlinear effects, including nonlinear or scale-dependent bias between galaxies and matter, at the level of accuracy demanded by the LSST`s precision.
