@@ -311,6 +311,22 @@ where $\delta_0$ is present overdensity and the growth function $D$ is normalize
 }
 where $\gamma\approx0.55-0.6$ depends only weakly on cosmological parameters \parencite{1980_Peebles}.
 
+%%%%%%%%%%%%%%%%%%%%%%%
+% Growth function
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Photon propagation}
+The above equations describe the evolution of matter density perturbations. Now we will focus on the propagation of light in this perturbed Universe. The photon momentum is defined via $k^\mu=\dd x^\mu/\dd\lambda_s$, where $\lambda_s$ is an affine parameter. The equations for the propagation are then
+\eq{
+    k_\mu k^\mu &= 0\,,\\
+    \label{eq:p_geo}
+    \dddd{k^\mu}{\lambda_s}+\Gamma^\mu_{\alpha\beta}k^\alpha k^\beta &= 0\,.
+}
+We will split the momentum vector into a background and a perturbed value $k^\mu=\bar k^\mu+\delta k^\mu$. The photon moves in the unperturbed metric along the direction $r$ so that $\dd\eta=\dd r$. At the background level we can integrate \autoref{eq:p_geo} to get $\bar k^0\propto a^{-2}$ and therefore the photon frequency $\nu\equiv\dd t/\dd\Lambda_s=a\bar k^0\propto a^{-1}$ as expected. The equations for the perturbed part $\delta k$ are (for details, see e.g. \cite{2010deto.book.....A})
+\eq{
+    \dddd{(\delta k^0/k^0)}{\eta} &= -\left(\partpart{\Phi}{\eta}+\partpart{\Psi}{\eta}+2\partpart{\Psi}{r}\right)\,,\\
+    \frac{\dd^2x^i}{\dd\lambda_s^2}+2\mathcal{H}\dddd{\eta}{\lambda_s}\dddd{x^i}{\lambda_s} &= \left(\partpart{Phi}{x^i}-\partpart{\Psi}{x^i}\right)\,,
+}
+where the two directions $x^1$ and $x^2$ are orthogonal to the propagation direction $r$.
 \subsection{Parametrization of models}
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables

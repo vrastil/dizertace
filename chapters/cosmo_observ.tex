@@ -53,7 +53,44 @@ In \textcite{BAO_results} present a measurement of the BAO from the three-dimens
 % WL
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Weak lensing}
-Gravitational lensing is the deflection of light from distant sources due to the bending of space-time by baryonic and dark matter (lenses) along the line of sight (more about lensing in \autoref{appen-lens}). It is a very useful cosmological probe because it is sensitive to all matter regardless of its nature. In the limit of very small deflection angles it is called weak lensing (WL). WL causes tiny distortions ($\sim0.5\%$), or ``shear'', in galaxy sizes and shapes -- see \autoref{fig_WL_Abell}. Intrinsic size or shape of a given galaxy are unknown, but normally, galaxy orientations are assumed to be random ($\sim30\%$ dispersion), so they should not exhibit statistically significant and coherent alignments. In the presence of lensing, small but coherent shears in background galaxy images are induced. This means that WL is statistically detectable by averaging shapes over many lensed galaxies. In principle either the shearing of galaxies (shape distortion) or their magnification (size distortion) can be measured. However, in practice the shape distortions is used much more widely, since the scatter in shapes of galaxies is less than the scatter in their sizes.
+Gravitational lensing is the deflection of light from distant sources due to the bending of space-time by baryonic and dark matter (lenses) along the line of sight. It is a very useful cosmological probe because it is sensitive to all matter regardless of its nature. In the limit of very small deflection angles it is called weak lensing (WL). WL causes tiny distortions ($\sim0.5\%$), or ``shear'', in galaxy sizes and shapes -- see \autoref{fig_WL_Abell}. Intrinsic size or shape of a given galaxy are unknown, but normally, galaxy orientations are assumed to be random ($\sim30\%$ dispersion), so they should not exhibit statistically significant and coherent alignments. In the presence of lensing, small but coherent shears in background galaxy images are induced. This means that WL is statistically detectable by averaging shapes over many lensed galaxies. In principle either the shearing of galaxies (shape distortion) or their magnification (size distortion) can be measured. However, in practice the shape distortions is used much more widely, since the scatter in shapes of galaxies is less than the scatter in their sizes.
+
+% Weak gravitational lensing bends the trajectory of the light according to \eqref{eq_kin}. The angular deflection integrated over the past light cone between $z$ and $z+\delta z$ is
+% \eq{
+%     \delta\vec{\alpha}=-\vec{\nabla}_\bot(\Phi+\Psi)\dddd\eta z \delta z,
+% }
+% where $\alpha$ is a (two-dimensional) vector perpendicular to the trajectory of the light. The gravitational lens equation \cite{WL_over}
+% \beq
+% \vec\beta=\vec\theta-\frac{r_{LS}}{r_S}\delta\vec\alpha,
+% \eeq
+% where $\theta$ is the observed direction of a ray and $\beta$ the direction to the source in the absence of the deflection. The distances are are the comoving angular distances from the lens plane to the source plane, and from the observer to the source plane respectively.
+
+% We cannot observe the absolute deflection since we do not know the the true direction of the source. However, the gradient of the deflection results in an image magnification and shear that are observable. These are described by the inverse magnification matrix
+% \beq
+% \textbf{M}\mins(\vec\theta)=\partpart{\vec\beta}{\vec\theta}=\textbf{1}+\int_0^{z_S}\frac{r_Sr_{LS}}{r_S}\vec{\nabla}_\bot\vec{\nabla}_\bot(\Phi+\Psi)\dddd\eta z \dd z.
+% \eeq
+% This magnification matrix is parametrized by a convergence $\kappa$ and shear parameters $\gamma_1$ and $\gamma_2$
+% \beq
+% \begin{split}
+% \textbf{M}(\vec\theta)= \left(
+% \begin{array}{cc}
+% 1+\kappa+\gamma_1 & \gamma_2 \\
+% \gamma_2 & 1+\kappa-\gamma_1 \\
+% \end{array}
+% \right).
+% \end{split}
+% \eeq
+% The weak lensing limit assumes $\kappa^2\ll1$ and $\gamma^2_i\ll1$. The convergence still cannot be measured directly as the size and flux of the source is generally unknown. However, the shear components can be measured statistically averaging galaxy image distortions over large sample of galaxies since the orientation of galaxies are assumed to be random. Weak lensing thus offers a probe of the sum of the two potentials $(\Phi+\Psi)$.
+% \ssec{Current Limits}
+% Using the Shapiro time delay one can obtain strong limits on the \textit{gravitational slip} (combination $\Psi-\Phi$) in the solar system. The round-trip time of signals from the Cassini spacecraft near Saturn as the signals pass close to the sun is longer than one would expect in flat spacetime. This gives tight limit on the slip \cite{test_pot_1}
+% \beq
+% \frac{|\Psi-\Phi|}{\Phi}=(2.1\pm2.3)\cdot\EXP{-5}
+% \eeq
+% within the solar system. Combining stellar dynamics with the strong gravitational lensing on galaxy scales limit the slip \cite{test_pot_2}
+% \beq
+% \frac{|\Psi-\Phi|}{\Phi}=0.01\pm0.05
+% \eeq
+% on kpc scales. Future surveys such as the LSST and Euclid will improve these limits and provide new one on larger scales.
 
 Weak lensing provides a direct measure of the distribution of matter, independent of any assumptions about galaxy biasing\footnote{Galaxy bias is the difference in the distribution of galaxies and that of the underlying dark matter. The biasing factor $b$ is defined such that the relative fluctuations in the spatial number density of galaxies are $b$ times the relative density fluctuations.}. Since this distribution can be predicted theoretically, and its amplitude can be directly used to constrain cosmology, weak lensing has great potential as a cosmological probe. The correlation of the density field of nearby galaxies with the lensing shear measured on more distant galaxies is called \textit{galaxy-galaxy lensing}. Most lens systems involve sources (and lenses) at moderate or high redshift, and thus can lensing probe the geometry of the Universe -- the measurement of the shear correlation function as a function of the redshifts of observed galaxies is called \textit{tomography}. The scaling of the galaxy-galaxy lensing signal as a function of the source redshift, known as \textit{cosmography}, depends purely on geometric factors and hence can be used to construct a distance-redshift relation.
 %%%%%%%%%%%%%%%%%%%
