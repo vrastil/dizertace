@@ -335,6 +335,23 @@ The \autoref{eq:SW_0} describes changes in the frequency (redshift) of photons p
     \Delta_{eo}\left(\frac{\delta k^0}{k^0}\right)=-2\Delta_{eo}\Psi-\int_{e}^{o}{\left(\partpart\Phi\eta-\partpart\Psi\eta\right)\dd\eta}\,.
 }
 The first effect is referred to as the \textit{Sachs--Wolfe effect} and depends on the difference between the potential at emission and at observation. The second effect is called the \textit{integrated Sachs--Wolfe effect} and depends on the line-of-sight integral of $\Phi-\Psi$.
+\subsubsection{Weak lensing}
+The spatial part of the geodesic equations, \autoref{eq:WL_0}, can be written for $i=1,2$ as
+\eq{
+    \frac{\dd^2x^i}{\dd r^2}=\partpart{\psi}{x^i}\,,
+}
+where the lensing potential $\psi\equiv\Phi-\Psi$. For small displacements we can put $x^i=r\theta^i$. Integrated the above equation gives us
+\eq{
+    \theta^i=\theta^i_o+\int_0^r\dd r'\left(1-\frac{r'}{r}\right)\partpart{\psi(r'\theta_o^1,r'\theta_o^2,r')}{x^i}\,.`'
+}
+Two light rays separated by a small angle  $\Delta\theta^i$ on the source plane at $r=r_s$ are connected to the the observation plane at $r=0$ by the symmetric transformation matrix
+\eq{
+    A_{ij}\equiv\partpart{\theta^i_s}{\theta^j_o}=\delta_{ij}+D_{ij}\,,
+}
+where the distortion tensor
+\eq{
+    D_{ij}=\int_0^{r_s}\dd r'\left(1-\frac{r'}{r_s}\right)r'\frac{\partial^2\psi}{\partial x^i\partial x^j}\,.
+}
 
 \subsection{Parametrization of models}
 
