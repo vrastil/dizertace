@@ -4,17 +4,68 @@ In this chapter we briefly introduce ideas behind adding new degrees of freedom 
 TODO
 
 \section{Cosmological constant}
-TODO
+Standard cosmological \LCDM\ model is in a good agreement with all measurements of CMB \parencite{collaboration2018planck}, type Ia supernovae \parencite{Abbott_2019}, or BAO \parencite{BAO_results}. However, this concordance model has some significant fundamental problems and even though it may serve as an effective description of our Universe we should be looking for a deeper explanation of the accelerated expansion of the Universe.
+\subsection{Fine-Tuning Problem}
+\subsection{Coincidence Problem}
 
 \section{TODO}
-Other reasons for studying the modifications of gravity may include the following TODO citation. Modified gravity can:
+Other reasons for studying the modifications of gravity may include the following TODO citation. Modified gravity:
 \begin{itemize}
-	\item provide natural unification of the early-time inflation and late-time acceleration.
-	\item serve as the basis for unified explanation of dark energy and dark matter
+	\item can provide natural unification of the early-time inflation and late-time acceleration TODO CITE
+	\item can serve as the basis for unified explanation of dark energy and dark matter TODO CITE
+	\item be is expected to be useful in high energy physics TODO CITE
 \end{itemize}
 
 \section{\textit{f(R)}-gravity}
+One of the simplest modified gravity models is the so-called $f(R)$ gravity in which we consider general functions of the Ricci scalar $R$ in the action
+\eq{
+	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left[F(R)\right]+S_m[\psi_m;g_\uv]\,,
+}
+where $F(R)=R+f(R)$ and $S_m$ is the matter action with matter fields $\Psi_m$ which are minimally coupled to gravity, i.e. they interact with gravity only through the determinant of the metric $\dg$ and the canonical kinetic term $-\frac12g^\uv\partial_\mu\phi\partial_\nu\phi$. The matter fields $\psi_m$ obey standard conservation equations and therefore the metric $g_\uv$ corresponds to the physical frame -- the Jordan frame.
 
+Variation with respect to the metric $g^\uv$ gives us equation of motion
+\eq{
+	\label{{eq:fR}}
+	F\R R_\uv-\frac{1}{2}f g_\uv+g_\uv\Box F\R-\nabla_\mu\nabla_\nu F\R=\frac{1}{\Mpl^2}T_\uv\,.
+}
+For $f(R)=-2\Lambda$ the standard Einstein gravity is reconstructed. Taking the trace of \eqref{eq:fR} we get
+\eq{
+	\label{eq:fR_tr}
+	3\Box F\R+F\R R-2F=\frac{1}{\Mpl^2}T\,.
+}
+We see that there is a propagating scalar degree of freedom, so-called \textit{scalaron} $F\R$ with mass $m^2=F\R/(3F\RR)$, which corresponds to the scalar field conformally coupled to matter in the Einstein frame.
 
+To get the inflation we need a solution that approaches the de Sitter solution characterized by vacuum space with with a constant positive curvature. Thus $\Box F\R=0$ and \eqref{eq:fR_tr} becomes
+\eq{
+	F\R R-2f=0.
+}
+For example the model $f(R)=\alpha R^2$ gives rise to an asymptotically exact de Sitter solution and can be responsible for the inflation in the early Universe. The inflation ends when the quadratic term becomes smaller than the linear term. As at the present epoch is the curvature very small this model is not suitable to realize the present cosmic acceleration. Models like $f(R)=-\alpha/R^n$ with $\alpha>0,\ n>0$ could in principle give rise to the present acceleration. However, these models do not satisfy local gravity constraints because of the instability associated with negative values of $f\RR$. Moreover, the standard matter epoch is not present because of a large coupling between the Ricci scalar and the non-relativistic matter.
 
+There are four conditions for the viability of \fR\ models \parencite{Amendola_2007}
+\begin{itemize}
+	\item $F\R>0\ (R>R_0)$, where $R_0$ is the Ricci scalar at the present epoch,\\
+	--required to avoid anti-gravity \parencite{2010deto.book.....A}\\
+	\item $F\RR>0\ (R>R_0)$,\\
+	--required for consistency with local gravity tests \parencite{2005gr.qc.....5136O}, for the presence of the matter-dominated epoch \parencite{2007PhRvL..98m1302A} and for the stability of cosmological perturbations \parencite{2007PhRvD..75d4004S}\\
+	\item $f(R)\rightarrow -2\Lambda\ (R\gg R_0)$,\\
+	--required for consistency with local gravity tests \parencite{2008PhRvD..77b3507T} and for the presence of the matter-dominated epoch \parencite{Amendola_2007}\\
+	\item $0<\frac{RF\RR}{F\R}<1\ (F\R R-2f=0)$.\\
+		--required for the stability of the late-time de Sitter solution \parencite{1988PhLB..202..198M}
+\end{itemize}
+Some examples of \fR\ models that satisfy these conditions:
+\eq{
+	f(R)&=-\mu R_c(R/R_c)^p	&\mbox{for\ }&0<p<1;\ \mu,R_c>0\,,\\
+	f(R)&=-\mu R_c\frac{(R/R_c)^{2n}}{(R/R_c)^{2n}+1} 	&\mbox{for\ }&n,\mu,R_c>0\,,\\
+	f(R)&=-\mu R_c\left[1-(1+R^2/R^2_c)^{-n}\right] 	&\mbox{for\ }&n,\mu,R_c>0\,,\\
+	f(R)&=-\mu R_c\tanh(R/R_c)	&\mbox{for\ }&\mu,R_c>0\,.
+}
+One of the main prediction of \fR\ gravity is different structure formation history than in \LCDM. For the large-scale structure formation on subhorizon scales \mbox{$k\gg H$} in quasi-static approximation one gets the modified equation for matter density perturbation \cite{2011RSPTA.369.4947B}
+\eq{
+	\ddot{\delta}_m+2H\dot{\delta}_m-4\pi G\eff \rho_m\delta_m\approx0\,,
+}
+where the effective gravitational constant is defined by
+\eq{
+	G\eff \equiv\frac{G}{1+f\R}\frac{4k^2+3a^2m^2}{3k^2+3a^2m^2}\,.
+}
+On scales much larger than the scalaron Compton wavelength $m_\Psi\mins$, gravity is unmodified aside from the overall reduction factor $f\R$. However, on smaller scales the gravitational coupling increases by the factor $4/3$. As the scalaron mass $m_\Psi$ and the factor $f\R$ depend on curvature (local density), the chameleon mechanism discussed earlier can prevent the detection of this effect in the Solar System.
 \section{Other theries}
