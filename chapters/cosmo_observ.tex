@@ -21,7 +21,7 @@ Recent analysis of \textcite{Abbott_2019} uses data from the Dark Energy Survey 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.7\textwidth]{cosmo_evol/DES_SNe_results.png}
-    \caption{Hubble diagram for the DES-SN3YR sample. Top: distance modulus $(\mu =5\log [d_L/10\rm{pc}])$ from ``BEAMS with Bias Corrections'' fit (\cite{Kessler_2017}, black bars, which are used for cosmology fits) and for each SN (red, orange circles). The dashed gray line shows best fit model, while the green and blue dotted lines show models with no dark energy and matter densities $\Omega_m = 0.3$ and $1.0$ respectively. Bottom: residuals to the best fit model; $1\sigma$ error bars show 68\% confidence. \textit{Note:} Reprinted from \parencite{Abbott_2019}.}
+    \caption{Hubble diagram for the DES-SN3YR sample. Top: distance modulus $(\mu =5\log [d_L/10\rm{pc}])$ from ``BEAMS with Bias Corrections'' fit (\cite{Kessler_2017}, black bars, which are used for cosmology fits) and for each SN (red, orange circles). The dashed gray line shows best fit model, while the green and blue dotted lines show models with no dark energy and matter densities $\Omega_m = 0.3$ and $1.0$ respectively. Bottom: residuals to the best fit model; $1\sigma$ error bars show 68\% confidence. \textit{Note:} Reprinted from \textcite{Abbott_2019}.}
     \label{fig:des_sne_results}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -38,13 +38,14 @@ This effect can be detected in the angular clustering of galaxies in bins of pho
 
 BAO can be clearly seen in the correlation function (see e.g. \cite{1993ApJ...412...64L} for definition and estimators). The two-point correlation function $\xi(r)$ is the excess probability $\dd P$ of finding two pairs of galaxies in two volumes $\dd V_1$ and $\dd V_2$ at a given comoving distance $r$
 \eq{
+    \label{eq:corr}
     \dd P = \bar{n}^2[1+\xi(r)]\dd V_1 \dd V_2\,,
 }
 where $\bar{n}$ is the expected density of the distribution. The distances are usually measured using the redshift in the redshift space where the distortions (see \autoref{sec:rsd}) cause the redshift-space correlation $\xi(s)$ function to vary according to the angle between the separation vector and the line of sight. In \autoref{fig:xi_s} we see the spherically averaged correlation function from \textcite{2005ApJ...633..560E} with the clear bump at $100h^{-1}$ Mpc scale.
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.7\textwidth]{cosmo_evol/bao_rsd.png}
-    \caption{The large-scale redshift-space correlation function of the SDSS LRG sample. The error bars are from the diagonal elements of the mock-catalog covariance matrix; however, the points are correlated. Note that the vertical axis mixes logarithmic and linear scalings. The inset shows an expanded view with a linear vertical axis. The models are $\Omega_mh^2=0.12$ (top, green), $0.13$ (red), and $0.14$ (bottom with peak, blue), all with $\Omega_bh^2=0.024$ and $n=0.89$ and with a mild non-linear prescription folded in. The magenta line shows a pure CDM model ($\Omega_mh^2=0.105$), which lacks the acoustic peak. It is interesting to note that although the data appears higher than the models, the covariance between the points is soft as regards overall shifts in $\xi(s)$. Subtracting $0.002$ from $\xi(s)$ at all scales makes the plot look cosmetically perfect, but changes the best-fit $\chi^2$ by only $1.3$. The bump at$100h^{-1}$ Mpc scale, on the other hand, is statistically significant. \textit{Note:} Reprinted from \parencite{2005ApJ...633..560E}.}
+    \caption{The large-scale redshift-space correlation function of the SDSS LRG sample. The error bars are from the diagonal elements of the mock-catalog covariance matrix; however, the points are correlated. Note that the vertical axis mixes logarithmic and linear scalings. The inset shows an expanded view with a linear vertical axis. The models are $\Omega_mh^2=0.12$ (top, green), $0.13$ (red), and $0.14$ (bottom with peak, blue), all with $\Omega_bh^2=0.024$ and $n=0.89$ and with a mild non-linear prescription folded in. The magenta line shows a pure CDM model ($\Omega_mh^2=0.105$), which lacks the acoustic peak. It is interesting to note that although the data appears higher than the models, the covariance between the points is soft as regards overall shifts in $\xi(s)$. Subtracting $0.002$ from $\xi(s)$ at all scales makes the plot look cosmetically perfect, but changes the best-fit $\chi^2$ by only $1.3$. The bump at$100h^{-1}$ Mpc scale, on the other hand, is statistically significant. \textit{Note:} Reprinted from \textcite{2005ApJ...633..560E}.}
     \label{fig:xi_s}
 \end{figure}
 
@@ -109,6 +110,26 @@ Weak lensing provides a direct measure of the distribution of matter, independen
 Studying the large-scale structures (LSS) of the Universe is of a great importance for the cosmology. Since the clustering of matter on scales from galaxies to superclusters came from quantum fluctuations in the very early Universe with important modification by radiation and baryons, the LSS encode critical information about the contents of the Universe, the origin of the fluctuations, and the cosmic expansion background in which the structures evolved.
 
 Measurements of large-scale power spectrum for the spatial distribution of matter as a function of redshift constrain the cosmic expansion history, the cosmological distance scale, the growth rate of structures, the mass of the neutrinos and the abundance of dark matter. This includes BAO measurement of the distance-redshift relation (as a standard ruler). The BAO with the growth of the LSS in the Universe form two robust probes of dark energy, and a potential discriminator between dark energy and modified gravity models. Beyond the dark energy, the large scale power spectrum is a probe of both neutrino mass and primordial non-gaussianity.
+\subsubsection{Matter power spectrum}
+The matter power spectrum $P(k)$ is defined as a quadratic function of the Fourier transformation of the density contrast $\delta$
+\eq{
+  \label{eq:pk}
+  P(k)(2\pi)^3\delta_{\rm D}(k-k')\equiv \left\langle \hat\delta(k)\hat\delta^*(k')\right\rangle\,,
+}
+where $\delta_{\rm D}$ is the Dirac delta function and we are averaging over possible realizations. The power spectrum is by far the most common descriptor of clustering in the linear and mildly non-linear regime and plays a central role in cosmology. The power spectrum is the Fourier transform of the correlation function \eqref{eq:corr}
+\eq{
+    P(k)=\int\xi(r)e^{-ik\cdot r}\dd^3r\,.
+}
+
+In \autoref{fig:pk_planck} is shown (linear) matter power spectrum inferred from different cosmological probes \parencite{2018arXiv180706205P}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\textwidth]{cosmo_evol/pk_planck.png}
+    \caption{The (linear theory) matter power spectrum (at z = 0) inferred from different cosmological probes. The broad agreement of the model (black line) with such a disparate compilation of data, spanning 14 Gyr in time and three decades in scale is an impressive testament to the explanatory power of \LCDM. Earlier versions of similar plots can be found in, for example, \textcite{1994ARA&A..32..319W}, \textcite{1995Sci...268..829S}, \textcite{2002PhRvD..66j3508T}, and \textcite{2004ApJ...606..702T}. A comparison with those papers shows that the evolution of the field in the last two decades has been dramatic, with \LCDM\ continuing to provide a good fit on these scales. \textit{Note:} Reprinted from \textcite{2018arXiv180706205P}.}
+    \label{fig:pk_planck}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 % Supernovae
 %%%%%%%%%%%%%%%%%%%%%%%
