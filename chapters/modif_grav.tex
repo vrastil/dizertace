@@ -19,13 +19,14 @@ Other reasons for studying the modifications of gravity may include the followin
 \section{\textit{f(R)}-gravity}
 One of the simplest modified gravity models is the so-called $f(R)$ gravity in which we consider general functions of the Ricci scalar $R$ in the action
 \eq{
+	\label{eq:S_fr}
 	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left[F(R)\right]+S_m[\psi_m;g_\uv]\,,
 }
 where $F(R)=R+f(R)$ and $S_m$ is the matter action with matter fields $\Psi_m$ which are minimally coupled to gravity, i.e. they interact with gravity only through the determinant of the metric $\dg$ and the canonical kinetic term $-\frac12g^\uv\partial_\mu\phi\partial_\nu\phi$. The matter fields $\psi_m$ obey standard conservation equations and therefore the metric $g_\uv$ corresponds to the physical frame -- the Jordan frame.
 
 Variation with respect to the metric $g^\uv$ gives us equation of motion
 \eq{
-	\label{{eq:fR}}
+	\label{eq:fR}
 	F\R R_\uv-\frac{1}{2}f g_\uv+g_\uv\Box F\R-\nabla_\mu\nabla_\nu F\R=\frac{1}{\Mpl^2}T_\uv\,.
 }
 For $f(R)=-2\Lambda$ the standard Einstein gravity is reconstructed. Taking the trace of \eqref{eq:fR} we get
@@ -44,13 +45,13 @@ For example the model $f(R)=\alpha R^2$ gives rise to an asymptotically exact de
 There are four conditions for the viability of \fR\ models \parencite{Amendola_2007}
 \begin{itemize}
 	\item $F\R>0\ (R>R_0)$, where $R_0$ is the Ricci scalar at the present epoch,\\
-	--required to avoid anti-gravity \parencite{2010deto.book.....A}\\
+	-- required to avoid anti-gravity \parencite{2010deto.book.....A}\\
 	\item $F\RR>0\ (R>R_0)$,\\
-	--required for consistency with local gravity tests \parencite{2005gr.qc.....5136O}, for the presence of the matter-dominated epoch \parencite{2007PhRvL..98m1302A} and for the stability of cosmological perturbations \parencite{2007PhRvD..75d4004S}\\
+	-- required for consistency with local gravity tests \parencite{2005gr.qc.....5136O}, for the presence of the matter-dominated epoch \parencite{2007PhRvL..98m1302A} and for the stability of cosmological perturbations \parencite{2007PhRvD..75d4004S}\\
 	\item $f(R)\rightarrow -2\Lambda\ (R\gg R_0)$,\\
-	--required for consistency with local gravity tests \parencite{2008PhRvD..77b3507T} and for the presence of the matter-dominated epoch \parencite{Amendola_2007}\\
+	-- required for consistency with local gravity tests \parencite{2008PhRvD..77b3507T} and for the presence of the matter-dominated epoch \parencite{Amendola_2007}\\
 	\item $0<\frac{RF\RR}{F\R}<1\ (F\R R-2f=0)$.\\
-		--required for the stability of the late-time de Sitter solution \parencite{1988PhLB..202..198M}
+	-- required for the stability of the late-time de Sitter solution \parencite{1988PhLB..202..198M}
 \end{itemize}
 Some examples of \fR\ models that satisfy these conditions:
 \eq{
@@ -68,4 +69,38 @@ where the effective gravitational constant is defined by
 	G\eff \equiv\frac{G}{1+f\R}\frac{4k^2+3a^2m^2}{3k^2+3a^2m^2}\,.
 }
 On scales much larger than the scalaron Compton wavelength $m_\Psi\mins$, gravity is unmodified aside from the overall reduction factor $f\R$. However, on smaller scales the gravitational coupling increases by the factor $4/3$. As the scalaron mass $m_\Psi$ and the factor $f\R$ depend on curvature (local density), the chameleon mechanism discussed earlier can prevent the detection of this effect in the Solar System.
+
+\subsection{Hu-Sawicki \texorpdfstring{\textit{\lowercase{f}(R)}}{fR} Model}
+We wish to study a class of $f(R)$ models that accelerate cosmic expansion at late times, without the cosmological constant, while satisfying both cosmological and Solar System tests. We consider the family of Hu-Sawicki $f(R)$ models \parencite{Hu-Saw}. The action of these models is given by \eqref{eq:S_fr} and $f(R)$ has a broken power-law form
+\eq{
+	f(R)=-M^2\frac{c_1(R/M^2)^m}{c_2(R/M^2)^m+1}\,,
+}
+where the mass scale $M^2\equiv\bar\rho_0/3\Mpl^2$, $m>0$, and $c_1$ and $c_2$ are dimensionless parameters such that at high redshifts \LCDM\ cosmology is restored.
+
+The formulation of modified gravity in this frame leads to second-order differential equations of motion \eqref{eq:fR} for $R$ and fourth-order field equations for $g_\uv$. With a conformal transformation we may rewrite these equation in the Einstein frame with second-order differentials only \parencite[see, e.g.,][]{CHIBA20031}.
+
+In the Einstein frame, the Hu-Sawicki models correspond to chameleon gravity with the potential
+\eq{
+	V(\chi) &= \Mpl^2\Lambda-\frac{\beta\bar\rho_0}{n\Mpl}\left(2\beta\Mpl\Phiscrz\right)^{1-n}\chi^n\,, \\
+    V_{,\chi}(\chi) &= -\frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}\,,
+}
+where $\beta=\sqrt{1/6}$ and the power-law exponent $n$ and screening potential $\Phiscrz$ are parameters of the theory. The screening potential has the following relation to the present scalaron value in $f(R)$-gravity:
+\eq{
+    \Phiscrz=\frac{3}{2}\ln{(1+f_{R0})}\approx\frac{3}{2}f_{R0}.
+}
+The extra scalar degree of freedom $\chi$ (\textit{chameleon}) obeys the equation of motion
+\eq{
+	\Box \chi = V_{,\chi}(\chi) + \frac{\beta}{\Mpl}\rho\equiv V_{\eff,\chi}(\chi)\,.
+}
+When matter moves non-relativistically and we are inside the sound horizon of the chameleon, time derivatives may be neglected, hence
+\eq{
+\label{eq:cham}
+	\Delta \chi = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}
+}
+The transformation from the Jordan frame to the Einstein frame introduces non-standard coupling of the chameleon field to standard matter. This results in a fifth force, given in the non-relativistic limit by
+\eq{
+    \label{eq:cham_force}
+	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\vec{\nabla}\chi \,.
+}
+
 \section{Other theries}
