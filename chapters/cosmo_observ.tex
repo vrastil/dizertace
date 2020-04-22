@@ -131,21 +131,41 @@ In \autoref{fig:pk_planck} is shown (linear) matter power spectrum inferred from
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%
-% Supernovae
+% Galaxy clusters
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Galaxy clusters}
 The observed number density and clustering of galaxy clusters as a function of mass and redshift provides a powerful toolset to constraining cosmology.  Galaxy clusters provided the first line of evidence for the existence of dark matter \textcite{zwicky} and cluster mass-to-light ratio measurements suggested that the matter density in the universe was sub-critical \textcite{Gott}. Galaxy clusters measurements are sensitive to both the expansion history and the growth of structure in the Universe enabling to distinguish between dark energy and modified gravity models for cosmic acceleration. Additional probes are measurements of the baryonic mass fraction in clusters, and of the tomographic lensing signatures through clusters.
 
-The basic idea of cluster abundance studies is to compare the predicted space density of massive halos to the observed space density of clusters. The basic observables are the richness, the number of galaxies in a specified luminosity and color range. Halo abundance is sensitive to the amplitude of the matter power-spectrum $\sigma_8$\footnote{$\sigma_8$ is a linear fluctuation in the mass distribution on scales of $8h\mins$ Mpc} and the matter density $\Omega_m$, more precisely a combination of a form $\sigma_8\Omega_m^q$, with $q\approx0.4$ \textcite{white}. The degeneracy between $\sigma_8$ and $\Omega_m$ can be broken by measuring abundances at a variety of masses.
+The basic idea of cluster abundance studies is to compare the predicted space density of massive halos to the observed space density of clusters. The basic observables are the richness, the number of galaxies in a specified luminosity and color range. Halo abundance is sensitive to the amplitude of the matter power-spectrum $\sigma_8$ and the matter density $\Omega_m$, more precisely a combination of a form $\sigma_8\Omega_m^q$, with $q\approx0.4$ \textcite{white}. The degeneracy between $\sigma_8$ and $\Omega_m$ can be broken by measuring abundances at a variety of masses.
+% \subsubsection{Spherical collapse}
+% If we assume a spherical overdensity of pressureless matter in an expanding Universe we can arrive to the following equation \parencite{2010deto.book.....A}
+% \eq{
+%     \delta''+\left(1+\frac{\HH'}{\HH}\right)\delta'-\frac32\Omega_m\delta=\frac43\frac{\delta'^2}{1+\delta}+\frac32\Omega_m\delta^2\,,
+% }
+% which has a solution in the Einstein--de Sitter Universe
+\subsubsection{The halo mass function}
+The halo mass function $\dd n/\dd M$ is defined as the number of haloes of mass $M$ per unit volume per unit interval in $M$. To describe the halo mass function we need two other quantities, $f(\sigma)$ and $\ln\sigma^{-1}$. The rms linear overdensity $\sigma$ of the density field smoothed with a top-hat filter $W$ with a radius that encloses a mass $M$ at the mean cosmic matter density is defined as
+\eq{
+    \sigma^2(M, z)=\frac{D^2(z)}{2\pi^2}\int_0^\infty{k^2P(k)W^2(k,M)\dd k}\,.
+}
+The mass function is then written as
+\eq{
+    \dddd nM=\frac{\rho_0}{M}\dddd{\ln\sigma^{-1}}{M}f(\sigma)\,,
+}
+where all the cosmological information is contained in the function \(f(\sigma)\) --  the fraction of mass in collapsed haloes per unit interval in $\ln\sigma$. This function depends on how haloes are defined, usually using the friends-of-friends (FoF) algorithm of \textcite{1985ApJ...292..371D}. The analytical form of $f(\sigma)$ using the asumtpion of of collisionless spherical collapse has been proposed by \textcite{1974ApJ...187..425P}
+\eq{
+    f(\sigma) = \sqrt{\frac2\pi}\frac{\delta_c}{\sigma}\exp{\left(-\frac{\delta_c^2}{2\sigma^2}\right)}\,,
+}
+where the parameter \(\delta_c=1.686\) can be interpreted physically as the linearly extrapolated overdensity of a top-hat spherical density perturbation at the moment of maximum compression for an Einstein de-Sitter universe.
 %%%%%%%%%%%%%%%%%%%%%%%
-% Supernovae
+% Strong lensing
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strong lensing}
 Strong gravitational lensing (SL) refers to the multiple imaging of a background object due to a massive foreground object (typically clusters of galaxies) -- see \autoref{fig_WL_Abell}. The resulting angular displacement, morphological distortion, and time delay can be used to measure dark energy parameters. Strong gravitational lensing time delays measure a combination of distances that combining with other dark energy probes can further constraint cosmological parameters. The time delays is also expected to test gravity on scales where the screening mechanisms is becoming active (more about screening mechanisms of modified gravities in \autoref{screen}).
 
 Another independent way to measure dark energy parameters with SL is the analysis of systems with multiple sets of multiple images \textcite{SL_in_CLGs}. The positions of these multiple images depend strongly on the detailed properties of the lens mass distribution and on the angular diameter distance ratios between the lens, source and observer, they encapsulate information about the underlying cosmology. This dependence on the geometry can be used to derive constraints on the cosmological parameters.
 %%%%%%%%%%%%%%%%%%%%%%%
-% Supernovae
+% Redshift-space distortions
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Redshift-space distortions}
 \label{sec:rsd}
