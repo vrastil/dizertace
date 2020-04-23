@@ -6,11 +6,15 @@ all: clean $(MAIN).pdf
 # LaTeX must be run multiple times to get references right
 TEX_CMD := pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
 $(MAIN).pdf:
-	$(TEX_CMD)
-	bibtex $(MAIN)
-	$(TEX_CMD)
-	$(TEX_CMD)
-	-cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/
+	@echo "Building, latex, 1/4"
+	-@$(TEX_CMD) > /dev/null
+	@echo "Building, bibtex, 2/4"
+	-@bibtex $(MAIN) > /dev/null
+	@echo "Building, latex, 3/4"
+	-@$(TEX_CMD) > /dev/null
+	@echo "Building, latex, 4/4" 
+	@$(TEX_CMD)
+	-@cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/
 
 TMP_FILES := $(MAIN).pdf \
 	$(MAIN).aux $(wildcard **/*.aux) \
@@ -30,4 +34,5 @@ TMP_FILES := $(MAIN).pdf \
 	pdfa.xmpi
 
 clean:
-	rm -f $(TMP_FILES)
+	@echo "Clean old files"
+	@rm -f $(TMP_FILES)

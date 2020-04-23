@@ -3,14 +3,138 @@
 
 history context, why to revisit
 }
+\subsection{Overview of Linear Theory}
+\todo{Rewrite equations using $a$, use previous equations}
+We begin with the linearized equations for gravitational clustering in an expanding Universe. We will be working in comoving coordinates -- the comoving position $\mb x$ is defined in terms of the proper position coordinate $\mb r = a\mb x$, where $a=a(t)$ is the scale factor. The comoving velocity $\mb v$ is then defined as a derivative with respect to cosmic time $t$, $\mb v = \dot{\mb x}$, where the overdot denotes a time derivative. The overdensity $\delta$ is defined in terms of the local density, $\rho$, and the background density, $\bar\rho$,  as $\delta=\rho/\bar\rho-1$. Particles move in the Newtonian gravitational potential, $\phi_G$. The equations for linear perturbations then read
+\eq{
+	\label{eq:lin_per_a}
+	\dot\delta + \nabla\cdot\mb v &= 0, \\
+	\label{eq:lin_per_b}
+    \dot{\mb v} + 2\frac{\dot a}{a} \mb v &= -\frac{1}{a^2}\nabla\phi_G, \\
+\begin{split}
+	\label{eq:lin_per_c}
+	\Delta\phi_G &= 4\pi G\bar\rho a^2 \delta \\
+    			&= \frac32 H_0^2\Omega_{m, 0}\frac\delta a \equiv \mu^{-1}\frac\delta a\,,
+\end{split}
+}
+where $H_0$ is the (present) Hubble constant, $\Omega_{m, 0}$ is the matter density (baryon and dark matter) and we defined the constant $\mu\equiv\left(\frac32 H_0^2\Omega_{m, 0}\right)^{-1}$. In this linear regime, the time and space dependence of the overdensity evolution are separable and we can write $\delta(a, \mb x)=D(a)\delta_0(\mb x)$ where the growth factor $D$ represents the growing solution (we neglect the decaying mode) and is normalized to unity at the present time.
 
+It is often useful to rewrite these equations with a different time variable, namely the scale factor $a$. This is convenient both from the numerical and theoretical points of view because the quantities are ``more constant". With the new time-variable $a$ and comoving velocity $\mb u = \dd \mb x/\dd a$, equation \eqref{eq:lin_per_a} becomes
+\eq{
+\label{eq:continuity_a}
+	\dddd D a \delta_0 + \nabla\cdot\mb u = 0\,,
+}
+where $\dd D/\dd a = 1$ in the Einstein--de Sitter universe (hereafter EdS) and so the divergence of the velocity field remains constant in both time and space. Equation \eqref{eq:lin_per_b} then becomes
+\seq{
+	\label{eq:motion_EdS}
+	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u + \mu\nabla\phi_G \right] \\
+\intertext{in EdS and, more generally,}
+	\label{eq:motion_LCDM}
+	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u\left(1+f_\Lambda\right) + \mu\nabla\phi_G\left(1-f_\Lambda\right)\right]
+}
+in the \LCDM\ universe. The modification factor
+\eq{
+	f_\Lambda = \frac{\Omega_{\Lambda,0}a^3}{\Omega_{m,0} + \Omega_{\Lambda,0}a^3} = \Omega_\Lambda(a)
+}
+rises from $0$ to $\Omega_{\Lambda,0}$ and becomes statistically significant $(>5\%)$ around redshift $z\approx2.5$. Equation \eqref{eq:lin_per_c} expressed with the growth factor reads
+\eq{
+\label{eq:poisson_a}
+	\Delta\phi_G(\mb x, a) = \mu^{-1}\frac D a \delta_0(\mb x)\,.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zel`dovich Approximation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zel`dovich approximation}
-
+The Zel'dovich approximation \parencite[hereafter ZA;][]{1970A&A.....5...84Z} is based on an ansatz that particles move in straight lines in the Lagrangian frame
+\eq{
+\label{eq:ZA}
+	\mb x(\mb q, a) = \mb q + D(a)\mb S(\mb q)\,,
+}
+where $\mb q$ are the initial positions (Eulerian coordinates) of a particle and $\mb S$ is some displacement field. Inserting equation \eqref{eq:ZA} into the continuity equation \eqref{eq:continuity_a} yields
+\eq{
+	-\nabla\cdot S = \delta_0\,.
+}
+Combining with the Poisson equation \eqref{eq:poisson_a}, we can see that \eqref{eq:ZA} represents a potential flow, $\mb S = -\nabla\phi_V$, where the velocity potential $\phi_V$ obeys the Poisson equation
+\eq{
+	\label{eq:poisson_vel}
+	\Delta\phi_V = \delta_0
+}
+and has a simple relation to the gravitational potential
+\eq{
+	\label{eq:vel_new}
+	\phi_V=\mu\frac a D \phi_G\,.
+}
+Note that the velocity potential is not exactly a potential of our velocity field $\mb u$ but
+\eq{
+	\label{eq:ZA_u}
+	\mb u\ZA(\mb x) = -\dddd D a \nabla\phi_V(\mb q)\,.
+}
+The ZA differs from other approximations (among other things) in how this (constant) velocity potential, $\phi_V$, enters the equations of motion. In order to avoid having different definitions of the \textit{real} velocity potential for the velocity fields in each approximation, we take the equation \eqref{eq:poisson_vel} as defining the velocity potential $\phi_V$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Truncated Zel`dovich Approximation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Truncated Zel`dovich approximation}
+In the ZA, particles move in straight lines given by equation \eqref{eq:ZA}. This eventually leads to shell-crossing and diffusion of particles on small scales since the ZA cannot describe the capture of particles within halos. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on small nonlinear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a nonlinear scale $k_{nl}$ defined as
+\eq{
+\label{eq:k_nl}
+    \frac{a^2(t)}{2\pi^2}\int_0^{k_{nl}}P(k)\dd k=1\,,
+}
+where the power spectrum $P(k)$ is defined as usual as
+\eq{
+  \label{eq:pk}
+  P(k)(2\pi)^3\delta_{\rm D}(k-k')\equiv \left\langle \hat\delta(k)\hat\delta^*(k')\right\rangle\,,
+}
+where $\delta_{\rm D}$ is the Dirac delta function.
 
+\textcite{doi:10.1093/mnras/269.3.626} further improved this truncation by applying a Gaussian window instead of an abrupt cutoff
+\eq{
+W(k)=e^{-k^2/2k^2_{G}}\,,
+}
+where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering leads to the so called truncated Zel`dovich approximation (TZA).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frozen-flow Approximation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Frozen field approximation}
+The frozen-flow approximation (FFA) was originally proposed by \textcite{Matarrese:1992be} as the exact solution of equation \eqref{eq:motion_EdS} in EdS
+\eq{
+  \label{eq:FFA_orig}
+  \tilde{\mb u}\FFA(\mb x) = \mb u_0(\mb x) = -\mu\nabla\phi_G(\mb x) = -\nabla\phi_V(\mb x)\,.
+}
+The velocity field $\tilde{\mb u}$ is frozen at each point to its initial value, i.e.
+\eq{
+	\partpart{\tilde{\mb u}}{a} = 0\,.
+}
+These equations are very similar to ZA but now the particles update their velocities to the local value of the velocity field (not the initial value), without any memory of their previous motion. This can be viewed as a movement of particles under some force in a medium with a very large viscosity. In our case of cosmological simulations, gravity represents the attractive force while Hubble friction represents the informal equivalent of a ``damping'' or ``viscous'' force.
 
+These definitions are, however, no longer valid in the general \LCDM\ cosmology where even in the linear regime both gravitational potential and velocity field undergo evolution. We generalize FFA for the \LCDM\ cosmology by adding an extra time dependence in equation \eqref{eq:FFA_orig}
+\eq{
+	\label{eq:FFA}
+	\mb u\FFA(\mb x, a) = -\dddd D a(a)\nabla\phi_V(\mb x)\,.
+}
+This velocity field solves \eqref{eq:motion_LCDM} exactly, due to the definition of the growth factor and its relation to the velocity field in the linear regime (see equation \eqref{eq:continuity_a}).
+
+Although equation \eqref{eq:FFA} now does not represent a \textit{frozen} flow, particles still move along the same characteristic curves as in EdS, just with different velocities. The particle trajectories are described by the integral equation
+\eq{
+	\label{eq:FFA_int}
+	\mb x(a) = \mb q + \int_0^a\dd a'\mb u\FFA(\mb x(a'), a')\,.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frozen-potential Approximation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Frozen potential approximation}
+The frozen-potential approximation (FPA) was introduced by \textcite{1994MNRAS.266..227B}. They exploit the fact that the gravitational potential changes much more slowly than the density contrast, and hence may be viewed as essentially frozen. They solved equation \eqref{eq:motion_EdS} at each time-step with the initial (constant) gravitational potential. In \LCDM
+\eq{
+	\label{eq:FPA}
+	\dddd{\mb u\FPA}{a} &= -\frac{3}{2a}\left[\mb u\FPA(\mb x,a)\left(1+\Omega_\Lambda(a)\right) + \frac D a \nabla\phi_V(\mb x)\left(1-\Omega_\Lambda(a)\right)\right]
+}
+and the particle trajectories are given as in the case of FFA\,
+\eq{
+	\mb x(a) = \mb q + \int_0^a\dd a'\mb u\FPA(\mb x(a'), a')~.
+}
+Particles now follow the linear \textit{gravitational} potential (which evolves slightly in \LCDM) instead of the initial \textit{velocity} potential as in the case of FFA. Equation \eqref{eq:FPA} drives the particle velocities (approximately) to the velocities of FFA but unlike in the FFA, particles now keep their inertia.
+
+
 
 \section{Lagrangian perturbation theories}
 
