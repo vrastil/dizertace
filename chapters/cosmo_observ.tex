@@ -68,7 +68,7 @@ Gravitational lensing is the deflection of light from distant sources due to the
 % }
 % on kpc scales. Future surveys such as the LSST and Euclid will improve these limits and provide new one on larger scales.
 % }%% end TODO
-Weak lensing provides a direct measure of the distribution of matter, independent of any assumptions about galaxy biasing\footnote{Galaxy bias is the difference in the distribution of galaxies and that of the underlying dark matter. The biasing factor $b$ is defined such that the relative fluctuations in the spatial number density of galaxies are $b$ times the relative density fluctuations.}. Since this distribution can be predicted theoretically, and its amplitude can be directly used to constrain cosmology, weak lensing has great potential as a cosmological probe. The correlation of the density field of nearby galaxies with the lensing shear measured on more distant galaxies is called \textit{galaxy-galaxy lensing}. Most lens systems involve sources (and lenses) at moderate or high redshift, and thus can lensing probe the geometry of the Universe -- the measurement of the shear correlation function as a function of the redshifts of observed galaxies is called \textit{tomography}. The scaling of the galaxy-galaxy lensing signal as a function of the source redshift, known as \textit{cosmography}, depends purely on geometric factors and hence can be used to construct a distance-redshift relation.
+Weak lensing provides a direct measure of the distribution of matter, independent of any assumptions about galaxy biasing. Since this distribution can be predicted theoretically, and its amplitude can be directly used to constrain cosmology, weak lensing has great potential as a cosmological probe. The correlation of the density field of nearby galaxies with the lensing shear measured on more distant galaxies is called \textit{galaxy-galaxy lensing}. Most lens systems involve sources (and lenses) at moderate or high redshift, and thus can lensing probe the geometry of the Universe -- the measurement of the shear correlation function as a function of the redshifts of observed galaxies is called \textit{tomography}. The scaling of the galaxy-galaxy lensing signal as a function of the source redshift, known as \textit{cosmography}, depends purely on geometric factors and hence can be used to construct a distance-redshift relation.
 \begin{figure}
 	\centering
 		\includegraphics[scale=1.00]{cosmo_evol/WL_abel.jpg}
@@ -76,7 +76,7 @@ Weak lensing provides a direct measure of the distribution of matter, independen
 	\label{fig_WL_Abell}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%
-% Supernovae
+% Large-scale structure
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Large-scale structure}
 Studying the large-scale structures (LSS) of the Universe is of a great importance for the cosmology. Since the clustering of matter on scales from galaxies to superclusters came from quantum fluctuations in the very early Universe with important modification by radiation and baryons, the LSS encode critical information about the contents of the Universe, the origin of the fluctuations, and the cosmic expansion background in which the structures evolved.
@@ -92,9 +92,13 @@ where $\delta_{\rm D}$ is the Dirac delta function and we are averaging over pos
 \eq{
     P(k)=\int\xi(r)e^{-ik\cdot r}\dd^3r\,.
 }
+However what we observe in practice is the galaxy density contrast $\delta_g$, which is different from the total matter density contrast $\delta_m$. The two quantities are assumed to be related by a bias factor $b$ defined by
+\eq{
+    b\equiv\frac{\delta_g}{\delta_m}\,,
+}
+from which follows $P_g(k)=b^2P_m(k)$. The idea of a simple biasing scheme tries to capture physics beyond the purely linear gravitational treatment, e.g. merging processes or evolutionary processes that render galaxies brighter or dimmer and therefore visible or invisible to our telescopes.
 
 In \autoref{fig:pk_planck} is shown (linear) matter power spectrum inferred from different cosmological probes \parencite{2018arXiv180706205P}.
-
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.7\textwidth]{cosmo_evol/pk_planck.png}
@@ -141,6 +145,12 @@ Another independent way to measure dark energy parameters with SL is the analysi
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Redshift-space distortions}
 \label{sec:rsd}
-When we observe distant galaxies, two features determine their redshifts -- the Hubble expansion and their peculiar velocities. The peculiar velocities of galaxies thus cause them to appear displaced along the line of sight in redshift space. These displacements lead to redshift distortions in the pattern of clustering of galaxies in redshift space and make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the tremendous advantage of bearing information about the dynamics of galaxies. The strength of the anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the logarithmic growth rate of fluctuations. By modeling the full redshift-space galaxy power spectrum one can obtain combination of the product of the matter clustering amplitude and the growth rate.
+When we observe distant galaxies, two features determine their redshifts -- the Hubble expansion and their peculiar velocities. The peculiar velocities of galaxies thus cause them to appear displaced along the line of sight in redshift space. These displacements lead to redshift distortions in the pattern of clustering of galaxies in redshift space and make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the tremendous advantage of bearing information about the dynamics of galaxies.
+
+The coordinate transformation from real space $(r)$ to redshift space $(s)$ of a source with a peculiar velocity $\bm v$ is given by
+\eq{
+    \mb s = \mb r\left[1+\frac{u(r)-u(0)}{r}\right]\,,
+}
+whre $u\equiv\mb v\cdot\mb r/r$. The strength of the anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the logarithmic growth rate of fluctuations \eqref{eq:grw_rate} and $b$ is the bias. By modeling the full redshift-space galaxy power spectrum one can obtain combination of the product of the matter clustering amplitude and the growth rate.
 
 Anisotropy of galaxy clustering offers an alternative to weak lensing and cluster abundances as a tool for measuring the growth of structures. RSD directly measure the rate at which structure is growing at the redshift of observation unlike WL and galaxy cluster measurements  which measure the rate of growth at multiple redshifts. RSD measurements can improve constraints on dark energy models and they can be used to constrain departures from GR by testing consistency of the growth and expansion histories. The key challenge in modeling RSD is accounting for nonlinear effects, including nonlinear or scale-dependent bias between galaxies and matter, at the level of accuracy demanded by the LSST`s precision.
