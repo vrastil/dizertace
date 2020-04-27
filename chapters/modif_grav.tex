@@ -1,11 +1,19 @@
 \chapter{Dark Energy and Modified Gravity}
 In this chapter we briefly introduce ideas behind adding new degrees of freedom to the Einstein equations, problems with the cosmological constant and we describe one particular modified gravity in more detail -- the $f(R)$ and chameleon gravity.
 \section{Cosmic acceleration}
-TODO
+\todo{History, pre-1998, post 1998, $\Lambda$ and alternatives}
 
-\section{Cosmological constant}
+\subsection{Cosmological constant}
+
+\todo{Heyrovsky D.:
+
+\textit{
+Specific comments on the scientific content: the cosmological-constant term is a natural part of the general form of Einstein’s equations, not a random ad-hoc term; most “problems” with Lambda are connected with its interpretation as vacuum energy density, they do not occur in its interpretation simply as a fundamental constant; the work could have included the observationally most relevant result: the cosmological evolution of the equation of state w(a) predicted by the different modified theories; weak lensing can be analyzed for rich galaxy clusters rather than for single galaxies.}
+}
+
+\todo{Additional arguments against $\Lambda$ -- quantum corrections, etc.}
 Standard cosmological \LCDM\ model is in a good agreement with all measurements of CMB \parencite{planck_cosm}, type Ia supernovae \parencite{Abbott_2019}, or BAO \parencite{BAO_results}. However, this concordance model has some significant fundamental problems and even though it may serve as an effective description of our Universe we should be looking for a deeper explanation of the accelerated expansion of the Universe.
-\subsection{Fine-Tuning Problem}
+\subsubsection{Fine-Tuning Problem}
 The first problem could be phrased as the question: \textit{Why is the observed value of $\Lambda$ so small in Planck units?} In order to realize the cosmic acceleration today, we require that the cosmological constant $\Lambda$ is of the order of the square of the present Hubble parameter $H_0$. If we interpret this as an energy density, it is equivalent to
 \eq{
 \rho_\Lambda=\Lambda \Mpl^2\approx10^{-120} \Mpl^4\approx10^{-47}\mbox{ GeV}^4.
@@ -19,14 +27,15 @@ where $V=(2\pi)^3\delta^3(0)$ is the volume of space. If we trust our theory up 
 \rho_{vac}=\int_0^{\Lambda_{UV}}{\frac{4\pi k^2 \dd k}{(2\pi)^3}}\frac12\sqrt{k^2+m^2}\approx\frac{\Lambda_{UV}^4}{16\pi^2}.
 }
 If we take the cut-off scale to be order of the Planck scale $\Mpl\approx10^{18}$ GeV, we get a value of about 120 orders of magnitude larger than the observed value. This situation is not better for different scales in particle physics. For the SUSY\footnote{In some supersymmetric theories, the number of fermionic and bosonic degrees of freedom are equal. The energy of the vacuum fluctuations per degree of freedom is the same in magnitude but opposite in sign for fermions and bosons of the same mass. Therefore the fermion and boson contributions cancel each other and the total vacuum energy density (and consequently $\Lambda$) vanishes. As the supersymmetry has to be broken today (we do not observe supersymetry in nature) supersymmetric partners can have different masses of order $\Lambda_{SUSY}\approx10^{3}$ GeV.} scale $\Lambda_{SUSY}\approx10^{3}$ GeV, even for the QCD scale $\Lambda_{QCD}\approx0.1$ GeV, is $\rho_{vac}$ still much larger than $\rho_\Lambda$. Even if the value of $\Lambda$ does not originate from the vacuum energy there is no such a small scale in known physics -- not in GR nor in quantum physics. This huge discrepancy between theoretical predictions and observed value of $\Lambda$ is a major issue in physics and cosmology.
-\subsection{Coincidence Problem}
+\subsubsection{Coincidence Problem}
 The second problem  could be phrased as the question: \textit{Why is the energy density $\rho_\Lambda$ so close to the present matter density?} While the energy density of the cosmological constant (vacuum energy) remains constant in time and was completely negligible in most of the past, the energy density of matter evolves like $\rho_m\propto(1+z)^3$ and will be entirely negligible in the future. According to the Copernican principle \parencite{ellis_maartens_maccallum_2012} we do not live in a special place \textbf{nor time}. Thus it is very unlikely that these two components will have densities of the same order of magnitude in the present. If $\rho^{(0)}_\Lambda/\rho^{(0)}_m$ was just 10 or 100 times smaller, we would not see any accelerated expansion. If it were a few orders of magnitude larger than one, the transition to the accelerated universe would occur at a large redshift.
 \\
 
 The so-called anthropic principle can seemingly give us the explanation for both of the two cosmological constant problems, why it is small and why the acceleration starts now. Because if the vacuum energy has been big and dominant from the earlier epoch, there would be no chance to form structures in the Universe, like galaxies, stars, planets and us, intelligent lives. But this anthropic explanation of the value $\rho_\Lambda$ makes sense only if there is a multiverse with a lot different realizations of $\rho_\Lambda$. But we live only in our realization of the Universe and therefore we cannot verify whether the anthropic principle solves the cosmological constant problem or not.
 
 Beside these two problems concerning the cosmological constant, the observations of coherent acoustic oscillations in the CMB \parencite{planck_cosm} has turned the notion of accelerated expansion in the very early universe (inflation) into an integral part of the cosmic standard model. This early accelerated expansion was not due to the cosmological constant, because in that case the inflation would not stop and today`s universe would not be possible. Therefore, we have to postulate some new scalar field (inflaton) \parencite{2015IJMPD..2430010C} that we know so little about. If we do not properly understand the past dynamics of the universe how can we accept the cosmological constant as an explanation of the present acceleration without doubt?
-\section{TODO}
+\subsection{Modofied gravity}
+\todo{alternatives to the cosmological constant}
 Other reasons for studying the modifications of gravity may include the following TODO citation. Modified gravity:
 \begin{itemize}
 	\item can provide natural unification of the early-time inflation and late-time acceleration TODO CITE
@@ -35,12 +44,13 @@ Other reasons for studying the modifications of gravity may include the followin
 \end{itemize}
 
 \section{\textit{f(R)}-gravity}
+\todo{check all equations}
 One of the simplest modified gravity models is the so-called $f(R)$ gravity in which we consider general functions of the Ricci scalar $R$ in the action
 \eq{
 	\label{eq:S_fr}
 	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left[F(R)\right]+S_m[\psi_m;g_\uv]\,,
 }
-where $F(R)=R+f(R)$ and $S_m$ is the matter action with matter fields $\Psi_m$ which are minimally coupled to gravity, i.e. they interact with gravity only through the determinant of the metric $\dg$ and the canonical kinetic term $-\frac12g^\uv\partial_\mu\phi\partial_\nu\phi$. The matter fields $\psi_m$ obey standard conservation equations and therefore the metric $g_\uv$ corresponds to the physical frame -- the Jordan frame.
+where $F(R)=R+f(R)$ and $S_m$ is the matter action with matter fields $\psi_m$ which are minimally coupled to gravity, i.e. they interact with gravity only through the determinant of the metric $\dg$ and the canonical kinetic term $-\frac12g^\uv\partial_\mu\phi\partial_\nu\phi$. The matter fields $\psi_m$ obey standard conservation equations and therefore the metric $g_\uv$ corresponds to the physical frame -- the Jordan frame.
 
 Variation with respect to the metric $g^\uv$ gives us equation of motion
 \eq{
@@ -61,6 +71,7 @@ To get the inflation we need a solution that approaches the de Sitter solution c
 For example the model $f(R)=\alpha R^2$ gives rise to an asymptotically exact de Sitter solution and can be responsible for the inflation in the early Universe. The inflation ends when the quadratic term becomes smaller than the linear term. As at the present epoch is the curvature very small this model is not suitable to realize the present cosmic acceleration. Models like $f(R)=-\alpha/R^n$ with $\alpha>0,\ n>0$ could in principle give rise to the present acceleration. However, these models do not satisfy local gravity constraints because of the instability associated with negative values of $f\RR$. Moreover, the standard matter epoch is not present because of a large coupling between the Ricci scalar and the non-relativistic matter.
 
 There are four conditions for the viability of \fR\ models \parencite{Amendola_2007}
+\todo{check literature}
 \begin{itemize}
 	\item $F\R>0\ (R>R_0)$, where $R_0$ is the Ricci scalar at the present epoch,\\
 	-- required to avoid anti-gravity \parencite{2010deto.book.....A}\\
@@ -86,12 +97,13 @@ where the effective gravitational constant is defined by
 \eq{
 	G\eff \equiv\frac{G}{1+f\R}\frac{4k^2+3a^2m^2}{3k^2+3a^2m^2}\,.
 }
-On scales much larger than the scalaron Compton wavelength $m_\Psi\mins$, gravity is unmodified aside from the overall reduction factor $f\R$. However, on smaller scales the gravitational coupling increases by the factor $4/3$. As the scalaron mass $m_\Psi$ and the factor $f\R$ depend on curvature (local density), the chameleon mechanism discussed earlier can prevent the detection of this effect in the Solar System.
+On scales much larger than the scalaron Compton wavelength $m\mins$, gravity is unmodified aside from the overall reduction factor $f\R$. However, on smaller scales the gravitational coupling increases by the factor $4/3$. As the scalaron mass $m$ and the factor $f\R$ depend on curvature (local density), the chameleon mechanism discussed earlier can prevent the detection of this effect in the Solar System.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Jordan vs. Einstein Frame
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Jordan vs. Einstein Frame}
+\todo{check and fix equations / references}
 The action \eqref{eq:S_fr} is described in the so-called Jordan frame, where the matter fields are minimally coupled to the metric and follow geodesics. We can also describe this in the so-called Einstein frame, where ``standard'' gravity is restored. Using the conformal transformations% we can rewrite the action \eqref{eq:S_fr}
 \eq{
 \label{eins_trans}
@@ -113,10 +125,12 @@ There is a difference whether one takes action \eqref{eq:S_fr} or \eqref{eq:S_ei
 
 Also other theories than Jordan-Brans-Dicke theory, e.g. Kaluza-Klein theories and higher derivative theories of gravity, can be formulated in two different ways \parencite{Faraoni:1998qx}.
 
+\todo{rewrite, remove questions}
 What does it mean that two frames are conformally related? Are these frames equivalent? And how is this equivality defined? It has been shown in \textcite{Magnano:1993bd} that these two frames are \textit{mathematically} equivalent, i.e. every solution in one frame implies an existence of a solution in the other frame and can be mapped into this frame. But this does not necessary mean that they are \textit{physically} equivalent and quantities defined in the individual frames are those we observe. There has been many debates about the (in)equivalence of these frames \parencite{Postma:2014vaa} and whether which one is the physical \parencite{Faraoni:1999hp}. Many contradictory arguments (sometimes incorrect) of both sides result into confusion and ambiguous viewpoints.
 
 Both frames have some issues with fundamental principles. In the Jordan frame the weak energy condition can be violated and hence states with the negative energy are possible. Moreover, there is no guarantee of stability of ground state. All \textit{classical} fields are believed to satisfy the energy condition but no so in quantum theories. On the other hand in the Einstein frame the weak energy condition is satisfied but due to the non-universal coupling of the matter fields the equivalence principle is violated. However this violation is only weak and can pass the Solar system tests.
 
+\todo{Check literature, update}
 So far it has not been definitely decided which frame is the physically correct one or whether they are equivalent and a complete agreement has not been reached in the community on this issue. For more information see e.g. \textcite{Carloni:2009gp,Capozziello:2011et}.
 % Magnano, G. and Sokolowski, L.M. (1994), Physical Review D 50, 5039.
 % Faraoni, V., Gunzig, E. and Nardone, P. (1998), Fundamentals of Cosmic Physics 20, 121.
@@ -142,6 +156,7 @@ where $m^2(\phi)\equiv V_{,\phi\phi}(\phi)$. Now, any of these three terms can s
 % HU-SAWICKI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hu-Sawicki \texorpdfstring{\textit{\lowercase{f}(R)}}{fR} Model}
+\todo{Cite own paper}
 We wish to study a class of $f(R)$ models that accelerate cosmic expansion at late times, without the cosmological constant, while satisfying both cosmological and Solar System tests. We consider the family of Hu-Sawicki $f(R)$ models \parencite{Hu-Saw}. The action of these models is given by \eqref{eq:S_fr} and $f(R)$ has a broken power-law form
 \eq{
 	f(R)=-M^2\frac{c_1(R/M^2)^m}{c_2(R/M^2)^m+1}\,,
@@ -150,12 +165,13 @@ where the mass scale $M^2\equiv\bar\rho_0/3\Mpl^2$, $m>0$, and $c_1$ and $c_2$ a
 
 The formulation of modified gravity in this frame leads to second-order differential equations of motion \eqref{eq:fR} for $R$ and fourth-order field equations for $g_\uv$. With a conformal transformation we may rewrite these equation in the Einstein frame with second-order differentials only \parencite[see, e.g.,][]{CHIBA20031}.
 
-In the Einstein frame, the Hu-Sawicki models correspond to chameleon gravity with the potential
+In the Einstein frame \todo{see transformation eqref}, the Hu-Sawicki models correspond to chameleon gravity with the potential
 \eq{
 	V(\chi) &= \Mpl^2\Lambda-\frac{\beta\bar\rho_0}{n\Mpl}\left(2\beta\Mpl\Phiscrz\right)^{1-n}\chi^n\,, \\
     V_{,\chi}(\chi) &= -\frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}\,,
 }
 where $\beta=\sqrt{1/6}$ and the power-law exponent $n$ and screening potential $\Phiscrz$ are parameters of the theory. The screening potential has the following relation to the present scalaron value in $f(R)$-gravity:
+\todo{add eqref}
 \eq{
     \Phiscrz=\frac{3}{2}\ln{(1+f_{R0})}\approx\frac{3}{2}f_{R0}.
 }
