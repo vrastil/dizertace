@@ -5,16 +5,23 @@ all: clean $(MAIN).pdf
 
 # LaTeX must be run multiple times to get references right
 TEX_CMD := pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
+BIB_BACKEND := biber # bibtex
 $(MAIN).pdf:
 	@echo "Building, latex, 1/4"
 	-@$(TEX_CMD) > /dev/null
 	@echo "Building, bibtex, 2/4"
-	-@bibtex $(MAIN) > /dev/null
+	-@$(BIB_BACKEND) $(MAIN) > /dev/null
 	@echo "Building, latex, 3/4"
 	-@$(TEX_CMD) > /dev/null
 	@echo "Building, latex, 4/4" 
 	@$(TEX_CMD)
 	-@cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/
+
+tex:
+	$(TEX_CMD)
+
+bib:
+	$(BIB_BACKEND) $(MAIN)
 
 TMP_FILES := $(MAIN).pdf \
 	$(MAIN).aux $(wildcard **/*.aux) \
@@ -36,3 +43,5 @@ TMP_FILES := $(MAIN).pdf \
 clean:
 	@echo "Clean old files"
 	@rm -f $(TMP_FILES)
+
+.PHONY: clean all tex bib

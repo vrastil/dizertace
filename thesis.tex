@@ -30,6 +30,7 @@
 
 %% Character encoding: usually latin2, cp1250 or utf8:
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 
 %% Prefer Latin Modern fonts
 \usepackage{lmodern}
@@ -45,16 +46,21 @@
 \usepackage{color, soul}	% highlighting
 
 %%% Bibliography
-\usepackage[backend=bibtex,style=authoryear]{biblatex}
-\addbibresource{bibliography/cosmo_surveys}
-\addbibresource{bibliography/overview}
-\addbibresource{bibliography/cosmo_evol}
-\addbibresource{bibliography/modif_grav}
-\addbibresource{bibliography/approx_schemes}
-\addbibresource{bibliography/cosmo_sim}
+\usepackage[
+backend=biber,
+style=authoryear,
+citestyle=authoryear
+]{biblatex}
+
+\addbibresource{bibliography/cosmo_surveys.bib}
+\addbibresource{bibliography/overview.bib}
+\addbibresource{bibliography/cosmo_evol.bib}
+\addbibresource{bibliography/modif_grav.bib}
+\addbibresource{bibliography/approx_schemes.bib}
+\addbibresource{bibliography/cosmo_sim.bib}
 \renewcommand{\bibname}{Bibliography}
 
-\usepackage[nottoc]{tocbibind} % makes sure that bibliography and the lists
+\usepackage[nottoc,numbib]{tocbibind} % makes sure that bibliography and the lists
 			    % of figures/tables are included in the table
 			    % of contents
 \usepackage{dcolumn}        % improved alignment of table columns
@@ -157,6 +163,9 @@ Abstract.
 
 
 %%% Bibliography
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
 \printbibliography
 
 %%% Figures used in the thesis (consider if this is needed)
