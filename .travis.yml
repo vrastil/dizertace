@@ -1,5 +1,6 @@
+dist: bionic
 install:
- - source ./.travis/texlive_install.sh
+ - sudo apt-get -y install xzdec biber texlive-full icc-profiles
 cache:
   directories:
     - /tmp/texlive

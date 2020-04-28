@@ -10,7 +10,7 @@ $(MAIN).pdf:
 	@echo "Building, latex, 1/4"
 	-@$(TEX_CMD) > /dev/null
 	@echo "Building, bibtex, 2/4"
-	-@$(BIB_BACKEND) $(MAIN) > /dev/null
+	-@$(BIB_BACKEND) $(MAIN)
 	@echo "Building, latex, 3/4"
 	-@$(TEX_CMD) > /dev/null
 	@echo "Building, latex, 4/4" 
