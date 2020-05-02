@@ -453,5 +453,65 @@ Phantom or ghost scalar fields with a negative kinetic energy $-X$ and $w\lesssi
 \eq{
 P=-X+e^{\kappa\lambda\phi}X^2/M^4.
 }
-\subsection{Coupled Dark Energy}
-\subsection{Unified Dark Energy and Dark Matter}
+\subsection{Gauss-Bonnet Dark Energy Models}
+In \fR\ gravity one adds general function of the Ricci scalar. But in principle one can add general functions of the Ricci and Riemann tensors as well, e.g. $f(R,R_\uv R^\uv,R_{\alpha\beta\gamma\delta}R^{\alpha\beta\gamma\delta},...)$ \parencite{2005PhRvD..71f3513C}. These Lagrangians are generally plagued by the existence of ghosts.  However, there exists a combination of Ricci and Riemann tensors that keeps the equations at second-order in the metric and does not necessarily give rise to instabilities -- so-called Gauss-Bonnet term $\GB$ coupled to a scalar field
+\eq{
+\GB\equiv R^2-4R_\uv R^\uv+R_{\alpha\beta\gamma\delta}R^{\alpha\beta\gamma\delta}.
+}
+The Gauss-Bonnet term is the unique invariant for which the highest (second) derivative occurs linearly in the equations of motion and thus ensuring the uniqueness of solutions. The Gauss-Bonnet term naturally arises as a correction to the tree-level action of low-energy effective string theories \parencite{2000PhR...337..343L}. The starting action is given by
+\eq{
+S=\int\dd^4x\dg\left[\frac{\Mpl^2}{2}R-\frac{\gamma}{2}\left(\nabla\phi\right)^2-V(\phi)+f(\phi)\GB\right],
+}
+where $\gamma=\pm1$ (+1 for the canonical scalar). For more details see \textcite{2005PhRvD..71l3509N,2006JCAP...06..004N,2013PhRvD..87h4037C}.
+\subsection{Braneworld Models}
+In the braneworld model of Dvali, Gabadadze and Porrati \parencite[DGP model][]{2000PhLB..485..208D} the 3-brane is embedded in a Minkowski bulk spacetime with infinitely large extra dimensions. The theory gives rise to the correct 4D potential at short distances whereas at large distances the potential is that of a 5D theory. The action of the theory is
+\eq{
+S=\frac{M^3_{(5)}}{2}\int\dd^5X\dgt\tR+\frac{\Mpl^2}{2}\int\dd^4x\dg R + \int\dd^4x\dg \LL_m,
+}
+where $g_{AB}(X)=g_{AB}(x,y)$ denotes a 5D metric for which the 5D Ricci scalar is $\tR$ and $M_{(5)}$ is the 5D Planck mass. Capital letters are used for 5D quantities $(A,B=0,1,2,3,5)$. The brane is located at $y=0$. The induces 4D metric on the brane is denoted by
+\eq{
+g_\uv(x)\equiv\tilde{g}_\uv(x,y=0).
+}
+The cross-over scale $r_0$ is defined by
+\eq{
+r_0\equiv\frac{\Mpl^2}{2M^3_{(5)}}.
+}
+At short distances $r\ll r_0$ gravity behaves as usual 4D theory, i.e the gravitational potential has correct $1/r$ behavior (except small logarithmic repulsion term). On the other hand at large distances $r\gg r_0$ the potential scales as $1/r^2$ in accordance with laws of 5D theory.
+
+The presence of the extra dimension has severe consequences on the cosmology as well. It can be shown \parencite{2010deto.book.....A,2009PhLB..674..237M} that the matter dominated Universe approaches the de Sitter solution $H=r_0\mins$. This cosmological solution drives our Universe into the self-inflationary regime without dark energy. From $H_0\approx r_0\mins$ we get $M_{(5)}\approx10-100$ MeV.
+\subsection{Massive Gravity}
+The idea to give a mass to the graviton (infrared modification of gravity) is not new and has been investigated since the first years of General Relativity. It is a less minimal theory than \fR\ theories or modified gravities with an extra scalar field because it introduces three new degrees of freedom rather than one. By giving a mass $m$ to the graviton we deform the classical potential to the Yukawa profile $\sim\frac1r e^{-mr}$ which departs from the classical one at distances $r>1/m$. By choosing the graviton mass to be of the order of the Hubble constant $m\sim H$ one can hope to explain the acceleration of the universe without dark energy.
+
+The simplest theory for a non-self-interacting massive graviton is Fierz-Pauli theory of \textcite{1939RSPSA.173..211F}. The action for a single massive spin 2 particle in flat space, carried by a symmetric tensor field $h_\uv$ is
+\eq{
+\begin{split}
+S=&\int\dd^4x\Big[-\frac12\partial_\lambda h_\uv\partial^\lambda h^\uv+\partial_\mu h_{\nu\lambda}\partial^\nu h^{\mu\lambda}-\partial_\mu h^\uv\partial_\nu h \\
+&+\frac12\partial_\lambda h \partial^\lambda h-\frac12 m^2\left(h_\uv h^\uv-h^2\right)\Big]+S_m.
+\end{split}
+}
+Any other combination of $h_\uv h^\uv$ and $h^2$ would lead to instabilities. Varying the action with respect to $h_\uv$ yields the equation of motion
+\eq{
+R_\uv-\frac12Rg_\uv+\frac12m^2(h_\uv-h\eta_\uv)=\frac{1}{\Mpl^2}T_\uv,
+}
+where all quantities are linearized around $\eta_\uv$.
+
+Because of the so-called vDVZ discontinuity (``van Dam-Veltman-Zakharov'') in the propagator of a graviton, the Fierz-Pauli theory leads to different physical predictions from those of GR regardless the mass of the graviton (even when $m\to0$). The Vainshtein mechanism \parencite{1972PhLB...39..393V} allows in principle to get rid of the vDVZ discontinuity by introducing non-linear Fierz-Pauli gravity.
+
+The Vainshtein mechanism is another example of the screening mechanism and restores the continuity with GR on scales below the so-called Vainshtein radius $r_V$, defined as
+\eq{
+r_V\equiv(GM/m^4)^{1/5}.
+}
+Much below the Vainshtein radius, which grows as the graviton`s mass approaches $0$, only linear terms plays crucial role and the GR is restored.
+
+For more about the massive gravity and the Vainshtein mechanism see e.g. \textcite{2013CQGra..30r4001B,2012RvMP...84..671H}.
+
+\subsection{Acceleration without Dark Energy}
+So far we studied some kind of a dark energy -- either in a form of an exotic matter or by modifying gravity itself. But this need for a dark energy as an explanation of the acceleration comes from our observations which are based on the presumption of the homogeneous and isotropic Universe. What we observe are different expansion rates at different distances rather than an increase in the expansion rate at all distances. But this can be caused by strong inhomogeneities in the distribution of matter rather than by an accelerating Universe.
+\subsubsection{Void models}
+The basic idea behind void models is that we live in the middle of a huge spherical region which is expanding faster because it is emptier than the outside. That means that the Universe as a whole does not accelerate but that we observe an \textit{apparent} cosmic acceleration. The edge of this void should be located around $z\sim0.3-0.5$, the value at which in the standard interpretation we observe the beginning of the acceleration. These models are described by the Lema\^\i tre-Tolman-Bondi (LTB) spherically symmetric metric -- the generalization of a FLRW metric in which the expansion factor along the radial coordinate is different relative to the surface line element $\dd\Omega^2$ \parencite{2013JCAP...02..047D,2006PhRvD..73h3519A}.
+
+The inhomogeneous LTB model matches to the supernovae data and the location of the first acoustic peak of CMB temperature power spectrum but cannot satisfactorily reproduce the entire CMB angular power spectrum \parencite{2011JCAP...02..013C}. The observed isotropy of the CMB radiation implies that we must live close to the center of the void -- nearer than 15 Mpc \parencite{2006PhRvD..74j3520A}. Moreover, there is no valid mechanism at present to explain the formation of such huge inhomogeneities, let alone one with our Galaxy near the center.
+\subsubsection{Backreaction}
+Unlike the void models, which regard the acceleration as an apparent one, \textit{backreaction} models try to explain the cosmic acceleration by arranging inhomogeneities so that the deviation from the FLRW metric can produce a real acceleration \parencite{2011CQGra..28w5002S,2004JCAP...02..003R,2005PhRvD..72b3507M}. Because GR equations are non-linear, averaging the inhomogeneities and then solving the GR equations (which is the usual approach) is not the same as first solving the full (inhomogeneous) GR equations and then averaging them -- the expected value of a non-linear function is not the same as the nonlinear function of the expected value.
+
+Any large inhomogeneities must be conceal from our sight to fit observations. Strong peculiar velocities instead of strong density fluctuations can do this job, but there are strong constraints on peculiar velocities from e.g., the kinematic Sunyaev--Zel'dovich effect. Moreover, the accompanying anisotropy is another source of observable effects difficult to accommodate with current observations.
