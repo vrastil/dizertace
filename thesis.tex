@@ -68,6 +68,9 @@ citestyle=authoryear
 \usepackage{paralist}       % improved enumerate and itemize
 \usepackage{textcomp}
 
+% Definitions of ADS journal macros
+\usepackage{preamble/journals}
+
 %%% Basic information on the thesis
 
 % Thesis title in English (exactly as in the formal assignment)
@@ -136,10 +139,10 @@ Abstract.
 
 % Definitions of macros (see description inside)
 \input{preamble/macros}
-\input{preamble/journals}
+
+\begin{document}
 
 % Title page and various mandatory informational pages
-\begin{document}
 \include{preamble/title}
 
 %%% A page with automatically generated table of contents of the doctoral thesis
@@ -152,13 +155,13 @@ Abstract.
 
 %%% Each chapter is kept in a separate file
 \include{chapters/preface}
-\include{chapters/cosmo_surveys}
 \include{chapters/cosmo_evol}
 \include{chapters/modif_grav}
 \include{chapters/cosmo_sim}
 \include{chapters/approx_schemes}
 \include{chapters/simulations_approx}
 \include{chapters/simulations_gadget}
+\include{chapters/cosmo_surveys}
 \include{chapters/epilog}
 
 
