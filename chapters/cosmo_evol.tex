@@ -2,7 +2,7 @@
 \todo{Check citation -- cite vs parencite vs textcite
 }
 
-In this chapter we briefly describe the evolution of the Universe. For more comprehensive lectures see e.g. \cite{Ref:Weinberg}, \cite{2002col.luc..cosmology} or \cite{2010deto.book.....A}. We begin with basic equations for the evolution and apply them to cosmological scales. We describe different epoch in history of the Universe and also introduce number of cosmic distances often used to put observational constraints on dark energy. We show some fundamental issues with the simplest models -- horizon problem, missing (dark) matter and accelerated expansion of the Universe -- and arrive to concordance \LCDM\ model. We describe background evolution and formation of structures in \LCDM\ model and introduce some basic observables. At the end of the chapter we outline some issues with the cosmological constant and offer some basic alternative in modified gravity models.
+In this chapter we briefly describe the evolution of the Universe. For more comprehensive lectures see e.g. \textcite{Ref:Weinberg}, \textcite{2002col.luc..cosmology} or \textcite{2010deto.book.....A}. We begin with basic equations for the evolution and apply them to cosmological scales. We describe different epoch in history of the Universe and also introduce number of cosmic distances often used to put observational constraints on dark energy. We show some fundamental issues with the simplest models -- horizon problem, missing (dark) matter and accelerated expansion of the Universe -- and arrive to concordance \LCDM\ model. We describe background evolution and formation of structures in \LCDM\ model and introduce some basic observables. At the end of the chapter we outline some issues with the cosmological constant and offer some basic alternative in modified gravity models.
 
 \section{Background evolution}
 \todo{cite cosmological principle}
@@ -88,7 +88,7 @@ With constant energy-density the Friedmann equations lead to an exponential expa
 % Hubble`s law
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hubble`s law}
-During the 1920s astronomers Slipher and Hubble found that the observed wavelength $\lambda_o$ of absorption lines of distant galaxies is larger than the wavelength $\lambda$ in the rest frame \cite{1929PNAS...15..168H}. This is due to the fact that the wavelength is stretched in proportion to the scale factor in an expanding Universe. The redshift $z$ is defined as
+During the 1920s astronomers Slipher and Hubble found that the observed wavelength $\lambda_o$ of absorption lines of distant galaxies is larger than the wavelength $\lambda$ in the rest frame \parencite{1929PNAS...15..168H}. This is due to the fact that the wavelength is stretched in proportion to the scale factor in an expanding Universe. The redshift $z$ is defined as
 \eq{
     z\equiv\frac{\lambda_0}{\lambda} - 1=a^{-1}-1\,.
 }
@@ -100,7 +100,7 @@ Because of the cosmic expansion, more distant objects are moving faster from us 
 \eq{
     v\sim H_0r\,,
 }
-which is the law Hubble reported in 1929 by plotting the recessional velocity $v$ versus the distance $r$. His measurements were noisy but the current measurements give the Hubble constant the value \cite{planck_cosm}.
+which is the law Hubble reported in 1929 by plotting the recessional velocity $v$ versus the distance $r$. His measurements were noisy but the current measurements give the Hubble constant the value \parencite{planck_cosm}
 \eq{
     H_0=(67.4\pm0.5)\rm{\ km\ s}^{-1}\rm{Mpc}^{-1}
 }
@@ -192,7 +192,7 @@ where $g_{\mu\nu}^{(0)}$ is the FLRW metric \eqref{eq:flrw} and all the entries 
         w_i & 2\Phi\delta_{ij}+h_{ij} \\
     \end{pmatrix}\,,
 }
-where $\Psi(t,x)$ and $\Phi(t,x)$ are spatial scalars, $w_i(t,x)$ is 3-vector, and $h_{ij}(t,x)$ is a traceless 3-tensor. We have a freedom to choose coordinates in which we will describe the equations of motion -- we can choose our \textit{gauge}. We wish to keep our background metric $g_{\mu\nu}^{(0)}$ the same (i.e. FLRW) and only change $\delta g_{\mu\nu}$. Note that unlike ordinary coordinate transformations a gauge transformation (although expressed as a change of coordinates) does not link different observers in the same spacetime but it links two different spacetimes seen by the same observer. For a detailed discussion of gauge choices, see e.g. \cite{PhysRevD.40.1804,10.1143/PTPS.78.1,PhysRevD.22.1882}.
+where $\Psi(t,x)$ and $\Phi(t,x)$ are spatial scalars, $w_i(t,x)$ is 3-vector, and $h_{ij}(t,x)$ is a traceless 3-tensor. We have a freedom to choose coordinates in which we will describe the equations of motion -- we can choose our \textit{gauge}. We wish to keep our background metric $g_{\mu\nu}^{(0)}$ the same (i.e. FLRW) and only change $\delta g_{\mu\nu}$. Note that unlike ordinary coordinate transformations a gauge transformation (although expressed as a change of coordinates) does not link different observers in the same spacetime but it links two different spacetimes seen by the same observer. For a detailed discussion of gauge choices, see e.g. \textcite{PhysRevD.40.1804}, \textcite{10.1143/PTPS.78.1} or \textcite{PhysRevD.22.1882}.
 
 We will choose to attach the observers to the points in the unperturbed frame, the so called \textit{Newtonian} or \textit{longitudinal} or \textit{shear-free} gauge. In this case the observer will detect a velocity field of particles falling into the clumps of matter and will measure a gravitational potential. We can impose up to four conditions on the metric, which corresponds to the four gauge coordinate transformations. The final perturbed metric is:
 \eq{
@@ -213,7 +213,7 @@ where $\tau$ is the proper time and $v^i=\dd x^i/\dd\eta$ is the matter peculiar
     \delta &\equiv\frac{\delta\rho}{\bar{\rho}}\equiv\frac{\rho-\bar{\rho}}{\bar{\rho}}\,,\\
     \theta &\equiv\nabla\cdot v\,,
 }
-where $\delta$ is the density contrast, the bar represents a mean value (spatial average) and $\theta$ is the velocity divergence. The first order equations are (for details, see e.g. \cite{2002col.luc..cosmology,10.1143/PTPS.78.1})
+where $\delta$ is the density contrast, the bar represents a mean value (spatial average) and $\theta$ is the velocity divergence. The first order equations are (for details see e.g. \cite{2002col.luc..cosmology} or \cite{10.1143/PTPS.78.1})
 \eq{
     \label{eq:lin_1}
     3\mathcal{H}(\mathcal{H}\Psi-\Phi') + \nabla^2\Phi &= -4\pi G\bar\rho a^2 \delta\,,\\
@@ -334,7 +334,7 @@ The above equations describe the evolution of matter density perturbations. Now 
     \label{eq:p_geo}
     \dddd{k^\mu}{\lambda_s}+\Gamma^\mu_{\alpha\beta}k^\alpha k^\beta &= 0\,.
 }
-We will split the momentum vector into a background and a perturbed value $k^\mu=\bar k^\mu+\delta k^\mu$. The photon moves in the unperturbed metric along the direction $r$ so that $\dd\eta=\dd r$. At the background level we can integrate the photon path \eqref{eq:p_geo} to get $\bar k^0\propto a^{-2}$ and therefore the photon frequency $\nu\equiv\dd t/\dd\Lambda_s=a\bar k^0\propto a^{-1}$ as expected. The equations for the perturbed part $\delta k$ are (for details, see e.g. \cite{2010deto.book.....A})
+We will split the momentum vector into a background and a perturbed value $k^\mu=\bar k^\mu+\delta k^\mu$. The photon moves in the unperturbed metric along the direction $r$ so that $\dd\eta=\dd r$. At the background level we can integrate the photon path \eqref{eq:p_geo} to get $\bar k^0\propto a^{-2}$ and therefore the photon frequency $\nu\equiv\dd t/\dd\Lambda_s=a\bar k^0\propto a^{-1}$ as expected. The equations for the perturbed part $\delta k$ are \parencite[for details see e.g. ][]{2010deto.book.....A}
 \eq{
     \label{eq:SW_0}
     \dddd{(\delta k^0/k^0)}{\eta} &= -\left(\partpart{\Phi}{\eta}+\partpart{\Psi}{\eta}+2\partpart{\Psi}{r}\right)\,,\\
