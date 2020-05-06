@@ -24,7 +24,27 @@ The main problem is following -- we have $n$ particles all interacting gravitati
 
 This direct approach is generally referred to as the Particle-Particle (PP) method \parencite{Hockney:1988:CSU:62815}. Although computationally expensive the accuracy in the force calculation is of machine precision. To be able to simulate large systems of particles we need to drop the accuracy of continuous positions and use discrete positions for force calculations. In our code we use two main methods for force calculations -- the Particle-Mesh algorithm (PM) and grid-based methods, both of them we describe in more details below.
 \subsection{Time integration}
-\todo{Leapfrog}
+The accurate time integration is a very important part of any \nbodysim. While there are many different methods to integrate particle trajectories \parencite[see e.g.][]{Hockney:1988:CSU:62815} we describe here one of the most used one -- the Leapfrog integrator.
+
+The leapfrog integrator is an example of a symplectic integrator. Symplectic integrators exactly solve an approximate Hamiltonian. As a consequence, the numerical time evolution is a canonical map and preserves certain conserved quantities exactly, such as the total angular momentum, the phase-space volume, and the Jacobi constants. The idea is to approximate the Hamiltonian \(H\) governing motion of particles with an approximat one
+\eq{
+    \tilde H=H+H\err\,,
+}
+where \(H\err\) is the error Hamiltonian. Provided that \(\tilde H\) and \(H\) are time-invariant, the energy error is bounded at all times. The goal now is to find \(\tilde H\) that can be solved exactly by simple numerical means and minimises \(H\err\). Defining the combined phase-space coordinates \(w\equiv(x,p)\) the Hamilton’s equations are
+\eq{
+    \dot w=\HH w\,,
+}
+where \(\HH\equiv\{\cdot,H\}\) is an operator acting on \(w\) through Poisson bracket. Hamilton’s equations have then the formal solution
+\eq{
+    w(t+\Delta t)=e^{\Delta t\HH}w(t)\,.
+}
+The operator \(e^{\Delta t\HH}\) can be split, in an approximate sense, into a succession of discrete but symplectic steps, each of which can be exactly integrated. The most common choice is to separate out the kinetic and potential energies, \(H=T(p)+V(x)\), such that we can split
+\eq{
+    \label{eq:dkd}
+    e^{\Delta t\HH}= e^{\Delta t(\TT+\VV)}\approx e^{\frac12\Delta t\VV}+e^{\Delta t\TT}+e^{\frac12\Delta t\VV}\,,
+}
+where operators \(\TT\equiv\{\cdot,T\}\) and \(\VV\equiv\{\cdot,V\}\) are known as kick and drift, as they only change either the positions (drift) or velocities (kick). Because these operators are non-commutative, the central relation in \eqref{eq:dkd} is only approximately true. This operator splitting is extremely useful, because the new equations have simple solution:
+
 \section{Particle-Mesh algorithm}
 \todo{Continuous and discrete potential}
 \subsection{Ewald method}
