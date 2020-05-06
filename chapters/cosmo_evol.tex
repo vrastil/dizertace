@@ -1,12 +1,10 @@
 \chapter{Cosmological Evolution}
-\todo{Check citation -- cite vs parencite vs textcite
-}
 
 In this chapter we briefly describe the evolution of the Universe. For more comprehensive lectures see e.g. \textcite{Ref:Weinberg}, \textcite{2002col.luc..cosmology} or \textcite{2010deto.book.....A}. We begin with basic equations for the evolution and apply them to cosmological scales. We describe different epoch in history of the Universe and also introduce number of cosmic distances often used to put observational constraints on dark energy. We show some fundamental issues with the simplest models -- horizon problem, missing (dark) matter and accelerated expansion of the Universe -- and arrive to concordance \LCDM\ model. We describe background evolution and formation of structures in \LCDM\ model and introduce some basic observables. At the end of the chapter we outline some issues with the cosmological constant and offer some basic alternative in modified gravity models.
 
 \section{Background evolution}
 \todo{cite cosmological principle}
-Standard cosmological model is based on the \textit{cosmological principle}. The cosmological principle states that the Universe is homogeneous and isotropic on sufficiently large scales (beyond those traced by the large-scale structure of the distribution of galaxies). The cosmic microwave background (CMB) observations strongly support this statement as photons from different parts of the Universe are coming with almost identical temperatures. This isotropy, however, does not imply homogeneity. The \textit{Copernican Principle} states that the observer is not in a special place or time. With the observed isotropy the Copernican Principle implies the Cosmological Principle. The observed inhomogeneities and irregularities on local scales come from gravitational instability.
+Standard cosmological model is based on the \textit{cosmological principle}, first clearly formulated in \textcite{1687pnpm.book.....N}. The cosmological principle states that the Universe is homogeneous and isotropic on sufficiently large scales (beyond those traced by the large-scale structure of the distribution of galaxies). The cosmic microwave background (CMB) observations strongly support this statement as photons from different parts of the Universe are coming with almost identical temperatures. This isotropy, however, does not imply homogeneity. The \textit{Copernican Principle} states that the observer is not in a special place or time. With the observed isotropy the Copernican Principle implies the Cosmological Principle. The observed inhomogeneities and irregularities on local scales come from gravitational instability and do not violate these principles.
 %%%%%%%%%%%%%%%%%%%%%%%
 % Friedmann equations
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -43,13 +41,14 @@ The dynamical equations of motion in the expanding Universe can be derived from 
 \eq{
     \label{eq:Friedmann}
     H^2 &= \frac{8\pi G}{3}\rho - \frac{K}{a^2}+\frac{\Lambda}{3}\,, \\
+    \label{eq:Friedmann_2}
     \frac{\ddot a}{a} &= -\frac{4\pi G}{3}(\rho + 3p)+\frac{\Lambda}{3}\,,\\
     \label{eq:Friedmann-continuity}
     \dot\rho &= -3H(\rho+p)\,,
 }
 \todo{comment $\Lambda$}
 
-where $H\equiv\dot a/a$ is the Hubble parameter, $\Lambda$ the cosmological constant, $\rho(t)$ is energy-density and $p$ pressure. We will be also using the conformal Hubble quantity
+where $H\equiv\dot a/a$ is the Hubble parameter, $\Lambda$ the cosmological constant (more details at the end of this chapter), $\rho(t)$ is energy-density and $p$ pressure. We will be also using the conformal Hubble quantity
 \eq{
     \mathcal{H}\equiv\frac{1}{a}\frac{\dd a}{\dd\eta}=Ha\,.
 }
@@ -76,7 +75,7 @@ where $w$ is constant. This lead to the following solutions in flat universe
 }
 where $t_i$ is an integration constant. Relativistic matter has the equation of state $w=1/3$ and the cosmic evolution during the radiation-dominated epoch is given by $w\propto a^{-4}$ and $a\propto(t-t_i)^{1/2}$. Non-relativistic matter has negligible pressure $(w=0)$ and the evolution during the matter- dominated era is given by $w\propto a^{-3}$ and $a\propto(t-t_i)^{2/3}$.
 
-The accelerated expansion of the Universe $(\ddot a>0)$ is possible only for $w<-1/3$ (see Friedman equation \eqref{eq:Friedmann}), i.e. negative pressure. Note that in Newtonian gravity there is no such equivalent. The pressure is related to a force associated with a local potential that depends on the position in space but in homogeneous and isotropic universe there is no such potential.
+The accelerated expansion of the Universe $(\ddot a>0)$ without the cosmological constant is possible only for $w<-1/3$ (see Friedman equation \eqref{eq:Friedmann_2}), i.e. negative pressure. Note that in Newtonian gravity there is no such equivalent. The pressure is related to a force associated with a local potential that depends on the position in space but in homogeneous and isotropic universe there is no such potential.
 
 When $w=-1$, the energy-density $\rho$ is constant and corresponds to the cosmological constant. This energy-density connected to the cosmological constant is
 \eq{
@@ -379,52 +378,10 @@ Briefly describe 2d order, higher corrections, spherical collapse. Mention not m
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/cosmo_observ}
+\input{chapters/cosmo_evol/cosmo_observ}
 
-\section{Standard \LCDM model -- successes and issues}
-\todo{Heyrovsky D.:
 
-\textit{On the other hand, what is missing is an initial overview of the standard Lambda CDM model, its successes and outstanding issues (especially since the thesis focuses on developments “beyond” Lambda CDM).}
-}
-
-\todo{
-\subsection{Dark matter}
-Flatness and horizon problems, missing matter in clusters and galaxies
-}
-
-\subsection{Cosmic acceleration}
-\todo{History, pre-1998, post 1998, $\Lambda$ and alternatives}
-
-\subsection{Cosmological constant}
-
-\todo{Heyrovsky D.:
-
-\textit{
-Specific comments on the scientific content: the cosmological-constant term is a natural part of the general form of Einstein’s equations, not a random ad-hoc term; most “problems” with Lambda are connected with its interpretation as vacuum energy density, they do not occur in its interpretation simply as a fundamental constant; the work could have included the observationally most relevant result: the cosmological evolution of the equation of state w(a) predicted by the different modified theories; weak lensing can be analyzed for rich galaxy clusters rather than for single galaxies.}
-}
-
-\todo{\parencite[e.g.][]{2015arXiv150205296P, 2012CRPhy..13..566M}}
-
-\todo{Additional arguments against $\Lambda$ -- quantum corrections, etc.}
-Standard cosmological \LCDM\ model is in a good agreement with all measurements of CMB \parencite{planck_cosm}, type Ia supernovae \parencite{Abbott_2019}, or BAO \parencite{BAO_results}. However, this concordance model has some significant fundamental problems and even though it may serve as an effective description of our Universe we should be looking for a deeper explanation of the accelerated expansion of the Universe.
-\subsubsection{Fine-Tuning Problem}
-The first problem could be phrased as the question: \textit{Why is the observed value of $\Lambda$ so small in Planck units?} In order to realize the cosmic acceleration today, we require that the cosmological constant $\Lambda$ is of the order of the square of the present Hubble parameter $H_0$. If we interpret this as an energy density, it is equivalent to
-\eq{
-\rho_\Lambda=\Lambda \Mpl^2\approx10^{-120} \Mpl^4\approx10^{-47}\mbox{ GeV}^4.
-}
-Suppose that this energy density comes from the vacuum energy. The zero-point energy of some field of mass $m$ with momentum $k$ is
-\eq{
-E_0=\left\langle0\left|H\right|0\right\rangle=V\int{\frac{\dd^3k}{(2\pi)^3}\frac12\sqrt{k^2+m^2}},
-}
-where $V=(2\pi)^3\delta^3(0)$ is the volume of space. If we trust our theory up to some cut-off scale $\Lambda_{UV}\gg m$, we obtain the vacuum energy density
-\eq{
-\rho_{vac}=\int_0^{\Lambda_{UV}}{\frac{4\pi k^2 \dd k}{(2\pi)^3}}\frac12\sqrt{k^2+m^2}\approx\frac{\Lambda_{UV}^4}{16\pi^2}.
-}
-If we take the cut-off scale to be order of the Planck scale $\Mpl\approx10^{18}$ GeV, we get a value of about 120 orders of magnitude larger than the observed value. This situation is not better for different scales in particle physics. For the SUSY\footnote{In some supersymmetric theories, the number of fermionic and bosonic degrees of freedom are equal. The energy of the vacuum fluctuations per degree of freedom is the same in magnitude but opposite in sign for fermions and bosons of the same mass. Therefore the fermion and boson contributions cancel each other and the total vacuum energy density (and consequently $\Lambda$) vanishes. As the supersymmetry has to be broken today (we do not observe supersymetry in nature) supersymmetric partners can have different masses of order $\Lambda_{SUSY}\approx10^{3}$ GeV.} scale $\Lambda_{SUSY}\approx10^{3}$ GeV, even for the QCD scale $\Lambda_{QCD}\approx0.1$ GeV, is $\rho_{vac}$ still much larger than $\rho_\Lambda$. Even if the value of $\Lambda$ does not originate from the vacuum energy there is no such a small scale in known physics -- not in GR nor in quantum physics. This huge discrepancy between theoretical predictions and observed value of $\Lambda$ is a major issue in physics and cosmology.
-\subsubsection{Coincidence Problem}
-The second problem  could be phrased as the question: \textit{Why is the energy density $\rho_\Lambda$ so close to the present matter density?} While the energy density of the cosmological constant (vacuum energy) remains constant in time and was completely negligible in most of the past, the energy density of matter evolves like $\rho_m\propto(1+z)^3$ and will be entirely negligible in the future. According to the Copernican principle \parencite{ellis_maartens_maccallum_2012} we do not live in a special place \textbf{nor time}. Thus it is very unlikely that these two components will have densities of the same order of magnitude in the present. If $\rho^{(0)}_\Lambda/\rho^{(0)}_m$ was just 10 or 100 times smaller, we would not see any accelerated expansion. If it were a few orders of magnitude larger than one, the transition to the accelerated universe would occur at a large redshift.
-\\
-
-The so-called anthropic principle can seemingly give us the explanation for both of the two cosmological constant problems, why it is small and why the acceleration starts now. Because if the vacuum energy has been big and dominant from the earlier epoch, there would be no chance to form structures in the Universe, like galaxies, stars, planets and us, intelligent lives. But this anthropic explanation of the value $\rho_\Lambda$ makes sense only if there is a multiverse with a lot different realizations of $\rho_\Lambda$. But we live only in our realization of the Universe and therefore we cannot verify whether the anthropic principle solves the cosmological constant problem or not.
-
-Beside these two problems concerning the cosmological constant, the observations of coherent acoustic oscillations in the CMB \parencite{planck_cosm} has turned the notion of accelerated expansion in the very early universe (inflation) into an integral part of the cosmic standard model. This early accelerated expansion was not due to the cosmological constant, because in that case the inflation would not stop and today`s universe would not be possible. Therefore, we have to postulate some new scalar field (inflaton) \parencite{2015IJMPD..2430010C} that we know so little about. If we do not properly understand the past dynamics of the universe how can we accept the cosmological constant as an explanation of the present acceleration without doubt?
+%%%%%%%%%%%%%%%%%%%%%%%
+% Standard LCDM model
+%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/cosmo_evol/lcdm}
