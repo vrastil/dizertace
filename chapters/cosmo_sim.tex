@@ -24,7 +24,7 @@ The main problem is following -- we have $n$ particles all interacting gravitati
 
 This direct approach is generally referred to as the Particle-Particle (PP) method \parencite{Hockney:1988:CSU:62815}. Although computationally expensive the accuracy in the force calculation is of machine precision. To be able to simulate large systems of particles we need to drop the accuracy of continuous positions and use discrete positions for force calculations. In our code we use two main methods for force calculations -- the Particle-Mesh algorithm (PM) and grid-based methods, both of them we describe in more details below.
 \subsection{Time integration}
-The accurate time integration is a very important part of any \nbodysim. While there are many different methods to integrate particle trajectories \parencite[see e.g.][]{Hockney:1988:CSU:62815} we describe here one of the most used one -- the Leapfrog integrator.
+The accurate time integration is a very important part of any \nbodysim. While there are many different methods to integrate particle trajectories \parencite[see e.g.][]{Hockney:1988:CSU:62815} we describe here one of the most used one in collisionless simulations -- the Leapfrog integrator.
 
 The leapfrog integrator is an example of a symplectic integrator. Symplectic integrators exactly solve an approximate Hamiltonian. As a consequence, the numerical time evolution is a canonical map and preserves certain conserved quantities exactly, such as the total angular momentum, the phase-space volume, and the Jacobi constants. The idea is to approximate the Hamiltonian \(H\) governing motion of particles with an approximat one
 \eq{
@@ -38,13 +38,36 @@ where \(\HH\equiv\{\cdot,H\}\) is an operator acting on \(w\) through Poisson br
 \eq{
     w(t+\Delta t)=e^{\Delta t\HH}w(t)\,.
 }
-The operator \(e^{\Delta t\HH}\) can be split, in an approximate sense, into a succession of discrete but symplectic steps, each of which can be exactly integrated. The most common choice is to separate out the kinetic and potential energies, \(H=T(p)+V(x)\), such that we can split
+\begin{sloppypar}
+The operator \(e^{\Delta t\HH}\) can be split, in an approximate sense, into a succession of discrete but symplectic steps, each of which can be exactly integrated. The most common choice is to separate out the kinetic and potential energies, \({H=T(p)+V(x)}\), such that we can split
+\end{sloppypar}
 \eq{
-    \label{eq:dkd}
-    e^{\Delta t\HH}= e^{\Delta t(\TT+\VV)}\approx e^{\frac12\Delta t\VV}+e^{\Delta t\TT}+e^{\frac12\Delta t\VV}\,,
+    \label{eq:kdk}
+    e^{\Delta t\HH}= e^{\Delta t(\TT+\VV)}\approx e^{\frac12\Delta t\VV}e^{\Delta t\TT}e^{\frac12\Delta t\VV}\,,
 }
-where operators \(\TT\equiv\{\cdot,T\}\) and \(\VV\equiv\{\cdot,V\}\) are known as kick and drift, as they only change either the positions (drift) or velocities (kick). Because these operators are non-commutative, the central relation in \eqref{eq:dkd} is only approximately true. This operator splitting is extremely useful, because the new equations have simple solution:
-
+where operators \(\TT\equiv\{\cdot,T\}\) and \(\VV\equiv\{\cdot,V\}\) are known as drift and kick, as they only change either the positions (drift) or velocities (kick). Because these operators are non-commutative, the central relation in \eqref{eq:kdk} is only approximately true. This operator splitting is extremely useful, because the new equations have simple solution:
+\eq{
+    e^{\Delta t\TT}
+    \begin{pmatrix}
+        x \\
+        p \\
+    \end{pmatrix}=
+    \begin{pmatrix}
+        x+\Delta t\ p \\
+        p \\
+    \end{pmatrix}
+    \mspace{20mu}\rm{and}\mspace{20mu}
+    e^{\Delta t\VV}
+    \begin{pmatrix}
+        x \\
+        p \\
+    \end{pmatrix}=
+    \begin{pmatrix}
+        x \\
+        p-\Delta t\ \nabla V \\
+    \end{pmatrix}\,.
+}
+The splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second order accurate, whereas simpler splitting only into one kick and one drift is first order accurate. The same accurcy and results has also similar splitting into drift-kick-drift which we use in our integrator.
 \section{Particle-Mesh algorithm}
 \todo{Continuous and discrete potential}
 \subsection{Ewald method}
