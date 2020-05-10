@@ -20,7 +20,7 @@ Numerical Recipes \parencite{10.5555/42249}
 \section{\nbody\ problem}
 Many problems in physics, including cosmology, involve particle systems with each particle interacting with all other particles present. In astronomy there is a gravitational interaction between starts, galaxies and cluster of galaxies, depending on scale which we are studying. The challenge of efficiently carrying out the related calculations is generally known as the \nbody\ problem.
 
-The main problem is following -- we have $n$ particles all interacting gravitationally with each other. To compute a trajectory of even a single particle involves computing trajectories of all other particles as the gravitational force is dependent on time-varying positions of other particles. That means that at each time-step we have to compute force from all other $n$ particles and we need to compute these forces for each of $n$ particles. This leaves us with complexity of \(\OO(n^2)\). This brute force approach can be used only for small systems and is computationally unimaginable for large systems in cosmology which typically involve \(n\sim10^{9}\) particles.
+The main problem is following -- we have $N_p$ particles all interacting gravitationally with each other. To compute a trajectory of even a single particle involves computing trajectories of all other particles as the gravitational force is dependent on time-varying positions of other particles. That means that at each time-step we have to compute force from all other $N_p$ particles and we need to compute these forces for each of $N_p$ particles. This leaves us with complexity of \(\OO(N_p^2)\). This brute force approach can be used only for small systems and is computationally unimaginable for large systems in cosmology which typically involve \(N_p\sim10^{9}\) particles.
 
 This direct approach is generally referred to as the Particle-Particle (PP) method \parencite{Hockney:1988:CSU:62815}. Although computationally expensive the accuracy in the force calculation is of machine precision. To be able to simulate large systems of particles we need to drop the accuracy of continuous positions and use discrete positions for force calculations. In our code we use two main methods for force calculations -- the Particle-Mesh algorithm (PM) and grid-based methods, both of them we describe in more details below.
 \subsection{Time integration}
@@ -69,23 +69,57 @@ where operators \(\TT\equiv\{\cdot,T\}\) and \(\VV\equiv\{\cdot,V\}\) are known 
 }
 The splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second order accurate, whereas simpler splitting only into one kick and one drift is first order accurate. The same accurcy and results has also similar splitting into drift-kick-drift which we use in our integrator.
 \section{Particle-Mesh algorithm}
-\todo{Continuous and discrete potential}
-\subsection{Ewald method}
+As we mentioned in the introduction in order to effectively compute forces on particles one has to abandon continuous position and solve the forces using discretized positions. The idea of the PM method is that we set up a mesh (grid) over the computational box, and then solve the gravitational potential (i.e. Poisson’s equation \eqref{eq:poisson_lin}) at the meshpoints. Forces at the meshpoints can then be obtained by calculating the gradient of the potential. The four principal steps of the particle-mesh calculation are:
+\begin{enumerate}
+    \item assign mass to the mesh,
+    \label{it:pm_1}
+    \item solve the field equation on the mesh,
+    \label{it:pm_2}
+    \item calculate the mesh-defined force field,
+    \label{it:pm_3}
+    \item interpolate to find forces on the particles,
+    \label{it:pm_4}
+\end{enumerate}
+where the forces found at the last step are used to integrate the equations of motion.
+\subsection{Assignment schemes}
+In step \ref{it:pm_1} and \ref{it:pm_4} we make a connection between discrete mesh and continuous positions of the particles. In the first we need to distribute mass of all particles onto the mesh and in the last step, on the contrary, we need to interpolate forces known on the discrete mesh onto particles with continuous positions. There are several ways of assigning the particle masses to the discrete density function $\delta$ and discrete force $-\nabla\Phi$ to the particles:
 
-\subsection{Short-range forces}
-\todo{P$^3$M
+\subsubsection{Nearest gridpoint (NGP)}
+The mass of each particle $m_i$ is assigned as a whole to the gridpoint closest to the particle. Similary, force on particles is given by force on the nearest gridpoint. Although computationally the simplest, NGP as a zero-order interpolation offer lowest accuracy and the interparticle force changes discontinuously as particles cross cell boundaries.
 
-TreePM
+\subsubsection{Cloud-in-Cell (CIC)}
+The mass of each particle is weighted over the eight closest cells while the the weighting in each dimension is proportional to the distance between particle and the mesh. CIC scheme is more costly in terms of number of arithmetic operations per particle per timestep than NGP but offers better accuracy as first order (linear) interpolation. The CIC interpolation function in one dimension is
+\eq{
+    w(x-x_p)=
+    \begin{cases}
+        1-\frac{|x-x_p|}{H} & |x-x_p|<H\,\\
+        0 & \rm{otherwise}
+    \end{cases}
+}
+where $x$ is the position of a mesh point, $x_p$ position of the partice and $H$ the distance between mesh points. The three-dimensional interpolation function is \(W(\mathbf x)=w(x_1)w(x_2)w(x_3)\). The CIC scheme is somewhere in the middle between oversimplistic NGP and higher order interpolations which offer greater accuracy and smoother transitions but at the cost of much greater computational resources -- second order interpolation (triangular shaped cloud, TSC) involves 27 cells, third order 64, and etc. CIC gives a much smoother force than the NGP scheme (piecewise linear) and reduces the amplitude of fluctuations in the interparticle forces as the particles are displaced with respect to the mesh. In our code we use the CIC scheme.
+\subsubsection{Mixed schemes}
+The NGP and CIC schemes both employ mass assignment functions which are the same as their force interpolation functions. A result of this symmetry is that they conserve momentum, i.e., the forces between a pair of particles are equal and opposite, and the force of a particle upon itself (the self force) is zero. A possible variation is to use a mass assignment function which is different from the force interpolation function. In such cases, symmetry still causes the force between pairs of particles to be equal and opposite, but no longer ensures that the self force is zero. At best, the presence of the self force presents a nonphysical restriction on the timestep and, at worst, it is disastrous.
 
-The Fast Multipole Method}
+\subsection{Solution of the field equations}
+An efficient method for the solution of the field equations is a necessary requirement for the practical implementation of the particle simulation algorithms that have been described. For linear Poisson’s equation \eqref{eq:poisson_lin} the most used method is the Fast Fourier Transformation whcih can compute convolutions involve in the force computation rapidly with complexity of $\OO(N_m\log N_m)$. The FFT also automatically solves periodic boundary conditions usually incorporated in cosmological simulations to enforce homogeneity and isotropy of the Universe.
 
+The Green's function $G(k)$ of \eqref{eq:poisson_lin} is not the expected one, $-1/k^2$, but we have the freedom to choose such a Green`s function which will minimize errors introduce by all the steps involve in force calculation -- mass assignment, potential solver, finite difference and force interpolation. This topic is in great detail studied in \textcite{Hockney:1988:CSU:62815}.
+\subsection{Particle-Particle Particle Mesh algorithm}
+The PM methods are excellent for solving long-range forces between particles as these methods are very fast and accurate. However, this accuracy is limited by the mesh size $H$ and PM algorithms cannot truly describe anything below this scale. The accuracy is given by the Nyquist wavelength $\lambda_N=2H$, which is the shortest spatial wavelength that can be accurately recovered. Similar, power on wavenumbers larger than the Nyquist wavenumber $k_N=2\pi/\lambda_N=N_m\pi/L$ will be aliased into longer waves. To overcome this limitations Particle-Particle Particle Mesh algorithms (P$^3$M) have neen proposed \textcite{hockney_10000_1973}.
+
+The essence of the method is to express the interparticle force as the sum of two component parts; the short-range part, which is nonzero only for particle separations less than some cutoff radius, and the smoothly varying long-range part, which has a transform which is approximately band-limited (that is to say, is approximately nonzero for only a limited range of $k$). The total short-range force on a particle is computed by direct particle-particle (PP) pair force summation and the smoothly varying part is approximated by the particle-mesh (PM) force calculation.
+
+We do not use P$^3$M in our approximate methods because of their much greater numerical requirements compared to simpler PM methods. For more details, see e.g. \textcite{Hockney:1988:CSU:62815}.
 \section{Grid-based methods}
 \todo{need to solve non-linear equations
 
 Gaus-Seidel relaxation method
 
-Multigrid methods}
+Multigrid methods
 
+The Fast Multipole Method}
+\section{Other methods}
+\subsection{TreePM}
 \section{Alternatives to \nbody\ simulations}
 \todo{Boltzmann equation, orbit averaging, Monte-Carlo}
 
