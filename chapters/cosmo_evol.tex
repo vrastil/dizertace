@@ -373,11 +373,28 @@ where the distortion tensor
     \,.
 }
 The convergence $\kappa$ describes the magnification of the source image and the two components of the shear field $\gamma_1,\gamma_2$ describe the distortion of the source image.
-\todo{
+%%%%%%%%%%%%%%%%%%%%%%%
+% Non-linear cosmological perturbations
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-linear cosmological perturbations}
-Briefly describe 2d order, higher corrections, spherical collapse. Mention not main part -- we are interested in linear approximations.
+So far we have described linear gravitational processes which are essential for cosmolgy as a whole and approximate methods we are exploring. However, as we will compare our results with full \nbodysim s, which can deal with the full non-linear dynamics, we will mention here a regime that lies between the linear perturbation theory and the full non-linear gravitational interactions.
+
+\todo{
+    Briefly describe 2d order + higher corrections
+
+    spherical collapse
+
+    Figure from 2LPT, etc. \cite{2004astro.ph.12025T}
+
+    Different approximation methods -- Lagrangian perturbation theory (LPT) up to third order (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{10.1093/mnras/260.4.765}), Augumented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) and COLA -- have been tested in \cite{2017JCAP...07..050M}.
 }
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{cosmo_evol/app_compare.png}
+    \caption{Power spectrum at $z = 0,\ 0.5$ and $1$ (top, middle and bottom panels, respectively) in real space and ratio with the \nbody’s one for the matter field (left panels) and for the halo catalogues (right panels). The vertical dashed line locates the $k = 0.5\hMpc$ where the one-halo term becomes significant. The vertical shaded area locates the region of the BAO peak, while the horizontal one locates the 1\% accuracy region.  \textit{Note:} Reprinted from \textcite{2017JCAP...07..050M}.}
+    \label{fig:app_compare}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
