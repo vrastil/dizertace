@@ -5,8 +5,6 @@ For a comparison with standard gravity we also used linear and non-linear power 
 
 Core Cosmology Library \parencite{2018arXiv181205995C}
 
-Gauss-Seidel relaxation \parencite{doi:10.1002/zamm.19720520813}
-
 full approximation scheme \parencite[FAS, see, e.g.,][]{MG_overview}
 
 initial conditions with opposite phases to accelerate convergence \parencite{PhysRevD.93.103519}.
@@ -101,25 +99,24 @@ where $x$ is the position of a mesh point, $x_p$ position of the partice and $H$
 The NGP and CIC schemes both employ mass assignment functions which are the same as their force interpolation functions. A result of this symmetry is that they conserve momentum, i.e., the forces between a pair of particles are equal and opposite, and the force of a particle upon itself (the self force) is zero. A possible variation is to use a mass assignment function which is different from the force interpolation function. In such cases, symmetry still causes the force between pairs of particles to be equal and opposite, but no longer ensures that the self force is zero. At best, the presence of the self force presents a nonphysical restriction on the timestep and, at worst, it is disastrous.
 
 \subsection{Solution of the field equations}
-An efficient method for the solution of the field equations is a necessary requirement for the practical implementation of the particle simulation algorithms that have been described. For linear Poisson’s equation \eqref{eq:poisson_lin} the most used method is the Fast Fourier Transformation whcih can compute convolutions involve in the force computation rapidly with complexity of $\OO(N_m\log N_m)$. The FFT also automatically solves periodic boundary conditions usually incorporated in cosmological simulations to enforce homogeneity and isotropy of the Universe.
+An efficient method for the solution of the field equations is a necessary requirement for the practical implementation of the particle simulation algorithms that have been described. For linear Poisson’s equation \eqref{eq:poisson_lin} the most used method is the Fast Fourier Transformation whcih can compute convolutions involve in the force computation rapidly with complexity of $\OO(N_m\log N_m)$. The FFT also automatically solves periodic boundary conditions usually incorporated in cosmological simulations to enforce homogeneity and isotropy of the Universe. Therefore, FFT-based methods are predominantly used with cosmological simulations.
 
 The Green's function $G(k)$ of \eqref{eq:poisson_lin} is not the expected one, $-1/k^2$, but we have the freedom to choose such a Green`s function which will minimize errors introduce by all the steps involve in force calculation -- mass assignment, potential solver, finite difference and force interpolation. This topic is in great detail studied in \textcite{Hockney:1988:CSU:62815}.
-\subsection{Particle-Particle Particle Mesh algorithm}
+\subsection{Particle-Particle Particle-Mesh algorithm}
 The PM methods are excellent for solving long-range forces between particles as these methods are very fast and accurate. However, this accuracy is limited by the mesh size $H$ and PM algorithms cannot truly describe anything below this scale. The accuracy is given by the Nyquist wavelength $\lambda_N=2H$, which is the shortest spatial wavelength that can be accurately recovered. Similar, power on wavenumbers larger than the Nyquist wavenumber $k_N=2\pi/\lambda_N=N_m\pi/L$ will be aliased into longer waves. To overcome this limitations Particle-Particle Particle Mesh algorithms (P$^3$M) have neen proposed \textcite{hockney_10000_1973}.
 
 The essence of the method is to express the interparticle force as the sum of two component parts; the short-range part, which is nonzero only for particle separations less than some cutoff radius, and the smoothly varying long-range part, which has a transform which is approximately band-limited (that is to say, is approximately nonzero for only a limited range of $k$). The total short-range force on a particle is computed by direct particle-particle (PP) pair force summation and the smoothly varying part is approximated by the particle-mesh (PM) force calculation.
 
 We do not use P$^3$M in our approximate methods because of their much greater numerical requirements compared to simpler PM methods. For more details, see e.g. \textcite{Hockney:1988:CSU:62815}.
-\section{Grid-based methods}
-\todo{need to solve non-linear equations
+\section{Multi-grid techniques}
+Practical multi-grid techniques were introduced by \textcite{10.2307/2006422}. These methods also interpolate the density and potential between grid and particles as PM methods based on FFT with $\OO(N_m\log N_m)$ complexity but they use relaxation methods such as Gauss-Seidel iteration \parencite{doi:10.1002/zamm.19720520813} and can solve elliptic partial differential equations using $\OO(N_m)$ operations. The numerical coefficients in these estimates are such that multigrid methods are comparable to the rapid methods in execution speed. Unlike the rapid methods, however, the multigrid methods can solve general elliptic equations with nonconstant coefficients with hardly any loss in efficiency. Even nonlinear equations of modified gravitational can be solved with these methods \parencite{10.5555/42249}.
 
-Gaus-Seidel relaxation method
+The basic idea exploits the fact that on a coarser grid relaxation occurs faster because information travels faster. The distribution of errors (the difference between the actual density -- source -- and that obtained via the discretisation of potential from the current estimate for the potential) is first smoothed on the finest grid by a few Gauss-Seidel iterations. After transferring the problem to a coarser grid, the process is repeated on coarser and coarser grids until, on the coarsest grid convergence is achieved. Then the problem is transferred back to finer and finer grids, each time iterating until convergence.
 
-Multigrid methods
-
-The Fast Multipole Method}
+\todo{GS and MG in more detail?}
 \section{Other methods}
 \subsection{TreePM}
+\subsection{Fast multipole methods}
 \section{Alternatives to \nbody\ simulations}
 \todo{Boltzmann equation, orbit averaging, Monte-Carlo}
 
