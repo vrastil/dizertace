@@ -379,22 +379,21 @@ The convergence $\kappa$ describes the magnification of the source image and the
 \subsection{Non-linear cosmological perturbations}
 So far we have described linear gravitational processes which are essential for cosmolgy as a whole and approximate methods we are exploring. However, as we will compare our results with full \nbodysim s, which can deal with the full non-linear dynamics, we will mention here a regime that lies between the linear perturbation theory and the full non-linear gravitational interactions.
 
-\todo{
-    Briefly describe 2d order + higher corrections
-
-    spherical collapse
-
-    Figure from 2LPT, etc. \cite{2004astro.ph.12025T}
-
-    Different approximation methods -- Lagrangian perturbation theory (LPT) up to third order (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{10.1093/mnras/260.4.765}), Augumented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) and COLA -- have been tested in \cite{2017JCAP...07..050M}.
+One step further from linear order are the second-order perturbations. In this approximation one no longer neglect terms like divergence of the velocity field and the resulting equations are much more complicated than the linear order \textcite[see e.g.][]{2004astro.ph.12025T,10.1093/mnras/264.2.375,2010deto.book.....A}. We will mention here only the simplest result for a spherical perturbation in Einstein--de Sitter universe with initial Gaussian perturbations \textcite{1980_Peebles}:
+\eq{
+    \delta &= \delta^{(1)}+\delta^{(2)}\,,\\
+    \delta^{(1)} &= \delta_0(\mb x)D_L(a)\,,\\
+    \delta^{(2)} &= \delta_0^2(\mb x)D_2(a)\,,\\
+    D_2 &= \frac{17}{21}D_L^2\,.
 }
+In general, solutions of higher order perturbations has to be found numerically and they are computationally similarly expensive as \nbodysim s described later in this work.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.5\textwidth]{cosmo_evol/app_compare.png}
-    \caption{Power spectrum at $z = 0,\ 0.5$ and $1$ (top, middle and bottom panels, respectively) in real space and ratio with the \nbody’s one for the matter field (left panels) and for the halo catalogues (right panels). The vertical dashed line locates the $k = 0.5\hMpc$ where the one-halo term becomes significant. The vertical shaded area locates the region of the BAO peak, while the horizontal one locates the 1\% accuracy region.  \textit{Note:} Reprinted from \textcite{2017JCAP...07..050M}.}
-    \label{fig:app_compare}
-\end{figure}
+Another non-linear effet of cosmological importance is the spherical collapse. The model of spherical collapse describes non-linear evolution of a spherical perturbation in an otherwise smooth expanding background. The equations and their solutions can be derived on purely Newtonian grounds \parencite{2010deto.book.....A}. As one expects, a small perturbation expands with the cosmological expansion, reaches a turnaround point and then the perturbation collapses under its own gravity to a singularity (unphysical phenomenon originated from the exact symmetry).
+
+The main result we get from this model for the Einstein–-de Sitter case is the critical or collapse value $\delta\coll$ of the linear fluctuation that is reached at the time of collapse. This quantity is of cosmological relevance as a first approximation to the epoch of galaxy formation and to calculate the abundance of collapsed objects. A spherical perturbation in the Einstein-–de Sitter Universe collapses to a singularity whenever the linear density contrast $\delta_L=\delta\coll\approx1.686$.
+
+The main reason why it is worth to study the phenomenon of a spherical collapse is that we can estimate the number of collapsed objects formed in a random Gaussian field by simply counting at any given time how many regions have an overdensity above the collapse threshold given by $\delta\coll$ (more in the halo mass function in the next section).
+
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
