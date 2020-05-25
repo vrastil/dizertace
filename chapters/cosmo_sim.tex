@@ -112,8 +112,57 @@ We do not use P$^3$M in our approximate methods because of their much greater nu
 Practical multi-grid techniques were introduced by \textcite{10.2307/2006422}. These methods also interpolate the density and potential between grid and particles as PM methods based on FFT with $\OO(N_m\log N_m)$ complexity but they use relaxation methods such as Gauss-Seidel iteration \parencite{doi:10.1002/zamm.19720520813} and can solve elliptic partial differential equations using $\OO(N_m)$ operations. The numerical coefficients in these estimates are such that multigrid methods are comparable to the rapid methods in execution speed. Unlike the rapid methods, however, the multigrid methods can solve general elliptic equations with nonconstant coefficients with hardly any loss in efficiency. Even nonlinear equations of modified gravitational can be solved with these methods \parencite{10.5555/42249}.
 
 The basic idea exploits the fact that on a coarser grid relaxation occurs faster because information travels faster. The distribution of errors (the difference between the actual density -- source -- and that obtained via the discretisation of potential from the current estimate for the potential) is first smoothed on the finest grid by a few Gauss-Seidel iterations. After transferring the problem to a coarser grid, the process is repeated on coarser and coarser grids until, on the coarsest grid convergence is achieved. Then the problem is transferred back to finer and finer grids, each time iterating until convergence.
+\subsection{Simple two-grid V-cycle}
+The key idea of the multigrid method can be understood by considering the simplest case of a two-grid method. Suppose we are trying to solve the discretized linear elliptic problem on a uniform grid with mesh size $h$
+\eq{
+    \LL_h u_h=f_h\,,
+}
+where $\LL$ is some linear elliptic operator and $f$ is the source. The error or correction of the (exact) solution $u_h$ to some approximate solution $\tilde u_h$ is
+\eq{
+    v_h\equiv u_h-\tilde u_h.
+}
+The residual or defect is
+\eq{
+    \label{eq:defect}
+    d_h\equiv\LL \tilde u_h-f_h\,.
+}
+Since $\LL_h$ is linear, the error satisfies
+\eq{
+    \label{eq:residual}
+    \LL_hv_h=-d_h\,.
+}
+In order to find $v_h$ we need to make an approximation to $\LL_h$. This can be done using classical iteration methods, such as Jacobi or Gauss-Seidel, which use simpler operator than $\LL_h$, e.g. only the diagonal part (Jacobi iteration) or the lower triangle (Gauss-Seidel iteration).
 
-\todo{GS and MG in more detail?}
+Instead of using simpler form of $\LL_h$ we can use coarser form, i.e. we will solve the problem using $\LL_H$ on a coarser grid with $H=2h$. The residual equation \eqref{eq:residual} is now approximated by
+\eq{
+    \label{eq:residual_H}
+    \LL_Hv_H=-d_H\,.
+}
+Since $\LL_H$ has smaller dimension this equation can be solved much faster than the original fine-grid solution. To transform residuals from fine to coarse grid we need a restriction operator $\RRR$, and similarly we need a  prolongation operator $\PP$ to interpolate corrections from coarse to fine grid.
+\eq{
+    \label{eq:restrict}
+    d_H &= \RRR d_h\,,\\
+    \label{eq:prolong}
+    \tilde v_h &= \PP \tilde v_H\,,
+}
+where $\tilde v_H$ is some approximate solution of \eqref{eq:residual_H}. The new approximation $\tilde u_h\new$ is then obtained as
+\eq{
+    \label{eq:new_app}
+    \tilde u_h\new = \tilde u_h + \tilde v_h\,.
+}
+
+The idea behind multigrid techniques is a combination of smoothing on the fine grid (relaxation) and on coarse grid (coarse-grid correction). Relaxation can rapidly reduce high-frequency errors but low-frequency errors tend to converge slowly. On the other hand, high frequency errors are not even representable on the coarse grid and low-frequency errors converge much quickly. The whole scheme, V-cycle, is thus:
+\begin{itemize}
+    \item Apply a relaxation method to $\tilde u_h$ (pre-smoothing),
+    \item Compute the defect on the fine grid from \eqref{eq:defect},
+    \item Restrict the defect by \eqref{eq:restrict},
+    \item Solve \eqref{eq:residual_H} on the coarse grid,
+    \item Interpolate the correction to the fine grid by \eqref{eq:prolong},
+    \item Compute the next approximation by \eqref{eq:new_app},
+    \item Apply a relaxation method to $\tilde u_h\new$ (poset-smoothing).
+\end{itemize}
+
+\subsection{Gauss-Seidel relaxation}
 \section{Other methods}
 \subsection{TreePM}
 \subsection{Fast multipole methods}
