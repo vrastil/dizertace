@@ -151,7 +151,7 @@ where $\tilde v_H$ is some approximate solution of \eqref{eq:residual_H}. The ne
     \tilde u_h\new = \tilde u_h + \tilde v_h\,.
 }
 
-The idea behind multigrid techniques is a combination of smoothing on the fine grid (relaxation) and on coarse grid (coarse-grid correction). Relaxation can rapidly reduce high-frequency errors but low-frequency errors tend to converge slowly. On the other hand, high frequency errors are not even representable on the coarse grid and low-frequency errors converge much quickly. The whole scheme, V-cycle, is thus:
+The idea behind multigrid techniques is a combination of smoothing on the fine grid (relaxation) and on coarse grid (coarse-grid correction). Relaxation can rapidly reduce high-frequency errors but low-frequency errors tend to converge slowly. On the other hand, high frequency errors are not even representable on the coarse grid and low-frequency errors converge much quickly. The whole scheme, two-grid V-cycle, is thus:
 \begin{itemize}
     \item Apply a relaxation method to $\tilde u_h$ (pre-smoothing),
     \item Compute the defect on the fine grid from \eqref{eq:defect},
@@ -159,10 +159,24 @@ The idea behind multigrid techniques is a combination of smoothing on the fine g
     \item Solve \eqref{eq:residual_H} on the coarse grid,
     \item Interpolate the correction to the fine grid by \eqref{eq:prolong},
     \item Compute the next approximation by \eqref{eq:new_app},
-    \item Apply a relaxation method to $\tilde u_h\new$ (poset-smoothing).
+    \item Apply a relaxation method to $\tilde u_h\new$ (post-smoothing).
 \end{itemize}
+To achieve the full multigrid method is now straightforward. Instead of solving the coarse-grid defect exactly we can get an approximate solution of it by introducing an even coarser grid and so on.
 
-\subsection{Gauss-Seidel relaxation}
+We considered $\LL$ to be a linear operator but the above method works also with non-linear operators. The speed of convergence is obviously worse and depend on the exact form of the operator. For our problem and finding solutions to \todo{chemeleon equation} this method proves to be sufficient.
+
+\subsubsection{Gauss-Seidel relaxation}
+The most popular smoothing method is Gauss-Seidel relaxation. The Gauss-Seidel scheme for $N$ mesh points is
+\eq{
+    \label{eq:GS}
+    u_i\new = u_i -\left(\sum^N_{j\neq i}L_{ij}u_j-f_i\right)\frac{1}{L_{ii}}\,,
+}
+where new values of $u$ are used on the right-hand side as they become available. It is usually best to use tile scheme,  making one pass through the mesh updating the even points and another pass updating the odd points.
+
+For nonlinear problems as ours one needs to modify the scheme \eqref{eq:GS} by Newton iteration
+\eq{
+    u_i\new=u_i-\frac{L_i(u_i)-f_i}{\partial L_i(u_i)/\partial u_i}\,.
+}
 \section{Other methods}
 \subsection{TreePM}
 \subsection{Fast multipole methods}
