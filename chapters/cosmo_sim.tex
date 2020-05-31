@@ -166,10 +166,10 @@ To achieve the full multigrid method is now straightforward. Instead of solving 
 We considered $\LL$ to be a linear operator but the above method works also with non-linear operators. The speed of convergence is obviously worse and depend on the exact form of the operator. For our problem and finding solutions to \todo{chemeleon equation} this method proves to be sufficient.
 
 \subsubsection{Gauss-Seidel relaxation}
-The most popular smoothing method is Gauss-Seidel relaxation. The Gauss-Seidel scheme for $N$ mesh points is
+The most popular smoothing method is Gauss-Seidel relaxation. The Gauss-Seidel scheme for $N_m$ mesh points is
 \eq{
     \label{eq:GS}
-    u_i\new = u_i -\left(\sum^N_{j\neq i}L_{ij}u_j-f_i\right)\frac{1}{L_{ii}}\,,
+    u_i\new = u_i -\left(\sum^{N_m}_{j\neq i}L_{ij}u_j-f_i\right)\frac{1}{L_{ii}}\,,
 }
 where new values of $u$ are used on the right-hand side as they become available. It is usually best to use tile scheme,  making one pass through the mesh updating the even points and another pass updating the odd points.
 
@@ -177,9 +177,15 @@ For nonlinear problems as ours one needs to modify the scheme \eqref{eq:GS} by N
 \eq{
     u_i\new=u_i-\frac{L_i(u_i)-f_i}{\partial L_i(u_i)/\partial u_i}\,.
 }
+\section{Initial conditions}
 \section{Other methods}
 \subsection{TreePM}
+The tree code was pioneered by \textcite{1986Natur.324..446B} and uses a hierarchical spatial tree to define localised groups of particles. This has advantage over an equidistant mesh when dealing with highly inhomogeneous systems like stellar dynamics when few cells would contain most of the particles. With the usual oct-tree each cubic cell containing more than some maximum number of particles is split into eight child cells of half their parent's size. This results in a tree-like hierarchy of cubic nodes with the root box, containing all particles, at its bottom. The particles within each of the tree nodes constitute a well-defined and localised group. The potential of a cell is obtained by multipole expansion around some centre of the group of particles (usually center of mass). The gravity at any point is then approximated by summation of potentials from all other cells while considering only cells with sufficiently small opening angle (size of the cell over the distance). If the opening angle is big the same algorithm is applied to the daughter cells.
 \subsection{Fast multipole methods}
+The fast multipole method of \textcite{1987JCoPh..73..325G} also works with localised particle groups and was originally proposed using a fixed grid but \textcite{2000ApJ...536L..39D} implemnted the method using a tree structure with better results. The method works similarly as the tree code but in addition to expanding the potential at the source positions it also expands it at the sink positions. This dual expansion at both ends of all interactions considerably speeds up the simultaneous computation of gravity for all particles, but brings no advantage over the tree code when computing the force at a single position.
+
+The second part is the interaction phase, when the coefficients of the Taylor series are evaluated for each cell. If the opening angle for a mutual cell-cell interaction is small enough the coefficients for the interactions in each direction are computed.  Otherwise, the interaction is split into up to 8 new interactions by opening the bigger of the two cells. The total computational
+costs of this algorithm are dominated by the interaction phase, which only requires $\OO(N_p)$ interactions for the computation of all $N_p$ particle forces. This represents a substantial reduction from the $\OO(N_p^2)$ for direct summation and can greatly imporves simulations of astrophysical problems with inhomogeneous particle distributions.
 \section{Alternatives to \nbody\ simulations}
 \todo{Boltzmann equation, orbit averaging, Monte-Carlo}
 
