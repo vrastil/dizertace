@@ -1,0 +1,52 @@
+\subsection{Correlation Function}
+\label{sec:corr}
+The two-point correlation function is defined as
+\eq{
+\label{eq:bao}
+\xi(r)=\left\langle \delta(\mb x)\delta(\mb{x+r})\right\rangle=\int\frac{\dd^3\mb k}{(2\pi)^3}P(k)e^{i\mb{k\cdot r}}\,.
+}
+We computed the correlation function $\xi(r)$ for different approximation schemes at different redshifts directly from the measured matter power spectrum $P(k)$ using equation \eqref{eq:bao}. In \autoref{fig:corr_func}, we display an example of the correlation function at redshift $z=0.5$. All approximations agree reasonably with the full nonlinear predictions of the emulator for the location of the BAO peak and its width.
+\begin{figure}
+\centering
+	\begin{subfigure}{\textwidth}
+        \includegraphicscustomlegend{simulations_approx/corr_func/corr_func_r2_z_z_eff}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphicscustom{simulations_approx/corr_func//corr_func_r2_z_z_eff}
+	\end{subfigure}
+	\caption{Two-point correlation function for different approximation schemes at $z=0.5$}.
+	\label{fig:corr_func}
+\end{figure}
+
+Individual features of the BAO peak -- location $r_0$, amplitude $A$ and width $\sigma$ -- are obtained by fitting a Gaussian to $r^2\xi(r)$ around the BAO peak
+\eq{
+\xi_G(r)=A\cdot e^{-(r-r_0)^2/2\sigma^2}
+}
+In \autoref{fig:corr_peak}, we show the these features of the BAO peak relative to the non-linear predictions of the emulator as a function of time. All approximations can predict the location of the peak with 1\% accuracy. In predicting the shape of the peak, however, they do worse -- all approximations deviate in predictions for the peak width and amplitude. Note that which approximation does best (compared to the others) for a given quantity is a function of redshift.
+
+%From comparison with the linear theory we see that FFA and FPA are predicting something between the linear and non-linear prediction but ZA and TZA predict values quite off the linear prediction as one would expect from these approximations.
+
+\begin{figure}
+\centering
+	\begin{subfigure}{\textwidth}
+        \includegraphicscustomlegend{simulations_approx/corr_func/corr_peak_loc_z_eff}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphicscustom{simulations_approx/corr_func//corr_peak_loc_z_eff}
+		\caption{Location}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphicscustom{simulations_approx/corr_func//corr_peak_amp_z_eff}
+		\caption{Amplitude}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphicscustom{simulations_approx/corr_func//corr_peak_width_z_eff}
+		\caption{Width}
+	\end{subfigure}
+	\caption{Location, amplitude and width of the BAO peak (relative to the non-linear prediction) as a function of the redshift.}
+	\label{fig:corr_peak}
+\end{figure}
