@@ -169,23 +169,25 @@ For nonlinear problems as ours one needs to modify the scheme \eqref{eq:GS} by N
     u_i\new=u_i-\frac{L_i(u_i)-f_i}{\partial L_i(u_i)/\partial u_i}\,.
 }
 \section{Initial conditions}
-\todo{
-https://arxiv.org/pdf/0804.3536.pdf
+So far we have described how the particles evolve under their mutual gravity. However, in a cosmological simulation we must first place these particles into the simulation box -- we must specify the initial conditions (IC). The particles cannot be placed arbitrarily but they must represent the real Universe. Among the properties we want is the particles to simulate our homogeneous, isotropic and infinite Universe. As we described in \autoref{chpt:cosmo_evol} the particles evolve and the resulting density field $\delta$ is not perfectly homogeneous. Statistical properties of the gassian density field, which is predicted by simple inflation models and supported by observation, can be entirely described by the matter power spectrum $P(k)$. Any procedure for generating the IC must be able to place the particles in the simulation box such as the resulting density field retains all of these properties.
 
-We want IC such as: $P(k)$, Homogeneity, isotropy -- glass condition, grid condition, gaussianity, $n(k)=1$
-
-from the initial $P(k)$ generate $\hat\delta(k)$ on the mesh,
-
-solve the field equations on the mesh,
-
-calculate the force field $\nabla\phi_V(\mb x)$ on the mesh,
-
-use ZA to get the initial positions and velocities.
-    
-
-initial conditions with opposite phases to accelerate convergence \parencite{PhysRevD.93.103519}.
-
+Our code for generating the IC is based on a convolution method described by \textcite{1997ApJ...490L.127P}. We first create a random uncorrelated gaussian density field $n(x)$ of unit variance. This white noise has a constant power spectrum $\left\langle|\hat n(k)|^2\right\rangle=1$. We then convolve this field with a correlation kernel $W(k)=\sqrt{P(k)}$ to obtain the initial  density field
+\eq{
+    \delta(k)=n(k)W(k)\,.
 }
+It can be easily seen that this density field has the correct power spectrum $\left\langle|\hat\delta(k)|^2\right\rangle=P(k)$. This density field is then used to compute the gravitation potential and forces in the simulation box. The actual positions and velocities of the particles are found using the linear perturbation theory, the Zel`dovich approximation \parencite{1970A&A.....5...84Z},
+\eq{
+    \mb x = \mb q + D(t)\mb S(\mb q)\,,
+}
+\begin{sloppypar}
+where $D$ is the growth function at the start of the simulation (typically ${z\sim20-200}$). The displacement field $S$ is computed from the linear theory and satisfies
+\end{sloppypar}
+\eq{
+    \nabla\cdot \mb S = -\delta\,.
+}
+The initial positions $\mb q$ of particles are chose to be grid points of the simulation box to satisfy homogeneity and isotropy. We use these grid-based IC but the so-called glass IC can also be employed. In the glass IC the particles are placed at random positions across the box and then evolved with repulsive gravity until they reach an equilibrium state. These IC look more naturally but contain lots of white noise power.
+
+In order to have reliable results one has to run cosmological simulation many times with different IC to lower the sampling variance. In order to accelerate the convergence we use each IC twice, second time with opposite phases \parencite{PhysRevD.93.103519}. Opposite phases of the density field in the Fourier space correspond to switched minima and maxima of the gravitation potential in the real space, $n_2(\mb x)=-n_1(\mb x)$
 
 \section{Core Cosmology Library}
 The Core Cosmology Library (\code{CCL}, \textcite{2019ApJS..242....2C}) is an open source software package written in \code{C}, with a \code{python} interface. The \code{CCL} provides routines to compute basic cosmological observables such as varius distances, power spectra, correlation functions and many others. The accuracy of all quantitites has been extensively tested and compared with many other independent software packages. This allows to establish a well-defined numerical accuracy for each predicted quantity. The \code{CCL} was developed for the needs of the DESC of the LSST which needs very precise predictions for the next generation of cosmological analysis. The author contributed to the development of this library.

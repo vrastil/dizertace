@@ -17,6 +17,10 @@ $(MAIN).pdf:
 	@$(TEX_CMD)
 	-@cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/
 
+rebuild:
+	@$(TEX_CMD)
+	-@cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/
+
 tex:
 	$(TEX_CMD)
 
