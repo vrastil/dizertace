@@ -45,7 +45,7 @@ where $\delta$ is the density contrast, the bar represents a mean value (spatial
     \label{eq:lin_4}
     \Phi''+2\mathcal{H}\Phi'-\mathcal{H}\Psi-(\mathcal{H}^2+2\mathcal{H}')\Psi &=-4\pi G\bar\rho a^2c^2_s\delta\,,
 }
-where the prime now denotes the derivative with respect to the conformal time $\eta$. Sound velocity $c_s$ is defined as
+where the prime denotes the derivative with respect to the conformal time $\eta$. Sound velocity $c_s$ is defined as
 \eq{
     c_s^2\equiv\frac{\delta p}{\delta\rho}=\dddd p\rho = \frac{\dot p}{\dot\rho}\,,
 }
@@ -135,7 +135,9 @@ In linear perturbation theory the gravitational evolution of fluctuations is sep
 \eq{
     \delta(a)=\delta_0D(a)\,,
 }
-where $\delta_0$ is present overdensity and the growth function $D$ is normalized as $D(a=1)\equiv1$. The logarithmic change of growth function is the growth rate $f$
+\begin{sloppypar}
+where $\delta_0$ is present overdensity and the growth function $D$ is normalized as ${D(a=1)\equiv1}$. The logarithmic change of growth function is the growth rate $f$
+\end{sloppypar}
 \eq{
     \label{eq:grw_rate}
     f\equiv\dddd{\ln D}{\ln a}\,.
@@ -177,7 +179,7 @@ The spatial part of the geodesic equations \eqref{eq:WL_0} can be written for $i
 }
 where the lensing potential $\psi\equiv\Phi-\Psi$. For small displacements we can put $x^i=r\theta^i$. Integrated the above equation gives us
 \eq{
-    \theta^i=\theta^i_0+\int_0^r\dd r'\left(1-\frac{r'}{r}\right)\partpart{\psi(r'\theta_0^1,r'\theta_0^2,r')}{x^i}\,.
+    \theta^i=\theta^i_0+\int_0^r\dd \tilde r\left(1-\frac{\tilde r}{r}\right)\partpart{\psi(\tilde r\theta_0^1,\tilde r\theta_0^2,\tilde r)}{x^i}\,.
 }
 Two light rays separated by a small angle  $\Delta\theta^i$ on the source plane at $r=r_s$ are connected to the the observation plane at $r=0$ by the symmetric transformation matrix
 \eq{
@@ -185,7 +187,7 @@ Two light rays separated by a small angle  $\Delta\theta^i$ on the source plane 
 }
 where the distortion tensor
 \eq{
-    D_{ij}=\int_0^{r_s}\dd r'\left(1-\frac{r'}{r_s}\right)r'\frac{\partial^2\psi}{\partial x^i\partial x^j}=
+    D_{ij}=\int_0^{r_s}\dd \tilde r\left(1-\frac{\tilde r}{r_s}\right)\tilde r\frac{\partial^2\psi}{\partial x^i\partial x^j}=
     \begin{pmatrix}
         -\kappa-\gamma_1 & -\gamma_2 \\
         -\gamma_2 & -\kappa + \gamma_1

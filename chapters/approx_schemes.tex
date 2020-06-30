@@ -116,7 +116,7 @@ This velocity field solves \eqref{eq:motion_LCDM} exactly, due to the definition
 Although equation \eqref{eq:FFA} now does not represent a \textit{frozen} flow, particles still move along the same characteristic curves as in EdS, just with different velocities. The particle trajectories are described by the integral equation
 \eq{
 	\label{eq:FFA_int}
-	\mb x(a) = \mb q + \int_0^a\dd a'\mb u\FFA(\mb x(a'), a')\,.
+	\mb x(a) = \mb q + \int_0^a\dd \tilde a\mb u\FFA(\mb x(\tilde a), \tilde a)\,.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,7 +130,7 @@ The frozen-potential approximation (FPA) was introduced by \textcite{1994MNRAS.2
 }
 and the particle trajectories are given as in the case of FFA\,
 \eq{
-	\mb x(a) = \mb q + \int_0^a\dd a'\mb u\FPA(\mb x(a'), a')~.
+	\mb x(a) = \mb q + \int_0^a\dd \tilde a\mb u\FPA(\mb x(\tilde a), \tilde a)~.
 }
 Particles now follow the linear \textit{gravitational} potential (which evolves slightly in \LCDM) instead of the initial \textit{velocity} potential as in the case of FFA. Equation \eqref{eq:FPA} drives the particle velocities (approximately) to the velocities of FFA but unlike in the FFA, particles now keep their inertia.
 
