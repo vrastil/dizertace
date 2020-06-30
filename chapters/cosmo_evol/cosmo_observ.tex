@@ -1,28 +1,3 @@
-
-\subsection{Parametrization of models}
-\todo{Move elsewhere?}
-
-We saw that at the background level the evolution is governed by Friedman equations \eqref{eq:Friedmann}---\eqref{eq:Friedmann-continuity} and consequently omega parameters \eqref{eq:omega} and Hubble parameter $H$ which can be obtained, e.g., from distance measurements. As \todo{we will discuss later in this work} the cosmological constant is not the only possible explanation of the accelerated expansion and the equation of state \(w\) of dark energy does not have to be exactly \(w=-1\). For the arbitrary equation of state $w_{DE}=p_{DE}/\rho_{DE}$ in the flat Universe with a negligible contribution of radiation we can obtain the following equation
-\eq{
-    w_{DE}(z)=\frac{(1+z)(E^2(z))'-3E^2(z)}
-                   {3\left[E^2(z)-\Omega_m^0(1+z^3)\right]}\,,
-}
-whre prime denotes derivative with respect to \(z\). We see that \(w_{DE}\) cannot be determined solely from \(E(z)\) (obtainable through distance measurements) and we need also present density of matter \(\Omega_m^0\). However, if we parametrize \(w_{DE}\) in some way as it is usually done through measurements of \(E(z)\) at several redshifts we can constraint both \(w_{DE}\) and \(\Omega_m^0\).
-
-Several parametrizations of \(w_{DE}\) have been proposed so far. We can write such parametrizations in the form
-\eq{
-    w_{DE}=\sum_{n=0}w_nx_n(z)\,,
-}
-where he expansions can be given by
-\eq{
-    & \rm{(i) Redshift:}      & x_n(z) &= z^n\,, \\
-    & \rm{(ii) Scale factor:} & x_n(z) &= (1-a)^n=\left(\frac{z}{1+z}\right)\,, \\
-    & \rm{(iii) Logarithmic:} & x_n(z) &= \left[\ln\left(1+z\right)\right]^n\,.
-}
-Parametrization (ii) is usually writen for \(n\leq1\) as \(w=w_0+w_a(1-a)\).
-
-\todo{add figure with results}
-
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -33,6 +8,12 @@ Here we present a brief description of cosmological probes which can be used for
 %http://terapix.phys.cmu.edu/misc/desc\_feb\_2015\_de\_school\_ShirleyHo.pdf \\
 %https://sites.google.com/site/cmucosmos13/lecture-notes \\
 %http://arxiv.org/pdf/1201.2434v2.pdf \\
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Cosmic distances
+%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/cosmo_evol/cosmo_dist}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmic Microwave Background
 %%%%%%%%%%%%%%%%%%%%%%%

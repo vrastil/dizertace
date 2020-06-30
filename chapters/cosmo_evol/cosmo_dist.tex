@@ -1,0 +1,65 @@
+\subsection{Cosmic distances}
+In the expanding Universe there are many ways to specify the distance between two points due to the constantly changing distances and the fact that observers look back in time as they look out in distance.
+\subsubsection{Comoving distance}
+The light traveling along the $\chi$ direction satisfies the geodesic equation $\dd s^2=-\dd t^2+a^2(t)\dd \chi^2=0$. The light emitted at the time $t=t_1$ with $\chi=\chi_1$ (redshift $z$) reaches an observer at time$t=t_0$ with $\chi=0$ (redshift $z=0$). Integrating the geodesic equation
+\eq{
+    \label{eq:d_c}
+    d_c\equiv\chi_1=\int_0^{\chi_1}\dd\chi=-\int_{t_0}^{t_1}\frac{\dd t}{a(t)}=\frac{1}{H_0}\int_0^z\frac{\dd\tilde z}{E(\tilde z)}\,,
+}
+where
+\eq{
+    E(z)\equiv H(z)/H_0=\sqrt{\Omega_{\gamma,0}(z+1)^4+\Omega_{m,0}(z+1)^3+\Omega_{K,0}(z+1)^2+\Omega_{\Lambda,0}}\,.
+}
+If we expand $E(z)$ around $z=0$ we can write the cosmic distance as
+\eq{
+    d_c=\frac{1}{H_0}z-\frac{E'(0)}{2H_0}z^2+\frac{2E'(0)^2-E''(0)}{6H_0}z^3+\mathcal{O}(z^4)\,,
+}
+where a prime represents a derivative with respect to $z$.
+\subsubsection{Luminosity distance}
+The luminosity distance $d_L$ is used in supernovae observations in order to link the supernova luminosity with the expansion rate of the Universe. It is defined by
+\eq{
+    d_L^2\equiv\frac{L_s}{4\pi F}\,,
+}
+where $L_s$ is the absolute bolometric (i.e., integrated over all frequencies) luminosity of a source and $F$ is the observed bolometric flux. The flux is defined by $F=L_0/S$, where $L_0$ is the observed luminosity and $S=4\pi f_K^2(\chi)$ is the area of a sphere at $z=0$.
+
+The absolute luminosity is defined as energy emitted per unit time interval, $L=\Delta E/\Delta t$. The energy of a photon is inversely proportional to its wavelength, $E\propto\lambda^{-1}\propto 1+z$, which is stretching in an expanding universe. Also the time between arrival of two photons is proportional to the wavelength, $\Delta t\propto\lambda\propto(1+z)^{-1}$. The ratio $L_s/L_0$ is then
+\eq{
+    \frac{L_s}{L_0}=\frac{\Delta E_1}{\Delta E_0}\frac{\Delta t_0}{\Delta t_1}=(1+z)^2\,,
+}
+and the luminosity distance is
+\eq{
+    d_L=f_K(\chi)(1+z)\,.
+}
+Using definition \(f_K\) \eqref{eq:f_K} and comoving distance \eqref{eq:d_c} we can express $d_L$ as
+\eq{
+    \label{eq:luminosity}
+    d_L=\frac{1+z}{H_0\sqrt{\Omega_{K,0}}}\sinh{\left(\sqrt{\Omega_{K,0}}\int_0^z{\frac{\dd\tilde z}{E(\tilde z)}}\right)}\,.
+}
+For small $z$ we can once again expand the expression and get
+\eq{
+    d_L=\frac{1}{H_0}z-\frac{E'(0)-2}{2H_0}z^2+\frac{2E'(0)^2-3E'(0)-E''(0)+\Omega_{K,0}}{6H_0}z^3+\mathcal{O}(z^4)\,.
+}
+\subsubsection{Angular diameter distance}
+The angular diameter distance $d_A$ is defined as
+\eq{
+    d_A\equiv\frac{\Delta x}{\Delta\theta}\,,
+}
+where $\Delta\theta$ is the angle that subtends an object of actual size$\Delta x$ orthogonal to the line of sight. Whenever we look at objects of known size such as CMB anisotropies or BAO scale we use this distance.
+
+The observer measures the size $\Delta x$ along the surface of a sphere with radius $\chi$ and from metric \eqref{eq:flrw_chi} follows
+\eq{
+    \Delta x=a(t)f_K(\chi)\Delta\theta\,.
+}
+The angular diameter distance is then
+\eq{
+    \label{eq:angular}
+    d_A=a(t)f_K(\chi)=\frac{1}{1+z}\frac{1}{H_0\sqrt{\Omega_{K,0}}}\sinh{\left(\sqrt{\Omega_{K,0}}\int_0^z{\frac{\dd\tilde z}{E(\tilde z)}}\right)}\,.
+}
+Comparing angular diameter distance \eqref{eq:angular} and luminosity distance \eqref{eq:luminosity} we can see that they have a following relation
+\eq{
+    d_A=\frac{d_L}{(1+z)^2}\,.
+}
+\subsubsection{Degeneracy of the distance measurements}
+We can se that up to the first order all the distances are the same and reduce to the Euclidean distance and that the Hubble`s law holds. With the increasing redshift the Hubble`s law dos not hold exactly and also different distances behave differently. This can be used to measure different properties of the Universe.
+
+As the distances depend on the cosmological parameters through the integral $\int_0^z{\dd\tilde z/E(\tilde z)}$ and through $\Omega_K$ we can measure only those parameters contained in $E(z)$. Moreover, if we had distance measurements only around one particular redshift $z$ any combination of parameters that would produce similar $E(z)$ would be equally acceptable. This degeneracy can be broken by combination of measurements across different redshifts or by using other cosmological probes.

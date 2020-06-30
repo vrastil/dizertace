@@ -1,12 +1,5 @@
 \chapter{Dark Energy and Modified Gravity}
-
-\todo{Heyrovsky D.:
-
-\textit{
-the work could have included the observationally most relevant result: the cosmological evolution of the equation of state w(a) predicted by the different modified theories; weak lensing can be analyzed for rich galaxy clusters rather than for single galaxies.}
-}
-
-In this chapter we briefly introduce how we can modify Einstein`s general relativity and main ideas behind adding new degrees of freedom to the Einstein equations. We describe one particular model of modified gravity in more detail -- the $f(R)$ theory and chameleon gravity.
+In this chapter we briefly introduce how we can modify Einstein`s general relativity, why would we want to do that and main ideas behind adding new degrees of freedom to the Einstein equations. We describe one particular model of modified gravity in more detail -- the $f(R)$ theory and chameleon gravity.
 
 % \subsection{Modofied gravity}
 \todo{alternatives to the cosmological constant}
@@ -16,6 +9,11 @@ Other reasons for studying the modifications of gravity may include the followin
 	\item can serve as the basis for unified explanation of dark energy and dark matter TODO CITE
 	\item be is expected to be useful in high energy physics TODO CITE
 \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Standard LCDM model
+%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/cosmo_evol/lcdm}
 
 \section{\textit{f(R)}-gravity}
 \todo{check all equations}
@@ -522,3 +520,32 @@ The inhomogeneous LTB model matches to the supernovae data and the location of t
 Unlike the void models, which regard the acceleration as an apparent one, \textit{backreaction} models try to explain the cosmic acceleration by arranging inhomogeneities so that the deviation from the FLRW metric can produce a real acceleration \parencite{2011CQGra..28w5002S,2004JCAP...02..003R,2005PhRvD..72b3507M}. Because GR equations are non-linear, averaging the inhomogeneities and then solving the GR equations (which is the usual approach) is not the same as first solving the full (inhomogeneous) GR equations and then averaging them -- the expected value of a non-linear function is not the same as the nonlinear function of the expected value.
 
 Any large inhomogeneities must be conceal from our sight to fit observations. Strong peculiar velocities instead of strong density fluctuations can do this job, but there are strong constraints on peculiar velocities from e.g., the kinematic Sunyaev--Zel'dovich effect. Moreover, the accompanying anisotropy is another source of observable effects difficult to accommodate with current observations.
+
+\section{Predictions of different models}
+\todo{Heyrovsky D.:
+
+\textit{
+the work could have included the observationally most relevant result: the cosmological evolution of the equation of state w(a) predicted by the different modified theories; weak lensing can be analyzed for rich galaxy clusters rather than for single galaxies.}
+}
+
+\subsection{Parametrization of models}
+We saw in the previous chapter that at the background level the evolution is governed by Friedman equations \eqref{eq:Friedmann}---\eqref{eq:Friedmann-continuity} and consequently omega parameters \eqref{eq:omega} and Hubble parameter $H$ which can be obtained, e.g., from distance measurements. As we discussed the cosmological constant is not the only possible explanation of the accelerated expansion and the equation of state \(w\) of dark energy does not have to be exactly \(w=-1\). For the arbitrary equation of state $w_{DE}=p_{DE}/\rho_{DE}$ in the flat Universe with a negligible contribution of radiation we can obtain the following equation
+\eq{
+    w_{DE}(z)=\frac{(1+z)(E^2(z))'-3E^2(z)}
+                   {3\left[E^2(z)-\Omega_{m,0}(1+z^3)\right]}\,,
+}
+whre prime denotes derivative with respect to \(z\). We see that \(w_{DE}\) cannot be determined solely from \(E(z)\) (obtainable through distance measurements) and we need also present density of matter \(\Omega_m^0\). However, if we parametrize \(w_{DE}\) in some way as it is usually done through measurements of \(E(z)\) at several redshifts we can constraint both \(w_{DE}\) and \(\Omega_m^0\).
+
+Several parametrizations of \(w_{DE}\) have been proposed so far. We can write such parametrizations in the form
+\eq{
+    w_{DE}=\sum_{n=0}w_nx_n(z)\,,
+}
+where he expansions can be given by
+\eq{
+    & \rm{(i) Redshift:}      & x_n(z) &= z^n\,, \\
+    & \rm{(ii) Scale factor:} & x_n(z) &= (1-a)^n=\left(\frac{z}{1+z}\right)\,, \\
+    & \rm{(iii) Logarithmic:} & x_n(z) &= \left[\ln\left(1+z\right)\right]^n\,.
+}
+Parametrization (ii) is usually writen for \(n\leq1\) as \(w=w_0+w_a(1-a)\).
+
+\todo{add figure with results}
