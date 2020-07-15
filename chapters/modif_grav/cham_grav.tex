@@ -97,7 +97,7 @@ These properties of the potential are commonly referred to as the potential of t
 	\item $V_{,\phi}<0$ and increasing;
 	\item $V_{,\phi\phi}>0$ and decreasing.
 \end{enumerate}
-Although the item $1.$ and boundedness from $2.$ are usually assumed as these kinds of potentials arise in in supersymmetric models, there are not necessary as we will see in the \autoref{num_cham} where we will study the chameleon gravity in context of Hu-Sawicki $f(R)$ models.
+Although the item $1.$ and boundedness from $2.$ are usually assumed as these kinds of potentials arise in in supersymmetric models, there are not necessary as we will see in the \autoref{sec:num_cham} where we will study the chameleon gravity in context of Hu-Sawicki $f(R)$ models.
 
 Example of this runaway potential we have already seen in the quintessence models -- the inverse power-law potential \eqref{Qtr}
 \eq{
@@ -175,7 +175,7 @@ We have boundary conditions coming from the requirement on matching $\phi$ and  
 \frac{\beta\rho_c}{3\Mpl}\left(\frac{r^2}{2}+\frac{R^3_{roll}}{r}\right)-\frac{\beta\rho_cR^2_{roll}}{2\Mpl}+\phi_c & R_{roll}<r<R_c.
 \end{cases}
 }
-The approximation of separating the solution into the two regions only makes sense if $(R_c-R_{roll})/R_c\ll1$. Otherwise there is no clear separation between the two regions, and one needs a solution valid over the entire range $0<r<R_c$. In \autoref{num_cham} is \eqref{eq_cham_r} solved numerically and we can check these approximations against numerical solutions.
+The approximation of separating the solution into the two regions only makes sense if $(R_c-R_{roll})/R_c\ll1$. Otherwise there is no clear separation between the two regions, and one needs a solution valid over the entire range $0<r<R_c$. In \autoref{sec:num_cham} is \eqref{eq_cham_r} solved numerically and we can check these approximations against numerical solutions.
 
 With approximation $(R_c-R_{roll})/R_c\ll1$ we can determines the effective mass of the object $\tilde{M}$ from the requirement $\phi(R_c^-)=\phi(R_c^+)$ and $\dd\phi/\dd r(R_c^-)=\dd\phi/\dd r(R_c^+)$.
 \eq{
@@ -250,3 +250,11 @@ The transformation from the Jordan frame to the Einstein frame introduces non-st
     \label{eq:cham_force}
 	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\vec{\nabla}\chi \,.
 }
+\subsection{Numerical solutions}
+\label{sec:num_cham}
+In this section we will show results of results of numerical solutions of chameleon profile. Our algorithm for finding solutions to \eqref{eq_cham_r} uses the shooting method \parencite{10.5555/42249} and is based on the original algorithm of \textcite{mastersthesis_vrastil}.
+
+\subsubsection{Spherical objects in background}
+
+\subsubsection{NFW Halo}
+\todo{Galaxies, clusters}
