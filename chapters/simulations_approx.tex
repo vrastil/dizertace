@@ -1,12 +1,26 @@
 \chapter{Simulations with Approximation Methods}
-\todo{Heyrovsky D.:
-
-\textit{The model choice is unusual, since the primary relevance of the chameleon field is away from highdensity regions, where it can mimic the effect of the cosmological constant. Nevertheless, it is a good idea to check if the chameleon field doesn’t interfere at these scales. In this context one should point out that for a galactic halo with a 10 kpc scale it does not make much sense to plot the rotation curve out to 300 kpc. Regarding the cosmological simulations, attempts to jointly solve a gravitational Nbody code with the Poisson-like chameleon equation do not look very promising. It might be better to use a gravitational hydrodynamic code, which solves similar types of PDEs.}
-}
 
 \section{Motivation}
 
 \section{Results for standard gravity}
+
+\subsection{Simulation parameters}
+We ran our simulations with the Planck \LCDM\ cosmology \parencite{planck_cosm}; its parameters are summarized in \autoref{tab:cosmo_param}. We expect our results to apply generically to cosmologies that are not too far from this set of parameter values.
+
+\begin{table}
+\begin{tabular}{ l c l }
+  \hline \hline
+  Hubble constant  [km s$^{-1}$ Mpc$^{-1}$] & $H_0$ & $67.74$ \\
+  Baryon density parameter & $\Omega_b$ & $0.0486$ \\
+  Matter density parameter & $\Omega_m$ & $0.3089$ \\
+  Total density parameter & $\Omega_{tot}$ & $1$ \\
+  Scalar spectral index & $n_s$ & $0.9667$ \\
+  Fluctuation amplitude at $8\Mpch$ & $\sigma_8$ & $0.8159$ \\
+  \hline \hline
+\end{tabular}
+\caption{Planck Collaboration cosmological parameters \parencite{planck_cosm} used in the simulations.}
+\label{tab:cosmo_param}
+\end{table}
 
 \todo{snapshots for different redshifts, PM simulations}
 

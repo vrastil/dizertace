@@ -1,10 +1,27 @@
 \chapter{Cosmological Simulations}
 
-full approximation scheme \parencite[FAS, see, e.g.,][]{MG_overview}
+%% full approximation scheme \parencite[FAS, see, e.g.,][]{MG_overview}
 
-\todo{Notation \(n,N,L,m\)
+In this chapter we will use the following notation: box size $L$ [$\Mpch$], number of particles $\Np$, number of force mesh points $\Nf$, number of power-spectrum mesh points $\Na$, number of runs $N$, number of time-steps $\Nt$ and a derived parameter, the particle mass $m$ $[M_\odot]$. This notation is summarized in \autoref{tab:sim_param}.
 
-}
+\begin{table}
+\begin{tabular}{ll}
+    \hline \hline
+    Symbol & Definition \\
+    \hline
+    $L$ & box size in units of $\Mpch$ \\
+    $\Np$ & number of particles \\
+    $\Nf$ & number of force mesh points \\
+    $\Na$ & number of power-spectrum mesh points \\
+    $N$ & number of runs \\
+    $\Nt$ & number of time-steps \\
+    $m$ & particle mass in units of $[M_\odot]$ \\
+    \hline \hline
+\end{tabular}
+\caption{Summary of symbols used for simulation parameters.}
+\label{tab:sim_param}
+\end{table}
+
 
 \section{\nbody\ problem}
 Many problems in physics, including cosmology, involve particle systems with each particle interacting with all other particles present. In astronomy there is a gravitational interaction between starts, galaxies and cluster of galaxies, depending on scale which we are studying. The challenge of efficiently carrying out the related calculations is generally known as the \nbody\ problem.
