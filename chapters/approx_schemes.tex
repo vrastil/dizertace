@@ -1,9 +1,16 @@
 \chapter{Approximation Schemes}
-\todo{motivation, fast
+Parts of this chapter has been published in \textcite{2020MNRAS.493.2085V}.
 
-history context, why to revisit
-}
-\subsection{Overview of Linear Theory}
+\section{Motivation}
+Various approximations in different scientific fields have always been studied in detail. Many non-linear equations cannot be solved analytically and one can hope to achieve at least some results using linearization or other perturbation theories of higher order. Cosmological simulations are no exception. From the beginning of first attempts to simulate clustering of matter on large scales in late 60`s the approximate methods were developed to help understand dynamics of the Universe. The greatest pioneering efforts to improve and validate these approximate methods have been undertook in the 90`s.
+
+These analytic or semi-analytic methods can be used to understand otherwise very complicated problem of structure formation. Instead of running a simulation "blindly" and trying to analyze them phenomenologically one can compare these simulations with much better understood approximate methods.
+
+Besides usefulness of approximations in getting an insight into gravitational evolution they are very helpful in getting large number of simulations quickly. In order to study BAO one needs high number of simulations with very large volume and high number of particles which requires demanding resources. The BAO scale is of particular interest to us as it lies between the linear regime which can be studied analytically and highly non-linear regime of halo formation which requires precise \nbodysim s. The semi-analytical methods are expected to work very well in this regime.
+
+In this chapter we describe several of approximations which have been studied in the past -- Zel`dovich approximation and its \textit{truncated} extension, frozen-flow approximation and frozen-potential approximation. The Zel'dovich approximation has been studied extensively in the past and here we use it mainly as a reference for comparison in the context of the other approximations.
+
+\section{Recapitulation of linear theory}
 \todo{Rewrite equations using $a$, use previous equations}
 We begin with the linearized equations for gravitational clustering in an expanding Universe. We will be working in comoving coordinates -- the comoving position $\mb x$ is defined in terms of the proper position coordinate $\mb r = a\mb x$, where $a=a(t)$ is the scale factor. The comoving velocity $\mb v$ is then defined as a derivative with respect to cosmic time $t$, $\mb v = \dot{\mb x}$, where the overdot denotes a time derivative. The overdensity $\delta$ is defined in terms of the local density, $\rho$, and the background density, $\bar\rho$,  as $\delta=\rho/\bar\rho-1$. Particles move in the Newtonian gravitational potential, $\phi_G$. The equations for linear perturbations then read
 \eq{
