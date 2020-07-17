@@ -52,7 +52,9 @@ rises from $0$ to $\Omega_{\Lambda,0}$ and becomes statistically significant $(>
 % Zel`dovich Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zel`dovich approximation}
-The Zel'dovich approximation \parencite[hereafter ZA;][]{1970A&A.....5...84Z} is based on an ansatz that particles move in straight lines in the Lagrangian frame
+The Zel'dovich approximation \parencite[hereafter ZA;][]{1970A&A.....5...84Z} bears its name after a pioneer in the study of large-scale structure, a Soviet physicist Yakov Zel`dovich. The ZA provides an intuitive way to understand the emergence of filamentary structures (cosmic web) and can realize model of non-linear structure formation even though it is based only on linear approximations \parencite{2014MNRAS.439.3630W}. The Zel’dovich approximation predicts the rich structure of voids, clusters, sheets and filaments observed in the Universe.
+
+The ZA is based on an ansatz that particles move in straight lines in the Lagrangian frame
 \eq{
 \label{eq:ZA}
 	\mb x(\mb q, a) = \mb q + D(a)\mb S(\mb q)\,,
@@ -71,33 +73,47 @@ and has a simple relation to the gravitational potential
 	\label{eq:vel_new}
 	\phi_V=\mu\frac a D \phi_G\,.
 }
+This results into ZA being
+\eq{
+	\mb x(\mb q, a) = \mb q - D(a)\mb\nabla \phi_V(\mb q)\,.
+}
 Note that the velocity potential is not exactly a potential of our velocity field $\mb u$ but
 \eq{
 	\label{eq:ZA_u}
 	\mb u\ZA(\mb x) = -\dddd D a \nabla\phi_V(\mb q)\,.
 }
 The ZA differs from other approximations (among other things) in how this (constant) velocity potential, $\phi_V$, enters the equations of motion. In order to avoid having different definitions of the \textit{real} velocity potential for the velocity fields in each approximation, we take the equation \eqref{eq:poisson_vel} as defining the velocity potential $\phi_V$.
+
+The deformation tensor is defined as
+\eq{
+	d_{ij}=\partpart{x_i}{q_j}=\delta_{ij}+D\partpart{\nabla_i}{q_j}\,.
+}
+The eigenvectors of the deformation tensor determine the principle directions of the collapse and the corresponding eigenvalues determine the time when the compression will be infinite. The density is given through eigenvalues $\lambda_i$ as
+\eq{
+	\rho=\frac{\bar\rho}{(1-D\lambda_1)(1-D\lambda_2)(1-D\lambda_3)}\,.
+}
+The time when the density in ZA becomes infinite corresponds to particles crossing the paths of other particles. Once this shell-crossing has occurred, the approximation has formally broken down, since there are no forces present to slow down the particles and capture them within halos.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Truncated Zel`dovich Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Truncated Zel`dovich approximation}
-In the ZA, particles move in straight lines given by equation \eqref{eq:ZA}. This eventually leads to shell-crossing and diffusion of particles on small scales since the ZA cannot describe the capture of particles within halos. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on small nonlinear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a nonlinear scale $k_{nl}$ defined as
+The shell-crossing and diffusion of particles on small scales in ZA happens the sooner the more power there is on small scales. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on small nonlinear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a nonlinear scale $k_{nl}$ defined as
 \eq{
 \label{eq:k_nl}
     \frac{a^2(t)}{2\pi^2}\int_0^{k_{nl}}P(k)\dd k=1\,,
 }
-where the power spectrum $P(k)$ is defined as usual as
+where the power spectrum $P(k)$ was defined in \eqref{eq:pk} as
 \eq{
   \label{eq:pk}
-  P(k)(2\pi)^3\delta_{\rm D}(k-k')\equiv \left\langle \hat\delta(k)\hat\delta^*(k')\right\rangle\,,
+  P(k)(2\pi)^3\delta_{\rm D}(k-k')\equiv \left\langle \hat\delta(k)\hat\delta^*(k')\right\rangle\,.
 }
-where $\delta_{\rm D}$ is the Dirac delta function.
 
 \textcite{doi:10.1093/mnras/269.3.626} further improved this truncation by applying a Gaussian window instead of an abrupt cutoff
 \eq{
 W(k)=e^{-k^2/2k^2_{G}}\,,
 }
-where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering leads to the so called truncated Zel`dovich approximation (TZA).
+where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering leads to the so called truncated Zel`dovich approximation (TZA). This removes most of the strongly non-linear behavior and allows the Zel’dovich pancakes to be seen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Frozen-flow Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
