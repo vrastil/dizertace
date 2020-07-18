@@ -5,12 +5,13 @@
 % (but beware, LaTeX adds 1in implicitly)
 \documentclass[12pt,a4paper]{report}
 \setlength\textwidth{145mm}
-\setlength\textheight{247mm}
+\setlength\textheight{242mm} % 247mm originally
 \setlength\oddsidemargin{15mm}
 \setlength\evensidemargin{15mm}
 \setlength\topmargin{0mm}
 \setlength\headsep{0mm}
 \setlength\headheight{0mm}
+% \setlength{\footskip}{10mm}
 % \openright makes the following text appear on a right-hand page
 \let\openright=\clearpage
 
@@ -168,8 +169,9 @@ Abstract.
 %%% print info about current date
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\today}
-\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{Ver.: \today}
+\cfoot{\thepage}
 
 %%% Each chapter is kept in a separate file
 \include{chapters/preface}
