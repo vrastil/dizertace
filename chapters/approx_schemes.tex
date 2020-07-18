@@ -94,11 +94,35 @@ The eigenvectors of the deformation tensor determine the principle directions of
 }
 The time when the density in ZA becomes infinite corresponds to particles crossing the paths of other particles. Once this shell-crossing has occurred, the approximation has formally broken down, since there are no forces present to slow down the particles and capture them within halos.
 
+\todo{Comparison of ZA at $z=0,1,2,3$, \autoref{fig:slice_dens_ZA}}
+\begin{figure*}
+	\begin{adjustwidth}{-3cm}{-1cm}
+	\centering
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=0$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=1$}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=2$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=3$}
+		\end{subfigure}
+		\caption{Projected density field at different redshifts for the Zel`dovich approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
+		\label{fig:slice_dens_ZA}
+	\end{adjustwidth}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Truncated Zel`dovich Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Truncated Zel`dovich approximation}
-The shell-crossing and diffusion of particles on small scales in ZA happens the sooner the more power there is on small scales. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on small nonlinear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a nonlinear scale $k_{nl}$ defined as
+The shell-crossing and diffusion of particles on small scales in ZA happens the sooner the more power there is on small scales. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on these small nonlinear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a nonlinear scale $k_{nl}$ defined as
 \eq{
 \label{eq:k_nl}
     \frac{a^2(t)}{2\pi^2}\int_0^{k_{nl}}P(k)\dd k=1\,,
@@ -114,11 +138,36 @@ where the power spectrum $P(k)$ was defined in \eqref{eq:pk} as
 W(k)=e^{-k^2/2k^2_{G}}\,,
 }
 where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering leads to the so called truncated Zel`dovich approximation (TZA). This removes most of the strongly non-linear behavior and allows the Zel’dovich pancakes to be seen.
+
+\todo{Comparison of TZA at $z=0,1,2,3$, \autoref{fig:slice_dens_TZA}}
+\begin{figure*}
+	\begin{adjustwidth}{-3cm}{-1cm}
+	\centering
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=0$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=1$}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=2$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=3$}
+		\end{subfigure}
+		\caption{Projected density field at different redshifts for the truncated Zel`dovich approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
+		\label{fig:slice_dens_TZA}
+	\end{adjustwidth}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Frozen-flow Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Frozen field approximation}
-The frozen-flow approximation (FFA) was originally proposed by \textcite{Matarrese:1992be} as the exact solution of equation \eqref{eq:motion_EdS} in EdS
+\section{Frozen flow approximation}
+The frozen-flow, or frozen-field, approximation (FFA) was originally proposed by \textcite{Matarrese:1992be} as the exact solution of equation \eqref{eq:motion_EdS} in EdS
 \eq{
   \label{eq:FFA_orig}
   \tilde{\mb u}\FFA(\mb x) = \mb u_0(\mb x) = -\mu\nabla\phi_G(\mb x) = -\nabla\phi_V(\mb x)\,.
@@ -142,6 +191,30 @@ Although equation \eqref{eq:FFA} now does not represent a \textit{frozen} flow, 
 	\mb x(a) = \mb q + \int_0^a\dd \tilde a\mb u\FFA(\mb x(\tilde a), \tilde a)\,.
 }
 
+\todo{Comparison of FFA at $z=0,1,2,3$, \autoref{fig:slice_dens_FFA}}
+\begin{figure*}
+	\begin{adjustwidth}{-3cm}{-1cm}
+	\centering
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=0$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=1$}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=2$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=3$}
+		\end{subfigure}
+		\caption{Projected density field at different redshifts for the frozen flow approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
+		\label{fig:slice_dens_FFA}
+	\end{adjustwidth}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Frozen-potential Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,7 +230,55 @@ and the particle trajectories are given as in the case of FFA\,
 }
 Particles now follow the linear \textit{gravitational} potential (which evolves slightly in \LCDM) instead of the initial \textit{velocity} potential as in the case of FFA. Equation \eqref{eq:FPA} drives the particle velocities (approximately) to the velocities of FFA but unlike in the FFA, particles now keep their inertia.
 
+\todo{Comparison of FPA at $z=0,1,2,3$, \autoref{fig:slice_dens_FPA}}
+\begin{figure*}
+	\begin{adjustwidth}{-3cm}{-1cm}
+	\centering
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=0$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=1$}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=2$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{$z=3$}
+		\end{subfigure}
+		\caption{Projected density field at different redshifts for the frozen potential approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
+		\label{fig:slice_dens_FPA}
+	\end{adjustwidth}
+\end{figure*}
 
+\todo{comparison of all approximation at $z=0$, \autoref{fig:slice_dens_all}}
+\begin{figure*}
+	\begin{adjustwidth}{-3cm}{-1cm}
+	\centering
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{Zel`dovich approximation}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{Truncated Zel`dovich approximation}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{Frozen-flow approximation}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{Frozen-potential approximation}
+		\end{subfigure}
+		\caption{Projected density field at redshift $z=0$ for the different approximations, all run with the same initial conditions. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
+		\label{fig:slice_dens_all}
+	\end{adjustwidth}
+\end{figure*}
 
 \section{Lagrangian perturbation theories}
 
