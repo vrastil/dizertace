@@ -138,8 +138,9 @@ Abstract.
 \usepackage{subcaption} % group figures
 \usepackage[export]{adjustbox} % adjust figures
 \usepackage{multirow}
-
 \usepackage{changepage} % adjustwidth
+\usepackage{datetime} % today
+\usepackage{fancyhdr}
 
 % subcaption issues an error
 \captionsetup{compatibility=false}
@@ -162,6 +163,13 @@ Abstract.
 %%% Abbreviations used in the thesis, if any, including their explanation
 %%% In mathematical theses, it could be better to move the list of abbreviations to the beginning of the thesis.
 \include{preamble/abbrev}
+
+
+%%% print info about current date
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage}
 
 %%% Each chapter is kept in a separate file
 \include{chapters/preface}
