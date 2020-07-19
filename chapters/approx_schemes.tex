@@ -300,7 +300,7 @@ To overcome problems of ZA with shell-crossing they propose a solution of ``stic
 \eq{
 	\dddd{\mb u\AAP}{a}=\nu\partpart{^2\mb u}{\mb x^2}\,.
 }
-The Burger`s equation has an analytical solution which can be used to study formation of structures. For more information regarding the adhesion approximation see  e.g. \textcite{1989MNRAS.236..385G,1990MNRAS.247..260W,1994ApJ...428...28M}.
+The Burger`s equation has an analytical solution which can be used to study formation of structures. For more information regarding the adhesion approximation see  also \textcite{1990MNRAS.247..260W,1994ApJ...428...28M}.
 
 \subsection{Stable clustering}
 It was proposed by \textcite{1974ApJ...189L..51P} that clustering in the very non-linear regime might be understood by assuming that regions of high density contrast undergo virialization and subsequently maintain a fixed proper density, hence stable clustering. The correlation function for a population of such systems would then simply evolve according to
@@ -311,14 +311,13 @@ It was proposed by \textcite{1974ApJ...189L..51P} that clustering in the very no
 \eq{
 	\bar\xi_{NL}=f(\bar\xi_{L})\,,
 }
-where the functional form of $f$ can be derived from the spherical top-hat model without any shell-crossing. For the linear regime $\bar\xi_{L}\ll1$, $f(y)=y$, and for non-linear $\bar\xi_{L}\gg1$, $f(y)=y^{3/2}$. For more information regarding the stable clustering see  e.g. \textcite{1974ApJ...189L..51P,1991ApJ...374L...1H,1996MNRAS.280L..19P,2003MNRAS.341.1311S}.
-\subsection{Lagrangian perturbation theories}
-
-
-
-\todo{
-    Different approximation methods -- Lagrangian perturbation theory (LPT) up to third order (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{10.1093/mnras/260.4.765}), Augumented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) and COLA -- have been tested in \cite{2017JCAP...07..050M}.
+where the functional form of $f$ can be derived from the spherical top-hat model without any shell-crossing. For the linear regime $\bar\xi_{L}\ll1$, $f(y)=y$, and for non-linear $\bar\xi_{L}\gg1$, $f(y)=y^{3/2}$. For more information regarding the stable clustering see  also \textcite{1996MNRAS.280L..19P,2003MNRAS.341.1311S}.
+\subsection{Lagrangian perturbation theories of higher orders}
+Success of ZA, the first order Lagrangian perturbation theory (LPT), has motivated studies of higher order corrections \parencite[see e.g.][]{10.1093/mnras/264.2.375,2002PhR...367....1B,2010MNRAS.403.1859J,2014ApJ...788...63S}. In the Lagrangian description, the spatial coordinates are transformed through the displacement vector $\Psi$ as
+\eq{
+	\mb x = \mb q + \Psi(a, \mb x)\,.
 }
+In LPT, this displacement vector field is expanded in a perturbation series in the linear growth function $D$ in Fourier space. Density perturbations $\delta$ are described as a function of the displacement vector through conservation of mass. This Lagrangian picture is intrinsically non-linear in the density field, and a small perturbation in Lagrangian fluid element paths carries a considerable amount of non-linear information about the corresponding Eulerian density and velocity fields. Different variants of LPT -- third order LPT (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{10.1093/mnras/260.4.765}), Augumented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) -- have been tested against particle-mesh code COLA (\cite{2013JCAP...06..036T}) in \cite{2017JCAP...07..050M}, see \autoref{fig:app_compare}.
 
 \begin{figure}[ht]
     \centering
@@ -328,3 +327,4 @@ where the functional form of $f$ can be derived from the spherical top-hat model
 \end{figure}
 
 \section{Application to modified gravity}
+\todo{move to the next chapter?}
