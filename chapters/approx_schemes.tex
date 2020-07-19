@@ -95,25 +95,31 @@ The eigenvectors of the deformation tensor determine the principle directions of
 }
 The time when the density in ZA becomes infinite corresponds to particles crossing the paths of other particles. Once this shell-crossing has occurred, the approximation has formally broken down, since there are no forces present to slow down the particles and capture them within halos.
 
+\newcommand{\zone}{3.88}
+\newcommand{\ztwo}{1.82}
+\newcommand{\zthree}{0.53}
+\newcommand{\zfour}{0.00}
+
+
 \todo{Comparison of ZA at $z=0,1,2,3$, \autoref{fig:slice_dens_ZA}}
 \begin{figure*}
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=0$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z\zone}.png}
+			\caption{$z=\zone$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=1$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z\ztwo}.png}
+			\caption{$z=\ztwo$}
 		\end{subfigure}
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=2$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z\zthree}.png}
+			\caption{$z=\zthree$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=3$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z\zfour}.png}
+			\caption{$z=\zfour$}
 		\end{subfigure}
 		\caption{Projected density field at different redshifts for the Zel`dovich approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_ZA}
@@ -145,20 +151,20 @@ where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering lea
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=0$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z\zone}.png}
+			\caption{$z=\zone$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=1$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z\ztwo}.png}
+			\caption{$z=\ztwo$}
 		\end{subfigure}
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=2$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z\zthree}.png}
+			\caption{$z=\zthree$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=3$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z\zfour}.png}
+			\caption{$z=\zfour$}
 		\end{subfigure}
 		\caption{Projected density field at different redshifts for the truncated Zel`dovich approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_TZA}
@@ -204,20 +210,20 @@ Although equation \eqref{eq:FFA} now does not represent a \textit{frozen} flow, 
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=0$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z\zone}.png}
+			\caption{$z=\zone$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=1$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z\ztwo}.png}
+			\caption{$z=\ztwo$}
 		\end{subfigure}
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=2$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z\zthree}.png}
+			\caption{$z=\zthree$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=3$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z\zfour}.png}
+			\caption{$z=\zfour$}
 		\end{subfigure}
 		\caption{Projected density field at different redshifts for the frozen flow approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_FFA}
@@ -243,20 +249,20 @@ Particles now follow the linear \textit{gravitational} potential (which evolves 
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=0$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z\zone}.png}
+			\caption{$z=\zone$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=1$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z\ztwo}.png}
+			\caption{$z=\ztwo$}
 		\end{subfigure}
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=2$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z\zthree}.png}
+			\caption{$z=\zthree$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\linewidth}
-			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
-			\caption{$z=3$}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z\zfour}.png}
+			\caption{$z=\zfour$}
 		\end{subfigure}
 		\caption{Projected density field at different redshifts for the frozen potential approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_FPA}
@@ -264,30 +270,36 @@ Particles now follow the linear \textit{gravitational} potential (which evolves 
 \end{figure*}
 
 \todo{comparison of all approximation at $z=0$, \autoref{fig:slice_dens_all}}
+% \afterpage{%
 \begin{figure*}
+	\thisfloatpagestyle{empty} 
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
-		\begin{subfigure}{0.5\linewidth}
+		\begin{subfigure}{0.4\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
 			\caption{Zel`dovich approximation}
 		\end{subfigure}%
-		\begin{subfigure}{0.5\linewidth}
+		\begin{subfigure}{0.4\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z0.00}.png}
 			\caption{Truncated Zel`dovich approximation}
 		\end{subfigure}
-		\begin{subfigure}{0.5\linewidth}
+		\begin{subfigure}{0.4\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z0.00}.png}
 			\caption{Frozen-flow approximation}
 		\end{subfigure}%
-		\begin{subfigure}{0.5\linewidth}
+		\begin{subfigure}{0.4\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z0.00}.png}
 			\caption{Frozen-potential approximation}
+		\end{subfigure}
+		\begin{subfigure}{0.4\linewidth}
+			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/pm_dens_512m_1p_1024M_200b_z0.00}.png}
+			\caption{PM simulation}
 		\end{subfigure}
 		\caption{Projected density field at redshift $z=0$ for the different approximations, all run with the same initial conditions. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_all}
 	\end{adjustwidth}
 \end{figure*}
-
+% } %% end afterpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Other approximations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
