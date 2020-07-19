@@ -4,7 +4,7 @@ Parts of this chapter has been published in \textcite{2020MNRAS.493.2085V}.
 \section{Motivation}
 Various approximations in different scientific fields have always been studied in detail. Many non-linear equations cannot be solved analytically and one can hope to achieve at least some results using linearization or other perturbation theories of higher order. Cosmological simulations are no exception. From the beginning of first attempts to simulate clustering of matter on large scales in late 60`s the approximate methods were developed to help understand dynamics of the Universe. The greatest pioneering efforts to improve and validate these approximate methods have been undertook in the 90`s.
 
-These analytic or semi-analytic methods can be used to understand otherwise very complicated problem of structure formation. Instead of running a simulation "blindly" and trying to analyze them phenomenologically one can compare these simulations with much better understood approximate methods.
+These analytic or semi-analytic methods can be used to understand otherwise very complicated problem of structure formation. Instead of running a simulation ``blindly'' and trying to analyze them phenomenologically one can compare these simulations with much better understood approximate methods.
 
 Besides usefulness of approximations in getting an insight into gravitational evolution they are very helpful in getting large number of simulations quickly. In order to study BAO one needs high number of simulations with very large volume and high number of particles which requires demanding resources. The BAO scale is of particular interest to us as it lies between the linear regime which can be studied analytically and highly non-linear regime of halo formation which requires precise \nbodysim s. The semi-analytical methods are expected to work very well in this regime.
 
@@ -26,7 +26,7 @@ We begin with the linearized equations for gravitational clustering in an expand
 }
 where $H_0$ is the (present) Hubble constant, $\Omega_{m, 0}$ is the matter density (baryon and dark matter) and we defined the constant $\mu\equiv\left(\frac32 H_0^2\Omega_{m, 0}\right)^{-1}$. In this linear regime, the time and space dependence of the overdensity evolution are separable and we can write $\delta(a, \mb x)=D(a)\delta_0(\mb x)$ where the growth factor $D$ represents the growing solution (we neglect the decaying mode) and is normalized to unity at the present time.
 
-It is often useful to rewrite these equations with a different time variable, namely the scale factor $a$. This is convenient both from the numerical and theoretical points of view because the quantities are ``more constant". With the new time-variable $a$ and comoving velocity $\mb u = \dd \mb x/\dd a$, equation \eqref{eq:lin_per_a} becomes
+It is often useful to rewrite these equations with a different time variable, namely the scale factor $a$. This is convenient both from the numerical and theoretical points of view because the quantities are ``more constant''. With the new time-variable $a$ and comoving velocity $\mb u = \dd \mb x/\dd a$, equation \eqref{eq:lin_per_a} becomes
 \eq{
 \label{eq:continuity_a}
 	\dddd D a \delta_0 + \nabla\cdot\mb u = 0\,,
@@ -291,18 +291,27 @@ Particles now follow the linear \textit{gravitational} potential (which evolves 
 % Other approximations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Other approximations}
-
+Approximations described previously are studied numerically in detail in the next chapter. Here we present few of the other approximations studied in the past or used today.
 
 \subsection{Adhesion approximation}
 The adhesion approximation was introduced in \textcite{1989MNRAS.236..385G}. To study the evolution of density inhomogeneities they used model of non-linear diffusion (Burger`s equation), that gives an approximate description of the growth of structures at the advanced non-linear stage of gravitational instability.
 
-To overcome problems of ZA with shell-crossing they propose a solution of "sticking articles." Particles move according to ZA until they ran into one another. Then they move together, with the velocity conserving momentum. This model can be described mathematically by inserting the viscous term into equations of motion, simulating attractive forces of gravity
+To overcome problems of ZA with shell-crossing they propose a solution of ``sticking articles.'' Particles move according to ZA until they ran into one another. Then they move together, with the velocity conserving momentum. This model can be described mathematically by inserting the viscous term into equations of motion, simulating attractive forces of gravity
 \eq{
-	\dddd{\mb u\AA}{a}=\nu\frac{\part^2\mb u}{\part \mb x^2}\,.
+	\dddd{\mb u\AAP}{a}=\nu\partpart{^2\mb u}{\mb x^2}\,.
 }
-The Burger`s equation has an analytical solution which can be used to study formation of structures. For more information regarding the adhesion approximation see  
+The Burger`s equation has an analytical solution which can be used to study formation of structures. For more information regarding the adhesion approximation see  e.g. \textcite{1989MNRAS.236..385G,1990MNRAS.247..260W,1994ApJ...428...28M}.
 
 \subsection{Stable clustering}
+It was proposed by \textcite{1974ApJ...189L..51P} that clustering in the very non-linear regime might be understood by assuming that regions of high density contrast undergo virialization and subsequently maintain a fixed proper density, hence stable clustering. The correlation function for a population of such systems would then simply evolve according to
+\eq{
+	\xi(r,a)\propto1/\bar\rho\propto a^3\,.
+}
+\textcite{1991ApJ...374L...1H} developed a method for interpolating between linear theory on large scales and the non-linear predictions of the stable clustering hypothesis on small scales. They showed that the non-linear volume-averaged two-point correlation function could be parameterized by a simple function of the linear correlation function
+\eq{
+	\bar\xi_{NL}=f(\bar\xi_{L})\,,
+}
+where the functional form of $f$ can be derived from the spherical top-hat model without any shell-crossing. For the linear regime $\bar\xi_{L}\ll1$, $f(y)=y$, and for non-linear $\bar\xi_{L}\gg1$, $f(y)=y^{3/2}$. For more information regarding the stable clustering see  e.g. \textcite{1974ApJ...189L..51P,1991ApJ...374L...1H,1996MNRAS.280L..19P,2003MNRAS.341.1311S}.
 \subsection{Lagrangian perturbation theories}
 
 
