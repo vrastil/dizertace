@@ -32,6 +32,7 @@
 %% Character encoding: usually latin2, cp1250 or utf8:
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{csquotes}
 
 %% Prefer Latin Modern fonts
 \usepackage{lmodern}
@@ -59,7 +60,7 @@ citestyle=authoryear
 \addbibresource{bibliography/modif_grav.bib}
 \addbibresource{bibliography/approx_schemes.bib}
 \addbibresource{bibliography/cosmo_sim.bib}
-\renewcommand{\bibname}{Bibliography}
+\addbibresource{bibliography/simulations_approx.bib}
 
 \usepackage[nottoc,numbib]{tocbibind} % makes sure that bibliography and the lists
 			    % of figures/tables are included in the table
@@ -191,8 +192,9 @@ Abstract.
 %%% Bibliography
 \cleardoublepage
 \phantomsection
+\renewcommand{\bibname}{Bibliography}
 \addcontentsline{toc}{chapter}{\bibname}
-\printbibliography
+\printbibliography[title={\bibname}]
 
 %%% Figures used in the thesis (consider if this is needed)
 %\listoffigures
@@ -202,7 +204,14 @@ Abstract.
 %\listoftables
 
 %%% Doctoral theses must contain a list of author's publications
-\chapwithtoc{List of publications}
+\cleardoublepage
+\phantomsection
+\renewcommand{\bibname}{List of publications}
+\addcontentsline{toc}{chapter}{\bibname}
+\begin{refsection}[bibliography/my_work.bib]
+\nocite{*}
+\printbibliography[title={\bibname}]
+\end{refsection}
 
 %%% Attachments to the doctoral thesis, if any. Each attachment must be
 %%% referred to at least once from the text of the thesis. Attachments
