@@ -252,10 +252,10 @@ The transformation from the Jordan frame to the Einstein frame introduces non-st
 }
 \subsection{Numerical solutions}
 \label{sec:num_cham}
-\todo{Heyrovsky D.:
+% \todo{Heyrovsky D.:
 
-\textit{The model choice is unusual, since the primary relevance of the chameleon field is away from highdensity regions, where it can mimic the effect of the cosmological constant. Nevertheless, it is a good idea to check if the chameleon field doesn’t interfere at these scales. In this context one should point out that for a galactic halo with a 10 kpc scale it does not make much sense to plot the rotation curve out to 300 kpc. Regarding the cosmological simulations, attempts to jointly solve a gravitational Nbody code with the Poisson-like chameleon equation do not look very promising. It might be better to use a gravitational hydrodynamic code, which solves similar types of PDEs.}
-}
+% \textit{The model choice is unusual, since the primary relevance of the chameleon field is away from highdensity regions, where it can mimic the effect of the cosmological constant. Nevertheless, it is a good idea to check if the chameleon field doesn’t interfere at these scales. In this context one should point out that for a galactic halo with a 10 kpc scale it does not make much sense to plot the rotation curve out to 300 kpc. Regarding the cosmological simulations, attempts to jointly solve a gravitational Nbody code with the Poisson-like chameleon equation do not look very promising. It might be better to use a gravitational hydrodynamic code, which solves similar types of PDEs.}
+% }
 
 In this section we will show results of results of numerical solutions of chameleon profile. Our algorithm for finding solutions to \eqref{eq_cham_r} uses the shooting method \parencite{10.5555/42249} and is based on the original algorithm of \textcite{mastersthesis_vrastil}. We further improve the code readibility and possible parametrization. The code is publically available at \todo{GitHub}.
 
@@ -292,12 +292,37 @@ In \autoref{fig:nfwlike_pot_eff} \todo{describe effective screening potential}
 
 \begin{figure*}
 	\centering
-		\begin{subfigure}{0.5\linewidth}
+		\begin{subfigure}{1.0\linewidth}
 			\includegraphics[width=1.0\linewidth]{{spherical_cham/nfwlike_pot_eff}.png}
-		\end{subfigure}%
-		\begin{subfigure}{0.5\linewidth}
+		\end{subfigure}
+		\begin{subfigure}{1.0\linewidth}
 			\includegraphics[width=1.0\linewidth]{{spherical_cham/nfwlike_pot_eff_n}.png}
 		\end{subfigure}
-		\caption{Projected density field at different redshifts for the Zel`dovich approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
+		\caption{Effective screening potential relative to the screening potential for a cluster of galaxy, $M=10^{14} M_\odot, c=4$. Top Figure is shown for several screening potentials (given through the equivalence radius) while the bottom for different chameleon parameter $n$.}
 		\label{fig:nfwlike_pot_eff}
+\end{figure*}
+
+In \autoref{fig:clustersYs} \todo{describe dynamical and lensing measurements}
+\begin{figure*}
+\begin{adjustwidth}{-3cm}{-1cm}
+	\centering
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{spherical_cham/clustersYs_-6}.png}
+			\caption{$\Phiscr=10^{-6}$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{spherical_cham/clustersYs_-4}.png}
+			\caption{$\Phiscr=10^{-4}$}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{spherical_cham/clustersYs_-2}.png}
+			\caption{$\Phiscr=10^{-2}$}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphics[width=1.0\linewidth]{{spherical_cham/clustersYs_0}.png}
+			\caption{$\Phiscr=10^{0}$}
+		\end{subfigure}
+		\caption{Effective dynamical mass of the clusters relative to the actual (lensing) mass of the cluster. Cluster properties are: ClG 0054-27 $(c=1.2, M=0.42\cdot10^{14}M_\odot)$, Cl 0016+1609 $(c=2.1, M=1.12\cdot10^{14}M_\odot)$, MS 2137.3-2353 $(c=13, M=2.9\cdot10^{14}M_\odot)$, ClG 2244-02 $(c=4.3, M=4.5\cdot10^{14}M_\odot)$, MS 0451.6-0305 $(c=5.5, M=18\cdot10^{14}M_\odot)$. Parameters are taken from \textcite{2007MNRAS.379..190C}.}
+		\label{fig:clustersYs}
+\end{adjustwidth}
 \end{figure*}
