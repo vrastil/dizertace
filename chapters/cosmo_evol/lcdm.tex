@@ -1,5 +1,5 @@
-\section{Standard \LCDM model -- successes and issues}
-Standard cosmological model, the \LCDM\ model or the concordance model, assumes that the Universe was created in the Big Bang from infinitely hot and dense energy and now is the Universe composed of about 5\% ordinary matter, 27\% dark matter, and 68\% dark energy \parencite{redefineLCDM}. The \LCDM\ model is based upon two theoretical models -- the Standard Model of Particle Physics and  the General Theory of Relativity. The model also assumes that the universe is homogeneous and isotropic on sufficiently large (cosmic) scales. The model is mathematically described above.
+\section{Standard \LCDM\ model -- successes and issues}
+Standard cosmological model, the \LCDM\ model or the concordance model, assumes that the Universe was created in the Big Bang from infinitely hot and dense energy and now is the Universe composed of about 5\% ordinary matter, 27\% dark matter, and 68\% dark energy \parencite{redefineLCDM}. The \LCDM\ model is based upon two theoretical models -- the Standard Model of Particle Physics and  the General Theory of Relativity. The model also assumes that the universe is homogeneous and isotropic on sufficiently large (cosmic) scales. The model is mathematically described above in \autoref{chpt:cosmo_evol}.
 
 The \LCDM\ model represents general relativity with a cosmological constant \(\Lambda\) which is associated with dark energy and a universe containing sufficiently massive dark matter particles, i.e., cold dark matter. However, the nature of both dark energy and dark matter is unknown.
 
@@ -7,7 +7,7 @@ In 1948, \textcite{PhysRev.74.505.2} suggested that the elements could have been
 
 The other great success of the Big bang model is prediction of the Cosmic Microwave Background (CMB) radiation and its temperature. In 1948, \textcite{1948Natur.162..774A} calculated the present temperature of the CMB to be about 5 K, remarkably close to the modern value of about 2.73 K, determined by the COBE satellite. In addition, the COBE results showed an extremely isotropic and homogeneous CMB. This led to the need for an inflationary phase \parencite{1981PhRvD..23..347G} of strongly accelerated expansion prior to the decoupling of photons from ordinary matter.
 
-The \LCDM\ model has additional major assumption about existence of dark matter. The notion of dark matter arose from observations of large astronomical objects such as galaxies and clusters of galaxies, which displayed gravitational effects that could not be accounted for by the visible matter. In particular, the observations of \textcite{1980ApJ...238..471R}, who measured the rotation curves for the luminous matter of many spiral galaxies together with the observations of \textcite{1978PhDT.......195B}, who compiled 21 cm rotation curves for neutral hydrogen gas that extended far beyond the luminous matter of each galaxy, showed that the composite rotation curves were essentially flat out to the edge of the 21 cm data. This implied that considerably more mass was required to be present in each galaxy. This invisible matter was called dark matter and since to date no dark matter has been definitely detected and the nature of dark matter remains unknown.
+The \LCDM\ model has an additional major assumption about existence of dark matter. The notion of dark matter arose from observations of large astronomical objects such as galaxies and clusters of galaxies, which displayed gravitational effects that could not be accounted for by the visible matter. In particular, the observations of \textcite{1980ApJ...238..471R}, who measured the rotation curves for the luminous matter of many spiral galaxies together with the observations of \textcite{1978PhDT.......195B}, who compiled 21 cm rotation curves for neutral hydrogen gas that extended far beyond the luminous matter of each galaxy, showed that the composite rotation curves were essentially flat out to the edge of the 21 cm data. This implied that considerably more mass was required to be present in each galaxy. This invisible matter was called dark matter and since to date no dark matter has been definitely detected and the nature of dark matter remains unknown.
 
 The notion of dark energy arose from two sets of observations of supernovae of Type Ia by \textcite{riess} and \textcite{1999ApJ...517..565P} that suggested that the expansion of the universe is accelerating. The conclusion from these observations was that the universe had to contain enough energy to overcome gravity. This energy was named “dark energy.”
 
@@ -18,9 +18,9 @@ Standard cosmological \LCDM\ model described above is in a good agreement with a
 The action of the general relativity, together with the action describing matter, is
 \eq{
 	\label{eq:S_GR}
-	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left(R-2\Lambda_B\right)+S_m[\psi_m;g_\uv]\,.
+	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left(R-2\Lambda_B\right)+S_m[\psi_m;g_\uv]\,,
 }
-The first term is the standard Einstein-Hilbert action. The \textit{bare} cosmological constant appears in the second term of the above expression and it is merely a new parameter of the total action. As it is compatible with general covariance this term appears to be totally natural from the relativistic point of view. The third term in the above equation denotes the generic matter action. Variation of the total action with respect to the metric tensor leads to the Einstein equations of motion
+where $\Mpl\equiv(\sqrt{8\pi G})^{-1}$ is the reduced Planck mass, $R$ is the Ricci scalar (curvature), $\Lambda_B$ the bare cosmological constant and $S_m[\psi_m;g_\uv]$ represents the action of matter fields. The first term $(R)$ is the standard Einstein-Hilbert action. The \textit{bare} cosmological constant appears in the second term of the above expression and it is merely a new parameter of the total action. As it is compatible with general covariance this term appears to be totally natural from the relativistic point of view. The third term in the above equation denotes the generic matter action. Variation of the total action with respect to the metric tensor leads to the Einstein equations of motion
 \eq{
     R_\uv-\frac12Rg_\uv+\Lambda_Bg_\uv=\frac{1}{\Mpl^2}T_\uv\,,
 }
@@ -40,7 +40,7 @@ where
 \eq{
     \Lambda\eff=\Lambda_B+\frac{1}{\Mpl^2}\rho\vac\,.
 }
-Therefore, we conclude that the effective cosmological constant is the sum of the bare cosmological constant and of a contribution originating from the vacuum fluctuations. The effective cosmological constant $\Lambda\eff$ is the quantity that one can observe and constrain when tests of the Einstein equations are carried out. The problem is that $\rho\vac$ is made of several terms which are all huge in comparison with the observed value of $\Lambda\eff$.
+Therefore, we conclude that the effective cosmological constant is the sum of the bare cosmological constant and of a contribution originating from the vacuum fluctuations. The effective cosmological constant $\Lambda\eff$ is the quantity that one can observe and constrain when tests of the Einstein equations are carried out. The problem is that $\rho\vac$ is made of several terms which are all huge in comparison with the observed value of $\Lambda\eff$ and need to be fine-tunned.
 \subsubsection{Phase Transitions}
 \begin{sloppypar}
 Another problem with fine-tuning of the cosmological constant comes from changes in the vacuum energy during phase transitions such as was the electro-weak phase transition. The contribution to the vacuum energy coming from the minimum of a potential of some field, in this case the Higgs field, changes as the field takes its new position after the transition. One can calculate this contribution \parencite{2012CRPhy..13..566M} and for the the mass of the Higgs boson $m_H=125$ GeV arrives at
@@ -48,7 +48,7 @@ Another problem with fine-tuning of the cosmological constant comes from changes
 \eq{
     \rho\vac^{EW}\simeq -10^{55}\rho\crit\,.
 }
-For the quantum chromo dynamics transition, one can compute
+For the quantum chromo-dynamics transition, one can compute
 \eq{
     \rho\vac^{EW}\simeq10^{45}\rho\crit\,.
 }
@@ -65,10 +65,9 @@ This contribution to the cosmological constant blows up in the ultra-violet regi
 where $\mu$ is a regularization scale. We see that the contribution is proportional to the fourth power of the mass of the particle and therefore, e.g., the photon does not contribute to the vacuum energy density. The equation was derived for free scalar field but similar contributions with different pre-factors can be computed for all other fields. The overal vacuum energy density is then
 \eq{
     \label{eq:vac_all}
-    \rho\vac=\sum_i\frac{m_i^4}{64\pi^4}\ln{\left(\frac{m_i^2}{\mu^2}\right)} + \rho_B + \rho\vac^{EW} + \rho\vac^{QCD}\,,
+    \rho\vac=\sum_in_i\frac{m_i^4}{64\pi^4}\ln{\left(\frac{m_i^2}{\mu^2}\right)} + \rho_B + \rho\vac^{EW} + \rho\vac^{QCD}\,,
 }
 where $n_H=1$ for the Higgs boson, $n_f=4$ for fermions and $n_V=3$ for massive vector fields. For the renormalization scale $\mu\simeq3\times10^{-25}$, as discussed in \textcite{2011arXiv1105.6296K}, one calculates the contribution from the zero-point energy of particles to be  $\rho\vac\simeq-2\times10^8$ GeV$^4$
 \subsubsection{Radiative instability}
-The one loop contributions \eqref{eq:vac_all} to the vacuum energy can be fine-tunned via the bare cosmological constant and associated $\rho_B$. Even though the cancellation has to be very precise (one part in $\sim10^{60}$) we can bi fine with this. Problems come with two-loops correction which is not significantly suppressed with respect to the one loop contribution 
-Therefore, the cancellation imposed at one loop is completely spoilt, and one must retune the finite contributions in the counterterm to more or less the same degree of accuracy. If we go further, to the three loops, four loops, and so on, we are required to fine tune each time to extreme accuracy. This is radiative instability and the cosmological constant problem.
+The one loop contributions \eqref{eq:vac_all} to the vacuum energy can be fine-tunned via the bare cosmological constant and associated $\rho_B$. Even though the cancellation has to be very precise (one part in $\sim10^{60}$) we can be fine with this solution. Problems come with two-loops correction which is not significantly suppressed with respect to the one loop contribution \todo{CITE}. Therefore, the cancellation imposed at one loop is completely spoilt, and one must retune the finite contributions in the counterterm to more or less the same degree of accuracy. If we go further, to the three loops, four loops, and so on, we are required to fine tune each time to an extreme accuracy. This is radiative instability and main cosmological constant problem.
 
