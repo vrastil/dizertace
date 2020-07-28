@@ -172,7 +172,7 @@ The idea behind multigrid techniques is a combination of smoothing on the fine g
 \end{itemize}
 To achieve the full multigrid method is now straightforward. Instead of solving the coarse-grid defect exactly we can get an approximate solution of it by introducing an even coarser grid and so on.
 
-We considered $\LL$ to be a linear operator but the above method works also with non-linear operators. The speed of convergence is obviously worse and depend on the exact form of the operator. For our problem and finding solutions to \todo{chemeleon equation} this method proves to be sufficient.
+We considered $\LL$ to be a linear operator but the above method works also with non-linear operators. The speed of convergence is obviously worse and depend on the exact form of the operator. For our problem and finding solutions to the chameleon equation of motion \eqref{eq:cham_husa} this method proves to be sufficient.
 
 \subsubsection{Gauss-Seidel relaxation}
 The most popular smoothing method is Gauss-Seidel relaxation. The Gauss-Seidel scheme for $N_m$ mesh points is
@@ -220,11 +220,6 @@ The fast multipole method of \textcite{1987JCoPh..73..325G} also works with loca
 
 The second part is the interaction phase, when the coefficients of the Taylor series are evaluated for each cell. If the opening angle for a mutual cell-cell interaction is small enough the coefficients for the interactions in each direction are computed.  Otherwise, the interaction is split into up to 8 new interactions by opening the bigger of the two cells. The total computational
 costs of this algorithm are dominated by the interaction phase, which only requires $\OO(N_p)$ interactions for the computation of all $N_p$ particle forces. This represents a substantial reduction from the $\OO(N_p^2)$ for direct summation and can greatly imporves simulations of astrophysical problems with inhomogeneous particle distributions.
-
-\todo{
-Is this necessary?
-
-\subsection{Alternatives to \nbody\ simulations}    
-Boltzmann equation, orbit averaging, Monte-Carlo
-
-Validation}
+% \subsection{Alternatives to \nbody\ simulations}    
+% Boltzmann equation, orbit averaging, Monte-Carlo
+% Validation
