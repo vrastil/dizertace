@@ -1,16 +1,15 @@
 \section{\textit{f(R)}-gravity}
-\todo{check all equations}
 One of the simplest modified gravity models is the so-called $f(R)$ gravity in which we consider general functions of the Ricci scalar $R$ in the action
 \eq{
 	\label{eq:S_fr}
 	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left[F(R)\right]+S_m[\psi_m;g_\uv]\,,
 }
-where $F(R)=R+f(R)$ and $S_m$ is the matter action with matter fields $\psi_m$ which are minimally coupled to gravity, i.e. they interact with gravity only through the determinant of the metric $\dg$ and the canonical kinetic term $-\frac12g^\uv\partial_\mu\phi\partial_\nu\phi$. The matter fields $\psi_m$ obey standard conservation equations and therefore the metric $g_\uv$ corresponds to the physical frame -- the Jordan frame.
+where $F(R)=R+f(R)$ and $S_m$ is the matter action with matter fields $\psi_m$ which are minimally coupled to gravity, i.e. they interact with gravity only through the determinant of the metric $\dg$ and the canonical kinetic term $-\frac12g^\uv\partial_\mu\psi\partial_\nu\psi$. The matter fields $\psi_m$ obey standard conservation equations and therefore the metric $g_\uv$ corresponds to the Jordan frame.
 
 Variation with respect to the metric $g^\uv$ gives us equation of motion
 \eq{
 	\label{eq:fR}
-	F\R R_\uv-\frac{1}{2}f g_\uv+g_\uv\Box F\R-\nabla_\mu\nabla_\nu F\R=\frac{1}{\Mpl^2}T_\uv\,.
+	F\R R_\uv-\frac{1}{2}F g_\uv+g_\uv\Box F\R-\nabla_\mu\nabla_\nu F\R=\frac{1}{\Mpl^2}T_\uv\,.
 }
 For $f(R)=-2\Lambda$ the standard Einstein gravity is reconstructed. Taking the trace of \eqref{eq:fR} we get
 \eq{
@@ -21,20 +20,19 @@ We see that there is a propagating scalar degree of freedom, so-called \textit{s
 
 To get the inflation we need a solution that approaches the de Sitter solution characterized by vacuum space with with a constant positive curvature. Thus $\Box F\R=0$ and \eqref{eq:fR_tr} becomes
 \eq{
-	F\R R-2f=0.
+	F\R R-2F=0.
 }
-For example the model $f(R)=\alpha R^2$ gives rise to an asymptotically exact de Sitter solution and can be responsible for the inflation in the early Universe. The inflation ends when the quadratic term becomes smaller than the linear term. As at the present epoch is the curvature very small this model is not suitable to realize the present cosmic acceleration. Models like $f(R)=-\alpha/R^n$ with $\alpha>0,\ n>0$ could in principle give rise to the present acceleration. However, these models do not satisfy local gravity constraints because of the instability associated with negative values of $f\RR$. Moreover, the standard matter epoch is not present because of a large coupling between the Ricci scalar and the non-relativistic matter.
+For example the model $F(R)=\alpha R^2$ gives rise to an asymptotically exact de Sitter solution and can be responsible for the inflation in the early Universe. In the model $f(R) = R + \alpha R^2$, the inflation ends when the quadratic term becomes smaller than the linear term. As at the present epoch is the curvature very small this model is not suitable to realize the present cosmic acceleration. Models like $f(R)=-\alpha/R^n$ with $\alpha>0,\ n>0$ could in principle give rise to the present acceleration. However, these models do not satisfy local gravity constraints because of the instability associated with negative values of $f\RR$. Moreover, the standard matter epoch is not present because of a large coupling between the Ricci scalar and the non-relativistic matter.
 
 There are four conditions for the viability of \fR\ models \parencite{Amendola_2007}
-\todo{check literature}
 \begin{itemize}
-	\item $F\R>0\ (R>R_0)$, where $R_0$ is the Ricci scalar at the present epoch,\\
+	\item $F\R>0\ (\rm{for\ } R>R_0)$, where $R_0$ is the Ricci scalar at the present epoch,\\
 	-- required to avoid anti-gravity \parencite{2010deto.book.....A}\\
-	\item $F\RR>0\ (R>R_0)$,\\
+	\item $F\RR>0\ (\rm{for\ } R>R_0)$,\\
 	-- required for consistency with local gravity tests \parencite{2005gr.qc.....5136O}, for the presence of the matter-dominated epoch \parencite{2007PhRvL..98m1302A} and for the stability of cosmological perturbations \parencite{2007PhRvD..75d4004S}\\
-	\item $f(R)\rightarrow -2\Lambda\ (R\gg R_0)$,\\
+	\item $F(R)\rightarrow R-2\Lambda\ (\rm{for\ } R\gg R_0)$,\\
 	-- required for consistency with local gravity tests \parencite{2008PhRvD..77b3507T} and for the presence of the matter-dominated epoch \parencite{Amendola_2007}\\
-	\item $0<\frac{RF\RR}{F\R}<1\ (F\R R-2f=0)$.\\
+	\item $0<\frac{RF\RR}{F\R}<1\ (\rm{for\ } F\R R-2F=0)$.\\
 	-- required for the stability of the late-time de Sitter solution \parencite{1988PhLB..202..198M}
 \end{itemize}
 Some examples of \fR\ models that satisfy these conditions:
@@ -58,7 +56,7 @@ On scales much larger than the scalaron Compton wavelength $m\mins$, gravity is 
 % Jordan vs. Einstein Frame
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Jordan vs. Einstein Frame}
-The action \eqref{eq:S_fr} is described in the so-called Jordan frame, where the matter fields are minimally coupled to the metric and follow geodesics. We can also describe this in the so-called Einstein frame, where ``standard'' gravity is restored. Using the conformal transformations
+The action \eqref{eq:S_fr} is described in the so-called Jordan frame, where the matter fields are minimally coupled to the metric and follow geodesics. We can also describe the action in the so-called Einstein frame, where ``standard'' gravity is restored. Using the conformal transformations
 \eq{
 \label{eins_trans}
 \begin{split}
