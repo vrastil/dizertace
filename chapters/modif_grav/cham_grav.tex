@@ -64,8 +64,8 @@ We wish to find a solution for spherically symmetric matter distributions of a s
 \begin{equation*}
 \rho(r)=
 \begin{cases}
-\rho_c & r<R_c \\
-\rho_0 & r>R_c,
+\rho_c & r<R_s \\
+\rho_0 & r>R_s,
 \end{cases}
 \end{equation*}
 where $\rho_c>\rho_0$. Further we define $\chi_c$ and $\chi_0$ with their masses $m_c$ and $m_0$ (the masses of small fluctuations about $\chi_c$ and $\chi_0$) such as
@@ -108,7 +108,7 @@ The field is frozen near this value until the friction term is sufficiently smal
 \chi(r)=
 \begin{cases}
 \chi_c & 0<r<R_{roll} \\
-\frac{\beta}{6\Mpl}\rho_cr^2+\frac{A}{r}+D & R_{roll}<r<R_c.
+\frac{\beta}{6\Mpl}\rho_cr^2+\frac{A}{r}+D & R_{roll}<r<R_s.
 \end{cases}
 }
 We have boundary conditions coming from the requirement on matching $\chi$ and  $\dd\chi/\dd r$ at $R_{roll}$, namely: $\chi=\chi_c$ and $\dd\chi/\dd r=0$ at $r=r_{roll}$. This fixes our constants and the solution is
@@ -117,36 +117,36 @@ We have boundary conditions coming from the requirement on matching $\chi$ and  
 \chi(r)=
 \begin{cases}
 \chi_c & 0<r<R_{roll} \\
-\frac{\beta\rho_c}{3\Mpl}\left(\frac{r^2}{2}+\frac{R^3_{roll}}{r}\right)-\frac{\beta\rho_cR^2_{roll}}{2\Mpl}+\chi_c & R_{roll}<r<R_c.
+\frac{\beta\rho_c}{3\Mpl}\left(\frac{r^2}{2}+\frac{R^3_{roll}}{r}\right)-\frac{\beta\rho_cR^2_{roll}}{2\Mpl}+\chi_c & R_{roll}<r<R_s.
 \end{cases}
 }
-The approximation of separating the solution into the two regions only makes sense if $(R_c-R_{roll})/R_c\ll1$. Otherwise there is no clear separation between the two regions, and one needs a solution valid over the entire range $0<r<R_c$. In \autoref{sec:num_cham} we solve equation \eqref{eq_cham_r} numerically and we will check these approximations against numerical solutions.
+The approximation of separating the solution into the two regions only makes sense if $(R_s-R_{roll})/R_s\ll1$. Otherwise there is no clear separation between the two regions, and one needs a solution valid over the entire range $0<r<R_s$. In \autoref{sec:num_cham} we solve equation \eqref{eq_cham_r} numerically and we will check these approximations against numerical solutions.
 
-With approximation $(R_c-R_{roll})/R_c\ll1$ we can determines the effective mass of the object $\tilde{M}$ from the requirement $\chi(R_c^-)=\chi(R_c^+)$ and $\dd\chi/\dd r(R_c^-)=\dd\chi/\dd r(R_c^+)$.
+With approximation $(R_s-R_{roll})/R_s\ll1$ we can determines the effective mass of the object $\tilde{M}$ from the requirement $\chi(R_s^-)=\chi(R_s^+)$ and $\dd\chi/\dd r(R_s^-)=\dd\chi/\dd r(R_s^+)$.
 \eq{
-\tilde{M}=\frac{3\Delta R_c}{R_c}M_c,
+\tilde{M}=\frac{3\Delta R_s}{R_s}M_c,
 }
 where
 \eq{
-\frac{\Delta R_c}{R_c}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_N(R_c)|}\approx\frac{R_c-R_{roll}}{R_c}\ll1.
+\frac{\Delta R_s}{R_s}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_N(R_s)|}\approx\frac{R_s-R_{roll}}{R_s}\ll1.
 }
 This qualitative derivation of the thin-shell regime is using too much strong assumptions and can be done more precisely without ignoring some of the terms but then it is harder to see the principle of the thin-shell effect. For more details see e.g. \textcite{Tamaki:2008mf,2007PhRvD..75f3501M,Waterhouse:2006wv}.
 \subsubsection{Thick-shell regime}
 In the \textit{thick-shell} regime the field is initially sufficiently displaced from the minimum -- $\chi_i\gg\chi_c$ that it begins to roll almost immediately (no friction term). Hence the interior solution is most easily obtained by taking the $R_{roll}=0$ in \eqref{eq_thin} and replacing $\chi_c$ by $\chi_i$
 \eq{
 \label{eq_thick}
-\chi(r)=\frac{\beta\rho_cr^2}{6\Mpl}+\chi_i\ \ \ 0<r<R_c.
+\chi(r)=\frac{\beta\rho_cr^2}{6\Mpl}+\chi_i\ \ \ 0<r<R_s.
 }
 By matching the interior and exterior solutions, we obtain
 \eq{
 \begin{split}
-\chi_i &=\chi_0-3\beta\Mpl\Phi_N(R_c)\\
+\chi_i &=\chi_0-3\beta\Mpl\Phi_N(R_s)\\
 \tilde{M} &=M_c,
 \end{split}
 }
-which is the linear regime with no screening. From the definition of $\Delta R_c/R_c$ we also obtain
+which is the linear regime with no screening. From the definition of $\Delta R_s/R_s$ we also obtain
 \eq{
-\frac{\Delta R_c}{R_c}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_N(R_c)|}>1.
+\frac{\Delta R_s}{R_s}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_N(R_s)|}>1.
 }
 \subsubsection{Thin-shell suppression factor}
 The chameleon force outside the object (where experiments take place) comparing to the Newtonian force is
@@ -185,43 +185,57 @@ The chameleon obeys the equation of motion \eqref{eom:cham} which reduces for ou
 
 \subsection{Numerical solutions}
 \label{sec:num_cham}
-% \todo{Heyrovsky D.:
+In this section we will show results of results of numerical solutions of chameleon profile. We will solve the equations for Hu-Sawicki \fR\ model, \eqref{eq:cham_husa}. In this section we will focus only on systems with spherical symmetry \eqref{eq_cham_r}, i.e. we will solve the the following equation
+\eq{
+	\label{eq:cham_husa_r}
+	\frac{\dd^2\chi}{\dd r^2}+\frac{2}{r}\dddd{\chi}{r} = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}
+}
+Our algorithm for finding solutions to \eqref{eq:cham_husa_r} uses the shooting method \parencite{10.5555/42249} and is based on the original algorithm of \textcite{mastersthesis_vrastil}. We further improved the code applicability, readability and its parametrization. The code is publicly available at \code{\url{https://github.com/vrastil/chi_r_solver}}.
 
-% \textit{The model choice is unusual, since the primary relevance of the chameleon field is away from highdensity regions, where it can mimic the effect of the cosmological constant. Nevertheless, it is a good idea to check if the chameleon field doesn’t interfere at these scales. In this context one should point out that for a galactic halo with a 10 kpc scale it does not make much sense to plot the rotation curve out to 300 kpc. Regarding the cosmological simulations, attempts to jointly solve a gravitational Nbody code with the Poisson-like chameleon equation do not look very promising. It might be better to use a gravitational hydrodynamic code, which solves similar types of PDEs.}
-% }
+\subsubsection{Stars}
+We will first consider a case where some approximate solutions exists -- a compact spherical object of constant density $\rho_c$ surrounded by the background of density $\rho_0$ as discuss in \autoref{cham_prof}. We expect that for low-mass objects the chameleon field will track the Newtonian potential while for massive objects the chameleon field will be frozen inside the sphere and outside it will be following the Newtonian behavior but with decreased amplitude.
 
-In this section we will show results of results of numerical solutions of chameleon profile. Our algorithm for finding solutions to \eqref{eq_cham_r} uses the shooting method \parencite{10.5555/42249} and is based on the original algorithm of \textcite{mastersthesis_vrastil}. We further improve the code readibility and possible parametrization. The code is publically available at \todo{GitHub}.
-
-\subsubsection{Spherical objects in background}
-In \autoref{fig:starlike} \todo{describe potential}
+In \autoref{fig:starlike} we show results for the chameleon profile. We used the notation $\tilde\chi\equiv(\chi-\chi_0)/2\beta\Mpl$ for better comparison with the Newtonian potential. We see that for $\Phiscr>\Phi_N$ we have an unscreened solution as expected. For lower values of $\Phiscr$ the field is frozen inside the object and have lower amplitude outside the object as expected from analytical solutions.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{{spherical_cham/starlike}.png}
-	\caption{Chameleon profile for several screening potentials. The top solution is in the linear regime and is identical to the gravitainal potential. The other two solutions are in the screened regime and the amplitude of the field is suppressed.}
+	\caption{Chameleon profile for several screening potentials. The top solution is in the linear regime and is identical to the gravitational potential. The other two solutions are in the screened regime and the amplitude of the field is suppressed.}
 	\label{fig:starlike}
 \end{figure}
 
+Let us focus on the regime which cannot be treated analytical, i.e. regime between thin-shell and thick-shell solutions. This regime corresponds to the situation when the linear approximation (thick-shell) breaks down inside the object, i.e. the gravitational potential cancels screening potential somewhere inside the object.We will denote $\Req$ the \textit{equivalence radius} -- radius at which the Newtonian potential equals the screening potential $|\Phi_N(\Req)|=\Phi_s$. By letting the equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_N(0)|=\Phi_s$ we can clearly distinguish between the linear $(\Req<0)$ and the screening $(\Req>0)$ regime.
 
-
-In \autoref{fig:starlike_forces} \todo{describe forces}
+In \autoref{fig:starlike_forces} we show the behavior of the chameleon fifth force in this regime. We see that for the linear regime the fifth force is as strong as standard gravity (up to the factor $2\beta^2$). For $\Req\ll R_s$ the chameleon field manages to catch up the linear solution inside the object and there is no screening outside. As the $\Req$ grows the field is not able catch up the linear solution while inside the object and the force outside is screened.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{{spherical_cham/starlike_forces}.png}
-	\caption{Chameleon force relative to the standard gravitainal force for several screening potentials (given through the equivalence radius). For $R_{eq}\ll R_S$ there is no sreening outside the object. As the $R_{eq}$ grows the chameleon enters the screened regime.}
+	\caption{Chameleon force relative to the standard gravitational force for several screening potentials (given through the equivalence radius). For $\Req\ll R_S$ there is no screening outside the object. As the $\Req$ grows the chameleon enters the screened regime.}
 	\label{fig:starlike_forces}
 \end{figure}
 
 \subsubsection{NFW Halo}
-In \autoref{fig:nfwlike_forces} \todo{describe forces}
+The Navarro-Frenk-White (NFW) profile proposed by \textcite{1996ApJ...462..563N} describes the distribution of cold dark matter. The NFW profile of matter overdensity is given by
+\eq{
+	\label{NFW_rho}
+	\delta\rho_{NFW}(r)=\frac{\rho_c}{r/r_s\left(1+r/r_s\right)^2},
+}
+where $\rho_c$ is the density scale and $r_s$ is the scale radius. We will also be using the dimensionless radius $x\equiv r/r_s$. Total mass of the halo is divergent (logarithmically) so we take a cut-off at the radius $r_{200}$, which is defined as the radius at which the density is 200 times the critical density. Then the mass of the halo is
+\eq{
+	M_{200}=\int_0^{r_{200}}4\pi r^2\rho(r)\dd r=4\pi\rho_cr_s^3\left(\ln(1+c)-\frac{c}{c+1}\right),
+}
+where $c\equiv r_{200}/r_s$ is the concentration of the halo. For a given mass the halo is fully characterized by the concentration.
+
+For NFW halo the density is not constant as in the case of compact spherical objects (stars). The chameleon mass and the screened solution is therefore also not constant and one does not have analytical solutions as in the case of stars. However, for realistic halo the density varies on scales much larger than the Compton wavelength of the chameleon. In such cases we can treat the field as frozen in the same sense as in the case of stars. Therefore we expect the chameleon field to behave in a similar way as in the case of stars, i.e. to follow the Newtonian potential in the linear case and to have screened behavior for more massive halos.
+
+In \autoref{fig:nfwlike_forces} we show the chameleon fifth force. We see that the behavior is indeed similar to stars although the field catches up much later. This is due to the fact that there is no sudden drop in density (and mass of the field) where the chameleon can start to behave as free but rather the mass is slowly dropping. This indicates that it will be much harder to detect the chameleon fifth force on scales of galaxies than for star-like objects. This is of course true only assuming the screening potential is the same on all scales.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{{spherical_cham/nfwlike_forces}.png}
-	\caption{Chameleon force relative to the standard gravitainal force for several screening potentials (given through the equivalence radius). For $R_{eq}\ll R_S$ there is no sreening outside the object. As the $R_{eq}$ grows the chameleon enters the screened regime.}
+	\caption{Chameleon force relative to the standard gravitational force for several screening potentials (given through the equivalence radius). For $\Req\ll R_S$ there is no screening outside the object. As the $\Req$ grows the chameleon enters the screened regime.}
 	\label{fig:nfwlike_forces}
 \end{figure}
 
-
-In \autoref{fig:nfwlike_pot_eff} \todo{describe effective screening potential}
+The meaning of the screening potential and its connection to the Newtonian potential is given by the value of the field at the background \todo{add eqref, show meaning of $\Phiscr$}. However, objects like stars or galaxy halos do not sit directly in the overall average density of the universe but rather in galaxy halo or halo of the cluster of galaxies. Therefore the value of the effective screening potential is given by the density the background object we can consider as being in infinity relative to the scale of studied object. In \autoref{fig:nfwlike_pot_eff} we show the value of this effective screening potential for a cluster of galaxies of a typical size -- $M=10^{14} M_\odot, c=4$. We see that the screening potential is greatly reduced in inner parts of the galaxy cluster halo. For this reason we do not think it much likely to observe effects of the chameleon field on scales smaller than Mpc.
 
 \begin{figure*}
 	\centering
@@ -235,7 +249,7 @@ In \autoref{fig:nfwlike_pot_eff} \todo{describe effective screening potential}
 		\label{fig:nfwlike_pot_eff}
 \end{figure*}
 
-In \autoref{fig:clustersYs} \todo{describe dynamical and lensing measurements}
+As the chameleon affects only non-relativistic matter it can be detected using combination of dynamical measurements and lensing measurements. Therefore, we considered what would be difference between mass distribution of a galaxy cluster measured via lensing (true mass) and via dynamics of enclosed galaxies. In \autoref{fig:clustersYs} we plot this ratio for five real clusters (simulated as having ideal NFW profile), see their parameters in \todo{Add Table}, and for four different values of the screening potential. We see that except for the case $\Phiscr=1$ one would need very precise (and nowadays unrealistic) measurements of the mass distribution. We are therefore left with only cosmological scales of tens of Mpc and larger to study the chameleon. We will study this case in \autoref{chpt:app_sims}.
 \begin{figure*}
 \begin{adjustwidth}{-3cm}{-1cm}
 	\centering
