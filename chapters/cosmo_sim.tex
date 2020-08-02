@@ -76,6 +76,7 @@ where operators \(\TT\equiv\{\cdot,T\}\) and \(\VV\equiv\{\cdot,V\}\) are known 
 }
 The splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second order accurate, whereas simpler splitting only into one kick and one drift is first order accurate. The same accurcy and results has also similar splitting into drift-kick-drift which we use in our integrator.
 \section{Particle-Mesh algorithm}
+\label{sec:PM}
 As we mentioned in the introduction in order to effectively compute forces on particles one has to abandon continuous position and solve the forces using discretized positions. The idea of the PM method is that we set up a mesh (grid) over the computational box, and then solve the gravitational potential (i.e. Poisson’s equation \eqref{eq:poisson_lin}) at the meshpoints. Forces at the meshpoints can then be obtained by calculating the gradient of the potential. The four principal steps of the particle-mesh calculation are:
 \begin{enumerate}
     \item assign mass to the mesh,

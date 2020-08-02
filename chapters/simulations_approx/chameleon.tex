@@ -3,6 +3,20 @@ In this section we apply the approximate techniques to chameleon gravity (parame
 
 Following this, we compare the results of chameleon gravity directly against the FPA and FFA simulations. %These comparisons can tell us a lot about when and on what scales are chameleon effects visible and which approximation is better for studying modified gravity. 
 We will study both $k-$space effects (power spectrum) and real-space effects (BAO peak in the correlation function). For chameleon gravity we ran all simulations twice -- once solving the non-linear Poisson equation \eqref{eq:cham_u} using the multigrid solver, and the second using the pseudo-linear prediction for the chameleon in $k-$space given by \eqref{eq:chi_lin_k} corrected by \eqref{eq:chi_bulk}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Approximation methods in modified gravity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Approximation methods in modified gravity}
+\todo{
+
+The transformation from the Jordan frame to the Einstein frame introduces non-standard coupling of the chameleon field to standard matter. This results in a fifth force, given in the non-relativistic limit by
+\eq{
+	\label{eq:cham_force}
+	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
+}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Effect of simulation resolution
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
