@@ -50,3 +50,38 @@ In \autoref{fig:corr_peak}, we show the these features of the BAO peak relative 
 	\caption{Location, amplitude and width of the BAO peak (relative to the non-linear prediction) as a function of the redshift.}
 	\label{fig:corr_peak}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Halo mass function
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Halo mass function}
+In \autoref{fig:hmf_diff_z}
+% \renewcommand{\zone}{3.9}
+% \renewcommand{\ztwo}{1.8}
+% \renewcommand{\zthree}{0.5}
+% \renewcommand{\zfour}{0.0}
+\begin{figure*}
+	\centering
+		\begin{subfigure}{1.0\textwidth}
+			\includegraphicscustomlegend{simulations_approx/hmf/z0.0_b500_M1024_hmf_z_z_eff}
+		\end{subfigure}
+		\begin{subfigure}{0.5\textwidth}
+			\includegraphicscustom{simulations_approx/hmf/z3.9_b500_M1024_hmf_z_z_eff}
+			\caption{$z = $}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\textwidth}
+			\includegraphicscustom{simulations_approx/hmf/z1.8_b500_M1024_hmf_z_z_eff}
+			\caption{$z = $}
+		\end{subfigure}
+		\begin{subfigure}{0.5\textwidth}
+			\includegraphicscustom{simulations_approx/hmf/z0.5_b500_M1024_hmf_z_z_eff}
+			\caption{$z = $}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\textwidth}
+			\includegraphicscustom{simulations_approx/hmf/z0.0_b500_M1024_hmf_z_z_eff}
+			\caption{$z = $}
+		\end{subfigure}
+		\caption{Halo mass function for different approximation schemes at different redshifts.}
+		\label{fig:hmf_diff_z}
+	\end{figure*}
+
