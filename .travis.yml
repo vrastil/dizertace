@@ -12,8 +12,9 @@ script:
 - cp thesis.pdf doc/
 deploy:
   provider: pages
-  skip_cleanup: true
+  strategy: git
   local_dir: doc
-  github_token: $GH_REPO_TOKEN
+  cleanup: False
+  deploy_key: $GH_REPO_TOKEN
   on:
     branch: master
