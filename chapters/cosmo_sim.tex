@@ -76,6 +76,7 @@ where operators \(\TT\equiv\{\cdot,T\}\) and \(\VV\equiv\{\cdot,V\}\) are known 
 }
 The splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second order accurate, whereas simpler splitting only into one kick and one drift is first order accurate. The same accurcy and results has also similar splitting into drift-kick-drift which we use in our integrator.
 \section{Particle-Mesh algorithm}
+\label{sec:PM}
 As we mentioned in the introduction in order to effectively compute forces on particles one has to abandon continuous position and solve the forces using discretized positions. The idea of the PM method is that we set up a mesh (grid) over the computational box, and then solve the gravitational potential (i.e. Poisson’s equation \eqref{eq:poisson_lin}) at the meshpoints. Forces at the meshpoints can then be obtained by calculating the gradient of the potential. The four principal steps of the particle-mesh calculation are:
 \begin{enumerate}
     \item assign mass to the mesh,
@@ -118,7 +119,7 @@ The essence of the method is to express the interparticle force as the sum of tw
 
 We do not use P$^3$M in our approximate methods because of their much greater numerical requirements compared to simpler PM methods. For more details, see e.g. \textcite{Hockney:1988:CSU:62815}.
 \section{Multi-grid techniques}
-Practical multi-grid techniques were introduced by \textcite{10.2307/2006422}. These methods also interpolate the density and potential between grid and particles as PM methods based on FFT with $\OO(N_m\log N_m)$ complexity but they use relaxation methods such as Gauss-Seidel iteration \parencite{doi:10.1002/zamm.19720520813} and can solve elliptic partial differential equations using $\OO(N_m)$ operations. The numerical coefficients in these estimates are such that multigrid methods are comparable to the rapid methods in execution speed. Unlike the rapid methods, however, the multigrid methods can solve general elliptic equations with nonconstant coefficients with hardly any loss in efficiency. Even nonlinear equations of modified gravitational can be solved with these methods \parencite{10.5555/42249}.
+Practical multi-grid techniques were introduced by \textcite{10.2307/2006422}. These methods also interpolate the density and potential between grid and particles as PM methods based on FFT with $\OO(N_m\log N_m)$ complexity but they use relaxation methods such as Gauss-Seidel iteration \parencite{doi:10.1002/zamm.19720520813} and can solve elliptic partial differential equations using $\OO(N_m)$ operations. The numerical coefficients in these estimates are such that multigrid methods are comparable to the rapid methods in execution speed. Unlike the rapid methods, however, the multigrid methods can solve general elliptic equations with nonconstant coefficients with hardly any loss in efficiency. Even non-linear equations of modified gravitational can be solved with these methods \parencite{10.5555/42249}.
 
 The basic idea exploits the fact that on a coarser grid relaxation occurs faster because information travels faster. The distribution of errors (the difference between the actual density -- source -- and that obtained via the discretisation of potential from the current estimate for the potential) is first smoothed on the finest grid by a few Gauss-Seidel iterations. After transferring the problem to a coarser grid, the process is repeated on coarser and coarser grids until, on the coarsest grid convergence is achieved. Then the problem is transferred back to finer and finer grids, each time iterating until convergence.
 \subsection{Simple two-grid V-cycle}
@@ -182,7 +183,7 @@ The most popular smoothing method is Gauss-Seidel relaxation. The Gauss-Seidel s
 }
 where new values of $u$ are used on the right-hand side as they become available. It is usually best to use tile scheme,  making one pass through the mesh updating the even points and another pass updating the odd points.
 
-For nonlinear problems as ours one needs to modify the scheme \eqref{eq:GS} by Newton iteration
+For non-linear problems as ours one needs to modify the scheme \eqref{eq:GS} by Newton iteration
 \eq{
     u_i\new=u_i-\frac{L_i(u_i)-f_i}{\partial L_i(u_i)/\partial u_i}\,.
 }

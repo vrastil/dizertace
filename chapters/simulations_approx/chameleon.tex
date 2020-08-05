@@ -3,6 +3,36 @@ In this section we apply the approximate techniques to chameleon gravity (parame
 
 Following this, we compare the results of chameleon gravity directly against the FPA and FFA simulations. %These comparisons can tell us a lot about when and on what scales are chameleon effects visible and which approximation is better for studying modified gravity. 
 We will study both $k-$space effects (power spectrum) and real-space effects (BAO peak in the correlation function). For chameleon gravity we ran all simulations twice -- once solving the non-linear Poisson equation \eqref{eq:cham_u} using the multigrid solver, and the second using the pseudo-linear prediction for the chameleon in $k-$space given by \eqref{eq:chi_lin_k} corrected by \eqref{eq:chi_bulk}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Approximation methods in modified gravity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Approximation methods in modified gravity}
+\todo{
+
+The transformation from the Jordan frame to the Einstein frame introduces non-standard coupling of the chameleon field to standard matter. This results in a fifth force, given in the non-relativistic limit by
+\eq{
+	\label{eq:cham_force}
+	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
+}
+}
+
+When applying the approximation methods described in \autoref{chpt:app_schemes} to the chameleon equations, we have three choices on how to arrive at an approximate solution:
+\begin{enumerate}
+\item \label{itm:lin_q} Purely linear prediction in $(\mb q, a)$-space, solution \eqref{eq:chi_lin_x}
+
+\item \label{itm:lin_k} Purely linear prediction in $(\mb k, a)$-space, solution \eqref{eq:chi_lin_k}
+
+\item \label{itm:nl_x} Non-linear prediction in $(\mb x, a)$-space, solution \eqref{eq:cham_u}
+\end{enumerate}
+
+Choice \ref{itm:lin_q} means that there is no computational overhead and we can simply take the chameleon force to be $2\beta^2a^{-2}$ of the gravitational one. This method clearly overestimates the chameleon force at early times when the chameleon's Compton wavelength is short. This is because the solution \eqref{eq:chi_lin_x} does not take into account the non-zero mass of the field.
+
+A better choice is to use \ref{itm:lin_k} where the non-zero mass is incorporated. This solution adds relatively little computational overhead over normal gravity -- needing (at least) one Fourier transform and also extra storage. The overdensity $\delta(\mb k, a)$ is either the linearly evolved one, i.e. $\delta(\mb k, a) = D(a)\delta_0(\mb k)$, or we can compute $\delta$ at each time-step from the current positions of particles. This adds extra computation when assigning the mass of particles on the grid and one extra Fourier transform to get $\delta(\mb k, a)$. 
+However, we cannot use \eqref{eq:chi_lin_k} blindly to get a solution in real space as this linear approximation breaks down inside massive objects where we would get a negative solution. This effect is similar to a usage of linear evolution for $\delta$ where we can end up with regions where $\delta<-1$. We need to check if the resulting chameleon field is positive and fix it where it is not. We use the screening regime value \eqref{eq:chi_bulk} to get a positive solution. We will refer to this prediction as pseudo-linear since it can address some effects of the screening mechanism.
+
+The most expensive choice is \ref{itm:nl_x} where we must iteratively solve nonlinear equations. Unlike other methods this one can address the screening regime inside and near massive objects but at the cost of the most computational overhead.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Effect of simulation resolution
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

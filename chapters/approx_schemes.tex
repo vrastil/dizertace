@@ -12,20 +12,19 @@ Besides usefulness of approximations in getting an insight into gravitational ev
 In this chapter we describe several of approximations which have been studied in the past -- Zel`dovich approximation and its \textit{truncated} extension, frozen-flow approximation and frozen-potential approximation. The Zel'dovich approximation has been studied extensively in the past and here we use it mainly as a reference for comparison in the context of the other approximations.
 
 \section{Recapitulation of linear theory}
-\todo{Rewrite equations using $a$, use previous equations}
-We begin with the linearized equations for gravitational clustering in an expanding Universe. We will be working in comoving coordinates -- the comoving position $\mb x$ is defined in terms of the proper position coordinate $\mb r = a\mb x$, where $a=a(t)$ is the scale factor. The comoving velocity $\mb v$ is then defined as a derivative with respect to cosmic time $t$, $\mb v = \dot{\mb x}$, where the overdot denotes a time derivative. The overdensity $\delta$ is defined in terms of the local density, $\rho$, and the background density, $\bar\rho$,  as $\delta=\rho/\bar\rho-1$. Particles move in the Newtonian gravitational potential, $\phi_G$. The equations for linear perturbations then read
+Here we remind some results of the linear theory previously presented in \autoref{chpt:cosmo_evol}. We rewrite the equations using variables more suited for cosmological simulations. We will be working in comoving coordinates -- the comoving position $\mb x$ is defined in terms of the proper position coordinate $\mb r = a\mb x$. The comoving velocity $\mb v$ is then defined as a derivative with respect to cosmic time $t$, $\mb v = \dot{\mb x}$, where the overdot denotes a time derivative. Particles move in the Newtonian gravitational potential, $\Phi$. The equations for linear perturbations then read
 \eq{
 	\label{eq:lin_per_a}
 	\dot\delta + \nabla\cdot\mb v &= 0, \\
 	\label{eq:lin_per_b}
-    \dot{\mb v} + 2\frac{\dot a}{a} \mb v &= -\frac{1}{a^2}\nabla\phi_G, \\
+    \dot{\mb v} + 2\frac{\dot a}{a} \mb v &= -\frac{1}{a^2}\nabla\Phi, \\
 \begin{split}
 	\label{eq:lin_per_c}
-	\Delta\phi_G &= 4\pi G\bar\rho a^2 \delta \\
+	\Delta\Phi &= 4\pi G\bar\rho a^2 \delta \\
     			&= \frac32 H_0^2\Omega_{m, 0}\frac\delta a \equiv \mu^{-1}\frac\delta a\,,
 \end{split}
 }
-where $H_0$ is the (present) Hubble constant, $\Omega_{m, 0}$ is the matter density (baryon and dark matter) and we defined the constant $\mu\equiv\left(\frac32 H_0^2\Omega_{m, 0}\right)^{-1}$. In this linear regime, the time and space dependence of the overdensity evolution are separable and we can write $\delta(a, \mb x)=D(a)\delta_0(\mb x)$ where the growth factor $D$ represents the growing solution (we neglect the decaying mode) and is normalized to unity at the present time.
+where we defined the constant $\mu\equiv\left(\frac32 H_0^2\Omega_{m, 0}\right)^{-1}$. In this linear regime, the time and space dependence of the overdensity evolution are separable and we can write $\delta(a, \mb x)=D(a)\delta_0(\mb x)$ where the growth factor $D$ represents the growing solution (we neglect the decaying mode) and is normalized to unity at the present time.
 
 It is often useful to rewrite these equations with a different time variable, namely the scale factor $a$. This is convenient both from the numerical and theoretical points of view because the quantities are ``more constant''. With the new time-variable $a$ and comoving velocity $\mb u = \dd \mb x/\dd a$, equation \eqref{eq:lin_per_a} becomes
 \eq{
@@ -35,19 +34,19 @@ It is often useful to rewrite these equations with a different time variable, na
 where $\dd D/\dd a = 1$ in the Einstein--de Sitter universe (hereafter EdS) and so the divergence of the velocity field remains constant in both time and space. Equation \eqref{eq:lin_per_b} then becomes
 \seq{
 	\label{eq:motion_EdS}
-	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u + \mu\nabla\phi_G \right] \\
+	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u + \mu\nabla\Phi \right] \\
 \intertext{in EdS and, more generally,}
 	\label{eq:motion_LCDM}
-	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u\left(1+f_\Lambda\right) + \mu\nabla\phi_G\left(1-f_\Lambda\right)\right]
+	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u\left(1+\Omega_\Lambda\right) + \mu\nabla\Phi\left(1-\Omega_\Lambda\right)\right]
 }
-in the \LCDM\ universe. The modification factor
+in the \LCDM\ universe. The omega factor of the cosmological constant
 \eq{
-	f_\Lambda = \frac{\Omega_{\Lambda,0}a^3}{\Omega_{m,0} + \Omega_{\Lambda,0}a^3} = \Omega_\Lambda(a)
+	\Omega_\Lambda(a) = \frac{\Omega_{\Lambda,0}a^3}{\Omega_{m,0} + \Omega_{\Lambda,0}a^3}
 }
 rises from $0$ to $\Omega_{\Lambda,0}$ and becomes statistically significant $(>5\%)$ around redshift $z\approx2.5$. Equation \eqref{eq:lin_per_c} expressed with the growth factor reads
 \eq{
 \label{eq:poisson_a}
-	\Delta\phi_G(\mb x, a) = \mu^{-1}\frac D a \delta_0(\mb x)\,.
+	\Delta\Phi(\mb x, a) = \mu^{-1}\frac D a \delta_0(\mb x)\,.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Zel`dovich Approximation
@@ -72,7 +71,7 @@ Combining with the Poisson equation \eqref{eq:poisson_a}, we can see that \eqref
 and has a simple relation to the gravitational potential
 \eq{
 	\label{eq:vel_new}
-	\phi_V=\mu\frac a D \phi_G\,.
+	\phi_V=\mu\frac a D \Phi\,.
 }
 This results into ZA being
 \eq{
@@ -100,9 +99,8 @@ The time when the density in ZA becomes infinite corresponds to particles crossi
 \newcommand{\zthree}{0.53}
 \newcommand{\zfour}{0.00}
 
-
-\todo{Comparison of ZA at $z=0,1,2,3$, \autoref{fig:slice_dens_ZA}}
-\begin{figure*}
+In \autoref{fig:slice_dens_ZA} we show comparison of a simulations with ZA at four different redshifts through projected density field. At redshift $z=\ztwo$ the cosmic web still looks nice but after that, at redshifts $z=\zthree, \zfour$, we can see that shell-crossing occurred and the overall picture gets blurry. The large-scale structures remain visible but the small-scale structures get diluted at later times.
+\begin{figure*}[!htbp]
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
@@ -129,7 +127,7 @@ The time when the density in ZA becomes infinite corresponds to particles crossi
 % Truncated Zel`dovich Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Truncated Zel`dovich approximation}
-The shell-crossing and diffusion of particles on small scales in ZA happens the sooner the more power there is on small scales. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on these small nonlinear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a nonlinear scale $k_{nl}$ defined as
+The shell-crossing and diffusion of particles on small scales in ZA happens the sooner the more power there is on small scales. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on these small non-linear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a non-linear scale $k_{nl}$ defined as
 \eq{
 \label{eq:k_nl}
     \frac{a^2(t)}{2\pi^2}\int_0^{k_{nl}}P(k)\dd k=1\,,
@@ -146,8 +144,9 @@ W(k)=e^{-k^2/2k^2_{G}}\,,
 }
 where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering leads to the so called truncated Zel`dovich approximation (TZA). This removes most of the strongly non-linear behavior and allows the Zel’dovich pancakes to be seen.
 
-\todo{Comparison of TZA at $z=0,1,2,3$, \autoref{fig:slice_dens_TZA}}
-\begin{figure*}
+In \autoref{fig:slice_dens_TZA} we show comparison of a simulations with TZA at four different redshifts through projected density field. We see clear differences in comparison with ZA. Large-scale structures evolve similarly to ZA but we see clear artifacts on small scales given by artificial cutoff at these scales. These small-scale structures in filaments are not so diluted as in case of ZA, however, lot of particles remain in voids where they are freezed due to the lack of the initial kick.
+
+\begin{figure*}[!htbp]
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
@@ -177,7 +176,7 @@ where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering lea
 The frozen-flow, or frozen-field, approximation (FFA) was originally proposed by \textcite{Matarrese:1992be} as the exact solution of equation \eqref{eq:motion_EdS} in EdS
 \eq{
   \label{eq:FFA_orig}
-  \tilde{\mb u}\FFA(\mb x) = \mb u_0(\mb x) = -\mu\nabla\phi_G(\mb x) = -\nabla\phi_V(\mb x)\,.
+  \tilde{\mb u}\FFA(\mb x) = \mb u_0(\mb x) = -\mu\nabla\Phi(\mb x) = -\nabla\phi_V(\mb x)\,.
 }
 The velocity field $\tilde{\mb u}$ is frozen at each point to its initial value, i.e.
 \eq{
@@ -205,8 +204,8 @@ Although equation \eqref{eq:FFA} now does not represent a \textit{frozen} flow, 
 	\mb x(a) = \mb q + \int_0^a\dd \tilde a\mb u\FFA(\mb x(\tilde a), \tilde a)\,.
 }
 
-\todo{Comparison of FFA at $z=0,1,2,3$, \autoref{fig:slice_dens_FFA}}
-\begin{figure*}
+In \autoref{fig:slice_dens_FFA} we show comparison of a simulations with FFA at four different redshifts through projected density field. Unlike in case of ZA or TZA there is no shell-crossing and structures remain clear even at later times. As the particles approach minima of the gravitational potential the slow down and we can see that resulting structures are elongated along stream-lines.
+\begin{figure*}[!htbp]
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
@@ -244,8 +243,8 @@ and the particle trajectories are given as in the case of FFA\,
 }
 Particles now follow the linear \textit{gravitational} potential (which evolves slightly in \LCDM) instead of the initial \textit{velocity} potential as in the case of FFA. Equation \eqref{eq:FPA} drives the particle velocities (approximately) to the velocities of FFA but unlike in the FFA, particles now keep their inertia. Same as in the case of FFA, the particles tend to move along the pancakes towards regions of lower potential to end up in a few clumps. The acceleration used in FPA is largest in regions where the instantaneous velocity vector points along the gradient of the potential, as happens for particles after they cross the pancake. In FFA the inertia of particles is ignored, whereas in the Zeldovich approximation inertia is assumed to dominate over change in the force field. FPA takes into consideration both factors but assumes a constant potential.
 
-\todo{Comparison of FPA at $z=0,1,2,3$, \autoref{fig:slice_dens_FPA}}
-\begin{figure*}
+In \autoref{fig:slice_dens_FPA} we show comparison of a simulations with FPA at four different redshifts through projected density field. On the first sight, it looks similarly as in the case of FFA, especially at early times. For $z=\zthree, \zfour$ we can see the differences due to the fact that particles have an inertia and resulting structures are not so elongated as in the case of FFA.
+\begin{figure*}[!htbp]
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
@@ -269,9 +268,15 @@ Particles now follow the linear \textit{gravitational} potential (which evolves 
 	\end{adjustwidth}
 \end{figure*}
 
-\todo{comparison of all approximation at $z=0$, \autoref{fig:slice_dens_all}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Particle-mesh simulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Particle-mesh simulation}
+For comparison with other approximations we also implemented the particle-mesh code, i.e. a simulation where the gravitation potential evolves according to the current position of particles but the particles feel only this long-range force without any short-range forces (for details see \autoref{sec:PM}). The particles move according to equation of motion \eqref{eq:motion_LCDM} and the gravitational potential evolve according to Poisson equation \eqref{eq:lin_per_c}.
+
+In \autoref{fig:slice_dens_all} we show comparison of all approximation methods with PM at $z=0$ through projected density field. Here we can see side-by-side the main differences between individual approximation methods: ZA with diluted small-scale structures, TZA with (almost) frozen small-scale structures, FFA and FPA with elongated structures. We see that PM simulation has more concentrated filaments but also more particles in voids than ZA, FFA and FPA.
 % \afterpage{%
-\begin{figure*}
+\begin{figure*}[!htbp]
 	\thisfloatpagestyle{empty} 
 	\begin{adjustwidth}{-3cm}{-1cm}
 	\centering
@@ -303,6 +308,7 @@ Particles now follow the linear \textit{gravitational} potential (which evolves 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Other approximations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \clearpage TODO
 \section{Other approximations}
 Approximations described previously are studied numerically in detail in the next chapter. Here we present few of the other approximations studied in the past or used today.
 
@@ -338,14 +344,3 @@ In LPT, this displacement vector field is expanded in a perturbation series in t
     \caption{Power spectrum at $z = 0,\ 0.5$ and $1$ (top, middle and bottom panels, respectively) in real space and ratio with the \nbody’s one for the matter field (left panels) and for the halo catalogues (right panels). The vertical dashed line locates the $k = 0.5\hMpc$ where the one-halo term becomes significant. The vertical shaded area locates the region of the BAO peak, while the horizontal one locates the 1\% accuracy region.  \textit{Note:} Reprinted from \textcite{2017JCAP...07..050M}.}
     \label{fig:app_compare}
 \end{figure}
-
-\section{Application to modified gravity}
-\todo{move to the next chapter?}
-\todo{
-
-The transformation from the Jordan frame to the Einstein frame introduces non-standard coupling of the chameleon field to standard matter. This results in a fifth force, given in the non-relativistic limit by
-\eq{
-	\label{eq:cham_force}
-	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
-}
-}
