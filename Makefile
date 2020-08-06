@@ -1,12 +1,12 @@
 # main file
 MAIN := thesis
 
-all: clean $(MAIN).pdf
+all: $(MAIN).pdf
 
 # LaTeX must be run multiple times to get references right
 TEX_CMD := pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
 BIB_BACKEND := biber # bibtex
-$(MAIN).pdf:
+$(MAIN).pdf: FORCE
 	@echo "Building, latex, 1/4"
 	-@$(TEX_CMD) > /dev/null
 	@echo "Building, bibtex, 2/4"
@@ -47,5 +47,7 @@ TMP_FILES := $(MAIN).pdf \
 clean:
 	@echo "Clean old files"
 	@rm -f $(TMP_FILES)
+
+FORCE: ;
 
 .PHONY: clean all tex bib
