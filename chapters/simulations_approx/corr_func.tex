@@ -1,6 +1,6 @@
 \subsection{Correlation Function}
 \label{sec:corr}
-The two-point correlation function is defined as
+The two-point correlation function is defined by the equation \eqref{eq:corr}. We computed the correlation function as a inverse Fourier transformation of \eqref{eq:pk_xi} as
 \eq{
 \label{eq:bao}
 \xi(r)=\left\langle \delta(\mb x)\delta(\mb{x+r})\right\rangle=\int\frac{\dd^3\mb k}{(2\pi)^3}P(k)e^{i\mb{k\cdot r}}\,.
@@ -56,11 +56,9 @@ In \autoref{fig:corr_peak}, we show the these features of the BAO peak relative 
 % Halo mass function
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Halo mass function}
-In \autoref{fig:hmf_diff_z}
-% \renewcommand{\zone}{3.9}
-% \renewcommand{\ztwo}{1.8}
-% \renewcommand{\zthree}{0.5}
-% \renewcommand{\zfour}{0.0}
+We computed the halo mass function (HMF) \eqref{eq:hmf} from the amplitude of density fluctuations for all approximation schemes. Their comparison is in \autoref{fig:hmf_diff_z}.
+\todo{Describe and compare} % https://iopscience.iop.org/article/10.1086/523083/pdf
+
 \begin{figure*}
 	\centering
 		\begin{subfigure}{1.0\textwidth}
@@ -68,19 +66,19 @@ In \autoref{fig:hmf_diff_z}
 		\end{subfigure}
 		\begin{subfigure}{0.5\textwidth}
 			\includegraphicscustom{simulations_approx/hmf/z3.9_b500_M1024_hmf_z_z_eff}
-			\caption{$z = $}
+			\caption{$z=\zone$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\textwidth}
 			\includegraphicscustom{simulations_approx/hmf/z1.8_b500_M1024_hmf_z_z_eff}
-			\caption{$z = $}
+			\caption{$z=\ztwo$}
 		\end{subfigure}
 		\begin{subfigure}{0.5\textwidth}
 			\includegraphicscustom{simulations_approx/hmf/z0.5_b500_M1024_hmf_z_z_eff}
-			\caption{$z = $}
+			\caption{$z=\zthree$}
 		\end{subfigure}%
 		\begin{subfigure}{0.5\textwidth}
 			\includegraphicscustom{simulations_approx/hmf/z0.0_b500_M1024_hmf_z_z_eff}
-			\caption{$z = $}
+			\caption{$z=\zfour$}
 		\end{subfigure}
 		\caption{Halo mass function for different approximation schemes at different redshifts.}
 		\label{fig:hmf_diff_z}

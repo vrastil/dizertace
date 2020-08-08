@@ -108,6 +108,7 @@ The matter power spectrum $P(k)$ is defined as a quadratic function of the Fouri
 }
 where $\delta_{\rm D}$ is the Dirac delta function and we are averaging over possible realizations. The power spectrum is by far the most common descriptor of clustering in the linear and mildly non-linear regime and plays a central role in cosmology. The power spectrum is the Fourier transform of the correlation function \eqref{eq:corr}
 \eq{
+    \label{eq:pk_xi}
     P(k)=\int\xi(r)e^{-ik\cdot r}\dd^3r\,.
 }
 However what we observe in practice is the galaxy density contrast $\delta_g$, which is different from the total matter density contrast $\delta_m$. The two quantities are assumed to be related by a bias factor $b$ defined by
@@ -138,12 +139,13 @@ The basic idea of cluster abundance studies is to compare the predicted space de
 % }
 % which has a solution in the Einstein--de Sitter Universe
 \subsubsection{The halo mass function}
-The halo mass function $\dd n/\dd M$ is defined as the number of haloes of mass $M$ per unit volume per unit interval in $M$. To describe the halo mass function we need two other quantities, $f(\sigma)$ and $\ln\sigma^{-1}$. The rms linear overdensity $\sigma$ of the density field smoothed with a top-hat filter $W$ with a radius that encloses a mass $M$ at the mean cosmic matter density is defined as
+The halo mass function (HMF) $\dd n/\dd M$ is defined as the number of haloes of mass $M$ per unit volume per unit interval in $M$. To describe the halo mass function we need two other quantities, $f(\sigma)$ and $\ln\sigma^{-1}$. The rms linear overdensity $\sigma$ of the density field smoothed with a top-hat filter $W$ with a radius that encloses a mass $M$ at the mean cosmic matter density is defined as
 \eq{
     \sigma^2(M, z)=\frac{D^2(z)}{2\pi^2}\int_0^\infty{k^2P(k)W^2(k,M)\dd k}\,.
 }
 The mass function is then written as
 \eq{
+    \label{eq:hmf}
     \dddd nM=\frac{\rho_0}{M}\dddd{\ln\sigma^{-1}}{M}f(\sigma)\,,
 }
 where all the cosmological information is contained in the function \(f(\sigma)\) --  the fraction of mass in collapsed haloes per unit interval in $\ln\sigma$. This function depends on how haloes are defined, usually using the friends-of-friends (FoF) algorithm of \textcite{1985ApJ...292..371D}. The analytical form of $f(\sigma)$ using the assumption of collisionless spherical collapse has been proposed by \textcite{1974ApJ...187..425P}
