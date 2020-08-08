@@ -42,7 +42,7 @@ The FFA predicts an increased enhancement of the power spectrum compared to the 
 
 \begin{figure*}
 \centering
-	\begin{subfigure}{1.0\textwidth}
+	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/fp_pwr_spec}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
@@ -65,7 +65,7 @@ In \autoref{fig:CHI_FP_diff}, we compare simulations with different chameleon pa
 
 \begin{figure*}
   \centering
-	\begin{subfigure}{0.5\textwidth}
+	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/chi_pwr_diff_256m_1p_512M_2000b}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
@@ -82,7 +82,7 @@ In \autoref{fig:CHI_FP_diff_lin_ratio} we show the ratio of the power spectrum u
 
 \begin{figure*}
   \centering
-	\begin{subfigure}{0.5\textwidth}
+	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/chi_pwr_diff_256m_1p_512M_2000b_lin_ratio}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
@@ -114,7 +114,7 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 
 \begin{figure*}
 \centering
-	\begin{subfigure}{1.0\textwidth}
+	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/chi_corr_func_r2_z_z_eff}
 	\end{subfigure}
 	\begin{subfigure}{1.0\textwidth}
@@ -134,7 +134,7 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Legend
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{subfigure}{0.5\textwidth}
+	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/nl_fp_corr_peak_amp_z_eff}
 	\end{subfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,16 +181,16 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 % Halo mass function
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Halo mass function}
-
+In \autoref{fig:chi_diff_hmf} we compared the (relative) halo mass function for different parameters of chameleon gravity. We see that in the mass range $(10^{12}--10^{14}M_\odot)$ all the simulations give very similar results and differ more outside this range. We see that higher the screening potential $\Phiscr$ the more power on small scales and therefore more massive halos. For distinguishing between different chameleon parameters we should therefore use the most massive halos $(M\gtrsim10^{14}M_\odot)$.
 \begin{figure*}
 	\centering
-		\begin{subfigure}{1.0\textwidth}
+		\begin{subfigure}{1.2\textwidth}
 			\includegraphicscustomlegend{simulations_approx/chi/hmf_z0.5_b500_M512_chi_hmf_z_z_eff}
 		\end{subfigure}
 		\begin{subfigure}{1.0\textwidth}
 			\centering
 			\includegraphicscustom{simulations_approx/chi/hmf_z0.5_b500_M512_chi_hmf_z_z_eff}
 		\end{subfigure}
-		\caption{Halo mass function for non-linear chameleon gravity with different chameleon parameters.}
+		\caption{Halo mass function (relative) for non-linear chameleon gravity with different chameleon parameters.}
 		\label{fig:chi_diff_hmf}
 	\end{figure*}

@@ -56,56 +56,56 @@ In \autoref{fig:corr_peak}, we show the these features of the BAO peak relative 
 % Halo mass function
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Halo mass function}
-We computed the halo mass function (HMF) \eqref{eq:hmf} from the amplitude of density fluctuations for all approximation schemes. Their comparison is in \autoref{fig:hmf_diff_z}.
-\todo{Describe and compare} % https://iopscience.iop.org/article/10.1086/523083/pdf
+We computed the halo mass function \eqref{eq:hmf} from the amplitude of density fluctuations for all approximation schemes. Four our simple analysis we just use the fitting formula \eqref{eq:hmf_jenkins} instead of implementing the full friend-of-friend algorithm.
 
+The comparison of approximations in mass range $(10^{11}-10^{15}M_\odot)$, is shown in \autoref{fig:hmf_diff_z}. We see that TZA for higher redshifts is completely wrong as its missing a lot of power on these scales. At higher redshifts this get better as the TZA gets more power on these scales without so much shell-crossing as ZA. We see that for $z=0$ TZA gives results closer to the linear prediction than ZA.
 \begin{figure*}
 	\centering
-		\begin{subfigure}{1.0\textwidth}
-			\includegraphicscustomlegend{simulations_approx/hmf/z0.0_b100_M1024_hmf_z_z_eff}
-		\end{subfigure}
-		\begin{subfigure}{0.5\textwidth}
-			\includegraphicscustom{simulations_approx/hmf/z3.9_b100_M1024_hmf_z_z_eff}
-			\caption{$z=\zone$}
-		\end{subfigure}%
-		\begin{subfigure}{0.5\textwidth}
-			\includegraphicscustom{simulations_approx/hmf/z1.8_b100_M1024_hmf_z_z_eff}
-			\caption{$z=\ztwo$}
-		\end{subfigure}
-		\begin{subfigure}{0.5\textwidth}
-			\includegraphicscustom{simulations_approx/hmf/z0.5_b100_M1024_hmf_z_z_eff}
-			\caption{$z=\zthree$}
-		\end{subfigure}%
-		\begin{subfigure}{0.5\textwidth}
-			\includegraphicscustom{simulations_approx/hmf/z0.0_b100_M1024_hmf_z_z_eff}
-			\caption{$z=\zfour$}
-		\end{subfigure}
-		\caption{Halo mass function for different approximation schemes at different redshifts.}
-		\label{fig:hmf_diff_z}
-	\end{figure*}
+	\begin{subfigure}{1.0\textwidth}
+		\includegraphicscustomlegend{simulations_approx/hmf/z0.0_b100_M1024_hmf_z_z_eff}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/z3.9_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\zone$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/z1.8_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\ztwo$}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/z0.5_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\zthree$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/z0.0_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\zfour$}
+	\end{subfigure}
+	\caption{Halo mass function for different approximation schemes at different redshifts.}
+	\label{fig:hmf_diff_z}
+\end{figure*}
 
-
-	\begin{figure*}
-		\centering
-			\begin{subfigure}{1.0\textwidth}
-				\includegraphicscustomlegend{simulations_approx/hmf/diff_z0.0_b100_M1024_hmf_z_z_eff}
-			\end{subfigure}
-			\begin{subfigure}{0.5\textwidth}
-				\includegraphicscustom{simulations_approx/hmf/diff_z3.9_b100_M1024_hmf_z_z_eff}
-				\caption{$z=\zone$}
-			\end{subfigure}%
-			\begin{subfigure}{0.5\textwidth}
-				\includegraphicscustom{simulations_approx/hmf/diff_z1.8_b100_M1024_hmf_z_z_eff}
-				\caption{$z=\ztwo$}
-			\end{subfigure}
-			\begin{subfigure}{0.5\textwidth}
-				\includegraphicscustom{simulations_approx/hmf/diff_z0.5_b100_M1024_hmf_z_z_eff}
-				\caption{$z=\zthree$}
-			\end{subfigure}%
-			\begin{subfigure}{0.5\textwidth}
-				\includegraphicscustom{simulations_approx/hmf/diff_z0.0_b100_M1024_hmf_z_z_eff}
-				\caption{$z=\zfour$}
-			\end{subfigure}
-			\caption{Halo mass function for different approximation schemes at different redshifts.}
-			\label{fig:diff_hmf_diff_z}
-		\end{figure*}
+In  \autoref{fig:diff_hmf_diff_z} we show the halo mass function in more detail, mainly as a relative difference between prediction of approximation schemes and prediction of the non-linear theory. We see that approximation schemes generally predicts less massive halos $(M\gtrsim10^{12}M_\odot)$ and more light halos $(M\lesssim10^{12}M_\odot)$. We see that simple PM simulations get results close to the non-linear prediction, except at higher redshift.
+\begin{figure*}
+	\centering
+	\begin{subfigure}{1.0\textwidth}
+		\includegraphicscustomlegend{simulations_approx/hmf/diff_z0.0_b100_M1024_hmf_z_z_eff}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/diff_z3.9_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\zone$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/diff_z1.8_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\ztwo$}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/diff_z0.5_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\zthree$}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphicscustom{simulations_approx/hmf/diff_z0.0_b100_M1024_hmf_z_z_eff}
+		\caption{$z=\zfour$}
+	\end{subfigure}
+	\caption{Halo mass function (relative) for different approximation schemes at different redshifts.}
+	\label{fig:diff_hmf_diff_z}
+\end{figure*}
