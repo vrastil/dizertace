@@ -18,6 +18,7 @@ example.pdf
 *.fdb_latexmk
 *.synctex.gz
 *.xmpdata
+*-eps-converted-to.pdf
 pdfa.xmpi
 
 # XMIND
