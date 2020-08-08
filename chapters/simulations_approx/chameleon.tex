@@ -1,4 +1,5 @@
 \section{Results for modified gravity}
+\newcommand{\chileft}{\hspace*{-1cm}}
 In this section we apply the approximate techniques to chameleon gravity. Parameters of all run and analyzed simulations are described in \autoref{tab:cham_param_CHI_lin} and \autoref{tab:cham_param_CHI_nl}. We focused on issues closely related to the scale where the chameleon field starts to affect the matter distribution. We first wish to study the effects of varying the simulation resolution on the power spectrum. Because the screening mechanism is directly related to the depth of the gravitational wells, and with lower spatial resolution, these wells are smeared, the role of resolution also needs to be understood. For this analysis we chose the FPA as this approximation is closest in spirit to \nbodysim s.
 
 Following this, we compare the results of chameleon gravity directly against the FPA and FFA simulations. %These comparisons can tell us a lot about when and on what scales are chameleon effects visible and which approximation is better for studying modified gravity. 
@@ -42,6 +43,7 @@ The FFA predicts an increased enhancement of the power spectrum compared to the 
 
 \begin{figure*}
 \centering
+	\chileft
 	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/fp_pwr_spec}
 	\end{subfigure}
@@ -65,6 +67,7 @@ In \autoref{fig:CHI_FP_diff}, we compare simulations with different chameleon pa
 
 \begin{figure*}
   \centering
+  \chileft
 	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/chi_pwr_diff_256m_1p_512M_2000b}
 	\end{subfigure}
@@ -83,6 +86,7 @@ In \autoref{fig:CHI_FP_diff_lin_ratio} we show the ratio of the power spectrum u
 \begin{figure*}
   \centering
 	\begin{subfigure}{1.2\textwidth}
+		\chileft
         \includegraphicscustomlegend{simulations_approx/chi/chi_pwr_diff_256m_1p_512M_2000b_lin_ratio}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
@@ -101,6 +105,7 @@ In \autoref{fig:CHI_FP_diff_lin_ratio} we show the ratio of the power spectrum u
 In \autoref{fig:chi_pwr_diff_map}, we compare chameleon gravity to the FPA through the ratio of their power spectra for one set of chameleon parameters $(n=0.5,\ \Phiscr=10^{-5})$ as a function of time and scale. Here we can see comparison of a non-linear prediction as well as a comparison with the chameleon mass (at a given time). The chameleon mass is a very good indicator at which time and on what scales we should expect to see some effects of the fifth force. This can be used to improve speed of the simulations at early times, when chameleon effects are negligible.
 \begin{figure}
 	\centering
+	\chileft
 	\includegraphics[width=1.0\linewidth]{simulations_approx/chi/chi_pwr_diff_map_512m_1p_1024M_500b_nl.png}
 	\caption{Ratio of the FPA power spectrum in chameleon gravity $(n=0.5,\ \Phiscr=10^{-5})$ to the simulation run with standard gravity as function of time. Blue solid line is a chameleon mass \eqref{eq:chi_m}.}
 	\label{fig:chi_pwr_diff_map}
@@ -115,6 +120,7 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 \begin{figure*}
 \centering
 	\begin{subfigure}{1.2\textwidth}
+		\chileft
         \includegraphicscustomlegend{simulations_approx/chi/chi_corr_func_r2_z_z_eff}
 	\end{subfigure}
 	\begin{subfigure}{1.0\textwidth}
@@ -135,6 +141,7 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 % Legend
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{subfigure}{1.2\textwidth}
+		\chileft
         \includegraphicscustomlegend{simulations_approx/chi/nl_fp_corr_peak_amp_z_eff}
 	\end{subfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,6 +191,7 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 In \autoref{fig:chi_diff_hmf} we compared the (relative) halo mass function for different parameters of chameleon gravity. We see that in the mass range $(10^{12}--10^{14}M_\odot)$ all the simulations give very similar results and differ more outside this range. We see that higher the screening potential $\Phiscr$ the more power on small scales and therefore more massive halos. For distinguishing between different chameleon parameters we should therefore use the most massive halos $(M\gtrsim10^{14}M_\odot)$.
 \begin{figure*}
 	\centering
+		\chileft
 		\begin{subfigure}{1.2\textwidth}
 			\includegraphicscustomlegend{simulations_approx/chi/hmf_z0.5_b500_M512_chi_hmf_z_z_eff}
 		\end{subfigure}
