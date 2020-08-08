@@ -1,37 +1,9 @@
 \section{Results for modified gravity}
-In this section we apply the approximate techniques to chameleon gravity (parameters as described in \autoref{tab:cham_param}), focusing on issues closely related to the scale where the chameleon field starts to affect the matter distribution. We first wish to study the effects of varying the simulation resolution on the power spectrum. Because the screening mechanism is directly related to the depth of the gravitational wells, and with lower spatial resolution, these wells are smeared, the role of resolution also needs to be understood. For this analysis we chose the FPA as this approximation is closest in spirit to \nbody s.
+\newcommand{\chileft}{\hspace*{-1cm}}
+In this section we apply the approximate techniques to chameleon gravity. Parameters of all run and analyzed simulations are described in \autoref{tab:cham_param_CHI_lin} and \autoref{tab:cham_param_CHI_nl}. We focused on issues closely related to the scale where the chameleon field starts to affect the matter distribution. We first wish to study the effects of varying the simulation resolution on the power spectrum. Because the screening mechanism is directly related to the depth of the gravitational wells, and with lower spatial resolution, these wells are smeared, the role of resolution also needs to be understood. For this analysis we chose the FPA as this approximation is closest in spirit to \nbodysim s.
 
 Following this, we compare the results of chameleon gravity directly against the FPA and FFA simulations. %These comparisons can tell us a lot about when and on what scales are chameleon effects visible and which approximation is better for studying modified gravity. 
-We will study both $k-$space effects (power spectrum) and real-space effects (BAO peak in the correlation function). For chameleon gravity we ran all simulations twice -- once solving the non-linear Poisson equation \eqref{eq:cham_u} using the multigrid solver, and the second using the pseudo-linear prediction for the chameleon in $k-$space given by \eqref{eq:chi_lin_k} corrected by \eqref{eq:chi_bulk}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Approximation methods in modified gravity
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Approximation methods in modified gravity}
-\todo{
-
-The transformation from the Jordan frame to the Einstein frame introduces non-standard coupling of the chameleon field to standard matter. This results in a fifth force, given in the non-relativistic limit by
-\eq{
-	\label{eq:cham_force}
-	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
-}
-}
-
-When applying the approximation methods described in \autoref{chpt:app_schemes} to the chameleon equations, we have three choices on how to arrive at an approximate solution:
-\begin{enumerate}
-\item \label{itm:lin_q} Purely linear prediction in $(\mb q, a)$-space, solution \eqref{eq:chi_lin_x}
-
-\item \label{itm:lin_k} Purely linear prediction in $(\mb k, a)$-space, solution \eqref{eq:chi_lin_k}
-
-\item \label{itm:nl_x} Non-linear prediction in $(\mb x, a)$-space, solution \eqref{eq:cham_u}
-\end{enumerate}
-
-Choice \ref{itm:lin_q} means that there is no computational overhead and we can simply take the chameleon force to be $2\beta^2a^{-2}$ of the gravitational one. This method clearly overestimates the chameleon force at early times when the chameleon's Compton wavelength is short. This is because the solution \eqref{eq:chi_lin_x} does not take into account the non-zero mass of the field.
-
-A better choice is to use \ref{itm:lin_k} where the non-zero mass is incorporated. This solution adds relatively little computational overhead over normal gravity -- needing (at least) one Fourier transform and also extra storage. The overdensity $\delta(\mb k, a)$ is either the linearly evolved one, i.e. $\delta(\mb k, a) = D(a)\delta_0(\mb k)$, or we can compute $\delta$ at each time-step from the current positions of particles. This adds extra computation when assigning the mass of particles on the grid and one extra Fourier transform to get $\delta(\mb k, a)$. 
-However, we cannot use \eqref{eq:chi_lin_k} blindly to get a solution in real space as this linear approximation breaks down inside massive objects where we would get a negative solution. This effect is similar to a usage of linear evolution for $\delta$ where we can end up with regions where $\delta<-1$. We need to check if the resulting chameleon field is positive and fix it where it is not. We use the screening regime value \eqref{eq:chi_bulk} to get a positive solution. We will refer to this prediction as pseudo-linear since it can address some effects of the screening mechanism.
-
-The most expensive choice is \ref{itm:nl_x} where we must iteratively solve nonlinear equations. Unlike other methods this one can address the screening regime inside and near massive objects but at the cost of the most computational overhead.
+We will study both $k-$space effects (power spectrum) and real-space effects (BAO peak in the correlation function). For chameleon gravity we ran all simulations twice -- once solving the non-linear Poisson equation \eqref{eq:cham_u_cp} using the multigrid solver, and the second using the pseudo-linear prediction for the chameleon in $k-$space given by \eqref{eq:chi_lin_k_cp} corrected by \eqref{eq:chi_bulk_cp}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Effect of simulation resolution
@@ -43,9 +15,9 @@ In order to study the effects of the simulation resolution, we define this resol
 }
 We wish to study two things in particular. The first is the minimum resolution needed to explore some particular scale, i.e., whether non-linear effects on smaller scales can affect larger scales. The second is to study the validity range of the pseudo-linear approximation of the chameleon field. We want to investigate on which scale this approximation breaks down and cannot be used even for generating approximate results.
 
-In \autoref{fig:chi_res}, we see several chameleon simulations $(n=0.5,\ \Phiscr=10^{-5})$ with different resolution as described in \autoref{tab:cham_param}. We compared the resulting power spectra directly with FPA simulations with the same parameters (box size, number of particles, etc.). There are four sets of simulations with different resolutions (Nyquist frequencies), each one with a pseudo-linear prediction for the chameleon field and a non-linear result from the multigrid solver.
+In \autoref{fig:chi_res}, we see several chameleon simulations $(n=0.5,\ \Phiscr=10^{-5})$ with different resolution. We compared the resulting power spectra directly with FPA simulations with the same parameters (box size, number of particles, etc.). There are four sets of simulations with different resolutions (Nyquist frequencies), each one with a pseudo-linear prediction for the chameleon field and a non-linear result from the multigrid solver.
 
-For lower resolution $(\knq = 0.4~\hMpc$ and $\knq = 0.8~\hMpc$), the pseudo-linear theory predicts higher amplitude of the power spectrum as it underestimates the screening effect on smaller scales. However, with higher resolution (and the ability to see deeper gravitational wells) this pseudo-linear prediction starts to overestimate the screening and suppress the power spectrum sooner than in the non-linear solver. It is because the correction to the solution \eqref{eq:chi_lin_k} suppress the chameleon force completely -- not only inside massive objects but near those as well. The non-linear solution predicts suppressed forces nearby these massive objects but not completely. The exact scale when this happens is dependent on the screening potential -- lower $\Phiscr$ means we need finer resolution to see deep gravitational wells where the chameleon is in the screening regime. For the choice of the screening potential as in \autoref{fig:chi_res} $(\Phiscr=10^{-5})$ this crossover where we cannot use the linear prediction happens at $k\sim2~\hMpc$. However, as FPA cannot fully resolve non-linear features on scales $k\gtrsim1~\hMpc$  we cannot take this scale exactly.
+For lower resolution $(\knq = 0.4~\hMpc$ and $\knq = 0.8~\hMpc$), the pseudo-linear theory predicts higher amplitude of the power spectrum as it underestimates the screening effect on smaller scales. However, with higher resolution (and the ability to see deeper gravitational wells) this pseudo-linear prediction starts to overestimate the screening and suppress the power spectrum sooner than in the non-linear solver. It is because the correction to the solution \eqref{eq:chi_lin_k_cp} suppress the chameleon force completely -- not only inside massive objects but near those as well. The non-linear solution predicts suppressed forces nearby these massive objects but not completely. The exact scale when this happens is dependent on the screening potential -- lower $\Phiscr$ means we need finer resolution to see deep gravitational wells where the chameleon is in the screening regime. For the choice of the screening potential as in \autoref{fig:chi_res} $(\Phiscr=10^{-5})$ this crossover where we cannot use the linear prediction happens at $k\sim2~\hMpc$. However, as FPA cannot fully resolve non-linear features on scales $k\gtrsim1~\hMpc$  we cannot take this scale exactly.
 
 We can also see that even with higher resolution the power spectra on large and medium scales remain the same. This may suggest that the non-linear effects due to coupling of different wave-numbers are small. However, as these results are coming from a quasi-linear approximation we should be cautious about such a statement. We will further explore this resolution effects of the chameleon gravity using full \nbody s in the future.
 
@@ -71,7 +43,8 @@ The FFA predicts an increased enhancement of the power spectrum compared to the 
 
 \begin{figure*}
 \centering
-	\begin{subfigure}{1.0\textwidth}
+	\chileft
+	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/fp_pwr_spec}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
@@ -94,7 +67,8 @@ In \autoref{fig:CHI_FP_diff}, we compare simulations with different chameleon pa
 
 \begin{figure*}
   \centering
-	\begin{subfigure}{0.5\textwidth}
+  \chileft
+	\begin{subfigure}{1.2\textwidth}
         \includegraphicscustomlegend{simulations_approx/chi/chi_pwr_diff_256m_1p_512M_2000b}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
@@ -111,7 +85,8 @@ In \autoref{fig:CHI_FP_diff_lin_ratio} we show the ratio of the power spectrum u
 
 \begin{figure*}
   \centering
-	\begin{subfigure}{0.5\textwidth}
+	\begin{subfigure}{1.2\textwidth}
+		\chileft
         \includegraphicscustomlegend{simulations_approx/chi/chi_pwr_diff_256m_1p_512M_2000b_lin_ratio}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
@@ -130,6 +105,7 @@ In \autoref{fig:CHI_FP_diff_lin_ratio} we show the ratio of the power spectrum u
 In \autoref{fig:chi_pwr_diff_map}, we compare chameleon gravity to the FPA through the ratio of their power spectra for one set of chameleon parameters $(n=0.5,\ \Phiscr=10^{-5})$ as a function of time and scale. Here we can see comparison of a non-linear prediction as well as a comparison with the chameleon mass (at a given time). The chameleon mass is a very good indicator at which time and on what scales we should expect to see some effects of the fifth force. This can be used to improve speed of the simulations at early times, when chameleon effects are negligible.
 \begin{figure}
 	\centering
+	\chileft
 	\includegraphics[width=1.0\linewidth]{simulations_approx/chi/chi_pwr_diff_map_512m_1p_1024M_500b_nl.png}
 	\caption{Ratio of the FPA power spectrum in chameleon gravity $(n=0.5,\ \Phiscr=10^{-5})$ to the simulation run with standard gravity as function of time. Blue solid line is a chameleon mass \eqref{eq:chi_m}.}
 	\label{fig:chi_pwr_diff_map}
@@ -143,7 +119,8 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 
 \begin{figure*}
 \centering
-	\begin{subfigure}{1.0\textwidth}
+	\begin{subfigure}{1.2\textwidth}
+		\chileft
         \includegraphicscustomlegend{simulations_approx/chi/chi_corr_func_r2_z_z_eff}
 	\end{subfigure}
 	\begin{subfigure}{1.0\textwidth}
@@ -163,7 +140,8 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Legend
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{subfigure}{0.5\textwidth}
+	\begin{subfigure}{1.2\textwidth}
+		\chileft
         \includegraphicscustomlegend{simulations_approx/chi/nl_fp_corr_peak_amp_z_eff}
 	\end{subfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,3 +188,17 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 % Halo mass function
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Halo mass function}
+In \autoref{fig:chi_diff_hmf} we compared the (relative) halo mass function for different parameters of chameleon gravity. We see that in the mass range $(10^{12}--10^{14}M_\odot)$ all the simulations give very similar results and differ more outside this range. We see that higher the screening potential $\Phiscr$ the more power on small scales and therefore more massive halos. For distinguishing between different chameleon parameters we should therefore use the most massive halos $(M\gtrsim10^{14}M_\odot)$.
+\begin{figure*}
+	\centering
+		\chileft
+		\begin{subfigure}{1.2\textwidth}
+			\includegraphicscustomlegend{simulations_approx/chi/hmf_z0.5_b500_M512_chi_hmf_z_z_eff}
+		\end{subfigure}
+		\begin{subfigure}{1.0\textwidth}
+			\centering
+			\includegraphicscustom{simulations_approx/chi/hmf_z0.5_b500_M512_chi_hmf_z_z_eff}
+		\end{subfigure}
+		\caption{Halo mass function (relative) for non-linear chameleon gravity with different chameleon parameters.}
+		\label{fig:chi_diff_hmf}
+	\end{figure*}

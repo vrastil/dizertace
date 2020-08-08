@@ -49,9 +49,9 @@ where
 \eq{
 m^2_0\equiv V_{,\chi\chi}(\chi_0).
 }
-Except for the screening term the equation \eqref{eq:cham_lin} has the same behavior as the Poisson equation for the Newtonian potential $\Phi_N$. For a spherically symmetric density profile this gives solution
+Except for the screening term the equation \eqref{eq:cham_lin} has the same behavior as the Poisson equation for the Newtonian potential $\Phi_G$. For a spherically symmetric density profile this gives solution
 \eq{
-\chi=\chi_0+2\beta\Mpl\Phi_N\left(r\right)e^{-m_0 r}.
+\chi=\chi_0+2\beta\Mpl\Phi_G\left(r\right)e^{-m_0 r}.
 }
 As the objects in the background become more massive (larger and/or denser) the Newtonian potential grows larger (in magnitude) and so the deviation of $\chi$ from background solution $\chi_0$. At some point this deviation is no longer small and the potential term in \eqref{eq:cham} cannot be treated perturbatively. It starts canceling the first source term and eventually the field $\chi$ posses a new value which minimizes the effective potential inside an object.
 
@@ -128,7 +128,7 @@ With approximation $(R_s-R_{roll})/R_s\ll1$ we can determines the effective mass
 }
 where
 \eq{
-\frac{\Delta R_s}{R_s}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_N(R_s)|}\approx\frac{R_s-R_{roll}}{R_s}\ll1.
+\frac{\Delta R_s}{R_s}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_G(R_s)|}\approx\frac{R_s-R_{roll}}{R_s}\ll1.
 }
 This qualitative derivation of the thin-shell regime is using too much strong assumptions and can be done more precisely without ignoring some of the terms but then it is harder to see the principle of the thin-shell effect. For more details see e.g. \textcite{Tamaki:2008mf,2007PhRvD..75f3501M,Waterhouse:2006wv}.
 \subsubsection{Thick-shell regime}
@@ -140,13 +140,13 @@ In the \textit{thick-shell} regime the field is initially sufficiently displaced
 By matching the interior and exterior solutions, we obtain
 \eq{
 \begin{split}
-\chi_i &=\chi_0-3\beta\Mpl\Phi_N(R_s)\\
+\chi_i &=\chi_0-3\beta\Mpl\Phi_G(R_s)\\
 \tilde{M} &=M_c,
 \end{split}
 }
 which is the linear regime with no screening. From the definition of $\Delta R_s/R_s$ we also obtain
 \eq{
-\frac{\Delta R_s}{R_s}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_N(R_s)|}>1.
+\frac{\Delta R_s}{R_s}\equiv\frac{\chi_0-\chi_c}{6\beta\Mpl|\Phi_G(R_s)|}>1.
 }
 \subsubsection{Thin-shell suppression factor}
 The chameleon force outside the object (where experiments take place) comparing to the Newtonian force is
@@ -182,9 +182,81 @@ The chameleon obeys the equation of motion \eqref{eom:cham} which reduces for ou
 \label{eq:cham_husa}
 	\Delta \chi = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}
 }
+We rescale the equations to units in which we can clearly see the role of the screening potential $\Phiscr$ and its relation to the gravitational potential $\Phi_G$. We start by defining a few special values of the chameleon potential -- the current background value
+\eq{
+	\chi_0\equiv2\beta\Mpl\Phiscrz\,,
+}
+the background value at a given time (for a matter dominated universe)
+\eq{
+	\chi_a(a)\equiv \chi_0 a^{3/(1-n)}
+}
+and the value of the screening potential at a given time
+\eq{
+	\Phiscra\equiv\Phiscrz a^{\frac{5-2n}{1-n}}\,.
+}
+With these definitions we rewrite equation \eqref{eq:cham} as
+\eq{
+\label{eq:cham_u}
+	\Delta\left(\chi/\chi_a\right)= C_\chi(a)\left[1+\delta-\left(\frac{\chi_a}{\chi}\right)^{1-n}\right]\,,
+}
+where the pre-factor $C_\chi(a)$ is defined by
+\eq{
+	C_\chi(a)\equiv\frac{3H_0^2\Omega_m}{2\Phiscrz}a^{-3\frac{2-n}{1-n}}=\left(a\mu\Phiscra\right)^{-1}\,.
+}
+\subsubsection{Linear prediction}
+Equation \eqref{eq:cham_u} is similar to the Poisson equation for the gravitational potential and gives meaning to the screening potential $\Phiscra$. If we assume $\chi\approx\chi_a$, then
+\eq{
+	\Delta\left(\chi/\chi_a\right) \approx \left(\mu\Phiscra\right)^{-1}\frac{\delta}{a} = \Delta\left(\Phi_G/\Phiscr\right)
+}
+and we can write down a linear solution as
+\eq{
+\label{eq:chi_lin_x}
+	\chi(\mb x, a) = \chi_a(a)\left(1 + \frac{\Phi_G(\mb x, a)}{\Phiscra(a)} \right)\,.
+}
+Here we can clearly see the role of the (time dependent) screening potential $\Phiscra$ -- as long as $|\Phi_G| < \Phiscra$ we have a valid solution but once the gravitational potential is large enough (in its negative values) the linear solution breaks down, as the chameleon field would become negative.
 
+We may derive a more accurate solution in Fourier space. If the chameleon field sits near its background value, i.e. $\chi=\chi_a\left(1 + \delta\tilde\chi \right)$, where $\delta\tilde\chi \ll 1$, we can rewrite \eqref{eq:cham_u} as
+\eq{
+	\Delta\delta\tilde\chi=\frac{m^2}{1-n}\delta + m^2\delta\tilde\chi\,,
+}
+where the mass of the chameleon field is
+\eq{
+    \label{eq:chi_m}
+	m^2(a)\equiv\frac{1-n}{a\mu\Phiscra}\,.
+}
+This equation has a solution in $k-$space of the form
+\eq
+{
+\label{eq:chi_lin_k}
+	\hat{\chi}(k)=-\frac{\chi_a}{1-n}\frac{m^2}{m^2+k^2}\hat{\delta}(k) = -\frac{\beta\bar\rho_m}{\Mpl}\frac{\hat{\delta}(k)}{k^2+m^2}\,.
+}
+
+The other regime, which can be solved approximately, is the screened regime inside massive objects. When the solution \eqref{eq:chi_lin_x} breaks down, and if $\delta(x)$ is approximately constant, the solution of equation \eqref{eq:cham_u} is
+\eq{
+	\chi=\frac{\chi_a}{\left(1+\delta\right)^{1/(1-n)}}\,.
+	\label{eq:chi_bulk}
+}
+Because $\chi_a$ is constant in space the chameleon force \eqref{cham_force} vanishes in this screened regime.
+
+In \autoref{fig:chi_evol} we show the evolution of background parameters of the chameleon field -- Compton wavelength $\lambda_c=m^{-1}$, background value of the chameleon field $\chi_a$ and the screening potential $\Phiscra$ -- for different values of the power-law exponent $n$ and the screening potential $\Phiscrz$.
+
+\begin{figure}
+\centering
+	\begin{subfigure}{1.0\textwidth}
+        \includegraphicscustomlegend{modif_grav/chi_evol}
+	\end{subfigure}
+	\begin{subfigure}{1.0\textwidth}
+		\includegraphicscustom{modif_grav/chi_evol}
+	\end{subfigure}
+    \caption{Evolution of background parameters of the chameleon field. From top to bottom: Compton wavelength $\lambda_c$, chameleon field $\chi_a$ and screening potential $\Phiscra$.}
+    \label{fig:chi_evol}
+\end{figure}
+
+The background value of the Compton wavelength informs us about the global behaviour of the chameleon field whereas the screening potential describes its behaviour locally. At high redshifts, the chameleon's Compton wavelength is too short to have any effects -- on large scales, due to its low background value, and on small scales due to a low value of the screening potential. At lower redshifts the chameleon field starts to affect matter, initially only on small scales but with the passage of time also on large scales. We thus expect the strongest effects to be on small scales.
 \subsection{Numerical solutions}
 \label{sec:num_cham}
+\todo{use new rewritten equations}
+
 In this section we will show results of results of numerical solutions of chameleon profile. We will solve the equations for Hu-Sawicki \fR\ model, \eqref{eq:cham_husa}. In this section we will focus only on systems with spherical symmetry \eqref{eq_cham_r}, i.e. we will solve the the following equation
 \eq{
 	\label{eq:cham_husa_r}
@@ -195,7 +267,7 @@ Our algorithm for finding solutions to \eqref{eq:cham_husa_r} uses the shooting 
 \subsubsection{Stars}
 We will first consider a case where some approximate solutions exists -- a compact spherical object of constant density $\rho_c$ surrounded by the background of density $\rho_0$ as discuss in \autoref{cham_prof}. We expect that for low-mass objects the chameleon field will track the Newtonian potential while for massive objects the chameleon field will be frozen inside the sphere and outside it will be following the Newtonian behavior but with decreased amplitude.
 
-In \autoref{fig:starlike} we show results for the chameleon profile. We used the notation $\tilde\chi\equiv(\chi-\chi_0)/2\beta\Mpl$ for better comparison with the Newtonian potential. We see that for $\Phiscr>\Phi_N$ we have an unscreened solution as expected. For lower values of $\Phiscr$ the field is frozen inside the object and have lower amplitude outside the object as expected from analytical solutions.
+In \autoref{fig:starlike} we show results for the chameleon profile. We used the notation $\tilde\chi\equiv(\chi-\chi_0)/2\beta\Mpl$ for better comparison with the Newtonian potential. We see that for $\Phiscr>\Phi_G$ we have an unscreened solution as expected. For lower values of $\Phiscr$ the field is frozen inside the object and have lower amplitude outside the object as expected from analytical solutions.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{{spherical_cham/starlike}.png}
@@ -203,7 +275,7 @@ In \autoref{fig:starlike} we show results for the chameleon profile. We used the
 	\label{fig:starlike}
 \end{figure}
 
-Let us focus on the regime which cannot be treated analytical, i.e. regime between thin-shell and thick-shell solutions. This regime corresponds to the situation when the linear approximation (thick-shell) breaks down inside the object, i.e. the gravitational potential cancels screening potential somewhere inside the object.We will denote $\Req$ the \textit{equivalence radius} -- radius at which the Newtonian potential equals the screening potential $|\Phi_N(\Req)|=\Phi_s$. By letting the equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_N(0)|=\Phi_s$ we can clearly distinguish between the linear $(\Req<0)$ and the screening $(\Req>0)$ regime.
+Let us focus on the regime which cannot be treated analytical, i.e. regime between thin-shell and thick-shell solutions. This regime corresponds to the situation when the linear approximation (thick-shell) breaks down inside the object, i.e. the gravitational potential cancels screening potential somewhere inside the object.We will denote $\Req$ the \textit{equivalence radius} -- radius at which the Newtonian potential equals the screening potential $|\Phi_G(\Req)|=\Phi_s$. By letting the equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_G(0)|=\Phi_s$ we can clearly distinguish between the linear $(\Req<0)$ and the screening $(\Req>0)$ regime.
 
 In \autoref{fig:starlike_forces} we show the behavior of the chameleon fifth force in this regime. We see that for the linear regime the fifth force is as strong as standard gravity (up to the factor $2\beta^2$). For $\Req\ll R_s$ the chameleon field manages to catch up the linear solution inside the object and there is no screening outside. As the $\Req$ grows the field is not able catch up the linear solution while inside the object and the force outside is screened.
 \begin{figure}

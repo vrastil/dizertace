@@ -43,7 +43,12 @@ in the \LCDM\ universe. The omega factor of the cosmological constant
 \eq{
 	\Omega_\Lambda(a) = \frac{\Omega_{\Lambda,0}a^3}{\Omega_{m,0} + \Omega_{\Lambda,0}a^3}
 }
-rises from $0$ to $\Omega_{\Lambda,0}$ and becomes statistically significant $(>5\%)$ around redshift $z\approx2.5$. Equation \eqref{eq:lin_per_c} expressed with the growth factor reads
+rises from $0$ to $\Omega_{\Lambda,0}$ and becomes statistically significant $(>5\%)$ around redshift $z\approx2.5$. The transformation \eqref{eins_trans} from the Jordan frame to the Einstein frame introduces non-standard coupling of the chameleon field to standard matter resulting in the fifth force \eqref{cham_force}. Using our new variables, this equation reads
+\eq{
+	\label{eq:cham_force}
+	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
+}
+Equation \eqref{eq:lin_per_c} expressed with the growth factor reads
 \eq{
 \label{eq:poisson_a}
 	\Delta\Phi(\mb x, a) = \mu^{-1}\frac D a \delta_0(\mb x)\,.
@@ -134,7 +139,7 @@ The shell-crossing and diffusion of particles on small scales in ZA happens the 
 }
 where the power spectrum $P(k)$ was defined in \eqref{eq:pk} as
 \eq{
-  \label{eq:pk}
+  \label{eq:pk_cp}
   P(k)(2\pi)^3\delta_{\rm D}(k-k')\equiv \left\langle \hat\delta(k)\hat\delta^*(k')\right\rangle\,.
 }
 
@@ -305,6 +310,59 @@ In \autoref{fig:slice_dens_all} we show comparison of all approximation methods 
 	\end{adjustwidth}
 \end{figure*}
 % } %% end afterpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Approximation methods in modified gravity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Approximation methods in modified gravity}
+Here we remind the basic chameleon equations we want to solve numerically. The non-linear Poisson equation
+\eq{
+\label{eq:cham_u_cp}
+	\Delta\left(\chi/\chi_a\right)= C_\chi(a)\left[1+\delta-\left(\frac{\chi_a}{\chi}\right)^{1-n}\right]\,,
+}
+where
+\eq{
+	C_\chi(a)\equiv\frac{3H_0^2\Omega_m}{2\Phiscrz}a^{-3\frac{2-n}{1-n}}=\left(a\mu\Phiscra\right)^{-1}\,,
+}
+the linear solution
+\eq{
+\label{eq:chi_lin_x_cp}
+	\chi(\mb x, a) = \chi_a(a)\left(1 + \frac{\Phi_G(\mb x, a)}{\Phiscra(a)} \right)\,.
+}
+the linear solution in $k-$space
+\eq
+{
+\label{eq:chi_lin_k_cp}
+	\hat{\chi}(k)=-\frac{\chi_a}{1-n}\frac{m^2}{m^2+k^2}\hat{\delta}(k) = -\frac{\beta\bar\rho_m}{\Mpl}\frac{\hat{\delta}(k)}{k^2+m^2}\,.
+}
+where the mass of the chameleon field is
+\eq{
+    \label{eq:chi_m_cp}
+	m^2(a)\equiv\frac{1-n}{a\mu\Phiscra}\,,
+}
+and the screened solution inside massive objects
+\eq{
+	\chi=\frac{\chi_a}{\left(1+\delta\right)^{1/(1-n)}}\,.
+	\label{eq:chi_bulk_cp}
+}
+
+When applying the approximation methods to the chameleon equations, we have three choices on how to arrive at an approximate solution:
+\begin{enumerate}
+\item \label{itm:lin_q} Purely linear prediction in $(\mb q, a)$-space, solution \eqref{eq:chi_lin_x_cp}
+
+\item \label{itm:lin_k} Purely linear prediction in $(\mb k, a)$-space, solution \eqref{eq:chi_lin_k_cp}
+
+\item \label{itm:nl_x} Non-linear prediction in $(\mb x, a)$-space, solution \eqref{eq:cham_u_cp}
+\end{enumerate}
+
+Choice \ref{itm:lin_q} means that there is no computational overhead and we can simply take the chameleon force to be $2\beta^2a^{-2}$ of the gravitational one. This method clearly overestimates the chameleon force at early times when the chameleon's Compton wavelength is short. This is because the solution \eqref{eq:chi_lin_x_cp} does not take into account the non-zero mass of the field.
+
+A better choice is to use \ref{itm:lin_k} where the non-zero mass is incorporated. This solution adds relatively little computational overhead over normal gravity -- needing (at least) one Fourier transform and also extra storage. The overdensity $\delta(\mb k, a)$ is either the linearly evolved one, i.e. $\delta(\mb k, a) = D(a)\delta_0(\mb k)$, or we can compute $\delta$ at each time-step from the current positions of particles. This adds extra computation when assigning the mass of particles on the grid and one extra Fourier transform to get $\delta(\mb k, a)$. 
+However, we cannot use \eqref{eq:chi_lin_k_cp} blindly to get a solution in real space as this linear approximation breaks down inside massive objects where we would get a negative solution. This effect is similar to a usage of linear evolution for $\delta$ where we can end up with regions where $\delta<-1$. We need to check if the resulting chameleon field is positive and fix it where it is not. We use the screening regime value \eqref{eq:chi_bulk_cp} to get a positive solution. We will refer to this prediction as pseudo-linear since it can address some effects of the screening mechanism.
+
+The most expensive choice is \ref{itm:nl_x} where we must iteratively solve nonlinear equations. Unlike other methods this one can address the screening regime inside and near massive objects but at the cost of the most computational overhead.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Other approximations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
