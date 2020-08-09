@@ -74,6 +74,28 @@ citestyle=authoryear
 % Definitions of ADS journal macros
 \usepackage{preamble/journals}
 
+\usepackage{subcaption} % group figures
+\usepackage[export]{adjustbox} % adjust figures
+\usepackage{multirow}
+\usepackage{changepage} % adjustwidth
+\usepackage{datetime} % today
+\usepackage{fancyhdr}
+% \usepackage{afterpage}
+\usepackage{floatpag}
+\floatpagestyle{fancy}
+
+\usepackage{lscape}
+\usepackage{multicol}
+
+% subcaption issues an error
+\captionsetup{compatibility=false}
+
+% setup include paths
+\graphicspath{{img/}}
+
+% Definitions of macros (see description inside)
+\input{preamble/macros}
+
 %%% Basic information on the thesis
 
 % Thesis title in English (exactly as in the formal assignment)
@@ -111,6 +133,9 @@ Dedication.
 
 % Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
 \def\Abstract{%
+\todo{More info about results -- spherical sims, N-body sims
+
+}
 The accelerated expansion of the Universe poses a major theoretical puzzle. Although the assumption of a non-zero cosmological constant provides a minimal extension of general relativity that is consistent with observational data, many theories of modified gravity have been suggested as possible alternatives. Predictions of structure formation for these models in the fully non-linear regime are very expensive and it is difficult, if not impossible, to explore such a huge space of models and parameters using high-resolution \textit{N}-body simulations. Even in the mildly nonlinear regime, perturbative methods can become extremely complex. We explore whether simplified dynamical approximations, applicable for a certain set of cosmological probes, can be used to investigate models of modified gravity with acceptable accuracy in the latter instance. For the case of chameleon gravity, we find that it is screened in away on scales smaller than that of galaxy clusters and that approximate methods can be used to explore the region around the baryon acoustic oscillation scale, $k\sim 0.1~h\text{Mpc}^{-1}$ but not much further.}
 
 % 3 to 5 keywords (recommended), each enclosed in curly braces
@@ -118,15 +143,7 @@ The accelerated expansion of the Universe poses a major theoretical puzzle. Alth
 {dark energy}, {modified gravity}, {\textit{N}-body simulations}, {cosmology}, {approximate methods}
 }
 
-%% Generate PDF/A-2u
 \usepackage{filecontents}
-\begin{filecontents}{\jobname.xmpdata}
-\Title{\ThesisTitle}
-\Author{\ThesisAuthor}
-% \Keywords{keyword1\sep keyword2\sep keyword3}
-% \Subject{\Abstract}
-\Publisher{Charles University}
-\end{filecontents}
 \usepackage[a-2u]{pdfx}
 
 %% The hyperref package for clickable links in PDF and also for storing
@@ -135,29 +152,14 @@ The accelerated expansion of the Universe poses a major theoretical puzzle. Alth
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
 \hypersetup{colorlinks=true}
-
-
-\usepackage{subcaption} % group figures
-\usepackage[export]{adjustbox} % adjust figures
-\usepackage{multirow}
-\usepackage{changepage} % adjustwidth
-\usepackage{datetime} % today
-\usepackage{fancyhdr}
-% \usepackage{afterpage}
-\usepackage{floatpag}
-\floatpagestyle{fancy}
-
-\usepackage{lscape}
-\usepackage{multicol}
-
-% subcaption issues an error
-\captionsetup{compatibility=false}
-
-% setup include paths
-\graphicspath{{img/}}
-
-% Definitions of macros (see description inside)
-\input{preamble/macros}
+%% Generate PDF/A-2u
+\begin{filecontents}{\jobname.xmpdata}
+\Title{\ThesisTitle}
+\Author{\ThesisAuthor}
+% \Keywords{keyword1\sep keyword2\sep keyword3}
+% \Subject{\Abstract}
+\Publisher{Charles University}
+\end{filecontents}
 
 %% TODO faster build
 % \includeonly{chapters/simulations_approx}
@@ -215,6 +217,7 @@ The accelerated expansion of the Universe poses a major theoretical puzzle. Alth
 \phantomsection
 \renewcommand{\bibname}{List of publications}
 \addcontentsline{toc}{chapter}{\bibname}
+\label{chpt:list_publish}
 \begin{refsection}[bibliography/my_work.bib]
 \nocite{*}
 \printbibliography[title={\bibname}]
