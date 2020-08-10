@@ -27,6 +27,11 @@ tex:
 bib:
 	$(BIB_BACKEND) $(MAIN)
 
+rtf:
+	latex2rtf $(MAIN).tex
+	-@cp $(MAIN).rtf /mnt/c/Users/micha/Downloads/
+
+
 TMP_FILES := $(MAIN).pdf \
 	$(MAIN).aux $(wildcard **/*.aux) \
 	$(MAIN).out \
