@@ -106,7 +106,7 @@ The time when the density in ZA becomes infinite corresponds to particles crossi
 
 In \autoref{fig:slice_dens_ZA} we show comparison of a simulations with ZA at four different redshifts through projected density field. At redshift $z=\ztwo$ the cosmic web still looks nice but after that, at redshifts $z=\zthree, \zfour$, we can see that shell-crossing occurred and the overall picture gets blurry. The large-scale structures remain visible but the small-scale structures get diluted at later times.
 \begin{figure*}[!htbp]
-	\begin{adjustwidth}{-3cm}{-1cm}
+	\begin{adjustwidth}{-1cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z\zone}.png}
@@ -124,9 +124,9 @@ In \autoref{fig:slice_dens_ZA} we show comparison of a simulations with ZA at fo
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z\zfour}.png}
 			\caption{$z=\zfour$}
 		\end{subfigure}
+	\end{adjustwidth}
 		\caption{Projected density field at different redshifts for the Zel`dovich approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_ZA}
-	\end{adjustwidth}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Truncated Zel`dovich Approximation
@@ -152,7 +152,7 @@ where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering lea
 In \autoref{fig:slice_dens_TZA} we show comparison of a simulations with TZA at four different redshifts through projected density field. We see clear differences in comparison with ZA. Large-scale structures evolve similarly to ZA but we see clear artifacts on small scales given by artificial cutoff at these scales. These small-scale structures in filaments are not so diluted as in case of ZA, however, lot of particles remain in voids where they are freezed due to the lack of the initial kick.
 
 \begin{figure*}[!htbp]
-	\begin{adjustwidth}{-3cm}{-1cm}
+	\begin{adjustwidth}{-1cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z\zone}.png}
@@ -170,9 +170,9 @@ In \autoref{fig:slice_dens_TZA} we show comparison of a simulations with TZA at 
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/tza_dens_512m_1p_1024M_200b_z\zfour}.png}
 			\caption{$z=\zfour$}
 		\end{subfigure}
+	\end{adjustwidth}
 		\caption{Projected density field at different redshifts for the truncated Zel`dovich approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_TZA}
-	\end{adjustwidth}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Frozen-flow Approximation
@@ -211,7 +211,7 @@ Although equation \eqref{eq:FFA} now does not represent a \textit{frozen} flow, 
 
 In \autoref{fig:slice_dens_FFA} we show comparison of a simulations with FFA at four different redshifts through projected density field. Unlike in case of ZA or TZA there is no shell-crossing and structures remain clear even at later times. As the particles approach minima of the gravitational potential the slow down and we can see that resulting structures are elongated along stream-lines.
 \begin{figure*}[!htbp]
-	\begin{adjustwidth}{-3cm}{-1cm}
+	\begin{adjustwidth}{-1cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z\zone}.png}
@@ -229,9 +229,9 @@ In \autoref{fig:slice_dens_FFA} we show comparison of a simulations with FFA at 
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/ff_dens_512m_1p_1024M_200b_z\zfour}.png}
 			\caption{$z=\zfour$}
 		\end{subfigure}
+	\end{adjustwidth}
 		\caption{Projected density field at different redshifts for the frozen flow approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_FFA}
-	\end{adjustwidth}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Frozen-potential Approximation
@@ -250,7 +250,7 @@ Particles now follow the linear \textit{gravitational} potential (which evolves 
 
 In \autoref{fig:slice_dens_FPA} we show comparison of a simulations with FPA at four different redshifts through projected density field. On the first sight, it looks similarly as in the case of FFA, especially at early times. For $z=\zthree, \zfour$ we can see the differences due to the fact that particles have an inertia and resulting structures are not so elongated as in the case of FFA.
 \begin{figure*}[!htbp]
-	\begin{adjustwidth}{-3cm}{-1cm}
+	\begin{adjustwidth}{-1cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z\zone}.png}
@@ -268,9 +268,9 @@ In \autoref{fig:slice_dens_FPA} we show comparison of a simulations with FPA at 
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/fp_dens_512m_1p_1024M_200b_z\zfour}.png}
 			\caption{$z=\zfour$}
 		\end{subfigure}
+	\end{adjustwidth}
 		\caption{Projected density field at different redshifts for the frozen potential approximation. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_FPA}
-	\end{adjustwidth}
 \end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -283,7 +283,7 @@ In \autoref{fig:slice_dens_all} we show comparison of all approximation methods 
 % \afterpage{%
 \begin{figure*}[!htbp]
 	\thisfloatpagestyle{empty} 
-	\begin{adjustwidth}{-3cm}{-1cm}
+	\begin{adjustwidth}{-2cm}{-2cm}
 	\centering
 		\begin{subfigure}{0.4\linewidth}
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/za_dens_512m_1p_1024M_200b_z0.00}.png}
@@ -305,9 +305,9 @@ In \autoref{fig:slice_dens_all} we show comparison of all approximation methods 
 			\includegraphics[width=1.0\linewidth]{{simulations_approx/dens/pm_dens_512m_1p_1024M_200b_z0.00}.png}
 			\caption{PM simulation}
 		\end{subfigure}
+	\end{adjustwidth}
 		\caption{Projected density field at redshift $z=0$ for the different approximations, all run with the same initial conditions. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_all}
-	\end{adjustwidth}
 \end{figure*}
 % } %% end afterpage
 
@@ -396,7 +396,7 @@ Success of ZA, the first order Lagrangian perturbation theory (LPT), has motivat
 }
 In LPT, this displacement vector field is expanded in a perturbation series in the linear growth function $D$ in Fourier space. Density perturbations $\delta$ are described as a function of the displacement vector through conservation of mass. This Lagrangian picture is intrinsically non-linear in the density field, and a small perturbation in Lagrangian fluid element paths carries a considerable amount of non-linear information about the corresponding Eulerian density and velocity fields. Different variants of LPT -- third order LPT (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{10.1093/mnras/260.4.765}), Augmented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) -- have been tested against particle-mesh code COLA (\cite{2013JCAP...06..036T}) in \cite{2017JCAP...07..050M}, see \autoref{fig:app_compare}.
 
-\begin{figure}[ht]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.9\textwidth]{cosmo_evol/app_compare.png}
     \caption{Power spectrum at $z = 0,\ 0.5$ and $1$ (top, middle and bottom panels, respectively) in real space and ratio with the \nbody’s one for the matter field (left panels) and for the halo catalogues (right panels). The vertical dashed line locates the $k = 0.5\hMpc$ where the one-halo term becomes significant. The vertical shaded area locates the region of the BAO peak, while the horizontal one locates the 1\% accuracy region.  \textit{Note:} Reprinted from \textcite{2017JCAP...07..050M}.}

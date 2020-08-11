@@ -206,7 +206,8 @@ where the pre-factor $C_\chi(a)$ is defined by
 \subsubsection{Linear prediction}
 Equation \eqref{eq:cham_u} is similar to the Poisson equation for the gravitational potential and gives meaning to the screening potential $\Phiscra$. If we assume $\chi\approx\chi_a$, then
 \eq{
-	\Delta\left(\chi/\chi_a\right) \approx \left(\mu\Phiscra\right)^{-1}\frac{\delta}{a} = \Delta\left(\Phi_G/\Phiscr\right)
+	\label{eq:chi__scr_mean}
+	\Delta\left(\chi/\chi_a\right) \approx \left(\mu\Phiscra\right)^{-1}\frac{\delta}{a} = \Delta\left(\Phi_G/\Phiscra\right)
 }
 and we can write down a linear solution as
 \eq{
@@ -228,7 +229,7 @@ This equation has a solution in $k-$space of the form
 \eq
 {
 \label{eq:chi_lin_k}
-	\hat{\chi}(k)=-\frac{\chi_a}{1-n}\frac{m^2}{m^2+k^2}\hat{\delta}(k) = -\frac{\beta\bar\rho_m}{\Mpl}\frac{\hat{\delta}(k)}{k^2+m^2}\,.
+	\hat{\chi}(k)=-\frac{\chi_a}{1-n}\frac{m^2}{m^2+k^2}\hat{\delta}(k) = -\frac{\beta\bar\rho}{\Mpl}\frac{\hat{\delta}(k)}{k^2+m^2}\,.
 }
 
 The other regime, which can be solved approximately, is the screened regime inside massive objects. When the solution \eqref{eq:chi_lin_x} breaks down, and if $\delta(x)$ is approximately constant, the solution of equation \eqref{eq:cham_u} is
@@ -240,7 +241,7 @@ Because $\chi_a$ is constant in space the chameleon force \eqref{cham_force} van
 
 In \autoref{fig:chi_evol} we show the evolution of background parameters of the chameleon field -- Compton wavelength $\lambda_c=m^{-1}$, background value of the chameleon field $\chi_a$ and the screening potential $\Phiscra$ -- for different values of the power-law exponent $n$ and the screening potential $\Phiscrz$.
 
-\begin{figure}
+\begin{figure}[hbt]
 \centering
 	\begin{subfigure}{1.0\textwidth}
         \includegraphicscustomlegend{modif_grav/chi_evol}
@@ -255,12 +256,10 @@ In \autoref{fig:chi_evol} we show the evolution of background parameters of the 
 The background value of the Compton wavelength informs us about the global behavior of the chameleon field whereas the screening potential describes its behavior locally. At high redshifts, the chameleon's Compton wavelength is too short to have any effects -- on large scales, due to its low background value, and on small scales due to a low value of the screening potential. At lower redshifts the chameleon field starts to affect matter, initially only on small scales but with the passage of time also on large scales. We thus expect the strongest effects to be on small scales.
 \subsection{Numerical solutions}
 \label{sec:num_cham}
-\todo{use new rewritten equations}
-
 In this section we will show results of results of numerical solutions of chameleon profile. We will solve the equations for Hu-Sawicki \fR\ model, \eqref{eq:cham_husa}. In this section we will focus only on systems with spherical symmetry \eqref{eq_cham_r}, i.e. we will solve the the following equation
 \eq{
 	\label{eq:cham_husa_r}
-	\frac{\dd^2\chi}{\dd r^2}+\frac{2}{r}\dddd{\chi}{r} = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}
+	\frac{\dd^2\chi}{\dd r^2}+\frac{2}{r}\dddd{\chi}{r} = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{\chi_0}{\chi}\right)^{1-n}
 }
 Our algorithm for finding solutions to \eqref{eq:cham_husa_r} uses the shooting method \parencite{10.5555/42249} and is based on the original algorithm of \textcite{mastersthesis_vrastil}. We further improved the code applicability, readability and its parametrization. The code is publicly available at \code{\url{https://github.com/vrastil/chi_r_solver}}.
 
@@ -307,7 +306,7 @@ In \autoref{fig:nfwlike_forces} we show the chameleon fifth force. We see that t
 	\label{fig:nfwlike_forces}
 \end{figure}
 
-The meaning of the screening potential and its connection to the Newtonian potential is given by the value of the field at the background \todo{add eqref, show meaning of $\Phiscr$}. However, objects like stars or galaxy halos do not sit directly in the overall average density of the universe but rather in galaxy halo or halo of the cluster of galaxies. Therefore the value of the effective screening potential is given by the density the background object we can consider as being in infinity relative to the scale of studied object. In \autoref{fig:nfwlike_pot_eff} we show the value of this effective screening potential for a cluster of galaxies of a typical size -- $M=10^{14} M_\odot, c=4$. We see that the screening potential is greatly reduced in inner parts of the galaxy cluster halo. For this reason we do not think it much likely to observe effects of the chameleon field on scales smaller than Mpc.
+The meaning of the screening potential and its connection to the Newtonian potential in \eqref{eq:chi__scr_mean} is given by the value of the field at the background, i.e. value that minimizes right side of \eqref{eq:cham_u}. However, objects like stars or galaxy halos do not sit directly in the overall average density of the universe but rather in galaxy halo or halo of the cluster of galaxies. Therefore the value of the effective screening potential is given by the density the background object we can consider as being in infinity relative to the scale of studied object. In \autoref{fig:nfwlike_pot_eff} we show the value of this effective screening potential for a cluster of galaxies of a typical size -- $M=10^{14} M_\odot, c=4$. We see that the screening potential is greatly reduced in inner parts of the galaxy cluster halo. For this reason we do not think it much likely to observe effects of the chameleon field on scales smaller than Mpc.
 
 \begin{figure*}
 	\centering
@@ -321,9 +320,25 @@ The meaning of the screening potential and its connection to the Newtonian poten
 		\label{fig:nfwlike_pot_eff}
 \end{figure*}
 
-As the chameleon affects only non-relativistic matter it can be detected using combination of dynamical measurements and lensing measurements. Therefore, we considered what would be difference between mass distribution of a galaxy cluster measured via lensing (true mass) and via dynamics of enclosed galaxies. In \autoref{fig:clustersYs} we plot this ratio for five real clusters (simulated as having ideal NFW profile), see their parameters in \todo{Add Table}, and for four different values of the screening potential. We see that except for the case $\Phiscr=1$ one would need very precise (and nowadays unrealistic) measurements of the mass distribution. We are therefore left with only cosmological scales of tens of Mpc and larger to study the chameleon. We will study this case in \autoref{chpt:app_sims}.
-\begin{figure*}
-\begin{adjustwidth}{-3cm}{-1cm}
+As the chameleon affects only non-relativistic matter it can be detected using combination of dynamical measurements and lensing measurements. Therefore, we considered what would be difference between mass distribution of a galaxy cluster measured via lensing (true mass) and via dynamics of enclosed galaxies. In \autoref{fig:clustersYs} we plot this ratio for five real clusters (simulated as having ideal NFW profile), see their parameters in \autoref{tab:clusters}, and for four different values of the screening potential. We see that except for the case $\Phiscr=1$ one would need very precise (and nowadays unrealistic) measurements of the mass distribution. We are therefore left with only cosmological scales of tens of Mpc and larger to study the chameleon. We will study this case in \autoref{chpt:app_sims}.
+\begin{table}[hbt]
+	\begin{tabular}{lcc|lcc}
+		\hline \hline
+		Cluster & $c$ & $M$ & Cluster & $c$ & $M$ \\
+		\hline
+		ClG 0054-27 & $1.2$ & $0.42\cdot10^{14}$ &
+		Cl 0016+1609 & $2.1$ & $1.12\cdot10^{14}$ \\
+		MS 2137.3-2353 & $13$ & $2.9\cdot10^{14}$ &
+		ClG 2244-02 & $4.3$ & $4.5\cdot10^{14}$ \\
+		MS 0451.6-0305 & $5.5$ & $18\cdot10^{14}$ & & & \\
+		\hline \hline
+	\end{tabular}
+	\caption{Properties of clusters simulated as perfect NFW halos: concentration $c$ and mass $M [M_\odot]$. Parameters are taken from \textcite{2007MNRAS.379..190C}}
+	\label{tab:clusters}
+\end{table}
+
+\begin{figure*}[!hbt]
+\begin{adjustwidth}{-1cm}{-1cm}
 	\centering
 		\begin{subfigure}{0.5\linewidth}
 			\includegraphics[width=1.0\linewidth]{{spherical_cham/clustersYs_-6}.png}
@@ -341,7 +356,7 @@ As the chameleon affects only non-relativistic matter it can be detected using c
 			\includegraphics[width=1.0\linewidth]{{spherical_cham/clustersYs_0}.png}
 			\caption{$\Phiscr=10^{0}$}
 		\end{subfigure}
-		\caption{Effective dynamical mass of the clusters relative to the actual (lensing) mass of the cluster. Cluster properties are: ClG 0054-27 $(c=1.2, M=0.42\cdot10^{14}M_\odot)$, Cl 0016+1609 $(c=2.1, M=1.12\cdot10^{14}M_\odot)$, MS 2137.3-2353 $(c=13, M=2.9\cdot10^{14}M_\odot)$, ClG 2244-02 $(c=4.3, M=4.5\cdot10^{14}M_\odot)$, MS 0451.6-0305 $(c=5.5, M=18\cdot10^{14}M_\odot)$. Parameters are taken from \textcite{2007MNRAS.379..190C}.}
+	\end{adjustwidth}
+		\caption{Effective dynamical mass of the clusters relative to the actual (lensing) mass of the cluster. Cluster properties are shown in \autoref{tab:clusters}.}
 		\label{fig:clustersYs}
-\end{adjustwidth}
 \end{figure*}
