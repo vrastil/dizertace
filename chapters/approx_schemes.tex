@@ -3,11 +3,11 @@
 Parts of this chapter has been published in \textcite{2020MNRAS.493.2085V}.
 
 \section{Motivation}
-Various approximations in different scientific fields have always been studied in detail. Many non-linear equations cannot be solved analytically and one can hope to achieve at least some results using linearization or other perturbation theories of higher order. Cosmological simulations are no exception. From the beginning of first attempts to simulate clustering of matter on large scales in late 60`s the approximate methods were developed to help understand dynamics of the Universe. The greatest pioneering efforts to improve and validate these approximate methods have been undertook in the 90`s.
+Various approximations in different scientific fields have always been studied in detail. Many non--linear equations cannot be solved analytically and one can hope to achieve at least some results using linearization or other perturbation theories of higher--order. Cosmological simulations are no exception. From the beginning of first attempts to simulate clustering of matter on large scales in late 60`s the approximate methods were developed to help understand dynamics of the Universe. The greatest pioneering efforts to improve and validate these approximate methods have been undertook in the 90`s.
 
 These analytic or semi-analytic methods can be used to understand otherwise very complicated problem of structure formation. Instead of running a simulation ``blindly'' and trying to analyze them phenomenologically one can compare these simulations with much better understood approximate methods.
 
-Besides usefulness of approximations in getting an insight into gravitational evolution they are very helpful in getting large number of simulations quickly. In order to study BAO one needs high number of simulations with very large volume and high number of particles which requires demanding resources. The BAO scale is of particular interest to us as it lies between the linear regime which can be studied analytically and highly non-linear regime of halo formation which requires precise \nbodysim s. The semi-analytical methods are expected to work very well in this regime.
+Besides usefulness of approximations in getting an insight into gravitational evolution they are very helpful in getting large number of simulations quickly. In order to study BAO one needs high number of simulations with very large volume and high number of particles which requires demanding resources. The BAO scale is of particular interest to us as it lies between the linear regime which can be studied analytically and highly non--linear regime of halo formation which requires precise \nbodysim s. The semi-analytical methods are expected to work very well in this regime.
 
 In this chapter we describe several of approximations which have been studied in the past -- Zel`dovich approximation and its \textit{truncated} extension, frozen-flow approximation and frozen-potential approximation. The Zel'dovich approximation has been studied extensively in the past and here we use it mainly as a reference for comparison in the context of the other approximations.
 
@@ -57,7 +57,7 @@ Equation \eqref{eq:lin_per_c} expressed with the growth factor reads
 % Zel`dovich Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zel`dovich approximation}
-The Zel'dovich approximation \parencite[hereafter ZA;][]{1970A&A.....5...84Z} bears its name after a pioneer in the study of large-scale structure, a Soviet physicist Yakov Zel`dovich. The ZA provides an intuitive way to understand the emergence of filamentary structures (cosmic web) and can realize model of non-linear structure formation even though it is based only on linear approximations \parencite{2014MNRAS.439.3630W}. The Zel’dovich approximation predicts the rich structure of voids, clusters, sheets and filaments observed in the Universe.
+The Zel'dovich approximation \parencite[hereafter ZA;][]{1970A&A.....5...84Z} bears its name after a pioneer in the study of large--scale structure, a Soviet physicist Yakov Zel`dovich. The ZA provides an intuitive way to understand the emergence of filamentary structures (cosmic web) and can realize model of non--linear structure formation even though it is based only on linear approximations \parencite{2014MNRAS.439.3630W}. The Zel’dovich approximation predicts the rich structure of voids, clusters, sheets and filaments observed in the Universe.
 
 The ZA is based on an ansatz that particles move in straight lines in the Lagrangian frame
 \eq{
@@ -99,7 +99,7 @@ The eigenvectors of the deformation tensor determine the principle directions of
 }
 The time when the density in ZA becomes infinite corresponds to particles crossing the paths of other particles. Once this shell-crossing has occurred, the approximation has formally broken down, since there are no forces present to slow down the particles and capture them within halos.
 
-In \autoref{fig:slice_dens_ZA} we show comparison of a simulations with ZA at four different redshifts through projected density field. At redshift $z=\ztwo$ the cosmic web still looks nice but after that, at redshifts $z=\zthree, \zfour$, we can see that shell-crossing occurred and the overall picture gets blurry. The large-scale structures remain visible but the small-scale structures get diluted at later times.
+In \autoref{fig:slice_dens_ZA} we show comparison of a simulations with ZA at four different redshifts through projected density field. At redshift $z=\ztwo$ the cosmic web still looks nice but after that, at redshifts $z=\zthree, \zfour$, we can see that shell-crossing occurred and the overall picture gets blurry. The large--scale structures remain visible but the small-scale structures get diluted at later times.
 \begin{figure*}[!htbp]
 	\begin{adjustwidth}{-1cm}{-1cm}
 	\centering
@@ -127,7 +127,7 @@ In \autoref{fig:slice_dens_ZA} we show comparison of a simulations with ZA at fo
 % Truncated Zel`dovich Approximation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Truncated Zel`dovich approximation}
-The shell-crossing and diffusion of particles on small scales in ZA happens the sooner the more power there is on small scales. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on these small non-linear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a non-linear scale $k_{nl}$ defined as
+The shell-crossing and diffusion of particles on small scales in ZA happens the sooner the more power there is on small scales. \textcite{doi:10.1093/mnras/260.4.765} suggested an improvement of the ZA by removing power on these small non--linear scales, i.e. to set the initial power spectrum to zero for wave-numbers $k$ greater than a non--linear scale $k_{nl}$ defined as
 \eq{
 \label{eq:k_nl}
     \frac{a^2(t)}{2\pi^2}\int_0^{k_{nl}}P(k)\dd k=1\,,
@@ -142,9 +142,9 @@ where the power spectrum $P(k)$ was defined in \eqref{eq:pk} as
 \eq{
 W(k)=e^{-k^2/2k^2_{G}}\,,
 }
-where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering leads to the so called truncated Zel`dovich approximation (TZA). This removes most of the strongly non-linear behavior and allows the Zel’dovich pancakes to be seen.
+where the smoothing scale $k_{G}$ is 1 to 1.5 times $k_{nl}$. This filtering leads to the so--called truncated Zel`dovich approximation (TZA). This removes most of the strongly non--linear behavior and allows the Zel’dovich pancakes to be seen.
 
-In \autoref{fig:slice_dens_TZA} we show comparison of a simulations with TZA at four different redshifts through projected density field. We see clear differences in comparison with ZA. Large-scale structures evolve similarly to ZA but we see clear artifacts on small scales given by artificial cutoff at these scales. These small-scale structures in filaments are not so diluted as in case of ZA, however, lot of particles remain in voids where they are freezed due to the lack of the initial kick.
+In \autoref{fig:slice_dens_TZA} we show comparison of a simulations with TZA at four different redshifts through projected density field. We see clear differences in comparison with ZA. Large--scale structures evolve similarly to ZA but we see clear artifacts on small scales given by artificial cutoff at these scales. These small-scale structures in filaments are not so diluted as in case of ZA, however, lot of particles remain in voids where they are freezed due to the lack of the initial kick.
 
 \begin{figure*}[!htbp]
 	\begin{adjustwidth}{-1cm}{-1cm}
@@ -186,7 +186,7 @@ These equations are very similar to ZA but now the particles update their veloci
 
 Originally, \textcite{Matarrese:1992be} stated three main reasons of why should the FFA work:
 \begin{itemize}
-\item FFA is, by construction, consistent with linear theory and follows correctly the evolution at early times. Keeping the linear approximation for the velocity potential is justified by the fact that this quantity is more sensitive to large wavelength modes than the density, and is therefore less affected by strongly non-linear evolution.
+\item FFA is, by construction, consistent with linear theory and follows correctly the evolution at early times. Keeping the linear approximation for the velocity potential is justified by the fact that this quantity is more sensitive to large wavelength modes than the density, and is therefore less affected by strongly non--linear evolution.
 \item Stream-lines are frozen to their initial shape, so multistream regions cannot form and FFA avoids formation of caustics at finite time and can therefore work well after shell-crossing would occur in ZA. A particle moving according to FFA has zero velocity at minima (or maxima) of the gravitational potential. It will slow down its motion when approaching such a position -- particles in FFA would need infinite time to reach such places. Particles move along curved paths and once they come close to pancake configurations they curve their trajectories, moving almost parallel to them, trying to reach the positions of filaments.
 \item This type of dynamics implies an artificial thickening of particles around pancakes, filaments and knots, which mimics the real gravitational clustering around these types of structures.
 \end{itemize}
@@ -312,7 +312,7 @@ In \autoref{fig:slice_dens_all} we show comparison of all approximation methods 
 % Approximation methods in modified gravity
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Approximation methods in modified gravity}
-Here we remind the basic chameleon equations we want to solve numerically. The non-linear Poisson equation
+Here we remind the basic chameleon equations we want to solve numerically. The non--linear Poisson equation
 \eq{
 \label{eq:cham_u_cp}
 	\Delta\left(\chi/\chi_a\right)= C_\chi(a)\left[1+\delta-\left(\frac{\chi_a}{\chi}\right)^{1-n}\right]\,,
@@ -349,7 +349,7 @@ When applying the approximation methods to the chameleon equations, we have thre
 
 \item \label{itm:lin_k} Purely linear prediction in $(\mb k, a)$-space, solution \eqref{eq:chi_lin_k_cp}
 
-\item \label{itm:nl_x} Non-linear prediction in $(\mb x, a)$-space, solution \eqref{eq:cham_u_cp}
+\item \label{itm:nl_x} Non--linear prediction in $(\mb x, a)$-space, solution \eqref{eq:cham_u_cp}
 \end{enumerate}
 
 Choice \ref{itm:lin_q} means that there is no computational overhead and we can simply take the chameleon force to be $2\beta^2a^{-2}$ of the gravitational one. This method clearly overestimates the chameleon force at early times when the chameleon's Compton wavelength is short. This is because the solution \eqref{eq:chi_lin_x_cp} does not take into account the non-zero mass of the field.
@@ -366,7 +366,7 @@ The most expensive choice is \ref{itm:nl_x} where we must iteratively solve nonl
 Approximations described previously are studied numerically in detail in the next chapter. Here we present few of the other approximations studied in the past or used today.
 
 \subsection{Adhesion approximation}
-The adhesion approximation was introduced in \textcite{1989MNRAS.236..385G}. To study the evolution of density inhomogeneities they used model of non-linear diffusion (Burger`s equation), that gives an approximate description of the growth of structures at the advanced non-linear stage of gravitational instability.
+The adhesion approximation was introduced in \textcite{1989MNRAS.236..385G}. To study the evolution of density inhomogeneities they used model of non--linear diffusion (Burger`s equation), that gives an approximate description of the growth of structures at the advanced non--linear stage of gravitational instability.
 
 To overcome problems of ZA with shell-crossing they propose a solution of ``sticking articles.'' Particles move according to ZA until they ran into one another. Then they move together, with the velocity conserving momentum. This model can be described mathematically by inserting the viscous term into equations of motion, simulating attractive forces of gravity
 \eq{
@@ -375,21 +375,21 @@ To overcome problems of ZA with shell-crossing they propose a solution of ``stic
 The Burger`s equation has an analytical solution which can be used to study formation of structures. For more information regarding the adhesion approximation see  also \textcite{1990MNRAS.247..260W,1994ApJ...428...28M}.
 
 \subsection{Stable clustering}
-It was proposed by \textcite{1974ApJ...189L..51P} that clustering in the very non-linear regime might be understood by assuming that regions of high density contrast undergo virialization and subsequently maintain a fixed proper density, hence stable clustering. The correlation function for a population of such systems would then simply evolve according to
+It was proposed by \textcite{1974ApJ...189L..51P} that clustering in the very non--linear regime might be understood by assuming that regions of high density contrast undergo virialization and subsequently maintain a fixed proper density, hence stable clustering. The correlation function for a population of such systems would then simply evolve according to
 \eq{
 	\xi(r,a)\propto1/\bar\rho\propto a^3\,.
 }
-\textcite{1991ApJ...374L...1H} developed a method for interpolating between linear theory on large scales and the non-linear predictions of the stable clustering hypothesis on small scales. They showed that the non-linear volume-averaged two-point correlation function could be parameterized by a simple function of the linear correlation function
+\textcite{1991ApJ...374L...1H} developed a method for interpolating between linear theory on large scales and the non--linear predictions of the stable clustering hypothesis on small scales. They showed that the non--linear volume-averaged two-point correlation function could be parameterized by a simple function of the linear correlation function
 \eq{
 	\bar\xi_{NL}=f(\bar\xi_{L})\,,
 }
-where the functional form of $f$ can be derived from the spherical top-hat model without any shell-crossing. For the linear regime $\bar\xi_{L}\ll1$, $f(y)=y$, and for non-linear $\bar\xi_{L}\gg1$, $f(y)=y^{3/2}$. For more information regarding the stable clustering see  also \textcite{1996MNRAS.280L..19P,2003MNRAS.341.1311S}.
-\subsection{Lagrangian perturbation theories of higher orders}
-Success of ZA, the first order Lagrangian perturbation theory (LPT), has motivated studies of higher order corrections \parencite[see e.g.][]{10.1093/mnras/264.2.375,2002PhR...367....1B,2010MNRAS.403.1859J,2014ApJ...788...63S}. In the Lagrangian description, the spatial coordinates are transformed through the displacement vector $\Psi$ as
+where the functional form of $f$ can be derived from the spherical top-hat model without any shell-crossing. For the linear regime $\bar\xi_{L}\ll1$, $f(y)=y$, and for non--linear $\bar\xi_{L}\gg1$, $f(y)=y^{3/2}$. For more information regarding the stable clustering see  also \textcite{1996MNRAS.280L..19P,2003MNRAS.341.1311S}.
+\subsection{Lagrangian perturbation theories of higher--orders}
+Success of ZA, the first--order Lagrangian perturbation theory (LPT), has motivated studies of higher--order corrections \parencite[see e.g.][]{10.1093/mnras/264.2.375,2002PhR...367....1B,2010MNRAS.403.1859J,2014ApJ...788...63S}. In the Lagrangian description, the spatial coordinates are transformed through the displacement vector $\Psi$ as
 \eq{
 	\mb x = \mb q + \Psi(a, \mb x)\,.
 }
-In LPT, this displacement vector field is expanded in a perturbation series in the linear growth function $D$ in Fourier space. Density perturbations $\delta$ are described as a function of the displacement vector through conservation of mass. This Lagrangian picture is intrinsically non-linear in the density field, and a small perturbation in Lagrangian fluid element paths carries a considerable amount of non-linear information about the corresponding Eulerian density and velocity fields. Different variants of LPT -- third order LPT (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{10.1093/mnras/260.4.765}), Augmented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) -- have been tested against particle-mesh code COLA (\cite{2013JCAP...06..036T}) in \cite{2017JCAP...07..050M}, see \autoref{fig:app_compare}.
+In LPT, this displacement vector field is expanded in a perturbation series in the linear growth function $D$ in Fourier space. Density perturbations $\delta$ are described as a function of the displacement vector through conservation of mass. This Lagrangian picture is intrinsically non--linear in the density field, and a small perturbation in Lagrangian fluid element paths carries a considerable amount of non--linear information about the corresponding Eulerian density and velocity fields. Different variants of LPT -- third order LPT (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{10.1093/mnras/260.4.765}), Augmented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) -- have been tested against particle-mesh code COLA (\cite{2013JCAP...06..036T}) in \cite{2017JCAP...07..050M}, see \autoref{fig:app_compare}.
 
 \begin{figure}[!htb]
     \centering
