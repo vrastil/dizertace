@@ -99,11 +99,6 @@ The eigenvectors of the deformation tensor determine the principle directions of
 }
 The time when the density in ZA becomes infinite corresponds to particles crossing the paths of other particles. Once this shell-crossing has occurred, the approximation has formally broken down, since there are no forces present to slow down the particles and capture them within halos.
 
-\newcommand{\zone}{3.88}
-\newcommand{\ztwo}{1.82}
-\newcommand{\zthree}{0.53}
-\newcommand{\zfour}{0.00}
-
 In \autoref{fig:slice_dens_ZA} we show comparison of a simulations with ZA at four different redshifts through projected density field. At redshift $z=\ztwo$ the cosmic web still looks nice but after that, at redshifts $z=\zthree, \zfour$, we can see that shell-crossing occurred and the overall picture gets blurry. The large-scale structures remain visible but the small-scale structures get diluted at later times.
 \begin{figure*}[!htbp]
 	\begin{adjustwidth}{-1cm}{-1cm}
@@ -282,7 +277,7 @@ For comparison with other approximations we also implemented the particle-mesh c
 In \autoref{fig:slice_dens_all} we show comparison of all approximation methods with PM at $z=0$ through projected density field. Here we can see side-by-side the main differences between individual approximation methods: ZA with diluted small-scale structures, TZA with (almost) frozen small-scale structures, FFA and FPA with elongated structures. We see that PM simulation has more concentrated filaments but also more particles in voids than ZA, FFA and FPA.
 % \afterpage{%
 \begin{figure*}[!htbp]
-	\thisfloatpagestyle{empty} 
+	\thisfloatpagestyle{empty}
 	\begin{adjustwidth}{-2cm}{-2cm}
 	\centering
 		\begin{subfigure}{0.4\linewidth}
@@ -309,6 +304,7 @@ In \autoref{fig:slice_dens_all} we show comparison of all approximation methods 
 		\caption{Projected density field at redshift $z=0$ for the different approximations, all run with the same initial conditions. Each slice has a box-length of $200~\Mpch$ and is $1~\Mpch$ thick.}
 		\label{fig:slice_dens_all}
 \end{figure*}
+\floatpagestyle{plain}
 % } %% end afterpage
 
 
@@ -366,7 +362,6 @@ The most expensive choice is \ref{itm:nl_x} where we must iteratively solve nonl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Other approximations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \clearpage TODO
 \section{Other approximations}
 Approximations described previously are studied numerically in detail in the next chapter. Here we present few of the other approximations studied in the past or used today.
 
