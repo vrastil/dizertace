@@ -4,5 +4,8 @@
         "**/*.bbl": true,
         "**/*.xmind": true,
         "**/*.xmpi": true
-    }
+    },
+    "cSpell.ignoreWords": [
+        "decadal"
+    ]
 }

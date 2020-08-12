@@ -1,7 +1,7 @@
 \section{Formation and evolution of LSS}
-So far we have considered only equations for smooth, homogeneous and isotropic background. In order to describe the real Universe with its rich structures we must employ perturbation theory for cosmological equations.
+So far we have considered only equations for a smooth, homogeneous, and isotropic background. To describe the real Universe with its rich structures, we must employ perturbation theory for cosmological equations.
 \subsection{Newtonian gauge}
-We will consider first order (linear) perturbations of the metric:
+We will consider first--order (linear) perturbations of the metric:
 \eq{
     g_{\mu\nu}=g_{\mu\nu}^{(0)}+\delta g_{\mu\nu}\,,
 }
@@ -13,19 +13,19 @@ where $g_{\mu\nu}^{(0)}$ is the FLRW metric \eqref{eq:flrw} and all the entries 
         w_i & 2\Phi\delta_{ij}+h_{ij} \\
     \end{pmatrix}\,,
 }
-where $\Psi(t,x)$ and $\Phi(t,x)$ are spatial scalars, $w_i(t,x)$ is 3-vector, and $h_{ij}(t,x)$ is a traceless 3-tensor. We have a freedom to choose coordinates in which we will describe the equations of motion -- we can choose our \textit{gauge}. We wish to keep our background metric $g_{\mu\nu}^{(0)}$ the same (i.e. FLRW) and only change $\delta g_{\mu\nu}$. Note that unlike ordinary coordinate transformations a gauge transformation (although expressed as a change of coordinates) does not link different observers in the same spacetime but it links two different spacetimes seen by the same observer. For a detailed discussion of gauge choices, see e.g. \textcite{PhysRevD.40.1804}, \textcite{10.1143/PTPS.78.1} or \textcite{PhysRevD.22.1882}.
+where $\Psi(t,x)$ and $\Phi(t,x)$ are spatial scalars, $w_i(t,x)$ is 3-vector, and $h_{ij}(t,x)$ is a traceless 3-tensor. We have the freedom to choose coordinates in which we will describe the equations of motion -- we can choose our \textit{gauge}. We wish to keep our background metric $g_{\mu\nu}^{(0)}$ the same (i.e. FLRW) and only change $\delta g_{\mu\nu}$. Note that unlike ordinary coordinate transformations a gauge transformation (although expressed as a change of coordinates) does not link different observers in the same spacetime but it links two different spacetimes seen by the same observer. For a detailed discussion of gauge choices, see e.g. \textcite{PhysRevD.40.1804,10.1143/PTPS.78.1,PhysRevD.22.1882}.
 
-We will choose to attach the observers to the points in the unperturbed frame, the so called \textit{Newtonian} or \textit{longitudinal} or \textit{shear-free} gauge. In this case the observer will detect a velocity field of particles falling into the clumps of matter and will measure a gravitational potential. We can impose up to four conditions on the metric, which corresponds to the four gauge coordinate transformations. The final perturbed metric is:
+We will choose to attach the observers to the points in the unperturbed frame, the so--called \textit{Newtonian} or \textit{longitudinal} or \textit{shear-free} gauge. In this case, the observer will detect a velocity field of particles falling into the clumps of matter and will measure a gravitational potential. We can impose up to four conditions on the metric, which corresponds to the four gauge coordinate transformations. The final perturbed metric is:
 \eq{
     \label{eq:flrw_pert}
     \dd s^2=a^2(\eta)\left[-(1+2\Psi)\dd\eta^2+(1+2\Phi)\delta_{ij}\dd x^i\dd x^j\right]\,.
 }
 \subsection{Linear perturbations}
-We now decompose the Einstein tensor and the energy-momentum tensor into background and perturbed parts. The background cosmological evolution is obtained by solving the zero-th order Einstein equations and is given by the Friedmann equations. The first order equations are given by the perturbation of the Einstein tensor, i.e. by perturbed metric \eqref{eq:flrw_pert}, and by the perturbed energy-momentum tensor $T_\uv$. The energy-momentum tensor for a single perfect fluid is given by
+We now decompose the Einstein tensor and the energy--momentum tensor into the background and perturbed parts. The background cosmological evolution is obtained by solving the zeroth order Einstein equations and is given by the Friedmann equations. The first--order equations are given by the perturbation of the Einstein tensor, i.e. by perturbed metric \eqref{eq:flrw_pert}, and by the perturbed energy--momentum tensor $T_\uv$. The energy--momentum tensor for a single perfect fluid is given by
 \eq{
     T_\uv=\left(\rho+p\right)u_\mu u_\nu + pg_\uv\,,
 }
-where the four-velocity $u^\mu$ is up to the first order
+where the four-velocity $u^\mu$ is up to the first--order
 \eq{
     u^\mu\equiv\dddd{x^\mu}{\tau}=\left[\frac{1}{a}(1-\Psi),\frac{v^i}{a} \right]\,,
 }
@@ -34,7 +34,7 @@ where $\tau$ is the proper time and $v^i=\dd x^i/\dd\eta$ is the matter peculiar
     \delta &\equiv\frac{\delta\rho}{\bar{\rho}}\equiv\frac{\rho-\bar{\rho}}{\bar{\rho}}\,,\\
     \theta &\equiv\nabla\cdot v\,,
 }
-where $\delta$ is the density contrast, the bar represents a mean value (spatial average) and $\theta$ is the velocity divergence. The first order equations are (for details see e.g. \cite{2002col.luc..cosmology} or \cite{10.1143/PTPS.78.1})
+where $\delta$ is the density contrast, the bar represents a mean value (spatial average) and $\theta$ is the velocity divergence. The first--order equations are (for details see e.g. \cite{2002col.luc..cosmology} or \cite{10.1143/PTPS.78.1})
 \eq{
     \label{eq:lin_1}
     3\mathcal{H}(\mathcal{H}\Psi-\Phi') + \nabla^2\Phi &= -4\pi G\bar\rho a^2 \delta\,,\\
@@ -49,21 +49,21 @@ where the prime denotes the derivative with respect to the conformal time $\eta$
 \eq{
     c_s^2\equiv\frac{\delta p}{\delta\rho}=\dddd p\rho = \frac{\dot p}{\dot\rho}\,,
 }
-where the last equality are valid only in the FLRW metric at background level. Conservation of the energy-momentum tensor leads to the perturbed continuity equation
+where the last equality is valid only in the FLRW metric at the background level. Conservation of the energy--momentum tensor leads to the perturbed continuity equation
 \eq{
     \delta'+3\mathcal{H}(c_s^2-w)\delta=-(1+w)(\theta+3\Psi')\,,
     \label{eq:lin_5}
 }
-which reduces for non-relativistic matter to
+which reduces for a non--relativistic matter to
 \eq{
     \delta'=-\theta-3\Phi'\,.
 }
-Another equation coming from the conservation of the energy-momentum tensor is
+Another equation coming from the conservation of the energy--momentum tensor is
 \eq{
     \theta'+\left[\mathcal{H}(1-3w)+\frac{w'}{1+w}\right]\theta=-\nabla^2\left(\frac{c_s^2}{1+w}\delta + \Psi \right)\,,
     \label{eq:lin_6}
 }
-which reduces for non-relativistic matter to
+which reduces for a non--relativistic matter to
 \eq{
     \theta'+\mathcal{H}\theta=-\nabla^2\Psi-\nabla^2(c_s^2\delta)\,,
 }
@@ -75,7 +75,7 @@ We will now transform all the equations to the Fourier space. The Fourier transf
     f(\bm{x})=\int e^{i\bm{k\cdot x}}\hat{f}(\bm k)\dd^3k\,,
 }
 where $\bm k$ is a wavenumber with modulus $k$ and hat represents quantities in Fourier space. If there is no danger of misunderstanding we will drop the hat in the following. Since we are dealing with linear equations the different modes are not coupled and we can solve the equation for each $k$ independently.
- From equations \eqref{eq:lin_1}---\eqref{eq:lin_4}, \eqref{eq:lin_5} and \eqref{eq:lin_6} we will obtain the following equations in Fourier space:
+ From equations \eqref{eq:lin_1}---\eqref{eq:lin_4}, \eqref{eq:lin_5}, and \eqref{eq:lin_6} we will obtain the following equations in Fourier space:
 \eq{
     \label{eq:lin_k_1}
     k^2\Phi + 3\mathcal{H}(\Phi'-\mathcal{H}\Psi) &= 4\pi G\bar\rho a^2 \delta\,,\\
@@ -92,7 +92,7 @@ where $\bm k$ is a wavenumber with modulus $k$ and hat represents quantities in 
 }
 where now $\theta=i\bm{k\cdot  v}$. Note that these six equations are not independent and $w$ and $c_s^2$ are arbitrary functions of time.
 \subsubsection{Super-horizon scales}
-In the large-scale limit $k\ll\mathcal{H}$, i.e. when the physical wavelength $\lambda_p=2\pi a/k$ of perturbations is much larger than the Hubble radius $H^{-1}$, and with the barotropic fluid, i.e. when the pressure depends only on the energy density, and with the constant $w$, we have $c_s^2=w$ and we can get an equation for $\Phi$
+In the large--scale limit $k\ll\mathcal{H}$, i.e. when the physical wavelength $\lambda_p=2\pi a/k$ of perturbations is much larger than the Hubble radius $H^{-1}$, and with the barotropic fluid, i.e. when the pressure depends only on the energy density, and with the constant $w$, we have $c_s^2=w$ and we can get an equation for $\Phi$
 \eq{
     \Phi''+3\mathcal{H}(1+c_s^2)\Phi'=0\,.
 }
@@ -116,11 +116,11 @@ These equations lead to
 \eq{
     \delta'' +\mathcal{H}\delta' +\left(c_s^2k^2 + \frac32\mathcal{H}^2 \right)\delta=0\,.
 }
-Perturbations on small scales with $(c_s^2k^2-\frac32\mathcal{H})>0$ do not grow but undergo damped oscillations. These are perturbations with physcial wavelength smaller than the Jeans length
+Perturbations on small scales with $(c_s^2k^2-\frac32\mathcal{H})>0$ do not grow but undergo damped oscillations. These are perturbations with physical wavelength smaller than the Jeans length
 \eq{
     \lambda_J=c_s\sqrt\frac{\pi}{G\bar\rho}\,.
 }
-For the photons and baryons before the decoupling epoch we have $c_S=c/sqrt3$ and the Jeans length is comparable to the Hubble radius $H^{-1}$ and the growth of perturbations is prevented on all scales smaller than that. For a small sound speed $c_sl\ll\mathcal{H}$ the perturbations grow freely (gravitational instability). The resulting equation for a single pressureless fluid becomes
+For the photons and baryons before the decoupling epoch we have $c_S=c/sqrt3$ and the Jeans length is comparable to the Hubble radius $H^{-1}$ and the growth of perturbations is prevented on all scales smaller than that. For a small sound speed $c_sl\ll\mathcal{H}$, the perturbations grow freely (gravitational instability). The resulting equation for a single pressureless fluid becomes
 \eq{
     \label{eq:lin_evol_m}
     \delta''+\mathcal{H}\delta'-\frac32\mathcal{H}^2\delta=0\,.
@@ -131,7 +131,7 @@ The growing solution during the matter dominated era is $\delta\propto a\propto 
 % Growth function
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Growth function and rate}
-In linear perturbation theory the gravitational evolution of fluctuations is separable into time-dependent and spatially-dependent (or wavenumber-dependent) parts, i.e.
+In linear perturbation theory, the gravitational evolution of fluctuations is separable into time-dependent and spatially-dependent (or wavenumber-dependent) parts, i.e.
 \eq{
     \delta(a)=\delta_0D(a)\,,
 }
@@ -158,7 +158,7 @@ The above equations describe the evolution of matter density perturbations. Now 
     \label{eq:p_geo}
     \dddd{k^\mu}{\lambda_s}+\Gamma^\mu_{\alpha\beta}k^\alpha k^\beta &= 0\,.
 }
-We will split the momentum vector into a background and a perturbed value $k^\mu=\bar k^\mu+\delta k^\mu$. The photon moves in the unperturbed metric along the direction $r$ so that $\dd\eta=\dd r$. At the background level we can integrate the photon path \eqref{eq:p_geo} to get $\bar k^0\propto a^{-2}$ and therefore the photon frequency $\nu\equiv\dd t/\dd\Lambda_s=a\bar k^0\propto a^{-1}$ as expected. The equations for the perturbed part $\delta k$ are \parencite[for details see e.g. ][]{2010deto.book.....A}
+We will split the momentum vector into a background and a perturbed value $k^\mu=\bar k^\mu+\delta k^\mu$. The photon moves in the unperturbed metric along the direction $r$ so that $\dd\eta=\dd r$. At the background level, we can integrate the photon path \eqref{eq:p_geo} to get $\bar k^0\propto a^{-2}$ and therefore the photon frequency $\nu\equiv\dd t/\dd\Lambda_s=a\bar k^0\propto a^{-1}$ as expected. The equations for the perturbed part $\delta k$ are \parencite[for details see e.g. ][]{2010deto.book.....A}
 \eq{
     \label{eq:SW_0}
     \dddd{(\delta k^0/k^0)}{\eta} &= -\left(\partpart{\Phi}{\eta}+\partpart{\Psi}{\eta}+2\partpart{\Psi}{r}\right)\,,\\
@@ -171,17 +171,17 @@ The time part of the geodesic equations \eqref{eq:SW_0} describes changes in the
 \eq{
     \left.\frac{\delta k^0}{k^0}\right\rvert_e^o=-2\left.\Psi\right\rvert_e^o-\int_{e}^{o}{\left(\partpart\Phi\eta-\partpart\Psi\eta\right)\dd\eta}\,,
 }
-where vertical bars represents change of quantities between $e$ and $o$. The first effect is referred to as the \textit{Sachs--Wolfe effect} and depends on the difference between the potential at emission and at observation. The second effect is called the \textit{integrated Sachs--Wolfe effect} and depends on the line-of-sight integral of $\Phi-\Psi$.
+where vertical bars represent the change of quantities between $e$ and $o$. The first effect is referred to as the \textit{Sachs--Wolfe effect} and depends on the difference between the potential at the time of emission and observation. The second effect is called the \textit{integrated Sachs--Wolfe effect} and depends on the line-of-sight integral of $\Phi-\Psi$.
 \subsubsection{Weak lensing}
 The spatial part of the geodesic equations \eqref{eq:WL_0} can be written for $i=1,2$ as
 \eq{
     \frac{\dd^2x^i}{\dd r^2}=\partpart{\psi}{x^i}\,,
 }
-where the lensing potential $\psi\equiv\Phi-\Psi$. For small displacements we can put $x^i=r\theta^i$. Integrated the above equation gives us
+where the lensing potential $\psi\equiv\Phi-\Psi$. For small displacements, we can put $x^i=r\theta^i$. Integrated the above equation gives us
 \eq{
     \theta^i=\theta^i_0+\int_0^r\dd \tilde r\left(1-\frac{\tilde r}{r}\right)\partpart{\psi(\tilde r\theta_0^1,\tilde r\theta_0^2,\tilde r)}{x^i}\,.
 }
-Two light rays separated by a small angle  $\Delta\theta^i$ on the source plane at $r=r_s$ are connected to the the observation plane at $r=0$ by the symmetric transformation matrix
+Two light rays separated by a small angle  $\Delta\theta^i$ on the source plane at $r=r_s$ are connected to the observation plane at $r=0$ by the symmetric transformation matrix
 \eq{
     A_{ij}\equiv\partpart{\theta^i_s}{\theta^j_o}=\delta_{ij}+D_{ij}\,,
 }
@@ -196,10 +196,10 @@ where the distortion tensor
 }
 The convergence $\kappa$ describes the magnification of the source image and the two components of the shear field $\gamma_1,\gamma_2$ describe the distortion of the source image.
 %%%%%%%%%%%%%%%%%%%%%%%
-% Non-linear cosmological perturbations
+% Non--linear cosmological perturbations
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Non-linear cosmological perturbations}
-So far we have described linear gravitational processes which are essential for cosmolgy as a whole and approximate methods we are exploring. However, as we will compare our results with full \nbodysim s, which can deal with the full non-linear dynamics, we will mention here a regime that lies between the linear perturbation theory and the full non-linear gravitational interactions.
+\subsection{Non--linear cosmological perturbations}
+So far we have described linear gravitational processes which are essential for cosmology as a whole and approximate methods we are exploring. However, as we will compare our results with full \nbodysim s, which can deal with the full non--linear dynamics, we will mention here a regime that lies between the linear perturbation theory and the full non--linear gravitational interactions.
 
 One step further from linear order are the second-order perturbations. In this approximation one no longer neglect terms like divergence of the velocity field and the resulting equations are much more complicated than the linear order \textcite[see e.g.][]{2004astro.ph.12025T,10.1093/mnras/264.2.375,2010deto.book.....A}. We will mention here only the simplest result for a spherical perturbation in Einstein--de Sitter universe with initial Gaussian perturbations \textcite{1980_Peebles}:
 \eq{
@@ -208,10 +208,10 @@ One step further from linear order are the second-order perturbations. In this a
     \delta^{(2)} &= \delta_0^2(\mb x)D_2(a)\,,\\
     D_2 &= \frac{17}{21}D_L^2\,.
 }
-In general, solutions of higher order perturbations has to be found numerically and they are computationally similarly expensive as \nbodysim s described later in this work.
+In general, solutions of higher--order perturbations have to be found numerically and they are computationally similarly expensive as \nbodysim s described later in this work.
 
-Another non-linear effet of cosmological importance is the spherical collapse. The model of spherical collapse describes non-linear evolution of a spherical perturbation in an otherwise smooth expanding background. The equations and their solutions can be derived on purely Newtonian grounds \parencite{2010deto.book.....A}. As one expects, a small perturbation expands with the cosmological expansion, reaches a turnaround point and then the perturbation collapses under its own gravity to a singularity (unphysical phenomenon originated from the exact symmetry).
+Another non--linear effect of cosmological importance is the spherical collapse. The model of spherical collapse describes a non--linear evolution of a spherical perturbation in an otherwise smooth expanding background. The equations and their solutions can be derived on purely Newtonian grounds \parencite{2010deto.book.....A}. As one expects, a small perturbation expands with the cosmological expansion, reaches a turnaround point and then the perturbation collapses under its own gravity to a singularity (unphysical phenomenon originated from the exact symmetry).
 
-The main result we get from this model for the Einstein–-de Sitter case is the critical or collapse value $\delta\coll$ of the linear fluctuation that is reached at the time of collapse. This quantity is of cosmological relevance as a first approximation to the epoch of galaxy formation and to calculate the abundance of collapsed objects. A spherical perturbation in the Einstein-–de Sitter Universe collapses to a singularity whenever the linear density contrast $\delta_L=\delta\coll\approx1.686$.
+The main result we get from this model for the Einstein–-de Sitter case is the critical or collapse value $\delta\coll$ of the linear fluctuation that is reached at the time of the collapse. This quantity is of cosmological relevance as a first approximation to the epoch of galaxy formation and to calculate the abundance of collapsed objects. A spherical perturbation in the Einstein-–de Sitter Universe collapses to a singularity whenever the linear density contrast $\delta_L=\delta\coll\approx1.686$.
 
 The main reason why it is worth to study the phenomenon of a spherical collapse is that we can estimate the number of collapsed objects formed in a random Gaussian field by simply counting at any given time how many regions have an overdensity above the collapse threshold given by $\delta\coll$ (more in the halo mass function in the next section).

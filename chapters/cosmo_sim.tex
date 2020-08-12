@@ -3,7 +3,7 @@
 
 %% full approximation scheme \parencite[FAS, see, e.g.,][]{MG_overview}
 
-In this chapter we will use the following notation: box size $L$ [$\Mpch$], number of particles $\Np$, number of force mesh points $\Nf$, number of power-spectrum mesh points $\Na$, number of runs $N$, number of time-steps $\Nt$ and a derived parameter, the particle mass $m$ $[M_\odot]$. This notation is summarized in \autoref{tab:sim_param}.
+In this chapter we will use the following notation: box size $L$ [$\Mpch$], number of particles $\Np$, number of force mesh points $\Nf$, number of power spectrum mesh points $\Na$, number of runs $N$, number of time-steps $\Nt$ and a derived parameter, the particle mass $m$ $[M_\odot]$. This notation is summarized in \autoref{tab:sim_param}.
 
 \begin{table}
 \begin{tabular}{ll}
@@ -13,7 +13,7 @@ In this chapter we will use the following notation: box size $L$ [$\Mpch$], numb
     $L$ & box size in units of $\Mpch$ \\
     $\Np$ & number of particles \\
     $\Nf$ & number of force mesh points \\
-    $\Na$ & number of power-spectrum mesh points \\
+    $\Na$ & number of power spectrum mesh points \\
     $N$ & number of runs \\
     $\Nt$ & number of time-steps \\
     $m$ & particle mass in units of $[M_\odot]$ \\
@@ -74,7 +74,7 @@ where operators \(\TT\equiv\{\cdot,T\}\) and \(\VV\equiv\{\cdot,V\}\) are known 
         p-\Delta t\ \nabla V \\
     \end{pmatrix}\,.
 }
-The splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second order accurate, whereas simpler splitting only into one kick and one drift is first order accurate. The same accurcy and results has also similar splitting into drift-kick-drift which we use in our integrator.
+The splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second order accurate, whereas simpler splitting only into one kick and one drift is first--order accurate. The same accurcy and results has also similar splitting into drift-kick-drift which we use in our integrator.
 \section{Particle-Mesh algorithm}
 \label{sec:PM}
 As we mentioned in the introduction in order to effectively compute forces on particles one has to abandon continuous position and solve the forces using discretized positions. The idea of the PM method is that we set up a mesh (grid) over the computational box, and then solve the gravitational potential (i.e. Poisson’s equation \eqref{eq:poisson_lin}) at the meshpoints. Forces at the meshpoints can then be obtained by calculating the gradient of the potential. The four principal steps of the particle-mesh calculation are:
@@ -96,7 +96,7 @@ In step \ref{it:pm_1} and \ref{it:pm_4} we make a connection between discrete me
 The mass of each particle $m_i$ is assigned as a whole to the gridpoint closest to the particle. Similary, force on particles is given by force on the nearest gridpoint. Although computationally the simplest, NGP as a zero-order interpolation offer lowest accuracy and the interparticle force changes discontinuously as particles cross cell boundaries.
 
 \subsubsection{Cloud-in-Cell (CIC)}
-The mass of each particle is weighted over the eight closest cells while the the weighting in each dimension is proportional to the distance between particle and the mesh. CIC scheme is more costly in terms of number of arithmetic operations per particle per timestep than NGP but offers better accuracy as first order (linear) interpolation. The CIC interpolation function in one dimension is
+The mass of each particle is weighted over the eight closest cells while the the weighting in each dimension is proportional to the distance between particle and the mesh. CIC scheme is more costly in terms of number of arithmetic operations per particle per timestep than NGP but offers better accuracy as first--order (linear) interpolation. The CIC interpolation function in one dimension is
 \eq{
     w(x-x_p)=
     \begin{cases}
@@ -104,7 +104,7 @@ The mass of each particle is weighted over the eight closest cells while the the
         0 & \rm{otherwise}
     \end{cases}
 }
-where $x$ is the position of a mesh point, $x_p$ position of the partice and $H$ the distance between mesh points. The three-dimensional interpolation function is \(W(\mathbf x)=w(x_1)w(x_2)w(x_3)\). The CIC scheme is somewhere in the middle between oversimplistic NGP and higher order interpolations which offer greater accuracy and smoother transitions but at the cost of much greater computational resources -- second order interpolation (triangular shaped cloud, TSC) involves 27 cells, third order 64, and etc. CIC gives a much smoother force than the NGP scheme (piecewise linear) and reduces the amplitude of fluctuations in the interparticle forces as the particles are displaced with respect to the mesh. In our code we use the CIC scheme.
+where $x$ is the position of a mesh point, $x_p$ position of the partice and $H$ the distance between mesh points. The three-dimensional interpolation function is \(W(\mathbf x)=w(x_1)w(x_2)w(x_3)\). The CIC scheme is somewhere in the middle between oversimplistic NGP and higher--order interpolations which offer greater accuracy and smoother transitions but at the cost of much greater computational resources -- second order interpolation (triangular shaped cloud, TSC) involves 27 cells, third order 64, and etc. CIC gives a much smoother force than the NGP scheme (piecewise linear) and reduces the amplitude of fluctuations in the interparticle forces as the particles are displaced with respect to the mesh. In our code we use the CIC scheme.
 \subsubsection{Mixed schemes}
 The NGP and CIC schemes both employ mass assignment functions which are the same as their force interpolation functions. A result of this symmetry is that they conserve momentum, i.e., the forces between a pair of particles are equal and opposite, and the force of a particle upon itself (the self force) is zero. A possible variation is to use a mass assignment function which is different from the force interpolation function. In such cases, symmetry still causes the force between pairs of particles to be equal and opposite, but no longer ensures that the self force is zero. At best, the presence of the self force presents a nonphysical restriction on the timestep and, at worst, it is disastrous.
 
@@ -119,7 +119,7 @@ The essence of the method is to express the interparticle force as the sum of tw
 
 We do not use P$^3$M in our approximate methods because of their much greater numerical requirements compared to simpler PM methods. For more details, see e.g. \textcite{Hockney:1988:CSU:62815}.
 \section{Multi-grid techniques}
-Practical multi-grid techniques were introduced by \textcite{10.2307/2006422}. These methods also interpolate the density and potential between grid and particles as PM methods based on FFT with $\OO(N_m\log N_m)$ complexity but they use relaxation methods such as Gauss-Seidel iteration \parencite{doi:10.1002/zamm.19720520813} and can solve elliptic partial differential equations using $\OO(N_m)$ operations. The numerical coefficients in these estimates are such that multigrid methods are comparable to the rapid methods in execution speed. Unlike the rapid methods, however, the multigrid methods can solve general elliptic equations with nonconstant coefficients with hardly any loss in efficiency. Even non-linear equations of modified gravitational can be solved with these methods \parencite{10.5555/42249}.
+Practical multi-grid techniques were introduced by \textcite{10.2307/2006422}. These methods also interpolate the density and potential between grid and particles as PM methods based on FFT with $\OO(N_m\log N_m)$ complexity but they use relaxation methods such as Gauss-Seidel iteration \parencite{doi:10.1002/zamm.19720520813} and can solve elliptic partial differential equations using $\OO(N_m)$ operations. The numerical coefficients in these estimates are such that multigrid methods are comparable to the rapid methods in execution speed. Unlike the rapid methods, however, the multigrid methods can solve general elliptic equations with nonconstant coefficients with hardly any loss in efficiency. Even non--linear equations of modified gravitational can be solved with these methods \parencite{10.5555/42249}.
 
 The basic idea exploits the fact that on a coarser grid relaxation occurs faster because information travels faster. The distribution of errors (the difference between the actual density -- source -- and that obtained via the discretisation of potential from the current estimate for the potential) is first smoothed on the finest grid by a few Gauss-Seidel iterations. After transferring the problem to a coarser grid, the process is repeated on coarser and coarser grids until, on the coarsest grid convergence is achieved. Then the problem is transferred back to finer and finer grids, each time iterating until convergence.
 \subsection{Simple two-grid V-cycle}
@@ -173,7 +173,7 @@ The idea behind multigrid techniques is a combination of smoothing on the fine g
 \end{itemize}
 To achieve the full multigrid method is now straightforward. Instead of solving the coarse-grid defect exactly we can get an approximate solution of it by introducing an even coarser grid and so on.
 
-We considered $\LL$ to be a linear operator but the above method works also with non-linear operators. The speed of convergence is obviously worse and depend on the exact form of the operator. For our problem and finding solutions to the chameleon equation of motion \eqref{eq:cham_husa} this method proves to be sufficient.
+We considered $\LL$ to be a linear operator but the above method works also with non--linear operators. The speed of convergence is obviously worse and depend on the exact form of the operator. For our problem and finding solutions to the chameleon equation of motion \eqref{eq:cham_husa} this method proves to be sufficient.
 
 \subsubsection{Gauss-Seidel relaxation}
 The most popular smoothing method is Gauss-Seidel relaxation. The Gauss-Seidel scheme for $N_m$ mesh points is
@@ -183,7 +183,7 @@ The most popular smoothing method is Gauss-Seidel relaxation. The Gauss-Seidel s
 }
 where new values of $u$ are used on the right-hand side as they become available. It is usually best to use tile scheme,  making one pass through the mesh updating the even points and another pass updating the odd points.
 
-For non-linear problems as ours one needs to modify the scheme \eqref{eq:GS} by Newton iteration
+For non--linear problems as ours one needs to modify the scheme \eqref{eq:GS} by Newton iteration
 \eq{
     u_i\new=u_i-\frac{L_i(u_i)-f_i}{\partial L_i(u_i)/\partial u_i}\,.
 }
@@ -209,19 +209,20 @@ The initial positions $\mb q$ of particles are chose to be grid points of the si
 In order to have reliable results one has to run cosmological simulation many times with different IC to lower the sampling variance. In order to accelerate the convergence we use each IC twice, second time with opposite phases \parencite{PhysRevD.93.103519}. Opposite phases of the density field in the Fourier space correspond to switched minima and maxima of the gravitation potential in the real space, $n_2(\mb x)=-n_1(\mb x)$
 
 \section{Core Cosmology Library}
-\todo{Explicitly my controbutions}
-The Core Cosmology Library (\code{CCL}, \textcite{2019ApJS..242....2C}) is an open source software package written in \code{C}, with a \code{python} interface. The \code{CCL} provides routines to compute basic cosmological observables such as varius distances, power spectra, correlation functions and many others. The accuracy of all quantitites has been extensively tested and compared with many other independent software packages. This allows to establish a well-defined numerical accuracy for each predicted quantity. The \code{CCL} was developed for the needs of the DESC of the LSST which needs very precise predictions for the next generation of cosmological analysis. The author contributed to the development of this library.
+%The author`s work inside the Dark Energy Science Collaboration (DESC) focused mainly on improving the Core Cosmology Library \parencite[\code{CCL},][]{2019ascl.soft01003C,2019ApJS..242....2C}. Initially author helped to create a documentation of the library, wrote many examples of usage of the \code{CCL} and presented with other authors the \code{CCL} and its capabilities at several sessions to new users. Author also helped to improve several automatization processes regarding releasing of the library and helped to improve its compatibility across different operating systems and environments.
 
-We use \code{CCL} for quantities such as linear and non-linear power spectra or growth functions. Internally, \code{CCL} calculates the matter power spectrum  $P(k)$ using various methods including common approximations, by calling external software such as Cosmic Linear Anisotropy Solving System (\code{CLASS}, \textcite{class}), or emulators, such as the CosmicEmu emulator \parencite{Heitmann:2015xma}.
+The Core Cosmology Library (\code{CCL}, \textcite{2019ApJS..242....2C}) is an open source software package written in \code{C}, with a \code{python} interface. The \code{CCL} provides routines to compute basic cosmological observables such as various distances, power spectra, correlation functions and many others. The accuracy of all quantities has been extensively tested and compared with many other independent software packages. This allows to establish a well-defined numerical accuracy for each predicted quantity. The \code{CCL} was developed for the needs of the DESC of the LSST which needs very precise predictions for the next generation of cosmological analysis. The author contributed to the development of this library, mainly by writing documentation, examples of usage and helping with automatization process and improving its compatibility.
+
+We use \code{CCL} for quantities such as linear and non--linear power spectra or growth functions. Internally, \code{CCL} calculates the matter power spectrum  $P(k)$ using various methods including common approximations, by calling external software such as Cosmic Linear Anisotropy Solving System (\code{CLASS}, \textcite{class}), or emulators, such as the CosmicEmu emulator \parencite{Heitmann:2015xma}.
 
 \section{Other methods}
 \subsection{TreePM}
-The tree code was pioneered by \textcite{1986Natur.324..446B} and uses a hierarchical spatial tree to define localised groups of particles. This has advantage over an equidistant mesh when dealing with highly inhomogeneous systems like stellar dynamics when few cells would contain most of the particles. With the usual oct-tree each cubic cell containing more than some maximum number of particles is split into eight child cells of half their parent's size. This results in a tree-like hierarchy of cubic nodes with the root box, containing all particles, at its bottom. The particles within each of the tree nodes constitute a well-defined and localised group. The potential of a cell is obtained by multipole expansion around some centre of the group of particles (usually center of mass). The gravity at any point is then approximated by summation of potentials from all other cells while considering only cells with sufficiently small opening angle (size of the cell over the distance). If the opening angle is big the same algorithm is applied to the daughter cells.
+The tree code was pioneered by \textcite{1986Natur.324..446B} and uses a hierarchical spatial tree to define localized groups of particles. This has advantage over an equidistant mesh when dealing with highly inhomogeneous systems like stellar dynamics when few cells would contain most of the particles. With the usual oct-tree each cubic cell containing more than some maximum number of particles is split into eight child cells of half their parent's size. This results in a tree-like hierarchy of cubic nodes with the root box, containing all particles, at its bottom. The particles within each of the tree nodes constitute a well-defined and localized group. The potential of a cell is obtained by multipole expansion around some centre of the group of particles (usually center of mass). The gravity at any point is then approximated by summation of potentials from all other cells while considering only cells with sufficiently small opening angle (size of the cell over the distance). If the opening angle is big the same algorithm is applied to the daughter cells.
 \subsection{Fast multipole methods}
-The fast multipole method of \textcite{1987JCoPh..73..325G} also works with localised particle groups and was originally proposed using a fixed grid but \textcite{2000ApJ...536L..39D} implemnted the method using a tree structure with better results. The method works similarly as the tree code but in addition to expanding the potential at the source positions it also expands it at the sink positions. This dual expansion at both ends of all interactions considerably speeds up the simultaneous computation of gravity for all particles, but brings no advantage over the tree code when computing the force at a single position.
+The fast multipole method of \textcite{1987JCoPh..73..325G} also works with localized particle groups and was originally proposed using a fixed grid but \textcite{2000ApJ...536L..39D} implemented the method using a tree structure with better results. The method works similarly as the tree code but in addition to expanding the potential at the source positions it also expands it at the sink positions. This dual expansion at both ends of all interactions considerably speeds up the simultaneous computation of gravity for all particles, but brings no advantage over the tree code when computing the force at a single position.
 
 The second part is the interaction phase, when the coefficients of the Taylor series are evaluated for each cell. If the opening angle for a mutual cell-cell interaction is small enough the coefficients for the interactions in each direction are computed.  Otherwise, the interaction is split into up to 8 new interactions by opening the bigger of the two cells. The total computational
-costs of this algorithm are dominated by the interaction phase, which only requires $\OO(N_p)$ interactions for the computation of all $N_p$ particle forces. This represents a substantial reduction from the $\OO(N_p^2)$ for direct summation and can greatly imporves simulations of astrophysical problems with inhomogeneous particle distributions.
+costs of this algorithm are dominated by the interaction phase, which only requires $\OO(N_p)$ interactions for the computation of all $N_p$ particle forces. This represents a substantial reduction from the $\OO(N_p^2)$ for direct summation and can greatly improves simulations of astrophysical problems with inhomogeneous particle distributions.
 % \subsection{Alternatives to \nbody\ simulations}    
 % Boltzmann equation, orbit averaging, Monte-Carlo
 % Validation
