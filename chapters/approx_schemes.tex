@@ -272,7 +272,7 @@ In \autoref{fig:slice_dens_FPA} we show comparison of a simulations with FPA at 
 % Particle-mesh simulation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle-mesh simulation}
-For comparison with other approximations we also implemented the particle-mesh code, i.e. a simulation where the gravitation potential evolves according to the current position of particles but the particles feel only this long-range force without any short-range forces (for details see \autoref{sec:PM}). The particles move according to equation of motion \eqref{eq:motion_LCDM} and the gravitational potential evolve according to Poisson equation \eqref{eq:lin_per_c}.
+For comparison with other approximations we also implemented the particle-mesh code, i.e. a simulation where the gravitation potential evolves according to the current position of particles but the particles feel only this long--range force without any short-range forces (for details see \autoref{sec:PM}). The particles move according to equation of motion \eqref{eq:motion_LCDM} and the gravitational potential evolve according to Poisson equation \eqref{eq:lin_per_c}.
 
 In \autoref{fig:slice_dens_all} we show comparison of all approximation methods with PM at $z=0$ through projected density field. Here we can see side-by-side the main differences between individual approximation methods: ZA with diluted small-scale structures, TZA with (almost) frozen small-scale structures, FFA and FPA with elongated structures. We see that PM simulation has more concentrated filaments but also more particles in voids than ZA, FFA and FPA.
 % \afterpage{%
@@ -375,7 +375,7 @@ To overcome problems of ZA with shell-crossing they propose a solution of ``stic
 The Burger`s equation has an analytical solution which can be used to study formation of structures. For more information regarding the adhesion approximation see  also \textcite{1990MNRAS.247..260W,1994ApJ...428...28M}.
 
 \subsection{Stable clustering}
-It was proposed by \textcite{1974ApJ...189L..51P} that clustering in the very non--linear regime might be understood by assuming that regions of high density contrast undergo virialization and subsequently maintain a fixed proper density, hence stable clustering. The correlation function for a population of such systems would then simply evolve according to
+It was proposed by \textcite{1974ApJ...189L..51P} that clustering in the very non--linear regime might be understood by assuming that regions of high--density contrast undergo virialization and subsequently maintain a fixed proper density, hence stable clustering. The correlation function for a population of such systems would then simply evolve according to
 \eq{
 	\xi(r,a)\propto1/\bar\rho\propto a^3\,.
 }
