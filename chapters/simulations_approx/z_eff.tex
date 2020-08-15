@@ -15,7 +15,7 @@ As discussed above, the suppression of linear growth in FFA and FPA can be viewe
 \eq{
 	\langle P(k, z\eff) \rangle = \langle P\lin(k, z)\rangle\,,
 }
-where we are averaging over ``large scales''. In our simulations this mean we are fitting the linear power spectrum in the range from the minimum available wave-number $k_\text{\tiny min}=2\pi/L$ to half a decade $k=\sqrt{10}k_\text{\tiny min}$.
+where we are averaging over ``large scales''. In our simulations, this means we are fitting the linear power spectrum in the range from the minimum available wave-number $k_\text{\tiny min}=2\pi/L$ to half a decade $k=\sqrt{10}k_\text{\tiny min}$.
 
 In the rest of the paper when we are comparing our results with a prediction of the linear or non-linear theory, we use this effective time instead of the simulation time unless stated otherwise.
 
@@ -28,11 +28,11 @@ In \autoref{fig:D_eff_Pk}, we compare the effective growth function with the lin
 	\begin{subfigure}{0.9\textwidth}
         \includegraphicscustom{simulations_approx/z_eff/D_eff_Pk}
 	\end{subfigure}
-  \caption{Effective growth factor $D\eff$ for different approximation schemes based on ratio of power spectrum on large scales compared to the linear prediction.}
+  \caption{Effective growth factor $D\eff$ for different approximation schemes based on the ratio of power spectrum on large scales compared to the linear prediction.}
   \label{fig:D_eff_Pk}
 \end{figure}
 
-In \autoref{fig:timestep} we study the dependence of $D\eff$ on the number of time-steps. A larger number of time-steps improves $D\eff$ for FPA but, as expected, cannot eliminate the effect. In the case of FFA, $D\eff$ actually decreases with increase in number of time-steps. In this case, for smaller number of time-steps, particles do not evolve exactly along characteristic curves of the (initial) potential and the deceleration is suppressed.
+In \autoref{fig:timestep} we study the dependence of $D\eff$ on the number of time-steps. A larger number of time-steps improves $D\eff$ for FPA but, as expected, cannot eliminate the effect. In the case of FFA, $D\eff$ actually decreases with an increase in the number of time-steps. In this case, for a smaller number of time-steps, particles do not evolve exactly along characteristic curves of the (initial) potential, and the deceleration is suppressed.
 \begin{figure}[bt]
   \centering
     \begin{subfigure}{0.9\textwidth}
@@ -41,8 +41,8 @@ In \autoref{fig:timestep} we study the dependence of $D\eff$ on the number of ti
 	\begin{subfigure}{0.9\textwidth}
         \includegraphicscustom{simulations_approx/z_eff/timesteps}
 	\end{subfigure}
-  \caption{Effective growth factor $D\eff$ at $z=0$ for FFA and FPA as a function of number of time-steps.}
+  \caption{Effective growth factor $D\eff$ at $z=0$ for FFA and FPA as a function of the number of time-steps.}
   \label{fig:timestep}
 \end{figure}
 
-After the linear theory compensation via the effective time, all approximations match the linear prediction on large scales (by definition), however, on smaller scales there are considerable differences. In the case of ZA (and TZA) at early times there is enhancement of power above linear theory, but at later times, the lack of the ability to follow small-scale structure (``diffusion'' at caustics) causes a suppression of power that continues to leak to larger scales. For FFA and FPA, however, the behavior is quite different. At early times particles on the smallest scales are almost in the minimum of the local gravitational potential (and consequently at the minimum of the velocity potential) and do not evolve much. This effect is weaker for FPA where particles have inertia and are not overdamped. At later times more and more particles end up in these (constant-in-time) gravitational wells and we observe (partial) non-linear gravitational clustering.
+After the linear theory compensation via the effective time, all approximations match the linear prediction on large scales (by definition), however, on smaller scales, there are considerable differences. In the case of ZA (and TZA) at early times there is an enhancement of power above linear theory, but at later times, the lack of the ability to follow small-scale structure (``diffusion'' at caustics) causes a suppression of power that continues to leak to larger scales. For FFA and FPA, however, the behavior is quite different. At early times particles on the smallest scales are almost in the minimum of the local gravitational potential (and consequently at the minimum of the velocity potential) and do not evolve much. This effect is weaker for FPA where particles have inertia and are not overdamped. At later times more and more particles end up in these (constant-in-time) gravitational wells and we observe (partial) non-linear gravitational clustering.
