@@ -91,8 +91,11 @@ citestyle=authoryear
 \usepackage{multicol}
 \usepackage{xspace}
 
+\usepackage{sectsty}
+\allsectionsfont{\boldmath}
+
 % subcaption issues an error
-\captionsetup{compatibility=false}
+\captionsetup{compatibility=false,font=small,labelfont=bf}
 
 % setup include paths
 \graphicspath{{img/}}
@@ -155,7 +158,8 @@ The accelerated expansion of the Universe poses a major theoretical puzzle. Alth
 \hypersetup{colorlinks=true}
 
 % \includeonly{}
-
+\widowpenalties=4 10000 10000 10000 150
+\clubpenalty=10000
 \begin{document}
 
 % remoe black box at the end of over-full lines
@@ -190,7 +194,10 @@ The accelerated expansion of the Universe poses a major theoretical puzzle. Alth
 \phantomsection
 \renewcommand{\bibname}{Bibliography}
 \addcontentsline{toc}{chapter}{\bibname}
+\begingroup
+\sloppy
 \printbibliography[title={\bibname}]
+\endgroup
 
 %%% Figures used in the thesis (consider if this is needed)
 %\listoffigures
@@ -207,7 +214,10 @@ The accelerated expansion of the Universe poses a major theoretical puzzle. Alth
 \label{chpt:list_publish}
 \begin{refsection}[bibliography/my_work.bib]
 \nocite{*}
+\begingroup
+\sloppy
 \printbibliography[title={\bibname}]
+\endgroup
 \end{refsection}
 
 %%% Attachments to the doctoral thesis, if any. Each attachment must be
