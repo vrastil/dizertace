@@ -36,12 +36,10 @@ eps: $(PDF_FILES) $(LOGO_CON)
 $(PDF_FILES): %-eps-converted-to.pdf: %.eps
 	@echo "Converting file  $<"
 	@$(EPS_CMD) -sOutputFile\#$@ $<
-	-@cp $@ $(CP_DEST)
 
 $(LOGO_CON): $(LOGO)
 	@echo "Converting file  $<"
 	@$(EPS_CMD) -sOutputFile\#$@ $<
-	-@cp $@ $(CP_DEST)
 
 rebuild: $(PDF_FILES) $(LOGO_CON)
 	-@rm $(MAIN).xmpdata
