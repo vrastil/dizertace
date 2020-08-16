@@ -3,7 +3,7 @@
 The power spectrum is defined by equation~\eqref{eq:pk}. In \autoref{fig:pwr_spec_all} we show the power spectra $P(k)$ at redshifts $z=0$ and $z=1.8$ for the different approximation schemes. The gray areas represent variation across different realizations (different simulation runs). We see that on large (linear) scales all approximations reproduce the linear theory prediction (note that this is because the FFA and FFP results have been compensated for slower growth, as described below). On smaller scales, differences between the approximations become apparent. At the higher redshift, the TZA is still missing a lot of power due to the initial truncation while ZA sticks close to the linear predication. At $z=0$, the ZA loses power compared to the linear power spectrum on these scales due to shell-crossing. In contrast, FFA and FPA do much better and can even partially simulate non-linear clustering.
 % In \autoref{fig:pwr_spec_all}, we used the so-called \textit{effective time}, described in the following subsection, to study the differences in the \textit{shape} of power spectra between the individual approximations. In the following we will show that FFA and FPA actually have slower growth than linear theory.
 
-\begin{figure}[hbt]
+\begin{figure}[!hbt]
 \centering
 	\begin{subfigure}{0.9\textwidth}
         \includegraphicscustomlegend{simulations_approx/pwr_spec/pwr_spec_z0.0}
@@ -24,30 +24,32 @@ The power spectrum is defined by equation~\eqref{eq:pk}. In \autoref{fig:pwr_spe
 \subsubsection{Comparison with linear theory}
 The relative differences between power spectra and the linear predictions at different redshifts are plotted in \autoref{fig:pwr_spec_diff}. By the linear prediction, in this case, is meant the initial power spectrum of the realization linearly evolved to the given epoch. The error bars once again represent variation across different realizations but individual differences are computed from the same realization of the power spectrum.
 \begin{figure*}[!hbt]
-\centering
-	\begin{subfigure}{1.0\textwidth}
-        \includegraphicscustomlegend{simulations_approx/pwr_spec/pwr_spec_diff_init_ZA}
-	\end{subfigure}
-	\begin{subfigure}{0.5\textwidth}
-		\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_emu}	
-		\caption{\LCDM\ (nl)}	
-	\end{subfigure}
-	\begin{subfigure}{0.5\textwidth}
-		\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_ZA}
-		\caption{Zel'dovich approximation}
-	\end{subfigure}%
-	\begin{subfigure}{0.5\textwidth}
-		\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_TZA}
-		\caption{Truncated Zel'dovich approximation}
-	\end{subfigure}
-	\begin{subfigure}{0.5\textwidth}
-		\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_FF}
-		\caption{Frozen-flow approximation}
-	\end{subfigure}%
-	\begin{subfigure}{0.5\textwidth}
-		\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_FP}
-		\caption{Frozen-potential approximation}
-	\end{subfigure}
+	\begin{adjustwidth}{-1cm}{-1cm}
+	\centering
+		\begin{subfigure}{1.0\linewidth}
+			\includegraphicscustomlegend{simulations_approx/pwr_spec/pwr_spec_diff_init_ZA}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_emu}	
+			\caption{\LCDM\ (nl)}	
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_ZA}
+			\caption{Zel'dovich approximation}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_TZA}
+			\caption{Truncated Zel'dovich approximation}
+		\end{subfigure}
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_FF}
+			\caption{Frozen-flow approximation}
+		\end{subfigure}%
+		\begin{subfigure}{0.5\linewidth}
+			\includegraphicscustom{simulations_approx/pwr_spec/pwr_spec_diff_init_FP}
+			\caption{Frozen-potential approximation}
+		\end{subfigure}
+	\end{adjustwidth}
 	\caption{Relative differences between power spectra of approximations and the linear prediction at different redshifts. ZA predicts power spectra at large scales very well but fails on small scales at later times. FFA and FPA do not have this problem at small scales but the power spectrum grows more slowly across all scales. The (CosmicEmu) non-linear power spectrum is shown in the upper panel for comparison.}
 	\label{fig:pwr_spec_diff}
 \end{figure*}
