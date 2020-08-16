@@ -1,11 +1,11 @@
-%%% This file contains definitions of various useful macros and environments %%%
-%%% Please add more macros here instead of cluttering other files with them. %%%
+%%% This file contains definitions of~various useful macros and~environments %%%
+%%% Please add more macros here instead of~cluttering other files with~them. %%%
 
-%%% Minor tweaks of style
+%%% Minor tweaks of~style
 
-% These macros employ a little dirty trick to convince LaTeX to typeset
-% chapter headings sanely, without lots of empty space above them.
-% Feel free to ignore.
+% These macros employ a~little dirty trick to~convince LaTeX to~typeset
+% chapter headings sanely, without lots of~empty space above them.
+% Feel free to~ignore.
 \makeatletter
 \def\@makechapterhead#1{
   {\parindent \z@ \raggedright \normalfont
@@ -21,17 +21,17 @@
 }}
 \makeatother
 
-% This macro defines a chapter, which is not numbered, but is included
-% in the table of contents.
+% This macro defines a~chapter, which is not numbered, but is included
+% in~the~table of~contents.
 \def\chapwithtoc#1{
 \chapter*{#1}
 \addcontentsline{toc}{chapter}{#1}
 }
 
-% Draw black "slugs" whenever a line overflows, so that we can spot it easily.
+% Draw black "slugs" whenever a~line overflows, so that we can spot it easily.
 \overfullrule=1mm
 
-%%% Macros for definitions, theorems, claims, examples, ... (requires amsthm package)
+%%% Macros for~definitions, theorems, claims, examples, ... (requires amsthm package)
 
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}
@@ -46,7 +46,7 @@
 \newtheorem*{rem}{Remark}
 \newtheorem*{example}{Example}
 
-%%% An environment for proofs
+%%% An~environment for~proofs
 
 %%% FIXME %%% \newenvironment{proof}{
 %%% FIXME %%%   \par\medskip\noindent
@@ -56,18 +56,18 @@
 %%% FIXME %%% \rightline{$\square$}  % or \SquareCastShadowBottomRight from bbding package
 %%% FIXME %%% }
 
-%%% An environment for typesetting of program code and input/output
-%%% of programs. (Requires the fancyvrb package -- fancy verbatim.)
+%%% An~environment for~typesetting of~program code and~input/output
+%%% of~programs. (Requires the~fancyvrb package -- fancy verbatim.)
 
 \DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small, frame=single}
 
-%%% Useful operators for statistics and probability
+%%% Useful operators for~statistics and~probability
 \DeclareMathOperator{\pr}{\textsf{P}}
 \DeclareMathOperator{\E}{\textsf{E}\,}
 \DeclareMathOperator{\var}{\textrm{var}}
 \DeclareMathOperator{\sd}{\textrm{sd}}
 
-%%% Transposition of a vector/matrix
+%%% Transposition of~a~vector/matrix
 \newcommand{\T}[1]{#1^\top}
 
 %%% Various math goodies
@@ -154,7 +154,7 @@
 
 \newcommand{\knq}{k_{\rm nq}}
 
-% change format of figures globally: vector / raster
+% change format of~figures globally: vector / raster
 \newcommand{\includegraphicscustom}[2][1.0]{\includegraphics[width=#1\linewidth,center]{{#2-eps-converted-to}.pdf}}
 \newcommand{\includegraphicscustomlegend}[2][0.7]{\includegraphics[width=#1\linewidth,center]{{#2_legend-eps-converted-to}.pdf}}
 
