@@ -133,7 +133,7 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 		\centering
 		\includegraphicscustom{simulations_approx/chi/chi_ff_corr_func_r2_z_z_eff}
 	\end{subfigure}
-	\caption{Correlation function for chameleon gravity $(n=0.5,\ \Phiscr=10^{-5})$ at $z=0.5$. On the top are shown results using FPA whereas on the bottom using FFA}
+	\caption{Correlation function for chameleon gravity $(n=0.5,\ \Phiscr=10^{-5})$ at $z=0.5$. On the top are shown results using FPA whereas on the bottom using FFA.}
 	\label{fig:chi_corr_func}
 \end{figure*}
 
@@ -190,17 +190,21 @@ In \autoref{fig:chi_corr_func}, we display the correlation function for one part
 % Halo mass function
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Halo mass function}
-In \autoref{fig:chi_diff_hmf} we compared the (relative) halo mass function for different parameters of chameleon gravity. We see that in the mass range $(10^{12}-10^{14}M_\odot)$ all the simulations give very similar results and differ more outside this range. We see that the higher the screening potential $\Phiscr$ the more power on small scales and therefore more massive halos. For distinguishing between different chameleon parameters we should, therefore, use the most massive halos $(M\gtrsim10^{14}M_\odot)$.
+In \autoref{fig:chi_diff_hmf} we compared the (relative) halo mass function for different parameters of chameleon gravity. We use the halo mass function relative to the non-linear prediction (at the effective time) from the emulator. Comparison is done both for FPA (top) and FFA (bottom). We see that for FPA in the mass range $(10^{12}-10^{14}M_\odot)$ all the simulations give very similar results and differ more outside this range. FFA shows much greater differences between individual parameters, as we have already seen in the correlation function. For both approximations, we see that the higher the screening potential $\Phiscr$ the more power on small scales and therefore more massive halos. For distinguishing between different chameleon parameters we should, therefore, use the most massive halos $(M\gtrsim10^{14}M_\odot)$.
 \begin{figure*}
 	\centering
 	\chileft
 	\begin{subfigure}{1.2\textwidth}
-		\includegraphicscustomlegend{simulations_approx/chi/hmf_z0.5_b500_M512_chi_hmf_z_z_eff}
+		\includegraphicscustomlegend{simulations_approx/chi/hmf_z0.5_b2000_M512_chi_hmf_z_z_eff}
 	\end{subfigure}
 	\begin{subfigure}{1.0\textwidth}
 		\centering
-		\includegraphicscustom{simulations_approx/chi/hmf_z0.5_b500_M512_chi_hmf_z_z_eff}
+		\includegraphicscustom{simulations_approx/chi/hmf_z0.5_b2000_M512_chi_hmf_z_z_eff}
 	\end{subfigure}
-	\caption{Halo mass function (relative) for non-linear chameleon gravity with different chameleon parameters.}
+	\begin{subfigure}{1.0\textwidth}
+		\centering
+		\includegraphicscustom{simulations_approx/chi/hmf_z0.5_b2000_M512_chi_ff_hmf_z_z_eff}
+	\end{subfigure}
+	\caption{Halo mass function (relative) for non-linear chameleon gravity with different chameleon parameters. On the top are shown results using FPA whereas on the bottom using FFA.}
 	\label{fig:chi_diff_hmf}
 \end{figure*}

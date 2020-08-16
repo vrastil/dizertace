@@ -43,12 +43,12 @@ $(LOGO_CON): $(LOGO)
 	@$(EPS_CMD) -sOutputFile\#$@ $<
 	-@cp $@ $(CP_DEST)
 
-rebuild:
+rebuild: $(PDF_FILES) $(LOGO_CON)
 	-@rm $(MAIN).xmpdata
 	@$(TEX_CMD)
 	-@cp $(MAIN).pdf $(CP_DEST)
 
-tex:
+tex: $(PDF_FILES) $(LOGO_CON)
 	-@rm $(MAIN).xmpdata
 	$(TEX_CMD)
 
