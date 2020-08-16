@@ -138,28 +138,14 @@ Unlike the void models, which regard the acceleration as an apparent one, \texti
 
 Any large inhomogeneities must be concealed from our sight to fit observations. Strong peculiar velocities instead of strong density fluctuations can do this job, but there are strong constraints on peculiar velocities from e.g., the kinematic Sunyaev--Zel'dovich effect. Moreover, the accompanying anisotropy is another source of observable effects difficult to accommodate with current observations.
 
-\section{Predictions of different models}
-% \todo{Optional:
-
-% \textit{
-% the work could have included the observationally most relevant result: the cosmological evolution of the equation of state w(a) predicted by the different modified theories; weak lensing can be analyzed for rich galaxy clusters rather than for single galaxies.}
-
-% KB, Geng and Lee, JCAP 1008, 021 (2010)
-
-% Hu and Sawicki, Phys. Rev. D 76, 064004 (2007)
-
-% \url{https://arxiv.org/pdf/2007.07717.pdf}
-
-% \url{https://arxiv.org/pdf/1202.4317.pdf}
-% }
-
-\subsection{Parametrization of models}
-We saw in the previous chapter that at the background level the evolution is governed by Friedman equations \eqref{eq:Friedmann} -- \eqref{eq:Friedmann-continuity} and consequently omega parameters \eqref{eq:omega} and Hubble parameter $H$ which can be obtained, e.g., from distance measurements. As we discussed the cosmological constant is not the only possible explanation of the accelerated expansion and the equation of state \(w\) of dark energy does not have to be exactly \(w=-1\). For the arbitrary equation of state $w_{DE}=p_{DE}/\rho_{DE}$ in the flat Universe with a negligible contribution of radiation we can obtain the following equation
+\section{Parametrization of models}
+We saw in the previous chapter that at the background level the evolution is governed by Friedman equations \eqref{eq:Friedmann} -- \eqref{eq:Friedmann-continuity} and consequently omega parameters \eqref{eq:omega} and Hubble parameter $H$ which can be obtained, e.g., from distance measurements. As we discussed, the cosmological constant is not the only possible explanation of the accelerated expansion and the equation of state \(w\) of dark energy does not have to be exactly \(w=-1\). For the arbitrary equation of state $w_{DE}=p_{DE}/\rho_{DE}$ in the flat Universe with a negligible contribution of radiation we can obtain the following equation
 \eq{
+    \label{eq:w_de}
     w_{DE}(z)=\frac{(1+z)(E^2(z))'-3E^2(z)}
                    {3\left[E^2(z)-\Omega_{m,0}(1+z^3)\right]}\,,
 }
-where a prime denotes derivative with respect to \(z\). We see that \(w_{DE}\) cannot be determined solely from \(E(z)\) (obtainable through distance measurements) and we need also present density of matter \(\Omega_m^0\). However, if we parametrize \(w_{DE}\) in some way as it is usually done through measurements of \(E(z)\) at several redshifts we can constraint both \(w_{DE}\) and \(\Omega_m^0\).
+where a prime denotes derivative with respect to \(z\). We see that \(w_{DE}\) cannot be determined solely from \(E(z)\) (obtainable through distance measurements) and we need also present density of matter \(\Omega_{m,0}\). However, if we parametrize \(w_{DE}\) in some way as it is usually done through measurements of \(E(z)\) at several redshifts we can constraint both \(w_{DE}\) and \(\Omega_{m,0}\).
 
 Several parametrization  of \(w_{DE}\) have been proposed so far. We can write such parametrization  in the form
 \eq{
@@ -172,3 +158,10 @@ where he expansions can be given by
     & \rm{(iii) Logarithmic:} & x_n(z) &= \left[\ln\left(1+z\right)\right]^n\,.
 }
 Parametrization (ii) is usually written for \(n\leq1\) as \(w=w_0+w_a(1-a)\).
+
+For the generic \fR\ gravity, the equation of state is given by \parencite{2013qopu.conf...73B}
+\eq{
+    w_{DE} = \frac{-(1/2)(F\R R-F)+\ddot F\R+2H\dot F\R-(1-F\R)\left(2\dot H + 3H^2\right) }
+                  {(1/2)(F\R - F) - 3H\dot F\R + 3 (1-F\R)H^2}\,,
+}
+which then can be compared with observations \eqref{eq:w_de}. For different examples of evolution of $w_{DE}$ see, e.g., \textcite{2020arXiv200707717A}.
