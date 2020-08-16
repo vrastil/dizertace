@@ -20,7 +20,7 @@ where we are averaging over ``large scales''. In our simulations, this means we 
 In the rest of the paper when we are comparing our results with a prediction of the linear or non-linear theory, we use this effective time instead of the simulation time unless stated otherwise.
 
 In \autoref{fig:D_eff_Pk}, we compare the effective growth function with the linear growth function of \LCDM. For ZA and TZA there is almost no suppression as we are comparing large scales. However, at later times (or if we had used smaller scales) we would see an exponential suppression as described in \cite{Bharadwaj_1996}. For FFA and FPA we have an almost linear dependence of $D\eff$ on $a$, for FFA with a slope of approximately $8\%$ and for FPA with the slope being approximately $6\%$.
-\begin{figure}[bt]
+\begin{figure}[!bt]
   \centering
     \begin{subfigure}{0.9\textwidth}
         \includegraphicscustomlegend{simulations_approx/z_eff/D_eff_Pk}
@@ -33,7 +33,7 @@ In \autoref{fig:D_eff_Pk}, we compare the effective growth function with the lin
 \end{figure}
 
 In \autoref{fig:timestep} we study the dependence of $D\eff$ on the number of time-steps. A larger number of time-steps improves $D\eff$ for FPA but, as expected, cannot eliminate the effect. In the case of FFA, $D\eff$ actually decreases with an increase in the number of time-steps. In this case, for a smaller number of time-steps, particles do not evolve exactly along characteristic curves of the (initial) potential, and the deceleration is suppressed.
-\begin{figure}[bt]
+\begin{figure}[!bt]
   \centering
     \begin{subfigure}{0.9\textwidth}
         \includegraphicscustomlegend{simulations_approx/z_eff/timesteps}

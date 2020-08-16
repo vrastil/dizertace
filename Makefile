@@ -9,8 +9,10 @@ rwildcard=$(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(su
 # LaTeX must be run multiple times to get references right
 TEX_CMD := pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
 BIB_CMD := biber # bibtex
-EPS_CMD := ps2pdf -dPDFA -dEPSCrop -dBATCH -dUseCIEColor -dNOPAUSE -sProcessColorModel\#DeviceRGB -sDEVICE\#pdfwrite -sPDFACompatibilityPolicy\#1
-
+EPS_CMD := ps2pdf -q -dEPSCrop -dBATCH -dNOPAUSE -sDEVICE\#pdfwrite \
+			      -dPDFA -dPDFACompatibilityPolicy\#1 \
+				  -sProcessColorModel\#DeviceRGB -dUseCIEColor
+CP_DEST := /mnt/c/Users/micha/Downloads/thesis/
 # All eps files in img directory
 EPS_FILES := $(call rwildcard,img,*.eps)
 PDF_FILES := $(EPS_FILES:.eps=-eps-converted-to.pdf)
@@ -27,24 +29,24 @@ $(MAIN).pdf: FORCE $(PDF_FILES) $(LOGO_CON)
 	-@$(TEX_CMD) > /dev/null
 	@echo "Building, latex, 4/4" 
 	@$(TEX_CMD)
-	-@cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/
+	-@cp $(MAIN).pdf $(CP_DEST)
 
 eps: $(PDF_FILES) $(LOGO_CON)
 
 $(PDF_FILES): %-eps-converted-to.pdf: %.eps
 	@echo "Converting file  $<"
-	@$(EPS_CMD) -sOutputFile\#$@ $< > /dev/null 2>&1
+	@$(EPS_CMD) -sOutputFile\#$@ $<
 
 $(LOGO_CON): $(LOGO)
 	@echo "Converting file  $<"
-	@$(EPS_CMD) -sOutputFile\#$@ $< > /dev/null 2>&1
+	@$(EPS_CMD) -sOutputFile\#$@ $<
 
-rebuild:
+rebuild: $(PDF_FILES) $(LOGO_CON)
 	-@rm $(MAIN).xmpdata
 	@$(TEX_CMD)
-	-@cp $(MAIN).pdf /mnt/c/Users/micha/Downloads/
+	-@cp $(MAIN).pdf $(CP_DEST)
 
-tex:
+tex: $(PDF_FILES) $(LOGO_CON)
 	-@rm $(MAIN).xmpdata
 	$(TEX_CMD)
 
@@ -71,6 +73,7 @@ TMP_FILES := $(MAIN).pdf \
 	$(MAIN).fdb_latexmk \
 	$(MAIN).synctex.gz \
 	$(MAIN).xmpdata \
+	$(PDF_FILES) \
 	pdfa.xmpi
 
 clean:
