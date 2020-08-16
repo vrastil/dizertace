@@ -46,7 +46,7 @@ $(LOGO_CON): $(LOGO)
 rebuild:
 	-@rm $(MAIN).xmpdata
 	@$(TEX_CMD)
-	-@$(CP_CMD)
+	-@cp $(MAIN).pdf $(CP_DEST)
 
 tex:
 	-@rm $(MAIN).xmpdata
