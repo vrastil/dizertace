@@ -34,7 +34,7 @@ def convert_month(line):
 
 def convert_file(bib_file):
     # read file
-    with open(bib_file, 'r') as a_file:
+    with open(bib_file, 'r', encoding="utf8") as a_file:
         data = a_file.readlines()
 
     # find month
@@ -42,7 +42,7 @@ def convert_file(bib_file):
         if any(month_alias in line.lower() for month_alias in MONTH_ALIAS):
             month = convert_month(line)
             new_line = f"\tmonth = {month},\n"
-            print(f"line '{line.strip()}' converted to '{new_line.strip()}'")
+            print(f"\tline '{line.strip()}' converted to '{new_line.strip()}'")
             data[i] = new_line
 
     # write file
@@ -52,5 +52,6 @@ def convert_file(bib_file):
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         for bib_file in sys.argv[1:]:
+            print(f"Processing file {bib_file}:")
             convert_file(bib_file)
 
