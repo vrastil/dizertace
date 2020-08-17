@@ -97,7 +97,7 @@ In~step \ref{it:pm_1} and~\ref{it:pm_4} we make a~connection between discrete me
 The~mass of~each particle $m_i$ is assigned as a~whole to~the~gridpoint closest to~the~particle. Similarly, the~force on~particles is given by force on~the~nearest gridpoint. Although computationally the~simplest, NGP as a~zero-order interpolation offers lowest accuracy, and~the~interparticle force changes discontinuously as particles cross cell boundaries.
 
 \subsubsection{Cloud-in-Cell (CIC)}
-The~mass of~each particle is weighted over the~eight closest cells while the~weighting in~each dimension is proportional to~the~distance between the~particle and~the~mesh. CIC scheme is more costly in~terms of~the~number of~arithmetic operations per particle per timestep than NGP but offers better accuracy as first-order (linear) interpolation. The~CIC interpolation function in~one dimension is
+The~mass of~each particle is weighted over the~eight closest cells while the~weighting in~each dimension is proportional to~the~distance between the~particle and the~mesh. CIC scheme is more costly in~terms of~the~number of~arithmetic operations per particle per timestep than NGP but offers better accuracy as first-order (linear) interpolation. The~CIC interpolation function in~one dimension is
 \eq{
     w(x-x_p)=
     \begin{cases}

@@ -1,14 +1,12 @@
 \chapter{Simulations with~Approximation Methods}
 \label{chpt:app_sims}
-In~this chapter we present main results of~our research regarding approximation techniques and~the~possibility to~use these techniques in~studies of~modified gravity.
+In~this chapter we present main results of~our research regarding approximation techniques and~the~possibility to~use these techniques in~studies of~modified gravity. Parts of~this chapter have been published in~\textcite{2020MNRAS.493.2085V}.
 
-Parts of~this chapter have been published in~\textcite{2020MNRAS.493.2085V}.
-\section{Results for~standard gravity}
-
-\subsection{Simulation parameters}
+% \section{Simulation parameters}
 We ran our simulations with~the~Planck \LCDM\ cosmology \parencite{planck_cosm}; its parameters are summarized in~\autoref{tab:cosmo_param}. We expect our results to~apply generically to~cosmologies that are not too far from this set of~parameter values.
-\begin{table}
+\begin{table}[!b]
 \centering
+% \vspace{-10mm}
 \begin{tabular}{ l c l }
   \hline \hline
   Hubble constant  [km s$^{-1}$ Mpc$^{-1}$] & $H_0$ & $67.74$ \\
@@ -22,6 +20,24 @@ We ran our simulations with~the~Planck \LCDM\ cosmology \parencite{planck_cosm};
 \caption{Planck Collaboration cosmological parameters \parencite{planck_cosm} used in~the~simulations.}
 \label{tab:cosmo_param}
 \end{table}
+The non-linear scale \eqref{eq:k_nl} for our chosen power spectrum is $k_{nl}=0.32~\hMpc$. The smoothing scale for TZA is suggested to be in the range from 1 to 1.5 times $k_{nl}$ so we ran the TZA simulations twice, once with $k_G=0.3~\hMpc$ and once with $k_G=0.5~\hMpc$. The results using $k_G=0.5~\hMpc$ proved to be better in terms of predicting the BAO features so we show only those results.
+
+In the plots we use various abbreviations for compactness, while discussing the results of the simulations and the linear and non-linear predictions. These are summarized in \autoref{tab:plots_not}.
+\begin{table}[!b]
+\centering
+% \vspace{-10mm}
+\begin{tabular}{ll}
+  \hline \hline
+  \LCDM\ (lin) & prediction of the linear theory with standard gravity\\
+  \LCDM\ (nl) & prediction of the emulator with standard gravity\\
+  ZA, TZA, FFA, FPA & simulation run with given approximation and standard gravity\\
+  $\chi$ (psl) & simulation run with pseudo-linear prediction of modified gravity\\
+  $\chi$ (nl) & simulation run with non-linear solution of modified gravity\\
+  \hline \hline
+\end{tabular}
+\caption{Abbreviations used in the plots.}
+\label{tab:plots_not}
+\end{table}
 
 In~total, we ran and~analyzed 7117 simulations using different approximations, parameters of~the~simulation volume and~chameleon parameters. Their properties are described in~\autoref{tab:sim_param_ZA_TZA} -- \autoref{tab:cham_param_CHI_nl}.
 
@@ -30,6 +46,7 @@ In~total, we ran and~analyzed 7117 simulations using different approximations, p
 \input{chapters/simulations_approx/params_chi}
 \end{landscape}
 
+\section{Results for~standard gravity}
 %%%%%%%%%%%%%%%%%%%%%%%
 % Matter power spectrum
 %%%%%%%%%%%%%%%%%%%%%%%
