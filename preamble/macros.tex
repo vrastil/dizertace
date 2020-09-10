@@ -67,6 +67,10 @@
 \DeclareMathOperator{\var}{\textrm{var}}
 \DeclareMathOperator{\sd}{\textrm{sd}}
 
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
 %%% Transposition of~a~vector/matrix
 \newcommand{\T}[1]{#1^\top}
 

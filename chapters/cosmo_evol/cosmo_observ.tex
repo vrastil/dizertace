@@ -33,14 +33,14 @@ where $a_{lm}$ are spherical harmonic coefficients of~temperature map $T$
 where $\theta,\ \phi$  denote a~position on~the~celestial sphere. It is customary to~plot the~quantity $l(l+1)C_l/(2\pi)$, which would be constant for~a~scale-invariant pattern on~the~sky, see \autoref{fig:cmb_compilation}.
 \begin{figure}[!hbt]
     \centering
-    \includegraphics[width=0.85\textwidth]{cosmo_evol/CMB_compilation.png}
+    \includegraphics[width=0.9\textwidth]{cosmo_evol/CMB_compilation.png}
     \caption{Compilation of~recent CMB angular power spectrum measurements from which most cosmological inferences are drawn. The~upper panel shows the~power spectra of~the~temperature and~E-mode and~B-mode polarization signals, the~next panel the~cross-correlation spectrum between T and~E, while the~lower panel shows the~lensing deflection power spectrum. Different colours correspond to~different experiments, each retaining its original binning. For~Planck, ACTPol, and~SPTpol, the~EE points with~large error bars are not plotted (to~avoid clutter). The~dashed line shows the~best-fit \LCDM\ model to~the~Planck temperature, polarization, and~lensing data. \textit{Note:} Reprinted from \textcite{2018arXiv180706205P}.}
     \label{fig:cmb_compilation}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%
 % Supernovae
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Supernovae}
+\subsection[Supernovae]{Supernovae\footnote{\label{ftn1}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}.}}
 \label{ssec:supernovae}
 Supernovae (SNe) are the~most straightforward tool for~studying cosmic acceleration, as they directly discovered the~acceleration in~the~first place \parencite{riess}. Type Ia supernovae (SNe Ia) are exploding stars defined by the~lack of~hydrogen and~the~presence of~silicon in~their early-time spectra \parencite{SN}, and~are a~product of~a~thermonuclear explosion of~a~C/O white dwarf. Observations show that SNe Ia have a~luminosity peak that is tightly correlated with~the~shape of~their light curves -- supernovae that rise and~fall more slowly have higher peak luminosity \parencite[first quantified by][]{SN_lum}. From observations of~(multiband) light curve shapes and~colors the~luminosity at~a~brightness peak can be predicted.
 
@@ -57,7 +57,7 @@ A~recent analysis of~\textcite{Abbott_2019} uses data from the~Dark Energy Surve
 %%%%%%%%%%%%%%%%%%%%%%%
 % BAO
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Baryonic acoustic oscillations}
+\subsection[Baryonic acoustic oscillations]{Baryonic acoustic oscillations\footnoteref{ftn1}}
 \label{sec:bao}
 Baryonic acoustic oscillations (BAO) provide an~entirely independent way of~measuring cosmic distance. Sound waves propagating before recombination imprint a~characteristic scale on~matter clustering. The~acoustic length scale can be computed as
 \eq{
@@ -84,7 +84,7 @@ In~\textcite{BAO_results} present a~measurement of~the~BAO from the~three-dimens
 %%%%%%%%%%%%%%%%%%%%%%%
 % WL
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Weak lensing}
+\subsection[Weak lensing]{Weak lensing\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}.}}
 \label{ssec:wl}
 Gravitational lensing is the~deflection of~light from distant sources due to~the~bending of~space-time by baryonic and~dark matter (lenses) along the~line of~sight. It is a~very useful cosmological probe because it is sensitive to~all matter regardless of~its nature. In~the~limit of~very small deflection angles, it is called weak lensing (WL). WL causes tiny distortions ($\sim0.5\%$), or ``shear'', in~galaxy sizes and~shapes. The~intrinsic size or shape of~a~given galaxy is unknown, but normally, galaxy orientations are assumed to~be random ($\sim30\%$ dispersion), so they should not exhibit statistically significant and~coherent alignments. In~the~presence of~lensing, small but coherent shears in~background galaxy images are induced. This means that WL is statistically detectable by averaging shapes over many lensed galaxies. In~principle, either the~shearing of~galaxies (shape distortion) or their magnification (size distortion) can be measured. However, in~practice, the~shape distortions are used much more widely since the~scatter in~shapes of~galaxies is less than the~scatter in~their sizes.
 
@@ -92,7 +92,7 @@ Weak lensing provides a~direct measure of~the~distribution of~matter, independen
 %%%%%%%%%%%%%%%%%%%%%%%
 % Large-scale structure
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Large-scale structure}
+\subsection[Large-scale structure]{Large-scale structure\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}.}}
 \label{ssec:lss}
 Studying the~large-scale structures (LSS) of~the~Universe is of~great importance for~the~cosmology. Since the~clustering of~matter on~scales from galaxies to~superclusters came from quantum fluctuations in~the~very early Universe with~important modification by radiation and~baryons, the~LSS encode critical information about the~contents of~the~Universe, the~origin of~the~fluctuations, and~the~cosmic expansion background in~which the~structures evolved.
 
@@ -125,7 +125,7 @@ In~\autoref{fig:pk_planck} is shown (linear) matter power spectrum inferred from
 %%%%%%%%%%%%%%%%%%%%%%%
 % Galaxy clusters
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Galaxy clusters}
+\subsection[Galaxy clusters]{Galaxy clusters\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}.}}
 \label{ssec:gc}
 The~observed number density and~clustering of~galaxy clusters as a~function of~mass and~redshift provides a~powerful toolset to~constraining cosmology.  Galaxy clusters provided the~first line of~evidence for~the~existence of~dark matter \textcite{zwicky} and~cluster mass-to-light ratio measurements suggested that the~matter density in~the~universe was sub-critical \textcite{Gott}. Galaxy clusters measurements are sensitive to~both the~expansion history and~the~growth of~structure in~the~Universe enabling to~distinguish between dark energy and~modified gravity models for~cosmic acceleration. Additional probes are measurements of~the~baryonic mass fraction in~clusters, and~measurements of~the~tomographic lensing signatures through clusters.
 
@@ -150,7 +150,7 @@ where all the~cosmological information is contained in~the~function \(f(\sigma)\
 \eq{
     f_{PS}(\sigma) = \sqrt{\frac2\pi}\frac{\delta\coll}{\sigma}\exp{\left(-\frac{\delta\coll^2}{2\sigma^2}\right)}\,,
 }
-where the~parameter \(\delta\coll=1.686\) was introduced in~the~previous section. While as a~first approximation the~PS mass function agrees with~simulations at~$z=0$ reasonably well, it overpredicts the~number of~low-mass halos and~underpredicts the~number of~massive halos at~the~current epoch \parencite{2007ApJ...671.1160L}. \textcite{2001MNRAS.321..372J} combined high-resolution simulations for~four different CDM cosmologies spanning a~mass range of~over 3 orders of~magnitude $(\sim10^{12}-10^{15}h^{-1}M_\odot)$, and~including several redshifts $z=0-5$. They came up with~the~following fitting function
+where the~parameter \(\delta\coll=1.686\) was introduced in~the~previous section. The~PS mass function agrees with~simulations at~$z=0$ reasonably well, but it overpredicts the~number of~low-mass halos and~underpredicts the~number of~massive halos at~the~current epoch \parencite{2007ApJ...671.1160L}. \textcite{2001MNRAS.321..372J} combined high-resolution simulations for~four different CDM cosmologies spanning a~mass range of~over 3 orders of~magnitude $(\sim10^{12}-10^{15}h^{-1}M_\odot)$, and~including several redshifts $z=0-5$. They came up with~the~following fitting function
 \eq{
     \label{eq:hmf_jenkins}
     f_{Jenkins}(\sigma)=0.315\exp\left(-|\ln\sigma^{-1}+0.61|^{3.8}\right)\,.
@@ -159,7 +159,7 @@ As their range of~masses and~redshifts correspond to~our study case we will use 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Strong lensing
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Strong lensing}
+\subsection[Strong lensing]{Strong lensing\footnote{\label{ftn2}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}.}}
 \label{ssec:SL}
 Strong gravitational lensing (SL) refers to~the~multiple imaging of~a~background object due to~a~massive foreground object (typically clusters of~galaxies). The~resulting angular displacement, morphological distortion, and~time delay can be used to~measure dark energy parameters. Strong gravitational lensing time delays measure a~combination of~distances that combining with~other dark energy probes can further constraint cosmological parameters. The~time delays are also expected to~test gravity on~scales where the~screening mechanisms are becoming active.
 
@@ -167,7 +167,7 @@ Another independent way to~measure dark energy parameters with~SL is the~analysi
 %%%%%%%%%%%%%%%%%%%%%%%
 % Redshift-space distortions
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Redshift-space distortions}
+\subsection[Redshift-space distortions]{Redshift-space distortions\footnoteref{ftn2}}
 \label{sec:rsd}
 When we observe distant galaxies, two features determine their redshifts -- the~Hubble expansion and~their peculiar velocities. The~peculiar velocities of~galaxies thus cause them to~appear displaced along the~line of~sight in~redshift space. These displacements lead to~redshift distortions in~the~pattern of~clustering of~galaxies in~redshift space and~make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the~tremendous advantage of~bearing information about the~dynamics of~galaxies.
 

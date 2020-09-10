@@ -93,6 +93,7 @@ citestyle=authoryear
 
 \usepackage{sectsty}
 \allsectionsfont{\boldmath}
+\usepackage[stable]{footmisc}
 
 % subcaption issues an~error
 \captionsetup{compatibility=false,font=small,labelfont=bf}
@@ -140,7 +141,7 @@ I would like to~thank my supervisor Michael Prouza for~his support during my who
 
 % Abstract (recommended length around 80-200 words; this is not a~copy of~your thesis assignment!)
 \def\Abstract{%
-The~accelerated expansion of~the~Universe poses a~major theoretical puzzle. Although the~assumption of~a~non-zero cosmological constant provides a~minimal extension of~general relativity that is consistent with~observational data, many theories of~modified gravity have been suggested as possible alternatives. Predictions of~structure formation for~these models in~the~fully non-linear regime are very expensive and~it is difficult, if not impossible, to~explore such a~huge space of~models and~parameters using high-resolution \textit{N}-body simulations. Even in~the~mildly nonlinear regime, perturbative methods can become extremely complex. We explore whether simplified dynamical approximations, applicable for~a~certain set of~cosmological probes, can be used to~investigate models of~modified gravity with~acceptable accuracy in~the~latter instance. For~the~case of~chameleon gravity, we found that it is screened away on~scales smaller than that of~galaxy clusters. On~large cosmological scales, we found that approximate methods can be used to~explore the~region around the~baryon acoustic oscillation scale, $k\sim 0.1~h\text{Mpc}^{-1}$ but not much further.}
+Discovery of~the~accelerated expansion of~the~Universe poses a~major theoretical puzzle. Although the~assumption of~a~non-zero cosmological constant provides a~minimal extension of~general relativity that is consistent with~observational data, many theories of~modified gravity have been suggested as possible alternatives due to the serious problem connected with~the~cosmological constant. Numerical predictions of~structure formation for~these models in~the~fully non-linear regime are very expensive and~it is difficult, if not impossible, to~explore such a~huge space of~models and~parameters using high-resolution \textit{N}-body simulations. Even in~the~mildly nonlinear regime, perturbative methods can become extremely complex. We explore whether simplified dynamical approximations, applicable for~a~certain set of~cosmological probes, can be used to~investigate models of~modified gravity with~acceptable accuracy in~the~latter instance. For~the~case of~chameleon gravity, we found that it is screened away on~scales smaller than that of~galaxy clusters. On~large cosmological scales, we found that approximate methods can be used to~explore the~region around the~baryon acoustic oscillation scale, $k\sim 0.1~h\text{Mpc}^{-1}$ but not much further.}
 
 % 3 to~5 keywords (recommended), each enclosed in~curly braces
 \def\Keywords{%
@@ -155,7 +156,10 @@ The~accelerated expansion of~the~Universe poses a~major theoretical puzzle. Alth
 %% Most settings are pre-set by the~pdfx package.
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
-\hypersetup{colorlinks=true}
+% \hypersetup{colorlinks=true}
+
+\usepackage{cleveref}
+\crefformat{footnote}{\footnotemark[#1]}
 
 % \includeonly{}
 \widowpenalties=4 10000 10000 10000 150

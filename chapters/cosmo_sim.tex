@@ -78,7 +78,7 @@ where operators \(\TT\equiv\{\cdot,T\}\) and~\(\VV\equiv\{\cdot,V\}\) are known 
 The~splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second-order accurate, whereas simpler splitting only into one kick and~one drift is first-order accurate. The~same accuracy and~results have also similar splitting into drift-kick-drift which we use in~our integrator.
 \section{Particle-Mesh algorithm}
 \label{sec:PM}
-As we mentioned in~the~introduction, in~order to~effectively compute forces on~particles one has to~abandon the~continuous position and~solve the~forces using discretized positions. The~idea of~the~PM method is that we set up a~mesh (grid) over the~computational box, and~then solve the~gravitational potential (i.e. Poisson’s equation \eqref{eq:poisson_lin}) at~the~mesh-points \parencite{n_body_Lindholm}. Forces at~the~mesh-points can then be obtained by calculating the~gradient of~the~potential. The~four principal steps of~the~particle-mesh calculation are \parencite{Hockney:1988:CSU:6281}:
+As we mentioned in~the~introduction, in~order to~effectively compute forces on~particles one has to~abandon the~continuous position and~solve the~forces using discretized positions. The~idea of~the~PM method is that we set up a~mesh (grid) over the~computational box, and~then we solve the~gravitational potential (i.e. Poisson’s equation \eqref{eq:poisson_lin}) at~the~mesh-points \parencite{n_body_Lindholm}. Forces at~the~mesh-points can then be obtained by calculating the~gradient of~the~potential. The~four principal steps of~the~particle-mesh calculation are \parencite{Hockney:1988:CSU:62815}:
 \begin{enumerate}
     \item assign mass to~the~mesh,
     \label{it:pm_1}
