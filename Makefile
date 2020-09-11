@@ -50,6 +50,10 @@ tex: $(PDF_FILES) $(LOGO_CON)
 	-@rm $(MAIN).xmpdata
 	$(TEX_CMD)
 
+diff:
+	pdflatex -interaction=nonstopmode -halt-on-error $(MAIN)-diff.tex
+	-@cp $(MAIN)-diff.pdf $(CP_DEST)
+
 bib:
 	$(BIB_CMD) $(MAIN)
 
