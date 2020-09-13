@@ -187,11 +187,13 @@ The~velocity field $\tilde{\mb u}$ is frozen at~each point to~its initial value,
 These equations are very similar to~ZA but now the~particles update their velocities to~the~local value of~the~velocity field (not the~initial value), without any memory of~their previous motion. This can be viewed as a~movement of~particles under some force in~a~medium with~very large viscosity. In~our case of~cosmological simulations, gravity represents the~attractive force while Hubble friction represents the~informal equivalent of~a~``damping'' or ``viscous'' force.
 
 Originally, \textcite{Matarrese:1992be} stated three main reasons of~why should the~FFA work:
+{\itshape
 \begin{itemize}
 \item FFA is, by construction, consistent with~linear theory and~follows correctly the~evolution at~early times. Keeping the~linear approximation for~the~velocity potential is justified by the~fact that this quantity is more sensitive to~large wavelength modes than the~density, and~is, therefore, less affected by strongly non-linear evolution.
 \item Stream-lines are frozen to~their initial shape, so multistream regions cannot form and~FFA avoids the~formation of~caustics at~a~finite time and~can, therefore, work well after shell-crossing would occur in~ZA. A~particle moving according to~FFA has zero velocity at~minima (or maxima) of~the~gravitational potential. It will slow down its motion when approaching such a~position -- particles in~FFA would need infinite time to~reach such places. Particles move along curved paths and~once they come close to~pancake configurations they curve their trajectories, moving almost parallel to~them, trying to~reach the~positions of~filaments.
 \item This type of~dynamics implies an~artificial thickening of~particles around pancakes, filaments, and~knots, which mimics the~real gravitational clustering around these types of~structures.
 \end{itemize}
+}
 
 The~definition \eqref{eq:FFA_orig} is, however, no longer valid in~the~general \LCDM\ cosmology where even in~the~linear regime both gravitational potential and~velocity field undergo evolution. We generalize FFA for~the~\LCDM\ cosmology by adding an~extra time dependence in~equation \eqref{eq:FFA_orig}
 \eq{

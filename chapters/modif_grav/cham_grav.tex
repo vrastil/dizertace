@@ -1,4 +1,4 @@
-\section[Chameleon Gravity]{Chameleon Gravity\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}.}}
+\section[Chameleon Gravity]{Chameleon Gravity\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{sec_cham}
 We now describe \fR\ gravities exhibiting the~chameleon mechanism in~more detail. As stated, this mechanism uses the~large mass of~the~chameleon field in~high-density regions and~chameleon gravity can satisfy tests of~the~equivalence principle in~the~Solar System. The~action of~a~chameleon scalar field $\chi$ in~the~Einstein frame is given by the~action \eqref{eq:S_ein_fr}. Varying the~action with~respect to~the~field $\chi$ one can obtain the~equation of~motion
 \eq{
@@ -17,6 +17,7 @@ where the~effective potential $V_{\eff}$ is defined by
 \eq{
 	V_{\eff}\left(\chi\right)\equiv V(\chi)+\sum_i\rho_i e^{(1-3w_i)\beta_i\chi/\Mpl}.
 }
+{\itshape
 If the~couplings $\beta_i$ are the~same for~each matter component with~the~same $w$ (we can omit the~radiation in~the~sum) and~the~overall density is $\rho=\sum_i\rho_i$, then the~effective potential reads
 \eq{
 	V_{\eff}\left(\chi\right)\equiv V(\chi)+\rho e^{(1-3w)\beta\chi/\Mpl}.
@@ -27,7 +28,9 @@ For~the~quasi-static and~weak $(\beta\chi/\Mpl\ll1)$ field in~a~weak gravity bac
 	\Delta \chi=\frac{\beta}{\Mpl}\rho+V_{,\chi},
 }
 which looks like the~normal Poisson equation but with~an~extra non-linear term.
+}
 \subsection{Chameleon Force}
+{\itshape
 The~interaction of~the~chameleon field with~matter is described by the~conformal coupling \eqref{eins_trans}. Free matter fields $\psi_m^{(i)}$ follow geodesics of~the~Jordan frame metric. In~the~Einstein frame, they follow modified trajectories affected by the~chameleon field \parencite{Waterhouse:2006wv}
 \eq{
 \frac{\dd^2x^\mu}{\dd\tau^2}+\Gamma^\mu_{\alpha\beta}\dddd{x^\alpha}{\tau}\dddd{x^\beta}{\tau}=-\frac{\beta_i}{\Mpl}\left(2\chi_{,\alpha}\dddd{x^\alpha}{\tau}\dddd{x^\mu}{\tau}+g^{\beta\mu}\chi_{,\beta}\right).
@@ -37,7 +40,9 @@ Note that the~chameleon force violates the~weak Equivalence Principle only if th
 \label{cham_force}
 \frac{\mb{F}_\chi}{m}=-\frac{\beta_i}{\Mpl}\mb{\nabla}\chi
 }
+}
 \subsection{Chameleon mechanism}
+{\itshape
 As discussed previously, we need some sort of~a~screening mechanism to~avoid Solar System tests of~GR. It means as seen from \eqref{cham_force} that the~chameleon potential needs to~approach some constant value in~dense regions or at~least have a~marginally suppressed amplitude.
 
 Suppose we have a~background solution $\chi_0$ which minimizes the~effective potential with~$\rho=\rho_0$. For~small fluctuations $\chi=\chi_0+\delta\chi$ and~$\rho=\rho_0+\delta\rho$ we can linearize \eqref{eq:cham} to~obtain
@@ -55,8 +60,10 @@ Except for~the~screening term, the~equation \eqref{eq:cham_lin} has the~same beh
 }
 As the~objects in~the~background become more massive (larger and/or denser) the~Newtonian potential grows larger (in~magnitude) and~so the~deviation of~$\chi$ from background solution $\chi_0$. At~some point, this deviation is no longer small and~the~potential term in~\eqref{eq:cham} cannot be treated perturbatively. It starts canceling the~first source term and~eventually the~field $\chi$ posses a~new value which minimizes the~effective potential inside an~object.
 
-This is the~essence of~the~chameleon mechanism. Let us derive the~mechanism more properly and~exactly. 
+This is the~essence of~the~chameleon mechanism. Let us derive the~mechanism more properly and~exactly.
+} %% itshape
 \subsection{Chameleon Profile}
+{\itshape
 \label{cham_prof}
 To~obtain the~chameleon behavior described above we need to~choose a~chameleon potential $V(\chi)$ with~the~right properties. To~have a~screening mechanism in~\eqref{eq:cham} we need $V_{,\chi}<0$ to~cancel the~source term and~$V_{,\chi\chi}>0$ to~have a~real mass of~the~field and~stable behavior of~perturbations.
 
@@ -158,6 +165,7 @@ The~chameleon force outside the~object (where experiments take place) comparing 
 \end{split}
 }
 where we ignore the~term $m_0 r\ll1$. Therefore for~the~coupling $\beta$ of~order unity, the~chameleon force is as strong as gravity unless it is screened away by the~thin-shell effect.
+} %% itshape
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HU-SAWICKI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,7 +272,9 @@ In~this section, we will show the~results of~numerical solutions of~the~chameleo
 Our algorithm for~finding solutions to~\eqref{eq:cham_husa_r} uses the~shooting method \parencite{10.5555/42249} and~is based on~the~original algorithm of~\textcite{mastersthesis_vrastil}. We further improved the~code applicability, readability, and~its parametrization. The~code is publicly available at~\code{\url{https://github.com/vrastil/chi_r_solver}}.
 
 \subsubsection{Stars}
+{\itshape
 We will first consider a~case where some approximate solutions exist -- a~compact spherical object of~constant density $\rho_c$ surrounded by the~background of~density $\rho_0$ as discuss in~\autoref{cham_prof}. We expect that for~low-mass objects the~chameleon field will track the~Newtonian potential while for~massive objects the~chameleon field will be frozen inside the~sphere and~outside it will be following the~Newtonian behavior but with~decreased amplitude.
+}
 
 In~\autoref{fig:starlike} we show results for~the~chameleon profile. We used the~notation $\tilde\chi\equiv(\chi-\chi_0)/2\beta\Mpl$ for~better comparison with~the~Newtonian potential. We see that for~$\Phiscr>\Phi_G$ we have an~unscreened solution as expected. For~lower values of~$\Phiscr$ the~field is frozen inside the~object and~have lower amplitude outside the~object as expected from analytical solutions.
 \begin{figure}
@@ -274,7 +284,8 @@ In~\autoref{fig:starlike} we show results for~the~chameleon profile. We used the
 	\label{fig:starlike}
 \end{figure}
 
-Let us focus on~the~regime which cannot be treated analytical, i.e. regime between thin-shell and~thick-shell solutions. This regime corresponds to~the~situation when the~linear approximation (thick-shell) breaks down inside the~object, i.e. the~gravitational potential cancels screening potential somewhere inside the~object. We will denote $\Req$ the~\textit{equivalence radius} -- radius at~which the~Newtonian potential equals the~screening potential $|\Phi_G(\Req)|=\Phi_s$. By letting the~equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_G(0)|=\Phi_s$ we can clearly distinguish between the~linear $(\Req<0)$ and~the~screening $(\Req>0)$ regime.
+{\itshape
+Let us focus on~the~regime which cannot be treated analytical, i.e. regime between thin-shell and~thick-shell solutions. This regime corresponds to~the~situation when the~linear approximation (thick-shell) breaks down inside the~object, i.e. the~gravitational potential cancels screening potential somewhere inside the~object. We will denote $\Req$ the~\textit{equivalence radius} -- radius at~which the~Newtonian potential equals the~screening potential $|\Phi_G(\Req)|=\Phi_s$. By letting the~equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_G(0)|=\Phi_s$ we can clearly distinguish between the~linear $(\Req<0)$ and~the~screening $(\Req>0)$ regime.}
 
 In~\autoref{fig:starlike_forces} we show the~behavior of~the~chameleon fifth force in~this regime. We see that for~the~linear regime the~fifth force is as strong as standard gravity (up to~the~factor $2\beta^2$). For~$\Req\ll R_s$ the~chameleon field manages to~catch up with~the~linear solution inside the~object and~there is no screening outside. As the~$\Req$ grows the~field is not able to~catch up with~the~linear solution while inside the~object and~the~force outside is screened.
 \begin{figure}
@@ -285,6 +296,7 @@ In~\autoref{fig:starlike_forces} we show the~behavior of~the~chameleon fifth for
 \end{figure}
 
 \subsubsection{NFW Halo}
+{\itshape
 The~Navarro-Frenk-White (NFW) profile proposed by \textcite{1996ApJ...462..563N} describes the~distribution of~cold dark matter. The~NFW profile of~matter overdensity is given by
 \eq{
 	\label{NFW_rho}
@@ -297,6 +309,7 @@ where $\rho_c$ is the~density scale and~$r_s$ is the~scale radius. We will also 
 where $c\equiv r_{200}/r_s$ is the~concentration of~the~halo. For~a~given mass the~halo is fully characterized by the~concentration.
 
 For~NFW halo the~density is not constant as in~the~case of~compact spherical objects (stars). The~chameleon mass and~the~screened solution are therefore also not constant and~one does not have analytical solutions as in~the~case of~stars. However, for~realistic halo, the~density varies on~scales much larger than the~Compton wavelength of~the~chameleon. In~such cases, we can treat the~field as frozen in~the~same sense as in~the~case of~stars. Therefore we expect the~chameleon field to~behave in~a~similar way as in~the~case of~stars, i.e. to~follow the~Newtonian potential in~the~linear case and~to~have screened behavior for~more massive halos.
+}
 
 In~\autoref{fig:nfwlike_forces} we show the~chameleon fifth force. We see that the~behavior is indeed similar to~stars although the~field catches up much later. This is because there is no sudden drop in~density (and~mass of~the~field) where the~chameleon can start to~behave as free but rather the~mass is slowly dropping. This indicates that it will be much harder to~detect the~chameleon fifth force on~scales of~galaxies than for~star-like objects. This is of~course true only assuming the~screening potential is the~same on~all scales.
 \begin{figure}
