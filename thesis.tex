@@ -76,7 +76,7 @@ url=false,
 \AtEveryBibitem{%
 \clearfield{pages}
 \clearfield{title}
-\clearfield{eprint}
+% \clearfield{eprint}
 \clearfield{archivePrefix}
 \clearfield{month}
 \clearfield{booktitle}
@@ -218,11 +218,15 @@ Discovery of~the~accelerated expansion of~the~Universe poses a~major theoretical
 %%% Bibliography
 \clearpage
 \phantomsection
+\printbibheading[heading=bibintoc]
 \renewcommand{\bibname}{Bibliography}
-\addcontentsline{toc}{chapter}{\bibname}
+% \addcontentsline{toc}{chapter}{\bibname}
 \begingroup
 \sloppy
-\printbibliography[title={\bibname}]
+\printbibliography[
+	title={References},
+	heading=subbibintoc
+]
 \endgroup
 
 %%% Figures used in~the~thesis (consider if this is needed)
@@ -233,16 +237,18 @@ Discovery of~the~accelerated expansion of~the~Universe poses a~major theoretical
 %\listoftables
 
 %%% Doctoral theses must contain a~list of~author's publications
-\clearpage
-\phantomsection
-\renewcommand{\bibname}{List of~publications}
-\addcontentsline{toc}{chapter}{\bibname}
+% \clearpage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{\bibname}
 \label{chpt:list_publish}
 \begin{refsection}[bibliography/my_work.bib]
 \nocite{*}
 \begingroup
 \sloppy
-\printbibliography[title={\bibname}]
+\printbibliography[
+	title={List of~publications},
+	heading=subbibintoc
+]
 \endgroup
 \end{refsection}
 
