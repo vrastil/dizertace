@@ -11,38 +11,38 @@ Note that this effect of~slower growth due to~a~decreasing gradient of~the~veloc
 
 Additionally, the~dynamical approximations in~FFA and~FPA can lead to~artificial non-linear enhancement of~the~growth at~later times on~small scales within deep wells. It takes more time to~get into a~local gravitational well than in~standard \nbody\ but once the~particles are there, they may form stable cores as they simply move towards the~local potential minimum. On~these small scales, the~approximations are not valid in~any case, so this point is mostly academic.
 
-As discussed above, the~suppression of~linear growth in~FFA and~FPA can be viewed as a~modified growth function and~we can introduce a~simple rescaling via an~effective redshift $z\eff$ so that the~power spectrum on~large linear scales matches the~linear prediction
-\eq{
-	\langle P(k, z\eff) \rangle = \langle P\lin(k, z)\rangle\,,
-}
-where we are averaging over ``large scales''. In~our simulations, this means we are fitting the~linear power spectrum in~the~range from the~minimum available wave-number $k_\text{\tiny min}=2\pi/L$ to~half a~decade $k=\sqrt{10}k_\text{\tiny min}$.
+% As discussed above, the~suppression of~linear growth in~FFA and~FPA can be viewed as a~modified growth function and~we can introduce a~simple rescaling via an~effective redshift $z\eff$ so that the~power spectrum on~large linear scales matches the~linear prediction
+% \eq{
+% 	\langle P(k, z\eff) \rangle = \langle P\lin(k, z)\rangle\,,
+% }
+% where we are averaging over ``large scales''. In~our simulations, this means we are fitting the~linear power spectrum in~the~range from the~minimum available wave-number $k_\text{\tiny min}=2\pi/L$ to~half a~decade $k=\sqrt{10}k_\text{\tiny min}$.
 
-In~the~rest of~the~paper when we are comparing our results with~a~prediction of~the~linear or non-linear theory, we use this effective time instead of~the~simulation time unless stated otherwise.
+% In~the~rest of~the~paper when we are comparing our results with~a~prediction of~the~linear or non-linear theory, we use this effective time instead of~the~simulation time unless stated otherwise.
 
-In~\autoref{fig:D_eff_Pk}, we compare the~effective growth function with~the~linear growth function of~\LCDM. For~ZA and~TZA there is almost no suppression as we are comparing large scales. However, at~later times (or if we had used smaller scales) we would see an~exponential suppression as described in~\cite{Bharadwaj_1996}. For~FFA and~FPA we have an~almost linear dependence of~$D\eff$ on~$a$, for~FFA with~a~slope of~approximately $8\%$ and~for~FPA with~the~slope being approximately $6\%$.
-\begin{figure}[!bt]
-  \centering
-    \begin{subfigure}{0.9\textwidth}
-        \includegraphicscustomlegend{simulations_approx/z_eff/D_eff_Pk}
-	\end{subfigure}
-	\begin{subfigure}{0.9\textwidth}
-        \includegraphicscustom{simulations_approx/z_eff/D_eff_Pk}
-	\end{subfigure}
-  \caption{Effective growth factor $D\eff$ for~different approximation schemes based on~the~ratio of~power spectrum on~large scales compared to~the~linear prediction.}
-  \label{fig:D_eff_Pk}
-\end{figure}
+% In~\autoref{fig:D_eff_Pk}, we compare the~effective growth function with~the~linear growth function of~\LCDM. For~ZA and~TZA there is almost no suppression as we are comparing large scales. However, at~later times (or if we had used smaller scales) we would see an~exponential suppression as described in~\cite{Bharadwaj_1996}. For~FFA and~FPA we have an~almost linear dependence of~$D\eff$ on~$a$, for~FFA with~a~slope of~approximately $8\%$ and~for~FPA with~the~slope being approximately $6\%$.
+% \begin{figure}[!bt]
+%   \centering
+%     \begin{subfigure}{0.9\textwidth}
+%         \includegraphicscustomlegend{simulations_approx/z_eff/D_eff_Pk}
+% 	\end{subfigure}
+% 	\begin{subfigure}{0.9\textwidth}
+%         \includegraphicscustom{simulations_approx/z_eff/D_eff_Pk}
+% 	\end{subfigure}
+%   \caption{Effective growth factor $D\eff$ for~different approximation schemes based on~the~ratio of~power spectrum on~large scales compared to~the~linear prediction.}
+%   \label{fig:D_eff_Pk}
+% \end{figure}
 
-In~\autoref{fig:timestep} we study the~dependence of~$D\eff$ on~the~number of~time-steps. A~larger number of~time-steps improves $D\eff$ for~FPA but, as expected, cannot eliminate the~effect. In~the~case of~FFA, $D\eff$ actually decreases with~an~increase in~the~number of~time-steps. In~this case, for~a~smaller number of~time-steps, particles do not evolve exactly along characteristic curves of~the~(initial) potential, and~the~deceleration is suppressed.
-\begin{figure}[!bt]
-  \centering
-    \begin{subfigure}{0.9\textwidth}
-        \includegraphicscustomlegend{simulations_approx/z_eff/timesteps}
-	\end{subfigure}
-	\begin{subfigure}{0.9\textwidth}
-        \includegraphicscustom{simulations_approx/z_eff/timesteps}
-	\end{subfigure}
-  \caption{Effective growth factor $D\eff$ at~$z=0$ for~FFA and~FPA as a~function of~the~number of~time-steps.}
-  \label{fig:timestep}
-\end{figure}
+% In~\autoref{fig:timestep} we study the~dependence of~$D\eff$ on~the~number of~time-steps. A~larger number of~time-steps improves $D\eff$ for~FPA but, as expected, cannot eliminate the~effect. In~the~case of~FFA, $D\eff$ actually decreases with~an~increase in~the~number of~time-steps. In~this case, for~a~smaller number of~time-steps, particles do not evolve exactly along characteristic curves of~the~(initial) potential, and~the~deceleration is suppressed.
+% \begin{figure}[!bt]
+%   \centering
+%     \begin{subfigure}{0.9\textwidth}
+%         \includegraphicscustomlegend{simulations_approx/z_eff/timesteps}
+% 	\end{subfigure}
+% 	\begin{subfigure}{0.9\textwidth}
+%         \includegraphicscustom{simulations_approx/z_eff/timesteps}
+% 	\end{subfigure}
+%   \caption{Effective growth factor $D\eff$ at~$z=0$ for~FFA and~FPA as a~function of~the~number of~time-steps.}
+%   \label{fig:timestep}
+% \end{figure}
 
-After the~linear theory compensation via the~effective time, all approximations match the~linear prediction on~large scales (by definition), however, on~smaller scales, there are considerable differences. In~the~case of~ZA (and~TZA) at~early times there is an~enhancement of~power above linear theory, but at~later times, the~lack of~the~ability to~follow small-scale structure (``diffusion'' at~caustics) causes a~suppression of~power that continues to~leak to~larger scales. For~FFA and~FPA, however, the~behavior is quite different. At~early times particles on~the~smallest scales are almost in~the~minimum of~the~local gravitational potential (and~consequently at~the~minimum of~the~velocity potential) and~do not evolve much. This effect is weaker for~FPA where particles have inertia and~are not overdamped. At~later times more and~more particles end up in~these (constant-in-time) gravitational wells and~we observe (partial) non-linear gravitational clustering.
+% After the~linear theory compensation via the~effective time, all approximations match the~linear prediction on~large scales (by definition), however, on~smaller scales, there are considerable differences. In~the~case of~ZA (and~TZA) at~early times there is an~enhancement of~power above linear theory, but at~later times, the~lack of~the~ability to~follow small-scale structure (``diffusion'' at~caustics) causes a~suppression of~power that continues to~leak to~larger scales. For~FFA and~FPA, however, the~behavior is quite different. At~early times particles on~the~smallest scales are almost in~the~minimum of~the~local gravitational potential (and~consequently at~the~minimum of~the~velocity potential) and~do not evolve much. This effect is weaker for~FPA where particles have inertia and~are not overdamped. At~later times more and~more particles end up in~these (constant-in-time) gravitational wells and~we observe (partial) non-linear gravitational clustering.
