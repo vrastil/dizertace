@@ -239,7 +239,7 @@ I would like to~thank my supervisor Michael Prouza for~his support during my who
 }
 
 \def\Abstract{
-Discovery of~the~accelerated expansion of~the~Universe poses a~major theoretical puzzle. Although the~assumption of~a~non-zero cosmological constant provides a~minimal extension of~general relativity that is consistent with~observational data, many theories of~modified gravity have been suggested as possible alternatives due to the serious problem connected with~the~cosmological constant. Numerical predictions of~structure formation for~these models in~the~fully non-linear regime are very expensive and~it is difficult, if not impossible, to~explore such a~huge space of~models and~parameters using high-resolution \textit{N}-body simulations. Even in~the~mildly nonlinear regime, perturbative methods can become extremely complex. We explore whether simplified dynamical approximations, applicable for~a~certain set of~cosmological probes, can be used to~investigate models of~modified gravity with~acceptable accuracy in~the~latter instance. For~the~case of~chameleon gravity, we found that it is screened away on~scales smaller than that of~galaxy clusters. On~large cosmological scales, we found that approximate methods can be used to~explore the~region around the~baryon acoustic oscillation scale, $k\sim 0.1~h\text{Mpc}^{-1}$ but not much further.}
+Discovery of~the~accelerated expansion of~the~Universe poses a~major theoretical puzzle. Although the~assumption of~a~non-zero cosmological constant provides a~minimal extension of~general relativity that is consistent with~observational data, many theories of~modified gravity have been suggested as possible alternatives due to serious problems connected with~the~cosmological constant. Numerical predictions of~structure formation for~these models in~the~fully non-linear regime are very expensive and~it is difficult, if not impossible, to~explore such a~huge space of~models and~parameters using high-resolution \textit{N}-body simulations. Even in~the~mildly nonlinear regime, perturbative methods can become extremely complex. We explore whether simplified dynamical approximations, applicable for~a~certain set of~cosmological probes, can be used to~investigate models of~modified gravity with~acceptable accuracy in~the~latter instance. For~the~case of~chameleon gravity, we found that it is screened away on~scales smaller than that of~galaxy clusters. On~large cosmological scales, we found that approximate methods can be used to~explore the~region around the~baryon acoustic oscillation scale, $k\sim 0.1~h\text{Mpc}^{-1}$ but not much further.}
 
 \def\Keywords{
 {dark energy}, {modified gravity}, {\textit{N}-body simulations}, {cosmology}, {approximate methods}
@@ -430,7 +430,7 @@ Due to~the~numerical difficulties connected with~highly non-linear equations of~
 
 For~our purposes, from many different models of~modified gravity, we chose to~explore and~test these simplified methods on~the~Hu-Sawicki \fR\ model. \fR\ gravity represents a~broad class of~theories. It can be considered as the~simplest example of~an~extended theory of~gravity. \fR\ gravity can be also studied from a~different point of~view than a~modification of~gravity. We can see this extra degree of~freedom as a~new scalar field, chameleon field, with~strong non-standard gravitation coupling to~other fields. The~chameleon field has a~mass-dependent on~surrounding density and~can, therefore, escape standard Solar system tests through this so-called chameleon mechanism. We will study this mechanism on~galaxy scales, cluster scales, and~mainly on~large cosmological scales.
 
-All theoretical predictions which can be obtained analytically or numerically through simulations need to~verify by real-life experiments. Present-day experiments such as DES, BOSS, or Planck place constraints on~modified gravities and~so far no extension of~Einstein's gravity has been confirmed but many alternatives remain viable. But a~new era of~next-generation experiments is coming in~the~next decade, such as the~Vera C. Rubin Observatory, Euclid, or W-FIRST.
+All theoretical predictions which can be obtained analytically or numerically through simulations need to~verify by real-life experiments. Present-day experiments such as DES, BOSS, or Planck place constraints on~modified gravities and~so far no extension of~Einstein's gravity has been confirmed but many alternatives remain viable. But a~new era of~next-generation experiments is coming in~the~next decade, such as the~Vera C. Rubin Observatory, Euclid, or Nancy Grace Roman Space Telescope.
 
 
 The~thesis is organized as follows: in~\autoref{chpt:cosmo_evol} we review basics of~the~evolution of~the~Universe; in~\autoref{chpt:de_mg} we describe various theories of~dark energy and~modified gravity while focusing on~the~chameleon theory. We study the~non-linear behavior of~the~chameleon field numerically in~systems exhibiting spherical symmetry in~\autoref{sec_cham}, which is something not studied previously. In~\autoref{chpt:cosmo_sim} we describe different techniques when dealing with~large cosmological simulations, how we adapted them in~our own code for~\nbodysim s, and~our contributions to~a~publicly available software \code{CCL} which compute basic cosmological observables. In~\autoref{chpt:app_schemes} we introduce different approximations, those we use in~our simulations, and~also approximations that are used by other codes or have been studied in~the~past. Unlike previously studied cases of~Einstein--de Sitter universes we adapted these approximations to~general \LCDM\ cosmologies. In~\autoref{chpt:app_sims} we describe original results of~our cosmological \nbodysim s using approximate schemes. In~this chapter, we also study the~chameleon gravity behavior on~cosmological scales. 
@@ -748,7 +748,7 @@ One of~the~main reasons why it is worth to~study the~phenomenon of~a~spherical c
 \section{Cosmological observables}
 Here we present a~brief description of~cosmological probes that can be used for~constraining dark energy. For~more details see e.g. \textcite{weinberg_observational_2013}, \textcite{2010deto.book.....A}, or \textcite{DE_probes2}.
 
-We have already studied this topic and~some of~the~presented probes in~the~author`s work \textcite{mastersthesis_vrastil}. Although in~the~main part of the work we deal mainly with large-scale structures and baryonic acoustic oscillations, general overview of~other~probes might interests some readers. Therefore, we reuse some parts of the~former text here. Explicitly, this concerns sub-sections \hyperref[ssec:supernovae]{Supernovae}, \hyperref[sec:bao]{Baryonic acoustic oscillations}, \hyperref[ssec:wl]{Weak lensing}, \hyperref[ssec:lss]{Large-scale structure}, \hyperref[ssec:gc]{Galaxy clusters}, \hyperref[ssec:SL]{Strong lensing}, and \hyperref[sec:rsd]{Redshift-space distortions}.
+We have already studied this topic and~some of~the~presented probes in~the~author`s work \textcite{mastersthesis_vrastil}. Although in~the~main part of the work we deal mainly with large-scale structures and baryonic acoustic oscillations, general overview of~other~probes might interests some readers. Therefore, we reuse some parts of the~former text here (written in italics). Explicitly, this concerns sub-sections \hyperref[ssec:supernovae]{Supernovae}, \hyperref[sec:bao]{Baryonic acoustic oscillations}, \hyperref[ssec:wl]{Weak lensing}, \hyperref[ssec:lss]{Large-scale structure}, \hyperref[ssec:gc]{Galaxy clusters}, \hyperref[ssec:SL]{Strong lensing}, and \hyperref[sec:rsd]{Redshift-space distortions}.
 
 \subsection{Cosmic distances}
 In~the~expanding Universe, there are many ways to~specify the~distance between two points due to~the~constantly changing distances and~the~fact that observers look back in~time as they look out in~distance.
@@ -819,7 +819,7 @@ As the~distances depend on~the~cosmological parameters through the~integral $\in
 \subsection{Cosmic Microwave Background}
 The~cosmic microwave background (CMB) is the~oldest $(z\sim1090)$ electromagnetic radiation we can see and~its surface forms the~so-called last scattering surface. The~photons were tightly coupled to~baryons and~electrons before this decoupling epoch in~a~hot plasma and~they could not propagate freely. The first detection of the~CMB photons was performed by \textcite{1965ApJ...142..419P}. They observe the radiation thermalized to~an~almost uniform temperature across the~whole sky. The predicted temperature anisotropies of~the~CMB were first measured at~large angular separations by the~COBE satellite in~\textcite{1992ApJ...396L...1S}. The~precise measurement of~temperature anisotropies by high-precision experiments \parencite[e.g.][]{2003ApJS..148..175S} provided a~new direction how to~determine cosmological parameters.
 
-The~CMB provides critical information regarding our Universe. It can constrain parameters such as $\Omega_m,\ \Omega_k$, the~high-redshift normalization of~matter fluctuations, the~spectral index $n_s$ and~curvature $\dd n_s/\dd \ln k$ of~the~scalar fluctuation spectrum, the~amplitude and~slope of~the~tensor (gravitational wave) fluctuation spectrum, the~post-recombination electron-scattering optical depth $\tau$, and~the~Hubble constant.
+The~CMB provides critical information regarding our Universe. It can constrain parameters such as $\Omega_m,\ \Omega_k$, the~high-redshift normalization of~matter fluctuations, the~spectral index $n_s$ and~curvature $\dd n_s/\dd \ln k$ of~the~scalar fluctuation spectrum, the~amplitude and~slope of~the~tensor (gravitational wave) fluctuation spectrum, the~post-recombination electron-scattering optical depth $\tau$, and~the~Hubble constant \parencite{weinberg_observational_2013}.
 
 The origin of CMB is described, in most theoretical models, as an~isotropic Gaussian stochastic process. For gaussian perturbations, all information about the underlying theoretical model is contained in the~angular power spectrum of~the~CMB anisotropies. Due to the isotropy of the process, one may expand the~CMB in~spherical harmonics to~extract its angular power spectrum, defined as \parencite{2015IJMPD..2430004B}
 \eq{
@@ -838,9 +838,11 @@ where $\theta,\ \phi$  denote a~position on~the~celestial sphere. It is customar
 \end{figure}
 \subsection[Supernovae]{Supernovae\footnote{\label{ftn1}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{ssec:supernovae}
+{\itshape
 Supernovae (SNe) are the~most straightforward tool for~studying cosmic acceleration, as they directly discovered the~acceleration in~the~first place \parencite{riess}. Type Ia supernovae (SNe Ia) are exploding stars defined by the~lack of~hydrogen and~the~presence of~silicon in~their early-time spectra \parencite{SN}, and~are a~product of~a~thermonuclear explosion of~a~C/O white dwarf. Observations show that SNe Ia have a~luminosity peak that is tightly correlated with~the~shape of~their light curves -- supernovae that rise and~fall more slowly have higher peak luminosity \parencite[first quantified by][]{SN_lum}. From observations of~(multiband) light curve shapes and~colors the~luminosity at~a~brightness peak can be predicted.
 
 To~measure cosmic expansion with~Type Ia SNe, the~observed flux and~predicted luminosity are compared. From that the~supernova's luminosity distance can be measured. An~accurate redshift is obtained by measuring the~host galaxy (calibrator). As we can see from the~equation for~the~luminosity distance \eqref{eq:d_L}, this method gives the~distance $D_L$ in~units of~$h\mins$ Mpc. Measured relation is used to~constraint dark energy parameters.
+}
 
 A~recent analysis of~\textcite{Abbott_2019} uses data from the~Dark Energy Survey Supernova Program (DES-SN) -- 207 spectroscopically confirmed SNe Ia from the~first three years of~DES-SN combined with~a~low-redshift sample of~122 SNe from the~literature. For~a~flat $w$CDM\ model they found a~matter density $\Omega_m=0.321\pm0.018$ and~an~equation of~state $w=-0.978\pm0.059$, see \autoref{fig:des_sne_results}.
 
@@ -852,6 +854,7 @@ A~recent analysis of~\textcite{Abbott_2019} uses data from the~Dark Energy Surve
 \end{figure}
 \subsection[Baryonic acoustic oscillations]{Baryonic acoustic oscillations\footnoteref{ftn1}}
 \label{sec:bao}
+{\itshape
 Baryonic acoustic oscillations (BAO) provide an~entirely independent way of~measuring cosmic distance. Sound waves propagating before recombination imprint a~characteristic scale on~matter clustering. The~acoustic length scale can be computed as
 \eq{
 r_s=\int_0^{t_\ast}{\frac{c_s(t)}{a(t)}\dd t}=\int_{z_\ast}^{\infty}{\frac{c_s(z)}{H(z)}\dd z},
@@ -859,6 +862,7 @@ r_s=\int_0^{t_\ast}{\frac{c_s(t)}{a(t)}\dd t}=\int_{z_\ast}^{\infty}{\frac{c_s(z
 where the~asterisk denotes time (redshift) at~recombination and~$c_s$ is the~sound speed. The~behavior of~$H(z)$ depends on~the~ratio of~the~matter density to~radiation density and~the~sound speed depends on~the~ratio of~radiation pressure to~the~energy density of~the~baryon-photon fluid, determined by the~baryon-to-photon ratio. Both the~matter-to-radiation ratio and~the~baryon-to-photon ratio can be measured from the~CMB anisotropy power spectrum. This gives $r_s\sim150$ Mpc. The~scale of~the~acoustic feature is stable to~better than 1\% accuracy, making it an~excellent standard ruler.
 
 This effect can be detected in~the~angular clustering of~galaxies in~bins of~photometric redshift, yielding the~angular diameter distance. Furthermore, measuring the~BAO scale in~a~velocity separation allows a~direct determination of~$H(z)$. The~BAO method measures $D(z)$ in~absolute units -- Mpc not $h\mins$ Mpc like SNe measurements, and~thus BAO measurements to~the~same redshift carry different information. At~low redshift $(z\lesssim0.5)$, the~BAO method strongly complements SN measurements, while at~higher redshift $(z\gtrsim0.5)$ the~BAO method is a~powerful probe of~dark energy and~cosmic geometry.
+}
 
 BAO can be clearly seen in~the~correlation function \parencite[see e.g.][]{1993ApJ...412...64L} for~definition and~estimators). The~two-point correlation function $\xi(r)$ is the~excess probability $\dd P$ of~finding two pairs of~galaxies in~two volumes $\dd V_1$ and~$\dd V_2$ at~a~given comoving distance $r$
 \eq{
@@ -876,14 +880,18 @@ where $\bar{n}$ is the~expected density of~the~distribution. The~distances are u
 In~\textcite{BAO_results} present a~measurement of~the~BAO from the~three-dimensional correlation of~Lyman-$\alpha$ forest absorption and~quasars from the~SDSS Data Release 14 (the~first two years of~observations by the~eBOSS) at~redshift $z=2.35$. The~position of~the~BAO peak is used to~determine the~Hubble distance $d_H$ and~the~comoving angular diameter distance $d_A$ relative to~the~sound horizon at~the~drag epoch $r_s: d_H(z=2.35)/r_s = 9.20\pm0.36$ and~$d_M(z=2.35)/r_s = 36.3\pm1.8$. These results are $1.5\sigma$ from the~flat \LCDM\ model of~\textcite{2016A&A...594A..13P}.
 \subsection[Weak lensing]{Weak lensing\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{ssec:wl}
+{\itshape
 Gravitational lensing is the~deflection of~light from distant sources due to~the~bending of~space-time by baryonic and~dark matter (lenses) along the~line of~sight. It is a~very useful cosmological probe because it is sensitive to~all matter regardless of~its nature. In~the~limit of~very small deflection angles, it is called weak lensing (WL). WL causes tiny distortions ($\sim0.5\%$), or ``shear'', in~galaxy sizes and~shapes. The~intrinsic size or shape of~a~given galaxy is unknown, but normally, galaxy orientations are assumed to~be random ($\sim30\%$ dispersion), so they should not exhibit statistically significant and~coherent alignments. In~the~presence of~lensing, small but coherent shears in~background galaxy images are induced. This means that WL is statistically detectable by averaging shapes over many lensed galaxies. In~principle, either the~shearing of~galaxies (shape distortion) or their magnification (size distortion) can be measured. However, in~practice, the~shape distortions are used much more widely since the~scatter in~shapes of~galaxies is less than the~scatter in~their sizes.
 
 Weak lensing provides a~direct measure of~the~distribution of~matter, independent of~any assumptions about galaxy biasing. Since this distribution can be predicted theoretically, and~its amplitude can be directly used to~constrain cosmology, weak lensing has great potential as a~cosmological probe. The~correlation of~the~density field of~nearby galaxies with~the~lensing shear measured on~more distant galaxies is called \textit{galaxy-galaxy lensing}. Most lens systems involve sources (and~lenses) at~moderate or high redshift, and~thus can lensing probe the~geometry of~the~Universe -- the~measurement of~the~shear correlation function as a~function of~the~redshifts of~observed galaxies is called \textit{tomography}. The~scaling of~the~galaxy-galaxy lensing signal as a~function of~the~source redshift, known as \textit{cosmography}, depends purely on~geometric factors and~hence can be used to~construct a~distance-redshift relation.
+}
 \subsection[Large-scale structure]{Large-scale structure\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{ssec:lss}
+{\itshape
 Studying the~large-scale structures (LSS) of~the~Universe is of~great importance for~the~cosmology. Since the~clustering of~matter on~scales from galaxies to~superclusters came from quantum fluctuations in~the~very early Universe with~important modification by radiation and~baryons, the~LSS encode critical information about the~contents of~the~Universe, the~origin of~the~fluctuations, and~the~cosmic expansion background in~which the~structures evolved.
 
 Measurements of~the~large-scale power spectrum for~the~spatial distribution of~matter as a~function of~redshift constrain the~cosmic expansion history, the~cosmological distance scale, the~growth rate of~structures, the~mass of~the~neutrinos, and~the~abundance of~dark matter. This includes the~BAO measurement of~the~distance-redshift relation (as a~standard ruler). The~BAO with~the~growth of~the~LSS in~the~Universe form two robust probes of~dark energy, and~a~potential discriminator between dark energy and~modified gravity models. Beyond the~dark energy, the~large scale power spectrum is a~probe of~both neutrino mass and~primordial non-Gaussianity.
+}
 \subsubsection{Matter power spectrum}
 The~matter power spectrum $P(k)$ is defined as a~quadratic function of~the~Fourier transformation of~the~density contrast $\delta$ \parencite{2010deto.book.....A}
 \eq{
@@ -911,9 +919,11 @@ In~\autoref{fig:pk_planck} is shown (linear) matter power spectrum inferred from
 
 \subsection[Galaxy clusters]{Galaxy clusters\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{ssec:gc}
+{\itshape
 The~observed number density and~clustering of~galaxy clusters as a~function of~mass and~redshift provides a~powerful toolset to~constraining cosmology.  Galaxy clusters provided the~first line of~evidence for~the~existence of~dark matter \textcite{zwicky} and~cluster mass-to-light ratio measurements suggested that the~matter density in~the~universe was sub-critical \textcite{Gott}. Galaxy clusters measurements are sensitive to~both the~expansion history and~the~growth of~structure in~the~Universe enabling to~distinguish between dark energy and~modified gravity models for~cosmic acceleration. Additional probes are measurements of~the~baryonic mass fraction in~clusters, and~measurements of~the~tomographic lensing signatures through clusters.
 
 The~basic idea of~cluster abundance studies is to~compare the~predicted space density of~massive halos to~the~observed space density of~clusters. The~basic observables are the~richness, the~number of~galaxies in~a~specified luminosity and~color range. Halo abundance is sensitive to~the~amplitude of~the~matter power spectrum $\sigma_8$ and~the~matter density $\Omega_m$, more precisely a~combination of~a~form $\sigma_8\Omega_m^q$, with~$q\approx0.4$ \textcite{white}. The~degeneracy between $\sigma_8$ and~$\Omega_m$ can be broken by measuring abundances at~a~variety of~masses.
+}
 \subsubsection{The~halo mass function}
 The~halo mass function (HMF) $\dd n/\dd M$ is defined as the~number of~haloes of~mass $M$ per unit volume per unit interval in~$M$. To~describe the~halo mass function we need two other quantities, $f(\sigma)$ and~$\ln\sigma^{-1}$. The~rms linear overdensity $\sigma$ of~the~density field smoothed with~a~top-hat filter $W$ with~a~radius that encloses a~mass $M$ at~the~mean cosmic matter density is defined as \parencite{2015IJMPD..2430004B}
 \eq{
@@ -936,20 +946,24 @@ where the~parameter \(\delta\coll=1.686\) was introduced in~the~previous section
 As their range of~masses and~redshifts correspond to~our study case we will use this fitting formula in~our analysis (see \autoref{chpt:app_sims}).
 \subsection[Strong lensing]{Strong lensing\footnote{\label{ftn2}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{ssec:SL}
+{\itshape
 Strong gravitational lensing (SL) refers to~the~multiple imaging of~a~background object due to~a~massive foreground object (typically clusters of~galaxies). The~resulting angular displacement, morphological distortion, and~time delay can be used to~measure dark energy parameters. Strong gravitational lensing time delays measure a~combination of~distances that combining with~other dark energy probes can further constraint cosmological parameters. The~time delays are also expected to~test gravity on~scales where the~screening mechanisms are becoming active.
 
 Another independent way to~measure dark energy parameters with~SL is the~analysis of~systems with~multiple sets of~multiple images \textcite{SL_in_CLGs}. The~positions of~these multiple images depend strongly on~the~detailed properties of~the~lens mass distribution and~on~the~angular diameter distance ratios between the~lens, source, and~observer, they encapsulate information about the~underlying cosmology. This dependence on~the~geometry can be used to~derive constraints on~the~cosmological parameters.
+}
 \subsection[Redshift-space distortions]{Redshift-space distortions\footnoteref{ftn2}}
 \label{sec:rsd}
-When we observe distant galaxies, two features determine their redshifts -- the~Hubble expansion and~their peculiar velocities. The~peculiar velocities of~galaxies thus cause them to~appear displaced along the~line of~sight in~redshift space. These displacements lead to~redshift distortions in~the~pattern of~clustering of~galaxies in~redshift space and~make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the~tremendous advantage of~bearing information about the~dynamics of~galaxies.
+{\itshape
+When we observe distant galaxies, two features determine their redshifts -- the~Hubble expansion and~their peculiar velocities. The~peculiar velocities of~galaxies thus cause them to~appear displaced along the~line of~sight in~redshift space. These displacements lead to~redshift distortions in~the~pattern of~clustering of~galaxies in~redshift space and~make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the~tremendous advantage of~bearing information about the~dynamics of~galaxies.}
 
 The~coordinate transformation from real space $(r)$ to~redshift space $(s)$ of~a~source with~a~peculiar velocity $\bm v$ is given by \parencite{2010deto.book.....A}
 \eq{
     \mb s = \mb r\left[1+\frac{u(r)-u(0)}{r}\right]\,,
 }
-where $u\equiv\mb v\cdot\mb r/r$. The~strength of~the~anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the~logarithmic growth rate of~fluctuations \eqref{eq:grw_rate} and~$b$ is the~bias. By modeling the~full redshift-space galaxy power spectrum one can obtain a~combination of~the~product of~the~matter clustering amplitude and~the~growth rate.
+where $u\equiv\mb v\cdot\mb r/r$. {\itshape The~strength of~the~anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the~logarithmic growth rate of~fluctuations \eqref{eq:grw_rate} and~$b$ is the~bias. By modeling the~full redshift-space galaxy power spectrum one can obtain a~combination of~the~product of~the~matter clustering amplitude and~the~growth rate.
 
-Anisotropy of~galaxy clustering offers an~alternative to~weak lensing and~cluster abundances as a~tool for~measuring the~growth of~structures. RSD directly measures the~rate at~which structure is growing at~the~redshift of~observation, unlike WL and~galaxy cluster measurements which measure the~rate of~growth at~multiple redshifts. RSD measurements can improve constraints on~dark energy models and~they can be used to~constrain departures from GR by testing the~consistency of~the~growth and~expansion histories. The~key challenge in~modeling RSD is accounting for~non-linear effects, including non-linear or scale-dependent bias between galaxies and~matter, at~the~level of~accuracy demanded by the~LSST's precision. 
+Anisotropy of~galaxy clustering offers an~alternative to~weak lensing and~cluster abundances as a~tool for~measuring the~growth of~structures. RSD directly measures the~rate at~which structure is growing at~the~redshift of~observation, unlike WL and~galaxy cluster measurements which measure the~rate of~growth at~multiple redshifts. RSD measurements can improve constraints on~dark energy models and~they can be used to~constrain departures from GR by testing the~consistency of~the~growth and~expansion histories.
+} 
 \section{Cosmological Surveys}
 There are many projects and~missions which study properties of~the~dark energy, either as a~main scientific goal or as a~complementary program. Here we mention some of the biggest surveys while directing the reader for further references.
 \subsection{Sloan Digital Sky Surveys}
@@ -969,7 +983,7 @@ The~Nancy Grace Roman Space Telescope (formerly known as WFIRST, the~Wide Field 
 \label{chpt:de_mg}
 In~this chapter we briefly introduce how we can modify Einstein's general relativity, what are reasons for~such modifications (the~cosmological constant problem), and~the~main ideas behind adding new degrees of~freedom to~the~Einstein equations. We describe one particular model of~modified gravity in~more detail -- the~$f(R)$ theory and~chameleon gravity. We will study the~behavior of~the~chameleon field in~spherical systems using numerical techniques.
 
-Some review parts of this chapter has already been studied and described in author`s work \textcite{mastersthesis_vrastil}. In this work, we deal with the~same topic of the $f(R)$ gravity. We also use various notations and equations we already defined in~the~former work and we need them here, such as the~chameleon field $\chi$ and related equations. As we further develop the original study of the chameleon, we also took over some parts of the text. We use the text in sections \hyperref[sec:fR]{\fR\ gravity}, \hyperref[sec_cham]{Chameleon Gravity}, and \hyperref[sec:other]{Other theories}, where a general overview of~other~interesting theories is presented. In section \hyperref[sec_cham]{Chameleon Gravity} we also extended our previous analysis of chameleon field on cosmological scales and we also extended the study of the chameleon in spherical systems on the scales of galaxy clusters.
+Some review parts of this chapter has already been studied and described in author`s work \textcite{mastersthesis_vrastil}. In this work, we deal with the~same topic of the $f(R)$ gravity. We also use various notations and equations we already defined in~the~former work and we need them here, such as the~chameleon field $\chi$ and related equations. As we further develop the original study of the chameleon, we also took over some parts of the text (written in italics). We use the text in sections \hyperref[sec:fR]{\fR\ gravity}, \hyperref[sec_cham]{Chameleon Gravity}, and \hyperref[sec:other]{Other theories}, where a general overview of~other~interesting theories is presented. In section \hyperref[sec_cham]{Chameleon Gravity} we also extended our previous analysis of chameleon field on cosmological scales and we also extended the study of the chameleon in spherical systems on the scales of galaxy clusters.
 
 \section{Standard $\Lambda$CDM model -- successes and~issues}
 The~standard cosmological model, the~\LCDM\ model or the~concordance model, assumes that the~Universe originated in~the~Big Bang from infinitely hot and dense energy, and~now is the~Universe composed of~about 5\% ordinary matter, 27\% dark matter, and~68\% dark energy \parencite{redefineLCDM}. The~\LCDM\ model depends on two theoretical models -- the~Standard Model of~Particle Physics and~ the~General Theory of~Relativity. The~model also assumes that the~universe is homogeneous and~isotropic on~sufficiently large (cosmic) scales. The~model is mathematically described above in~\autoref{chpt:cosmo_evol}.
@@ -1052,6 +1066,7 @@ As we know that vacuum energy really does exist, as evidenced by the~Lamb shift 
 \end{itemize} 
 \section[$f(R)$-gravity]{$f(R)$-gravity\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{sec:fR}
+{\itshape
 One of~the~simplest modified gravity models is the~so-called $f(R)$ gravity in~which we consider general functions of~the~Ricci scalar $R$ in~the~action
 \eq{
 	\label{eq:S_fr}
@@ -1104,8 +1119,9 @@ where the~effective gravitational constant is defined by
 	G\eff \equiv\frac{G}{1+f\R}\frac{4k^2+3a^2m^2}{3k^2+3a^2m^2}\,.
 }
 On~scales much larger than the~scalaron Compton wavelength $m\mins$, gravity is unmodified aside from the~overall reduction factor $f\R$. However, on~smaller scales the~gravitational coupling increases by the~factor $4/3$. As the~scalaron mass $m$ and~the~factor $f\R$ depend on~curvature (local density), the~chameleon mechanism discussed earlier can prevent the~detection of~this effect in~the~Solar System.
-
+} 
 \subsection{Jordan vs. Einstein Frame}
+{\itshape
 The~action \eqref{eq:S_fr} is described in~the~so-called Jordan frame, where the~matter fields are minimally coupled to~the~metric and~follow geodesics. We can also describe the~action in~the~so-called Einstein frame, where ``standard'' gravity is restored. Using the~conformal transformations
 \eq{
 \label{eins_trans}
@@ -1126,14 +1142,17 @@ where tildes denote quantities in~the~Einstein frame. This action looks like the
 There is a~difference between whether one takes action \eqref{eq:S_fr} or \eqref{eq:S_ein_fr} to~be the~fundamental action defining the~modified gravity. In~the~former one, there is only one coupling constant $\beta$, defined by $A(\phi)=\exp(\beta\phi/\Mpl)$, for~all matter fields. If one takes the~action in~the~Einstein frame to~be the~fundamental one the~matter action is replaced by $S_m[\psi_m;A^2(\phi)\tilde{g}_\uv]\rightarrow S_i[\psi_i;A_i^2(\phi)\tilde{g}_\uv]$ where one can define the~coupling strengths $\beta_i$ to~the~different matter components to~be different. This is very important for~tests of~modified gravity. For~instance, if there is minimal coupling to~the~baryonic matter, $\beta_b=0$, Solar System or astrophysical tests do not constraint coupling strength to~the~cold matter $\beta_c$ whereas the~cosmological observations do.
 
 Note that the~coupling constant for~\fR\ is $\beta=\sqrt{1/6}$ but for~other more general theories this coupling can vary. Even for~\fR\ theories, one expects that loop corrections can change the~coupling strength. Also, other theories such as the~Jordan--Brans--Dicke theory, Kaluza--Klein theories, and~higher derivative theories of~gravity, can be formulated in~two different ways \parencite{Faraoni:1998qx}.
+}
 
-These two conformally related frames are physically equivalent, i.e. physical observations are frame independent, but the~frame dependence of~cosmological perturbations has led to~confusion in~the~past. There have been many debates about the~(in)equivalence of~these frames \parencite{Postma:2014vaa} and~whether which one is the~physical \parencite{Faraoni:1999hp}. Many contradictory arguments (sometimes incorrect) of~both sides result in~confusion and~ambiguous viewpoints.
+These two conformally related frames are physically equivalent, i.e. physical observations are frame independent, but the~frame dependence of~cosmological perturbations has led to~confusion in~the~past. There have been many debates about the~(in)equivalence of~these frames \parencite{Postma:2014vaa} and~whether which one is the~physical \parencite{Faraoni:1999hp}.
 
-It has been shown in~\textcite{Magnano:1993bd} that these two frames are \textit{mathematically} equivalent, i.e. every solution in~one frame implies an~existence of~a~solution in~the~other frame and~can be mapped into this frame. The~confusion about their physical equivalence comes from interpretations of~experiment results. For~example, \textit{ordinary} cosmology described by Einstein’s theory leads to~an~expanding universe solution. Coming to~the~Jordan frame we can interpret the~scale factor as a~scalar field which is coupled to~matter. In~this case, the~redshift of~spectral lines is no longer interpreted as an~effect due to~the~expansion of~the~Universe, but due to~growth of~coupling constants such that the~present transition energies are higher than those in~the~past. Hence the~Jordan frame physicist does not see an~expanding Universe, but growing coupling constants. Nevertheless, the~measured redshift of~spectral lines is the~same for~both frames.
+In~\textcite{Magnano:1993bd} proved the \textit{mathematical} equivalence these two frames , i.e. every solution in~one frame implies an~existence of~a~solution in~the~other frame and~can be mapped into this frame. The~confusion about their physical equivalence comes from interpretations of~experiment results. For~example, \textit{ordinary} cosmology described by Einstein’s theory leads to~an~expanding universe solution. However, if we transform the equations to~the~Jordan frame, the~scale factor can be interpreted as a~scalar field which is coupled to~matter. The~redshift of~spectral lines is now seen as a result of growth of~coupling constants which makes transition energies higher than in~the~past and not the expansion of~the~Universe. Nevertheless, the~measured redshift is the~same for~both frames.
 
+{\itshape
 Both frames have some issues with~fundamental principles. In~the~Jordan frame, the~weak energy condition can be violated and~hence states with~the~negative energy are possible. Moreover, there is no guarantee of~stability of~the~ground state. All \textit{classical} fields are believed to~satisfy the~energy condition but no so in~quantum theories. On~the~other hand in~the~Einstein frame, the~weak energy condition is satisfied but due to~the~non-universal coupling of~the~matter fields, the~equivalence principle is violated. However, this violation is only weak and~can pass the~Solar system tests.
-
+}
 \subsection{Screening Mechanisms}
+{\itshape
 We know that general relativity with~the~cosmological constant and~assumptions about the~cold dark matter can describe our universe very well. That means that any modified cosmology must be able to~recover \LCDM\ cosmology to~high accuracy. This is not normally an~issue. However, since modifications of~GR typically involve an~extra scalar degree of~freedom there are interactions with~matter that are unavoidable -- no symmetry can prevent all couplings to~the~standard model. This coupling to~matter means that there should be a~fifth force. Because we do not see any fifth forces or modifications of~gravity in~the~laboratory or in~the~Solar System we need to~suppress these fifth forces -- we need some sort of~a~\textit{screening mechanism}.
 
 The~nature of~the~screening mechanisms can be different. Let us start from \eqref{eq:S_ein_fr} with~the~generalized kinetic term $-\frac12 Z(\phi,\partial\phi,...)(\partial\phi)^2$. We can solve the~equations of~motion for~the~background in~a~minimum of~a~potential $V(\phi)$ and~write $\phi=\phi_0+\delta\phi$, where $\phi_0$ is a~background solution and~$\delta\phi$ is a~fluctuation. The~Lagrangian density for~the~fluctuations to~the~second order (first order vanishes) is
@@ -1145,7 +1164,8 @@ where $m^2(\phi)\equiv V_{,\phi\phi}(\phi)$. Now, any of~these three terms can s
 	\item  \textit{Large inertia} -- a~large $Z$ makes it hard for~the~scalar to~propagate and~leads to~the~kinetic type of~the~screening, where first or second derivatives being important; e.g. Galileons \parencite{2009PhRvD..79f4036N}, massive gravity \parencite{2012RvMP...84..671H} or Vainshtein mechanism \parencite{2013CQGra..30r4001B};
 	\item \textit{Large mass} --  a~large $m$ means the~scalar propagates only over short distances and~leads to~the~chameleon type of~the~screening, where in~regions of~high-density, such as on~the~Earth, the~field acquires a~large mass -- the~Chameleon mechanism \parencite{Waterhouse:2006wv};
 	\item \textit{Weak coupling} -- a~small $\beta$ in~regions of~high density makes the~interaction with~matter fields weaker and~leads to~symmetron \parencite{2010PhRvL.104w1301H}) or varying dilaton \parencite{Damour:1994zq,2011PhRvD..83j4026B} theories.
-\end{itemize} 
+\end{itemize}
+} 
 \section[Chameleon Gravity]{Chameleon Gravity\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
 \label{sec_cham}
 We now describe \fR\ gravities exhibiting the~chameleon mechanism in~more detail. As stated, this mechanism uses the~large mass of~the~chameleon field in~high-density regions and~chameleon gravity can satisfy tests of~the~equivalence principle in~the~Solar System. The~action of~a~chameleon scalar field $\chi$ in~the~Einstein frame is given by the~action \eqref{eq:S_ein_fr}. Varying the~action with~respect to~the~field $\chi$ one can obtain the~equation of~motion
@@ -1165,6 +1185,7 @@ where the~effective potential $V_{\eff}$ is defined by
 \eq{
 	V_{\eff}\left(\chi\right)\equiv V(\chi)+\sum_i\rho_i e^{(1-3w_i)\beta_i\chi/\Mpl}.
 }
+{\itshape
 If the~couplings $\beta_i$ are the~same for~each matter component with~the~same $w$ (we can omit the~radiation in~the~sum) and~the~overall density is $\rho=\sum_i\rho_i$, then the~effective potential reads
 \eq{
 	V_{\eff}\left(\chi\right)\equiv V(\chi)+\rho e^{(1-3w)\beta\chi/\Mpl}.
@@ -1175,7 +1196,9 @@ For~the~quasi-static and~weak $(\beta\chi/\Mpl\ll1)$ field in~a~weak gravity bac
 	\Delta \chi=\frac{\beta}{\Mpl}\rho+V_{,\chi},
 }
 which looks like the~normal Poisson equation but with~an~extra non-linear term.
+}
 \subsection{Chameleon Force}
+{\itshape
 The~interaction of~the~chameleon field with~matter is described by the~conformal coupling \eqref{eins_trans}. Free matter fields $\psi_m^{(i)}$ follow geodesics of~the~Jordan frame metric. In~the~Einstein frame, they follow modified trajectories affected by the~chameleon field \parencite{Waterhouse:2006wv}
 \eq{
 \frac{\dd^2x^\mu}{\dd\tau^2}+\Gamma^\mu_{\alpha\beta}\dddd{x^\alpha}{\tau}\dddd{x^\beta}{\tau}=-\frac{\beta_i}{\Mpl}\left(2\chi_{,\alpha}\dddd{x^\alpha}{\tau}\dddd{x^\mu}{\tau}+g^{\beta\mu}\chi_{,\beta}\right).
@@ -1185,7 +1208,9 @@ Note that the~chameleon force violates the~weak Equivalence Principle only if th
 \label{cham_force}
 \frac{\mb{F}_\chi}{m}=-\frac{\beta_i}{\Mpl}\mb{\nabla}\chi
 }
+}
 \subsection{Chameleon mechanism}
+{\itshape
 As discussed previously, we need some sort of~a~screening mechanism to~avoid Solar System tests of~GR. It means as seen from \eqref{cham_force} that the~chameleon potential needs to~approach some constant value in~dense regions or at~least have a~marginally suppressed amplitude.
 
 Suppose we have a~background solution $\chi_0$ which minimizes the~effective potential with~$\rho=\rho_0$. For~small fluctuations $\chi=\chi_0+\delta\chi$ and~$\rho=\rho_0+\delta\rho$ we can linearize \eqref{eq:cham} to~obtain
@@ -1203,8 +1228,10 @@ Except for~the~screening term, the~equation \eqref{eq:cham_lin} has the~same beh
 }
 As the~objects in~the~background become more massive (larger and/or denser) the~Newtonian potential grows larger (in~magnitude) and~so the~deviation of~$\chi$ from background solution $\chi_0$. At~some point, this deviation is no longer small and~the~potential term in~\eqref{eq:cham} cannot be treated perturbatively. It starts canceling the~first source term and~eventually the~field $\chi$ posses a~new value which minimizes the~effective potential inside an~object.
 
-This is the~essence of~the~chameleon mechanism. Let us derive the~mechanism more properly and~exactly. 
+This is the~essence of~the~chameleon mechanism. Let us derive the~mechanism more properly and~exactly.
+} 
 \subsection{Chameleon Profile}
+{\itshape
 \label{cham_prof}
 To~obtain the~chameleon behavior described above we need to~choose a~chameleon potential $V(\chi)$ with~the~right properties. To~have a~screening mechanism in~\eqref{eq:cham} we need $V_{,\chi}<0$ to~cancel the~source term and~$V_{,\chi\chi}>0$ to~have a~real mass of~the~field and~stable behavior of~perturbations.
 
@@ -1306,6 +1333,7 @@ The~chameleon force outside the~object (where experiments take place) comparing 
 \end{split}
 }
 where we ignore the~term $m_0 r\ll1$. Therefore for~the~coupling $\beta$ of~order unity, the~chameleon force is as strong as gravity unless it is screened away by the~thin-shell effect.
+} 
 \subsection{Hu-Sawicki \texorpdfstring{\textit{\lowercase{f}(R)}}{fR} Model}
 We wish to~study a~class of~$f(R)$ models that accelerate cosmic expansion at~late times, without the~cosmological constant, while satisfying both cosmological and~Solar System tests. We consider the~family of~Hu-Sawicki $f(R)$ models \parencite{Hu-Saw}. The~action of~these models is given by \eqref{eq:S_fr} and~$f(R)$ has a~broken power-law form
 \eq{
@@ -1409,7 +1437,9 @@ In~this section, we will show the~results of~numerical solutions of~the~chameleo
 Our algorithm for~finding solutions to~\eqref{eq:cham_husa_r} uses the~shooting method \parencite{10.5555/42249} and~is based on~the~original algorithm of~\textcite{mastersthesis_vrastil}. We further improved the~code applicability, readability, and~its parametrization. The~code is publicly available at~\code{\url{https://github.com/vrastil/chi_r_solver}}.
 
 \subsubsection{Stars}
+{\itshape
 We will first consider a~case where some approximate solutions exist -- a~compact spherical object of~constant density $\rho_c$ surrounded by the~background of~density $\rho_0$ as discuss in~\autoref{cham_prof}. We expect that for~low-mass objects the~chameleon field will track the~Newtonian potential while for~massive objects the~chameleon field will be frozen inside the~sphere and~outside it will be following the~Newtonian behavior but with~decreased amplitude.
+}
 
 In~\autoref{fig:starlike} we show results for~the~chameleon profile. We used the~notation $\tilde\chi\equiv(\chi-\chi_0)/2\beta\Mpl$ for~better comparison with~the~Newtonian potential. We see that for~$\Phiscr>\Phi_G$ we have an~unscreened solution as expected. For~lower values of~$\Phiscr$ the~field is frozen inside the~object and~have lower amplitude outside the~object as expected from analytical solutions.
 \begin{figure}
@@ -1419,7 +1449,8 @@ In~\autoref{fig:starlike} we show results for~the~chameleon profile. We used the
 	\label{fig:starlike}
 \end{figure}
 
-Let us focus on~the~regime which cannot be treated analytical, i.e. regime between thin-shell and~thick-shell solutions. This regime corresponds to~the~situation when the~linear approximation (thick-shell) breaks down inside the~object, i.e. the~gravitational potential cancels screening potential somewhere inside the~object. We will denote $\Req$ the~\textit{equivalence radius} -- radius at~which the~Newtonian potential equals the~screening potential $|\Phi_G(\Req)|=\Phi_s$. By letting the~equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_G(0)|=\Phi_s$ we can clearly distinguish between the~linear $(\Req<0)$ and~the~screening $(\Req>0)$ regime.
+{\itshape
+Let us focus on~the~regime which cannot be treated analytical, i.e. regime between thin-shell and~thick-shell solutions. This regime corresponds to~the~situation when the~linear approximation (thick-shell) breaks down inside the~object, i.e. the~gravitational potential cancels screening potential somewhere inside the~object. We will denote $\Req$ the~\textit{equivalence radius} -- radius at~which the~Newtonian potential equals the~screening potential $|\Phi_G(\Req)|=\Phi_s$. By letting the~equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_G(0)|=\Phi_s$ we can clearly distinguish between the~linear $(\Req<0)$ and~the~screening $(\Req>0)$ regime.}
 
 In~\autoref{fig:starlike_forces} we show the~behavior of~the~chameleon fifth force in~this regime. We see that for~the~linear regime the~fifth force is as strong as standard gravity (up to~the~factor $2\beta^2$). For~$\Req\ll R_s$ the~chameleon field manages to~catch up with~the~linear solution inside the~object and~there is no screening outside. As the~$\Req$ grows the~field is not able to~catch up with~the~linear solution while inside the~object and~the~force outside is screened.
 \begin{figure}
@@ -1430,6 +1461,7 @@ In~\autoref{fig:starlike_forces} we show the~behavior of~the~chameleon fifth for
 \end{figure}
 
 \subsubsection{NFW Halo}
+{\itshape
 The~Navarro-Frenk-White (NFW) profile proposed by \textcite{1996ApJ...462..563N} describes the~distribution of~cold dark matter. The~NFW profile of~matter overdensity is given by
 \eq{
 	\label{NFW_rho}
@@ -1442,6 +1474,7 @@ where $\rho_c$ is the~density scale and~$r_s$ is the~scale radius. We will also 
 where $c\equiv r_{200}/r_s$ is the~concentration of~the~halo. For~a~given mass the~halo is fully characterized by the~concentration.
 
 For~NFW halo the~density is not constant as in~the~case of~compact spherical objects (stars). The~chameleon mass and~the~screened solution are therefore also not constant and~one does not have analytical solutions as in~the~case of~stars. However, for~realistic halo, the~density varies on~scales much larger than the~Compton wavelength of~the~chameleon. In~such cases, we can treat the~field as frozen in~the~same sense as in~the~case of~stars. Therefore we expect the~chameleon field to~behave in~a~similar way as in~the~case of~stars, i.e. to~follow the~Newtonian potential in~the~linear case and~to~have screened behavior for~more massive halos.
+}
 
 In~\autoref{fig:nfwlike_forces} we show the~chameleon fifth force. We see that the~behavior is indeed similar to~stars although the~field catches up much later. This is because there is no sudden drop in~density (and~mass of~the~field) where the~chameleon can start to~behave as free but rather the~mass is slowly dropping. This indicates that it will be much harder to~detect the~chameleon fifth force on~scales of~galaxies than for~star-like objects. This is of~course true only assuming the~screening potential is the~same on~all scales.
 \begin{figure}
@@ -1510,6 +1543,7 @@ As the~chameleon affects only non-relativistic matter it can be detected using a
 \label{sec:other}
 In~this section we briefly mention some of~the~other theories od modified gravity. This list is in~no way complete and~serves only as an~example of~different approaches to~modifications of~gravity. See references for~further reading.
 \subsection{Quintessence}
+{\itshape
 Quintessence, from the~Latin ``fifth element'', is according to~ancient and~medieval philosophy the~fifth element, or ether, supposed to~be the~constituent matter of~the~heavenly bodies after air, fire, earth, and~water. The~name quintessence, or the~$Q$ component, was first used by \textcite{1998PhRvL..80.1582C} for~the~canonical scalar field $\phi$ evolving along a~potential $V(\phi)$. Such a~dynamical field can reproduce the~late-time acceleration with~the~equation of~state $w=w(t)\approx1$. Although quintessence can alleviate the~coincidence problem of~dark energy via the~so-called tracker solution, it still suffers by the~fine-tunning problem as the~potential needs to~be flat enough to~lead to~the~slow-roll inflation today with~an~energy scale $\rho_{DE}\simeq10^{-120}\Mpl^4$ and~a~mass scale $m_\phi\lesssim10^{-33}$ eV. However, such fine-tuned potentials can be constructed within the~framework of~particle physics.
 
 Quintessence is one of~the~simple models of~dark energy as it is a~canonical scalar field that interacts with~all the~other components only through standard gravity. The~Lagrangian density for~the~quintessence field is
@@ -1554,7 +1588,9 @@ The~broader class of~potentials belonging to~the~thawing models are so-called hi
 \eq{
 V(\phi)=M^{4}\left[\cos{(\phi/f)}+1\right].
 }
+} 
 \subsection{K-essence}
+{\itshape
 Quintessence models are based on~a~scalar field with~a~canonical kinetic term and~a~slowly varying potential. However, in~the~context of~particle physics there appear scalar fields with~non-canonical kinetic terms. In~\textcite{1999PhLB..458..209A} it is shown that a~large class of~scalar fields with~non-canonical kinetic terms can, without the~help of~potential terms, drive an~inflationary evolution starting from rather generic initial conditions. The~Lagrangian density for~the~k-essence is
 \eq{
 \label{Klagr}
@@ -1584,7 +1620,9 @@ Phantom or ghost scalar fields with~a~negative kinetic energy $-X$ and~$w\lesssi
 \eq{
 P=-X+e^{\kappa\lambda\phi}X^2/M^4.
 }
+} 
 \subsection{Gauss-Bonnet Dark Energy Models}
+{\itshape
 In~\fR\ gravity one adds the~general function of~the~Ricci scalar. But in~principle, one can add general functions of~the~Ricci and~Riemann tensors as well, e.g. $f(R,R_\uv R^\uv,R_{\alpha\beta\gamma\delta}R^{\alpha\beta\gamma\delta},...)$ \parencite{2005PhRvD..71f3513C}. These Lagrangians are generally plagued by the~existence of~ghosts.  However, there exists a~combination of~Ricci and~Riemann tensors that keeps the~equations at~second-order in~the~metric and~does not necessarily give rise to~instabilities -- so-called Gauss-Bonnet term $\GB$ coupled to~a~scalar field
 \eq{
 \GB\equiv R^2-4R_\uv R^\uv+R_{\alpha\beta\gamma\delta}R^{\alpha\beta\gamma\delta}.
@@ -1594,7 +1632,9 @@ The~Gauss-Bonnet term is the~unique invariant for~which the~highest (second) der
 S=\int\dd^4x\dg\left[\frac{\Mpl^2}{2}R-\frac{\gamma}{2}\left(\nabla\phi\right)^2-V(\phi)+f(\phi)\GB\right],
 }
 where $\gamma=\pm1$ (+1 for~the~canonical scalar). For~more details see \textcite{2005PhRvD..71l3509N,2006JCAP...06..004N,2013PhRvD..87h4037C}.
+} 
 \subsection{Braneworld Models}
+{\itshape
 In~the~braneworld model of~Dvali, Gabadadze, and~Porrati \parencite[DGP model][]{2000PhLB..485..208D} the~3-brane is embedded in~a~Minkowski bulk spacetime with~infinitely large extra dimensions. The~theory gives rise to~the~correct 4D potential at~short distances whereas at~large distances the~potential is that of~a~5D theory. The~action of~the~theory is
 \eq{
 S=\frac{M^3_{(5)}}{2}\int\dd^5X\dgt\tR+\frac{\Mpl^2}{2}\int\dd^4x\dg R + \int\dd^4x\dg \LL_m,
@@ -1610,7 +1650,9 @@ r_0\equiv\frac{\Mpl^2}{2M^3_{(5)}}.
 At~short distances $r\ll r_0$ gravity behaves as usual 4D theory, i.e the~gravitational potential has correct $1/r$ behavior (except small logarithmic repulsion term). On~the~other hand at~large distances $r\gg r_0$ the~potential scales as $1/r^2$ according to~the~laws of~5D theory.
 
 The~presence of~the~extra dimension has severe consequences on~the~cosmology as well. It can be shown \parencite{2010deto.book.....A,2009PhLB..674..237M} that the~matter-dominated Universe approaches the~de Sitter solution $H=r_0\mins$. This cosmological solution drives our Universe into the~self-inflationary regime without dark energy. From $H_0\approx r_0\mins$ we get $M_{(5)}\approx10-100$ MeV.
+} 
 \subsection{Massive Gravity}
+{\itshape
 The~idea to~give a~mass to~the~graviton (infrared modification of~gravity) is not new and~has been investigated since the~first years of~General Relativity. It is a~less minimal theory than \fR\ theories or modified gravities with~an~extra scalar field because it introduces three new degrees of~freedom rather than one. By giving a~mass $m$ to~the~graviton we deform the~classical potential to~the~Yukawa profile $\sim\frac1r e^{-mr}$ which departs from the~classical one at~distances $r>1/m$. By choosing the~graviton mass to~be of~the~order of~the~Hubble constant $m\sim H$ one can hope to~explain the~acceleration of~the~universe without dark energy.
 
 The~simplest theory for~a~non-self-interacting massive graviton is the~Fierz-Pauli theory of~\textcite{1939RSPSA.173..211F}. The~action for~a~single massive spin 2 particle in~flat space, carried by a~symmetric tensor field $h_\uv$ is
@@ -1635,18 +1677,19 @@ r_V\equiv(GM/m^4)^{1/5}.
 Much below the~Vainshtein radius, which grows as the~graviton's mass approaches $0$, only linear terms play a~crucial role and~the~GR is restored.
 
 For~more about the~massive gravity and~the~Vainshtein mechanism see e.g. \textcite{2013CQGra..30r4001B,2012RvMP...84..671H}.
-
+} 
 \subsection{Acceleration without Dark Energy}
+{\itshape
 So far we studied some kind of~dark energy -- either in~the~form of~an~exotic matter or by modifying gravity itself. But this need for~dark energy as an~explanation of~the~acceleration comes from our observations which are based on~the~presumption of~the~homogeneous and~isotropic Universe. What we observe are different expansion rates at~different distances rather than an~increase in~the~expansion rate at~all distances. But this can be caused by strong inhomogeneities in~the~distribution of~matter rather than by an~accelerating Universe.
 \subsubsection{Void models}
 The~basic idea behind void models is that we live in~the~middle of~a~huge spherical region which is expanding faster because it is emptier than the~outside. That means that the~Universe as a~whole does not accelerate but that we observe an~\textit{apparent} cosmic acceleration. The~edge of~this void should be located around $z\sim0.3-0.5$, the~value at~which in~the~standard interpretation we observe the~beginning of~the~acceleration. These models are described by the~Lema\^\i tre-Tolman-Bondi (LTB) spherically symmetric metric -- the~generalization of~a~FLRW metric in~which the~expansion factor along the~radial coordinate is different relative to~the~surface line element $\dd\Omega^2$ \parencite{2013JCAP...02..047D,2006PhRvD..73h3519A}.
 
-The~inhomogeneous LTB model matches to~the~supernovae data and~the~location of~the~first acoustic peak of~the~CMB temperature power spectrum but cannot satisfactorily reproduce the~entire CMB angular power spectrum \parencite{2011JCAP...02..013C}. The~observed isotropy of~the~CMB radiation implies that we must live close to~the~center of~the~void -- nearer than 15 Mpc \parencite{2006PhRvD..74j3520A}. Moreover, there is no valid mechanism at~present to~explain the~formation of~such huge inhomogeneities, let alone one with~our Galaxy near the~center.
+The~inhomogeneous LTB model matches to the~supernovae data and the~location of~the~first acoustic peak of~the~CMB temperature power spectrum but cannot satisfactorily reproduce the~entire CMB angular power spectrum \parencite{2011JCAP...02..013C}. The~observed isotropy of~the~CMB radiation implies that we must live close to~the~center of~the~void -- nearer than 15 Mpc \parencite{2006PhRvD..74j3520A}. Moreover, there is no valid mechanism at~present to~explain the~formation of~such huge inhomogeneities, let alone one with~our Galaxy near the~center.
 \subsubsection{Backreaction}
 Unlike the~void models, which regard the~acceleration as an~apparent one, \textit{backreaction} models try to~explain the~cosmic acceleration by arranging inhomogeneities so that the~deviation from the~FLRW metric can produce a~real acceleration \parencite{2011CQGra..28w5002S,2004JCAP...02..003R,2005PhRvD..72b3507M}. Because GR equations are non-linear, averaging the~inhomogeneities and~then solving the~GR equations (which is the~usual approach) is not the~same as first solving the~full (inhomogeneous) GR equations and~then averaging them -- the~expected value of~a~non-linear function is not the~same as the~non-linear function of~the~expected value.
 
 Any large inhomogeneities must be concealed from our sight to~fit observations. Strong peculiar velocities instead of~strong density fluctuations can do this job, but there are strong constraints on~peculiar velocities from e.g., the~kinematic Sunyaev--Zel'dovich effect. Moreover, the~accompanying anisotropy is another source of~observable effects difficult to~accommodate with~current observations.
-
+} 
 \section{Parametrization of~models}
 We saw in~the~previous chapter that at~the~background level the~evolution is governed by Friedman equations \eqref{eq:Friedmann} -- \eqref{eq:Friedmann-continuity} and~consequently omega parameters \eqref{eq:omega} and~Hubble parameter $H$ which can be obtained, e.g., from distance measurements. As we discussed, the~cosmological constant is not the~only possible explanation of~the~accelerated expansion and~the~equation of~state \(w\) of~dark energy does not have to~be exactly \(w=-1\). For~the~arbitrary equation of~state $w_{DE}=p_{DE}/\rho_{DE}$ in~the~flat Universe with~a~negligible contribution of~radiation we can obtain the~following equation
 \eq{
@@ -2076,11 +2119,13 @@ The~velocity field $\tilde{\mb u}$ is frozen at~each point to~its initial value,
 These equations are very similar to~ZA but now the~particles update their velocities to~the~local value of~the~velocity field (not the~initial value), without any memory of~their previous motion. This can be viewed as a~movement of~particles under some force in~a~medium with~very large viscosity. In~our case of~cosmological simulations, gravity represents the~attractive force while Hubble friction represents the~informal equivalent of~a~``damping'' or ``viscous'' force.
 
 Originally, \textcite{Matarrese:1992be} stated three main reasons of~why should the~FFA work:
+{\itshape
 \begin{itemize}
 \item FFA is, by construction, consistent with~linear theory and~follows correctly the~evolution at~early times. Keeping the~linear approximation for~the~velocity potential is justified by the~fact that this quantity is more sensitive to~large wavelength modes than the~density, and~is, therefore, less affected by strongly non-linear evolution.
 \item Stream-lines are frozen to~their initial shape, so multistream regions cannot form and~FFA avoids the~formation of~caustics at~a~finite time and~can, therefore, work well after shell-crossing would occur in~ZA. A~particle moving according to~FFA has zero velocity at~minima (or maxima) of~the~gravitational potential. It will slow down its motion when approaching such a~position -- particles in~FFA would need infinite time to~reach such places. Particles move along curved paths and~once they come close to~pancake configurations they curve their trajectories, moving almost parallel to~them, trying to~reach the~positions of~filaments.
 \item This type of~dynamics implies an~artificial thickening of~particles around pancakes, filaments, and~knots, which mimics the~real gravitational clustering around these types of~structures.
 \end{itemize}
+}
 
 The~definition \eqref{eq:FFA_orig} is, however, no longer valid in~the~general \LCDM\ cosmology where even in~the~linear regime both gravitational potential and~velocity field undergo evolution. We generalize FFA for~the~\LCDM\ cosmology by adding an~extra time dependence in~equation \eqref{eq:FFA_orig}
 \eq{
@@ -2946,8 +2991,6 @@ In~\autoref{chpt:cosmo_sim} we described general techniques when dealing with~co
 In~\autoref{chpt:app_schemes} we introduced different approximations that can be used to~study the~Universe quickly and~intuitively. Most of~the~previous studies focused on the~Einstein--de Sitter Universe whereas in~this work we generalized the~equations to~the~\LCDM\ cosmology. We described how we implemented these approximations in~studies of~modified gravity which has not been done before and~is one of~the~original result of~this work.
 
 Key results of~the~thesis are presented in~\autoref{chpt:app_sims}. We described original results of~our cosmological \nbodysim s using approximate schemes. We focused on~aspects that have drawn less attention in~the~past -- slower growth of~structure formation (modified growth function), study of~the~correlation function, predictions of~the~shape of~the~peak of~baryonic acoustic oscillations in~real space and~the~ability to~predict certain non-linear features of~full \nbodysim s. We showed that these approximations can be used to~study scales around the~baryon acoustic oscillation scale, $k\sim 0.1~h\text{Mpc}^{-1}$ but not much further. We also tested these methods on~the~chameleon gravity and~showed what probes are suited the~best for~distinguishing between different parameters of~the~chameleon gravity. Unlike matter power spectra and~baryonic acoustic oscillation, the~halo mass function does not seem to~be a~good way to~study the~chameleon gravity. In~\autoref{chpt:outlook} we then discussed other possible applications of~approximate methods described in~this work and~we outlined further course of~our studies.
-
-In~\autoref{chpt:cosmo_surveys} we reviewed the~present-day and~future experiments designed to~study our Universe. We showed what constraints on~our Universe have already been observed and~what accuracy of~future experiments we can expect.
 
 \subsubsection{Author's publications}
 \begin{refsection}[bibliography/my_work.bib]
