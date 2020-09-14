@@ -2,9 +2,9 @@
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Cosmological observables}
-Here we present a~brief description of~cosmological probes that can be used for~constraining dark energy. For~more details see e.g. \textcite{weinberg_observational_2013}, \textcite{2010deto.book.....A}, or \textcite{DE_probes2}.
+% Here we present a~brief description of~cosmological probes that can be used for~constraining dark energy. For~more details see e.g. \textcite{weinberg_observational_2013}, \textcite{2010deto.book.....A}, or \textcite{DE_probes2}.
 
-We have already studied this topic and~some of~the~presented probes in~the~author`s work \textcite{mastersthesis_vrastil}. Although in~the~main part of the work we deal mainly with large-scale structures and baryonic acoustic oscillations, general overview of~other~probes might interests some readers. Therefore, we reuse some parts of the~former text here (written in italics). Explicitly, this concerns sub-sections \hyperref[ssec:supernovae]{Supernovae}, \hyperref[sec:bao]{Baryonic acoustic oscillations}, \hyperref[ssec:wl]{Weak lensing}, \hyperref[ssec:lss]{Large-scale structure}, \hyperref[ssec:gc]{Galaxy clusters}, \hyperref[ssec:SL]{Strong lensing}, and \hyperref[sec:rsd]{Redshift-space distortions}.
+% We have already studied this topic and~some of~the~presented probes in~the~author`s work \textcite{mastersthesis_vrastil}. Although in~the~main part of the work we deal mainly with large-scale structures and baryonic acoustic oscillations, general overview of~other~probes might interests some readers. Therefore, we reuse some parts of the~former text here (written in italics). Explicitly, this concerns sub-sections \hyperref[ssec:supernovae]{Supernovae}, \hyperref[sec:bao]{Baryonic acoustic oscillations}, \hyperref[ssec:wl]{Weak lensing}, \hyperref[ssec:lss]{Large-scale structure}, \hyperref[ssec:gc]{Galaxy clusters}, \hyperref[ssec:SL]{Strong lensing}, and \hyperref[sec:rsd]{Redshift-space distortions}.
 %In~shear-shear tomography, the~shear of~background galaxies, binned in~redshift, is cross correlated. 
 %\ssec{Introduction}
 %http://terapix.phys.cmu.edu/misc/desc\_feb\_2015\_de\_school\_ShirleyHo.pdf \\
@@ -14,99 +14,96 @@ We have already studied this topic and~some of~the~presented probes in~the~autho
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmic distances
 %%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/cosmo_evol/cosmo_dist}
+% \input{chapters/cosmo_evol/cosmo_dist}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmic Microwave Background
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Cosmic Microwave Background}
-The~cosmic microwave background (CMB) is the~oldest $(z\sim1090)$ electromagnetic radiation we can see and~its surface forms the~so-called last scattering surface. The~photons were tightly coupled to~baryons and~electrons before this decoupling epoch in~a~hot plasma and~they could not propagate freely. The first detection of the~CMB photons was performed by \textcite{1965ApJ...142..419P}. They observe the radiation thermalized to~an~almost uniform temperature across the~whole sky. The predicted temperature anisotropies of~the~CMB were first measured at~large angular separations by the~COBE satellite in~\textcite{1992ApJ...396L...1S}. The~precise measurement of~temperature anisotropies by high-precision experiments \parencite[e.g.][]{2003ApJS..148..175S} provided a~new direction how to~determine cosmological parameters.
+% \subsection{Cosmic Microwave Background}
+% The~cosmic microwave background (CMB) is the~oldest $(z\sim1090)$ electromagnetic radiation we can see and~its surface forms the~so-called last scattering surface. The~photons were tightly coupled to~baryons and~electrons before this decoupling epoch in~a~hot plasma and~they could not propagate freely. The first detection of the~CMB photons was performed by \textcite{1965ApJ...142..419P}. They observe the radiation thermalized to~an~almost uniform temperature across the~whole sky. The predicted temperature anisotropies of~the~CMB were first measured at~large angular separations by the~COBE satellite in~\textcite{1992ApJ...396L...1S}. The~precise measurement of~temperature anisotropies by high-precision experiments \parencite[e.g.][]{2003ApJS..148..175S} provided a~new direction how to~determine cosmological parameters.
 
-The~CMB provides critical information regarding our Universe. It can constrain parameters such as $\Omega_m,\ \Omega_k$, the~high-redshift normalization of~matter fluctuations, the~spectral index $n_s$ and~curvature $\dd n_s/\dd \ln k$ of~the~scalar fluctuation spectrum, the~amplitude and~slope of~the~tensor (gravitational wave) fluctuation spectrum, the~post-recombination electron-scattering optical depth $\tau$, and~the~Hubble constant \parencite{weinberg_observational_2013}.
+% The~CMB provides critical information regarding our Universe. It can constrain parameters such as $\Omega_m,\ \Omega_k$, the~high-redshift normalization of~matter fluctuations, the~spectral index $n_s$ and~curvature $\dd n_s/\dd \ln k$ of~the~scalar fluctuation spectrum, the~amplitude and~slope of~the~tensor (gravitational wave) fluctuation spectrum, the~post-recombination electron-scattering optical depth $\tau$, and~the~Hubble constant \parencite{weinberg_observational_2013}.
 
-The origin of CMB is described, in most theoretical models, as an~isotropic Gaussian stochastic process. For gaussian perturbations, all information about the underlying theoretical model is contained in the~angular power spectrum of~the~CMB anisotropies. Due to the isotropy of the process, one may expand the~CMB in~spherical harmonics to~extract its angular power spectrum, defined as \parencite{2015IJMPD..2430004B}
-\eq{
-    C_l^{TT}=\frac{1}{2l+1}\sum_{m=-l}^{l}|a^T_{lm}|^2\,,
-}
-where $a_{lm}$ are spherical harmonic coefficients of~temperature map $T$
-\eq{
-    T(\theta,\phi)=\sum_{l=0}^\infty\sum_{m=-l}^{l}a_{lm}Y_{lm}(\theta,\phi)\,,
-}
-where $\theta,\ \phi$  denote a~position on~the~celestial sphere. It is customary to~plot the~quantity $l(l+1)C_l/(2\pi)$, which would be constant for~a~scale-invariant pattern on~the~sky, see \autoref{fig:cmb_compilation}.
-\begin{figure}[!hbt]
-    \centering
-    \includegraphics[width=0.9\textwidth]{cosmo_evol/CMB_compilation.png}
-    \caption{Compilation of~recent CMB angular power spectrum measurements from which most cosmological inferences are drawn. The~upper panel shows the~power spectra of~the~temperature and~E-mode and~B-mode polarization signals, the~next panel the~cross-correlation spectrum between T and~E, while the~lower panel shows the~lensing deflection power spectrum. Different colours correspond to~different experiments, each retaining its original binning. For~Planck, ACTPol, and~SPTpol, the~EE points with~large error bars are not plotted (to~avoid clutter). The~dashed line shows the~best-fit \LCDM\ model to~the~Planck temperature, polarization, and~lensing data. \textit{Note:} Reprinted from \textcite{2018arXiv180706205P}.}
-    \label{fig:cmb_compilation}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%
-% Supernovae
-%%%%%%%%%%%%%%%%%%%%%%%
-\subsection[Supernovae]{Supernovae\footnote{\label{ftn1}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
-\label{ssec:supernovae}
-{\itshape
-Supernovae (SNe) are the~most straightforward tool for~studying cosmic acceleration, as they directly discovered the~acceleration in~the~first place \parencite{riess}. Type Ia supernovae (SNe Ia) are exploding stars defined by the~lack of~hydrogen and~the~presence of~silicon in~their early-time spectra \parencite{SN}, and~are a~product of~a~thermonuclear explosion of~a~C/O white dwarf. Observations show that SNe Ia have a~luminosity peak that is tightly correlated with~the~shape of~their light curves -- supernovae that rise and~fall more slowly have higher peak luminosity \parencite[first quantified by][]{SN_lum}. From observations of~(multiband) light curve shapes and~colors the~luminosity at~a~brightness peak can be predicted.
+% The origin of CMB is described, in most theoretical models, as an~isotropic Gaussian stochastic process. For gaussian perturbations, all information about the underlying theoretical model is contained in the~angular power spectrum of~the~CMB anisotropies. Due to the isotropy of the process, one may expand the~CMB in~spherical harmonics to~extract its angular power spectrum, defined as \parencite{2015IJMPD..2430004B}
+% \eq{
+%     C_l^{TT}=\frac{1}{2l+1}\sum_{m=-l}^{l}|a^T_{lm}|^2\,,
+% }
+% where $a_{lm}$ are spherical harmonic coefficients of~temperature map $T$
+% \eq{
+%     T(\theta,\phi)=\sum_{l=0}^\infty\sum_{m=-l}^{l}a_{lm}Y_{lm}(\theta,\phi)\,,
+% }
+% where $\theta,\ \phi$  denote a~position on~the~celestial sphere. It is customary to~plot the~quantity $l(l+1)C_l/(2\pi)$, which would be constant for~a~scale-invariant pattern on~the~sky, see \autoref{fig:cmb_compilation}.
+% \begin{figure}[!hbt]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{cosmo_evol/CMB_compilation.png}
+%     \caption{Compilation of~recent CMB angular power spectrum measurements from which most cosmological inferences are drawn. The~upper panel shows the~power spectra of~the~temperature and~E-mode and~B-mode polarization signals, the~next panel the~cross-correlation spectrum between T and~E, while the~lower panel shows the~lensing deflection power spectrum. Different colours correspond to~different experiments, each retaining its original binning. For~Planck, ACTPol, and~SPTpol, the~EE points with~large error bars are not plotted (to~avoid clutter). The~dashed line shows the~best-fit \LCDM\ model to~the~Planck temperature, polarization, and~lensing data. \textit{Note:} Reprinted from \textcite{2018arXiv180706205P}.}
+%     \label{fig:cmb_compilation}
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%
+% % Supernovae
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \subsection[Supernovae]{Supernovae\footnote{\label{ftn1}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
+% \label{ssec:supernovae}
+% {\itshape
+% Supernovae (SNe) are the~most straightforward tool for~studying cosmic acceleration, as they directly discovered the~acceleration in~the~first place \parencite{riess}. Type Ia supernovae (SNe Ia) are exploding stars defined by the~lack of~hydrogen and~the~presence of~silicon in~their early-time spectra \parencite{SN}, and~are a~product of~a~thermonuclear explosion of~a~C/O white dwarf. Observations show that SNe Ia have a~luminosity peak that is tightly correlated with~the~shape of~their light curves -- supernovae that rise and~fall more slowly have higher peak luminosity \parencite[first quantified by][]{SN_lum}. From observations of~(multiband) light curve shapes and~colors the~luminosity at~a~brightness peak can be predicted.
 
-To~measure cosmic expansion with~Type Ia SNe, the~observed flux and~predicted luminosity are compared. From that the~supernova's luminosity distance can be measured. An~accurate redshift is obtained by measuring the~host galaxy (calibrator). As we can see from the~equation for~the~luminosity distance \eqref{eq:d_L}, this method gives the~distance $D_L$ in~units of~$h\mins$ Mpc. Measured relation is used to~constraint dark energy parameters.
-}
+% To~measure cosmic expansion with~Type Ia SNe, the~observed flux and~predicted luminosity are compared. From that the~supernova's luminosity distance can be measured. An~accurate redshift is obtained by measuring the~host galaxy (calibrator). As we can see from the~equation for~the~luminosity distance \eqref{eq:d_L}, this method gives the~distance $D_L$ in~units of~$h\mins$ Mpc. Measured relation is used to~constraint dark energy parameters.
+% }
 
-A~recent analysis of~\textcite{Abbott_2019} uses data from the~Dark Energy Survey Supernova Program (DES-SN) -- 207 spectroscopically confirmed SNe Ia from the~first three years of~DES-SN combined with~a~low-redshift sample of~122 SNe from the~literature. For~a~flat $w$CDM\ model they found a~matter density $\Omega_m=0.321\pm0.018$ and~an~equation of~state $w=-0.978\pm0.059$, see \autoref{fig:des_sne_results}.
+% A~recent analysis of~\textcite{Abbott_2019} uses data from the~Dark Energy Survey Supernova Program (DES-SN) -- 207 spectroscopically confirmed SNe Ia from the~first three years of~DES-SN combined with~a~low-redshift sample of~122 SNe from the~literature. For~a~flat $w$CDM\ model they found a~matter density $\Omega_m=0.321\pm0.018$ and~an~equation of~state $w=-0.978\pm0.059$, see \autoref{fig:des_sne_results}.
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.7\textwidth]{cosmo_evol/DES_SNe_results.png}
-    \caption{Hubble diagram for~the~DES-SN3YR sample. Top: distance modulus $(\mu =5\log [d_L/10\rm{pc}])$ from ``BEAMS with~Bias Corrections'' fit \parencite{Kessler_2017}, black bars, which are used for~cosmology fits) and~for~each SN (red, orange circles). The~dashed gray line shows best fit model, while the~green and~blue dotted lines show models with~no dark energy and~matter densities $\Omega_m = 0.3$ and~$1.0$ respectively. Bottom: residuals to~the~best fit model; $1\sigma$ error bars show 68\% confidence. \textit{Note:} Reprinted from \textcite{Abbott_2019}.}
-    \label{fig:des_sne_results}
-\end{figure}
+% \begin{figure}[hbt]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{cosmo_evol/DES_SNe_results.png}
+%     \caption{Hubble diagram for~the~DES-SN3YR sample. Top: distance modulus $(\mu =5\log [d_L/10\rm{pc}])$ from ``BEAMS with~Bias Corrections'' fit \parencite{Kessler_2017}, black bars, which are used for~cosmology fits) and~for~each SN (red, orange circles). The~dashed gray line shows best fit model, while the~green and~blue dotted lines show models with~no dark energy and~matter densities $\Omega_m = 0.3$ and~$1.0$ respectively. Bottom: residuals to~the~best fit model; $1\sigma$ error bars show 68\% confidence. \textit{Note:} Reprinted from \textcite{Abbott_2019}.}
+%     \label{fig:des_sne_results}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%
 % BAO
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection[Baryonic acoustic oscillations]{Baryonic acoustic oscillations\footnoteref{ftn1}}
+\subsection[Baryonic acoustic oscillations]{Baryonic acoustic oscillations}
 \label{sec:bao}
-{\itshape
-Baryonic acoustic oscillations (BAO) provide an~entirely independent way of~measuring cosmic distance. Sound waves propagating before recombination imprint a~characteristic scale on~matter clustering. The~acoustic length scale can be computed as
+Baryonic acoustic oscillations (BAO) provide a way of~measuring cosmic distance. Sound waves propagating before recombination imprint a~characteristic scale on~matter clustering. The~acoustic length scale can be computed as
 \eq{
 r_s=\int_0^{t_\ast}{\frac{c_s(t)}{a(t)}\dd t}=\int_{z_\ast}^{\infty}{\frac{c_s(z)}{H(z)}\dd z},
 }
 where the~asterisk denotes time (redshift) at~recombination and~$c_s$ is the~sound speed. The~behavior of~$H(z)$ depends on~the~ratio of~the~matter density to~radiation density and~the~sound speed depends on~the~ratio of~radiation pressure to~the~energy density of~the~baryon-photon fluid, determined by the~baryon-to-photon ratio. Both the~matter-to-radiation ratio and~the~baryon-to-photon ratio can be measured from the~CMB anisotropy power spectrum. This gives $r_s\sim150$ Mpc. The~scale of~the~acoustic feature is stable to~better than 1\% accuracy, making it an~excellent standard ruler.
 
 This effect can be detected in~the~angular clustering of~galaxies in~bins of~photometric redshift, yielding the~angular diameter distance. Furthermore, measuring the~BAO scale in~a~velocity separation allows a~direct determination of~$H(z)$. The~BAO method measures $D(z)$ in~absolute units -- Mpc not $h\mins$ Mpc like SNe measurements, and~thus BAO measurements to~the~same redshift carry different information. At~low redshift $(z\lesssim0.5)$, the~BAO method strongly complements SN measurements, while at~higher redshift $(z\gtrsim0.5)$ the~BAO method is a~powerful probe of~dark energy and~cosmic geometry.
-}
+
 
 BAO can be clearly seen in~the~correlation function \parencite[see e.g.][]{1993ApJ...412...64L} for~definition and~estimators). The~two-point correlation function $\xi(r)$ is the~excess probability $\dd P$ of~finding two pairs of~galaxies in~two volumes $\dd V_1$ and~$\dd V_2$ at~a~given comoving distance $r$
 \eq{
     \label{eq:corr}
     \dd P = \bar{n}^2[1+\xi(r)]\dd V_1 \dd V_2\,,
 }
-where $\bar{n}$ is the~expected density of~the~distribution. The~distances are usually measured using the~redshift in~the~redshift space where the~distortions (see \autoref{sec:rsd}) cause the~redshift-space correlation $\xi(s)$ function to~vary according to~the~angle between the~separation vector and~the~line of~sight. In~\autoref{fig:xi_s} we see the~spherically averaged correlation function from \textcite{2005ApJ...633..560E} with~the~clear bump at~$100h^{-1}$ Mpc scale.
-\begin{figure}[!hbt]
-    \centering
-    \includegraphics[width=0.7\textwidth]{cosmo_evol/bao_rsd.png}
-    \caption{The~large-scale redshift-space correlation function of~the~SDSS LRG sample. The~error bars are from the~diagonal elements of~the~mock-catalog covariance matrix; however, the~points are correlated. Note that the~vertical axis mixes logarithmic and~linear scalings. The~inset shows an~expanded view with~a~linear vertical axis. The~models are $\Omega_mh^2=0.12$ (top, green), $0.13$ (red), and~$0.14$ (bottom with~peak, blue), all with~$\Omega_bh^2=0.024$ and~$n=0.89$ and~with~a~mild non-linear prescription folded in. The~magenta line shows a~pure CDM model ($\Omega_mh^2=0.105$), which lacks the~acoustic peak. It is interesting to~note that although the~data appears higher than the~models, the~covariance between the~points is soft as regards overall shifts in~$\xi(s)$. Subtracting $0.002$ from $\xi(s)$ at~all scales makes the~plot look cosmetically perfect, but changes the~best-fit $\chi^2$ by only $1.3$. The~bump at$100h^{-1}$ Mpc scale, on~the~other hand, is statistically significant. \textit{Note:} Reprinted from \textcite{2005ApJ...633..560E}.}
-    \label{fig:xi_s}
-\end{figure}
+% where $\bar{n}$ is the~expected density of~the~distribution. The~distances are usually measured using the~redshift in~the~redshift space where the~distortions (see \autoref{sec:rsd}) cause the~redshift-space correlation $\xi(s)$ function to~vary according to~the~angle between the~separation vector and~the~line of~sight. In~\autoref{fig:xi_s} we see the~spherically averaged correlation function from \textcite{2005ApJ...633..560E} with~the~clear bump at~$100h^{-1}$ Mpc scale.
+% \begin{figure}[!hbt]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{cosmo_evol/bao_rsd.png}
+%     \caption{The~large-scale redshift-space correlation function of~the~SDSS LRG sample. The~error bars are from the~diagonal elements of~the~mock-catalog covariance matrix; however, the~points are correlated. Note that the~vertical axis mixes logarithmic and~linear scalings. The~inset shows an~expanded view with~a~linear vertical axis. The~models are $\Omega_mh^2=0.12$ (top, green), $0.13$ (red), and~$0.14$ (bottom with~peak, blue), all with~$\Omega_bh^2=0.024$ and~$n=0.89$ and~with~a~mild non-linear prescription folded in. The~magenta line shows a~pure CDM model ($\Omega_mh^2=0.105$), which lacks the~acoustic peak. It is interesting to~note that although the~data appears higher than the~models, the~covariance between the~points is soft as regards overall shifts in~$\xi(s)$. Subtracting $0.002$ from $\xi(s)$ at~all scales makes the~plot look cosmetically perfect, but changes the~best-fit $\chi^2$ by only $1.3$. The~bump at$100h^{-1}$ Mpc scale, on~the~other hand, is statistically significant. \textit{Note:} Reprinted from \textcite{2005ApJ...633..560E}.}
+%     \label{fig:xi_s}
+% \end{figure}
 
-In~\textcite{BAO_results} present a~measurement of~the~BAO from the~three-dimensional correlation of~Lyman-$\alpha$ forest absorption and~quasars from the~SDSS Data Release 14 (the~first two years of~observations by the~eBOSS) at~redshift $z=2.35$. The~position of~the~BAO peak is used to~determine the~Hubble distance $d_H$ and~the~comoving angular diameter distance $d_A$ relative to~the~sound horizon at~the~drag epoch $r_s: d_H(z=2.35)/r_s = 9.20\pm0.36$ and~$d_M(z=2.35)/r_s = 36.3\pm1.8$. These results are $1.5\sigma$ from the~flat \LCDM\ model of~\textcite{2016A&A...594A..13P}.
+% In~\textcite{BAO_results} present a~measurement of~the~BAO from the~three-dimensional correlation of~Lyman-$\alpha$ forest absorption and~quasars from the~SDSS Data Release 14 (the~first two years of~observations by the~eBOSS) at~redshift $z=2.35$. The~position of~the~BAO peak is used to~determine the~Hubble distance $d_H$ and~the~comoving angular diameter distance $d_A$ relative to~the~sound horizon at~the~drag epoch $r_s: d_H(z=2.35)/r_s = 9.20\pm0.36$ and~$d_M(z=2.35)/r_s = 36.3\pm1.8$. These results are $1.5\sigma$ from the~flat \LCDM\ model of~\textcite{2016A&A...594A..13P}.
 %%%%%%%%%%%%%%%%%%%%%%%
 % WL
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection[Weak lensing]{Weak lensing\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
-\label{ssec:wl}
-{\itshape
-Gravitational lensing is the~deflection of~light from distant sources due to~the~bending of~space-time by baryonic and~dark matter (lenses) along the~line of~sight. It is a~very useful cosmological probe because it is sensitive to~all matter regardless of~its nature. In~the~limit of~very small deflection angles, it is called weak lensing (WL). WL causes tiny distortions ($\sim0.5\%$), or ``shear'', in~galaxy sizes and~shapes. The~intrinsic size or shape of~a~given galaxy is unknown, but normally, galaxy orientations are assumed to~be random ($\sim30\%$ dispersion), so they should not exhibit statistically significant and~coherent alignments. In~the~presence of~lensing, small but coherent shears in~background galaxy images are induced. This means that WL is statistically detectable by averaging shapes over many lensed galaxies. In~principle, either the~shearing of~galaxies (shape distortion) or their magnification (size distortion) can be measured. However, in~practice, the~shape distortions are used much more widely since the~scatter in~shapes of~galaxies is less than the~scatter in~their sizes.
+% \subsection[Weak lensing]{Weak lensing\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
+% \label{ssec:wl}
+% {\itshape
+% Gravitational lensing is the~deflection of~light from distant sources due to~the~bending of~space-time by baryonic and~dark matter (lenses) along the~line of~sight. It is a~very useful cosmological probe because it is sensitive to~all matter regardless of~its nature. In~the~limit of~very small deflection angles, it is called weak lensing (WL). WL causes tiny distortions ($\sim0.5\%$), or ``shear'', in~galaxy sizes and~shapes. The~intrinsic size or shape of~a~given galaxy is unknown, but normally, galaxy orientations are assumed to~be random ($\sim30\%$ dispersion), so they should not exhibit statistically significant and~coherent alignments. In~the~presence of~lensing, small but coherent shears in~background galaxy images are induced. This means that WL is statistically detectable by averaging shapes over many lensed galaxies. In~principle, either the~shearing of~galaxies (shape distortion) or their magnification (size distortion) can be measured. However, in~practice, the~shape distortions are used much more widely since the~scatter in~shapes of~galaxies is less than the~scatter in~their sizes.
 
-Weak lensing provides a~direct measure of~the~distribution of~matter, independent of~any assumptions about galaxy biasing. Since this distribution can be predicted theoretically, and~its amplitude can be directly used to~constrain cosmology, weak lensing has great potential as a~cosmological probe. The~correlation of~the~density field of~nearby galaxies with~the~lensing shear measured on~more distant galaxies is called \textit{galaxy-galaxy lensing}. Most lens systems involve sources (and~lenses) at~moderate or high redshift, and~thus can lensing probe the~geometry of~the~Universe -- the~measurement of~the~shear correlation function as a~function of~the~redshifts of~observed galaxies is called \textit{tomography}. The~scaling of~the~galaxy-galaxy lensing signal as a~function of~the~source redshift, known as \textit{cosmography}, depends purely on~geometric factors and~hence can be used to~construct a~distance-redshift relation.
-}
+% Weak lensing provides a~direct measure of~the~distribution of~matter, independent of~any assumptions about galaxy biasing. Since this distribution can be predicted theoretically, and~its amplitude can be directly used to~constrain cosmology, weak lensing has great potential as a~cosmological probe. The~correlation of~the~density field of~nearby galaxies with~the~lensing shear measured on~more distant galaxies is called \textit{galaxy-galaxy lensing}. Most lens systems involve sources (and~lenses) at~moderate or high redshift, and~thus can lensing probe the~geometry of~the~Universe -- the~measurement of~the~shear correlation function as a~function of~the~redshifts of~observed galaxies is called \textit{tomography}. The~scaling of~the~galaxy-galaxy lensing signal as a~function of~the~source redshift, known as \textit{cosmography}, depends purely on~geometric factors and~hence can be used to~construct a~distance-redshift relation.
+% }
 %%%%%%%%%%%%%%%%%%%%%%%
 % Large-scale structure
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection[Large-scale structure]{Large-scale structure\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
+\subsection[Large-scale structure]{Large-scale structure}
 \label{ssec:lss}
-{\itshape
 Studying the~large-scale structures (LSS) of~the~Universe is of~great importance for~the~cosmology. Since the~clustering of~matter on~scales from galaxies to~superclusters came from quantum fluctuations in~the~very early Universe with~important modification by radiation and~baryons, the~LSS encode critical information about the~contents of~the~Universe, the~origin of~the~fluctuations, and~the~cosmic expansion background in~which the~structures evolved.
 
 Measurements of~the~large-scale power spectrum for~the~spatial distribution of~matter as a~function of~redshift constrain the~cosmic expansion history, the~cosmological distance scale, the~growth rate of~structures, the~mass of~the~neutrinos, and~the~abundance of~dark matter. This includes the~BAO measurement of~the~distance-redshift relation (as a~standard ruler). The~BAO with~the~growth of~the~LSS in~the~Universe form two robust probes of~dark energy, and~a~potential discriminator between dark energy and~modified gravity models. Beyond the~dark energy, the~large scale power spectrum is a~probe of~both neutrino mass and~primordial non-Gaussianity.
-}
 \subsubsection{Matter power spectrum}
 The~matter power spectrum $P(k)$ is defined as a~quadratic function of~the~Fourier transformation of~the~density contrast $\delta$ \parencite{2010deto.book.....A}
 \eq{
@@ -118,30 +115,28 @@ where $\delta_{\rm D}$ is the~Dirac delta function and~we are averaging over pos
     \label{eq:pk_xi}
     P(k)=\int\xi(r)e^{-ik\cdot r}\dd^3r\,.
 }
-However, what we observe in~practice, is the~galaxy density contrast $\delta_g$, which is different from the~total matter density contrast $\delta_m$. The~two quantities are assumed to~be related by a~bias factor $b$ defined by \parencite{2010deto.book.....A}
-\eq{
-    b\equiv\frac{\delta_g}{\delta_m}\,,
-}
-from which follows $P_g(k)=b^2P_m(k)$. This simple assumption tries to incorporate non-linear physical processes, such as merging of galaxies, or evolutionary processes of stars that makes galaxies brighter or dimmer.
+% However, what we observe in~practice, is the~galaxy density contrast $\delta_g$, which is different from the~total matter density contrast $\delta_m$. The~two quantities are assumed to~be related by a~bias factor $b$ defined by \parencite{2010deto.book.....A}
+% \eq{
+%     b\equiv\frac{\delta_g}{\delta_m}\,,
+% }
+% from which follows $P_g(k)=b^2P_m(k)$. This simple assumption tries to incorporate non-linear physical processes, such as merging of galaxies, or evolutionary processes of stars that makes galaxies brighter or dimmer.
 
-In~\autoref{fig:pk_planck} is shown (linear) matter power spectrum inferred from different cosmological probes \parencite{2018arXiv180706205P}.
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.7\textwidth]{cosmo_evol/pk_planck.png}
-    \caption{The~(linear theory) matter power spectrum (at~z = 0) inferred from different cosmological probes. The~broad agreement of~the~model (black line) with~such a~disparate compilation of~data, spanning 14 Gyr in~time and~three decades in~scale is an~impressive testament to~the~explanatory power of~\LCDM. Earlier versions of~similar plots can be found in, for~example, \textcite{1994ARA&A..32..319W}, \textcite{1995Sci...268..829S}, \textcite{2002PhRvD..66j3508T}, and~\textcite{2004ApJ...606..702T}. A~comparison with~those papers shows that the~evolution of~the~field in~the~last two decades has been dramatic, with~\LCDM\ continuing to~provide a~good fit on~these scales. \textit{Note:} Reprinted from \textcite{2018arXiv180706205P}.}
-    \label{fig:pk_planck}
-\end{figure}
+% In~\autoref{fig:pk_planck} is shown (linear) matter power spectrum inferred from different cosmological probes \parencite{2018arXiv180706205P}.
+% \begin{figure}[hbt]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{cosmo_evol/pk_planck.png}
+%     \caption{The~(linear theory) matter power spectrum (at~z = 0) inferred from different cosmological probes. The~broad agreement of~the~model (black line) with~such a~disparate compilation of~data, spanning 14 Gyr in~time and~three decades in~scale is an~impressive testament to~the~explanatory power of~\LCDM. Earlier versions of~similar plots can be found in, for~example, \textcite{1994ARA&A..32..319W}, \textcite{1995Sci...268..829S}, \textcite{2002PhRvD..66j3508T}, and~\textcite{2004ApJ...606..702T}. A~comparison with~those papers shows that the~evolution of~the~field in~the~last two decades has been dramatic, with~\LCDM\ continuing to~provide a~good fit on~these scales. \textit{Note:} Reprinted from \textcite{2018arXiv180706205P}.}
+%     \label{fig:pk_planck}
+% \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Galaxy clusters
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection[Galaxy clusters]{Galaxy clusters\footnote{Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
+\subsection[Galaxy clusters]{Galaxy clusters}
 \label{ssec:gc}
-{\itshape
 The~observed number density and~clustering of~galaxy clusters as a~function of~mass and~redshift provides a~powerful toolset to~constraining cosmology.  Galaxy clusters provided the~first line of~evidence for~the~existence of~dark matter \textcite{zwicky} and~cluster mass-to-light ratio measurements suggested that the~matter density in~the~universe was sub-critical \textcite{Gott}. Galaxy clusters measurements are sensitive to~both the~expansion history and~the~growth of~structure in~the~Universe enabling to~distinguish between dark energy and~modified gravity models for~cosmic acceleration. Additional probes are measurements of~the~baryonic mass fraction in~clusters, and~measurements of~the~tomographic lensing signatures through clusters.
 
 The~basic idea of~cluster abundance studies is to~compare the~predicted space density of~massive halos to~the~observed space density of~clusters. The~basic observables are the~richness, the~number of~galaxies in~a~specified luminosity and~color range. Halo abundance is sensitive to~the~amplitude of~the~matter power spectrum $\sigma_8$ and~the~matter density $\Omega_m$, more precisely a~combination of~a~form $\sigma_8\Omega_m^q$, with~$q\approx0.4$ \textcite{white}. The~degeneracy between $\sigma_8$ and~$\Omega_m$ can be broken by measuring abundances at~a~variety of~masses.
-}
 % \subsubsection{Spherical collapse}
 % If we assume a~spherical overdensity of~pressureless matter in~an~expanding Universe we can arrive to~the~following equation \parencite{2010deto.book.....A}
 % \eq{
@@ -167,30 +162,30 @@ where the~parameter \(\delta\coll=1.686\) was introduced in~the~previous section
     \label{eq:hmf_jenkins}
     f_{Jenkins}(\sigma)=0.315\exp\left(-|\ln\sigma^{-1}+0.61|^{3.8}\right)\,.
 }
-As their range of~masses and~redshifts correspond to~our study case we will use this fitting formula in~our analysis (see \autoref{chpt:app_sims}).
+As their range of~masses and~redshifts correspond to~our study case we will use this fitting formula in~our analysis.
 %%%%%%%%%%%%%%%%%%%%%%%
 % Strong lensing
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection[Strong lensing]{Strong lensing\footnote{\label{ftn2}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
-\label{ssec:SL}
-{\itshape
-Strong gravitational lensing (SL) refers to~the~multiple imaging of~a~background object due to~a~massive foreground object (typically clusters of~galaxies). The~resulting angular displacement, morphological distortion, and~time delay can be used to~measure dark energy parameters. Strong gravitational lensing time delays measure a~combination of~distances that combining with~other dark energy probes can further constraint cosmological parameters. The~time delays are also expected to~test gravity on~scales where the~screening mechanisms are becoming active.
+% \subsection[Strong lensing]{Strong lensing\footnote{\label{ftn2}Some parts of this section have already been published in \textcite{mastersthesis_vrastil}. The overtaken text is written in italics.}}
+% \label{ssec:SL}
+% {\itshape
+% Strong gravitational lensing (SL) refers to~the~multiple imaging of~a~background object due to~a~massive foreground object (typically clusters of~galaxies). The~resulting angular displacement, morphological distortion, and~time delay can be used to~measure dark energy parameters. Strong gravitational lensing time delays measure a~combination of~distances that combining with~other dark energy probes can further constraint cosmological parameters. The~time delays are also expected to~test gravity on~scales where the~screening mechanisms are becoming active.
 
-Another independent way to~measure dark energy parameters with~SL is the~analysis of~systems with~multiple sets of~multiple images \textcite{SL_in_CLGs}. The~positions of~these multiple images depend strongly on~the~detailed properties of~the~lens mass distribution and~on~the~angular diameter distance ratios between the~lens, source, and~observer, they encapsulate information about the~underlying cosmology. This dependence on~the~geometry can be used to~derive constraints on~the~cosmological parameters.
-}
+% Another independent way to~measure dark energy parameters with~SL is the~analysis of~systems with~multiple sets of~multiple images \textcite{SL_in_CLGs}. The~positions of~these multiple images depend strongly on~the~detailed properties of~the~lens mass distribution and~on~the~angular diameter distance ratios between the~lens, source, and~observer, they encapsulate information about the~underlying cosmology. This dependence on~the~geometry can be used to~derive constraints on~the~cosmological parameters.
+% }
 %%%%%%%%%%%%%%%%%%%%%%%
 % Redshift-space distortions
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection[Redshift-space distortions]{Redshift-space distortions\footnoteref{ftn2}}
-\label{sec:rsd}
-{\itshape
-When we observe distant galaxies, two features determine their redshifts -- the~Hubble expansion and~their peculiar velocities. The~peculiar velocities of~galaxies thus cause them to~appear displaced along the~line of~sight in~redshift space. These displacements lead to~redshift distortions in~the~pattern of~clustering of~galaxies in~redshift space and~make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the~tremendous advantage of~bearing information about the~dynamics of~galaxies.}
+% \subsection[Redshift-space distortions]{Redshift-space distortions\footnoteref{ftn2}}
+% \label{sec:rsd}
+% {\itshape
+% When we observe distant galaxies, two features determine their redshifts -- the~Hubble expansion and~their peculiar velocities. The~peculiar velocities of~galaxies thus cause them to~appear displaced along the~line of~sight in~redshift space. These displacements lead to~redshift distortions in~the~pattern of~clustering of~galaxies in~redshift space and~make large scale galaxy clustering anisotropic. Redshift-space distortions (RSD) have the~tremendous advantage of~bearing information about the~dynamics of~galaxies.}
 
-The~coordinate transformation from real space $(r)$ to~redshift space $(s)$ of~a~source with~a~peculiar velocity $\bm v$ is given by \parencite{2010deto.book.....A}
-\eq{
-    \mb s = \mb r\left[1+\frac{u(r)-u(0)}{r}\right]\,,
-}
-where $u\equiv\mb v\cdot\mb r/r$. {\itshape The~strength of~the~anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the~logarithmic growth rate of~fluctuations \eqref{eq:grw_rate} and~$b$ is the~bias. By modeling the~full redshift-space galaxy power spectrum one can obtain a~combination of~the~product of~the~matter clustering amplitude and~the~growth rate.
+% The~coordinate transformation from real space $(r)$ to~redshift space $(s)$ of~a~source with~a~peculiar velocity $\bm v$ is given by \parencite{2010deto.book.....A}
+% \eq{
+%     \mb s = \mb r\left[1+\frac{u(r)-u(0)}{r}\right]\,,
+% }
+% where $u\equiv\mb v\cdot\mb r/r$. {\itshape The~strength of~the~anisotropy is governed by distortion parameter $\beta = f(z)/b(z)$, where $f(z)$ is the~logarithmic growth rate of~fluctuations \eqref{eq:grw_rate} and~$b$ is the~bias. By modeling the~full redshift-space galaxy power spectrum one can obtain a~combination of~the~product of~the~matter clustering amplitude and~the~growth rate.
 
-Anisotropy of~galaxy clustering offers an~alternative to~weak lensing and~cluster abundances as a~tool for~measuring the~growth of~structures. RSD directly measures the~rate at~which structure is growing at~the~redshift of~observation, unlike WL and~galaxy cluster measurements which measure the~rate of~growth at~multiple redshifts. RSD measurements can improve constraints on~dark energy models and~they can be used to~constrain departures from GR by testing the~consistency of~the~growth and~expansion histories.
-}
+% Anisotropy of~galaxy clustering offers an~alternative to~weak lensing and~cluster abundances as a~tool for~measuring the~growth of~structures. RSD directly measures the~rate at~which structure is growing at~the~redshift of~observation, unlike WL and~galaxy cluster measurements which measure the~rate of~growth at~multiple redshifts. RSD measurements can improve constraints on~dark energy models and~they can be used to~constrain departures from GR by testing the~consistency of~the~growth and~expansion histories.
+% }

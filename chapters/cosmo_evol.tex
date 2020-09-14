@@ -1,9 +1,6 @@
 \chapter{Cosmological Evolution}
 \label{chpt:cosmo_evol}
-In~this chapter we briefly describe the~evolution of~the~Universe. For~more comprehensive lectures see e.g. \textcite{Ref:Weinberg}, \textcite{2002col.luc..cosmology} or \textcite{2010deto.book.....A}. We begin with~basic equations for~the~evolution and~apply them to~cosmological scales. We describe background evolution and~formation of~structures in~the~\LCDM\ model and~we briefly mention non-linear cosmological perturbations. At~the~end of~the~chapter, we introduce some basic cosmological observables that are often used to~put observational constraints on~dark energy.
-
 \section{Background evolution}
-The~standard cosmological model is based on~the~\textit{cosmological principle}, first clearly formulated in~\textcite{1687pnpm.book.....N}. The~cosmological principle states that the~Universe is homogeneous and~isotropic on~sufficiently large scales. The~cosmic microwave background (CMB) observations strongly support this statement as photons from different parts of~the~Universe are coming with~almost identical temperatures. However, the isotropy does not imply homogeneity. The~\textit{Copernican Principle} states that the~observer is not in~a~special place or time. With~the~observed isotropy, the~Copernican Principle implies the~Cosmological Principle. The~observed inhomogeneities and~irregularities on~local scales come from gravitational instability and~do not violate these principles.
 %%%%%%%%%%%%%%%%%%%%%%%
 % Friedmann equations
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -12,12 +9,55 @@ The~standard cosmological model is based on~the~\textit{cosmological principle},
 %%%%%%%%%%%%%%%%%%%%%%%
 % Hubble's law
 %%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/cosmo_evol/hubble}
+% \input{chapters/cosmo_evol/hubble}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Formation and~evolution of~LSS
 %%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/cosmo_evol/form_evol_lss}
+% \input{chapters/cosmo_evol/form_evol_lss}
+\section{Formation and~evolution of~LSS}
+We have considered equations for~a~smooth, homogeneous, and~isotropic background. To~describe the~real Universe with~its rich structures, we must employ perturbation theory for~cosmological equations. The~background cosmological evolution is obtained by solving the~zeroth order Einstein equations and~is given by the~Friedmann equations. The~first-order equations are given by the~perturbation of~the~Einstein tensor and~by the~perturbed energy-momentum tensor. We will be working in~comoving coordinates -- the~comoving position $\mb x$ is defined in~terms of~the~proper position coordinate $\mb r = a\mb x$. The~comoving velocity $\mb v$ is then defined as a~derivative with~respect to~cosmic time $t$, $\mb v = \dot{\mb x}$, where the~overdot denotes a~time derivative. Particles move in~the~Newtonian gravitational potential, $\Phi$. The~equations for~linear perturbations then read
+\eq{
+	\label{eq:lin_per_a}
+	\dot\delta + \nabla\cdot\mb v &= 0, \\
+	\label{eq:lin_per_b}
+    \dot{\mb v} + 2\frac{\dot a}{a} \mb v &= -\frac{1}{a^2}\nabla\Phi, \\
+\begin{split}
+	\label{eq:lin_per_c}
+	\Delta\Phi &= 4\pi G\bar\rho a^2 \delta \\
+    			&= \frac32 H_0^2\Omega_{m, 0}\frac\delta a \equiv \mu^{-1}\frac\delta a\,,
+\end{split}
+}
+where we defined the~constant $\mu\equiv\left(\frac32 H_0^2\Omega_{m, 0}\right)^{-1}$. In~this linear regime, the~time and~space dependence of~the~overdensity evolution are separable and~we can write $\delta(a, \mb x)=D(a)\delta_0(\mb x)$ where the~growth factor $D$ represents the~growing solution (we neglect the~decaying mode) and~is normalized to~unity at~the~present time.
+
+It is often useful to~rewrite these equations with~a~different time variable, namely the~scale factor $a$. This is convenient both from the~numerical and~theoretical points of~view because the~quantities are ``more constant''. With~the~new time-variable $a$ and~comoving velocity $\mb u = \dd \mb x/\dd a$, equation \eqref{eq:lin_per_a} becomes
+\eq{
+\label{eq:continuity_a}
+	\dddd D a \delta_0 + \nabla\cdot\mb u = 0\,,
+}
+where $\dd D/\dd a = 1$ in~the~Einstein--de Sitter universe (hereafter EdS) and~so the~divergence of~the~velocity field remains constant in~both time and~space. Equation \eqref{eq:lin_per_b} then becomes
+\seq{
+	\label{eq:motion_EdS}
+	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u + \mu\nabla\Phi \right] \\
+\intertext{in~EdS and, more generally,}
+	\label{eq:motion_LCDM}
+	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u\left(1+\Omega_\Lambda\right) + \mu\nabla\Phi\left(1-\Omega_\Lambda\right)\right]
+}
+in~the~\LCDM\ universe. The~omega factor of~the~cosmological constant
+\eq{
+	\Omega_\Lambda(a) = \frac{\Omega_{\Lambda,0}a^3}{\Omega_{m,0} + \Omega_{\Lambda,0}a^3}
+}
+rises from $0$ to~$\Omega_{\Lambda,0}$ and~becomes significant $(>5\%)$ around redshift $z\approx2.5$. The~transformation \eqref{eins_trans} from the~Jordan frame to~the~Einstein frame introduces non-standard coupling of~the~chameleon field to~standard matter resulting in~the~fifth force \eqref{cham_force}. Using our new variables, this equation reads
+\eq{
+	\label{eq:cham_force}
+	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
+}
+Equation \eqref{eq:lin_per_c} expressed with~the~growth factor reads
+\eq{
+\label{eq:poisson_a}
+	\Delta\Phi(\mb x, a) = \mu^{-1}\frac D a \delta_0(\mb x)\,.
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
@@ -27,4 +67,4 @@ The~standard cosmological model is based on~the~\textit{cosmological principle},
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/cosmo_evol/cosmo_surveys}
+% \input{chapters/cosmo_evol/cosmo_surveys}
