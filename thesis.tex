@@ -66,8 +66,22 @@
 \usepackage[
 backend=biber,
 style=authoryear,
-citestyle=authoryear
+citestyle=authoryear,
+doi=false,
+isbn=false,
+url=false,
 ]{biblatex}
+
+%removes field from references
+\AtEveryBibitem{%
+\clearfield{pages}
+\clearfield{title}
+\clearfield{eprint}
+\clearfield{archivePrefix}
+\clearfield{month}
+\clearfield{booktitle}
+\clearfield{address}
+}
 
 \addbibresource{bibliography/cosmo_surveys.bib}
 \addbibresource{bibliography/overview.bib}
