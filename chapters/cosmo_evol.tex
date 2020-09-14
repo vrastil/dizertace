@@ -16,7 +16,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 % \input{chapters/cosmo_evol/form_evol_lss}
 \section{Formation and~evolution of~LSS}
-We have considered equations for~a~smooth, homogeneous, and~isotropic background. To~describe the~real Universe with~its rich structures, we must employ perturbation theory for~cosmological equations. The~background cosmological evolution is obtained by solving the~zeroth order Einstein equations and~is given by the~Friedmann equations. The~first-order equations are given by the~perturbation of~the~Einstein tensor and~by the~perturbed energy-momentum tensor. We will be working in~comoving coordinates -- the~comoving position $\mb x$ is defined in~terms of~the~proper position coordinate $\mb r = a\mb x$. The~comoving velocity $\mb v$ is then defined as a~derivative with~respect to~cosmic time $t$, $\mb v = \dot{\mb x}$, where the~overdot denotes a~time derivative. Particles move in~the~Newtonian gravitational potential, $\Phi$. The~equations for~linear perturbations then read
+The~background cosmological evolution is obtained by solving the~zeroth order Einstein equations and~is given by the~Friedmann equations. The~first-order equations are given by the~perturbation of~the~Einstein tensor and~by the~perturbed energy-momentum tensor.
+
+We will be working in~comoving coordinates -- the~comoving position $\mb x$ is defined in~terms of~the~proper position coordinate $\mb r = a\mb x$. The~comoving velocity $\mb v$ is then defined as a~derivative with~respect to~cosmic time $t$, $\mb v = \dot{\mb x}$, where the~overdot denotes a~time derivative. Particles move in~the~Newtonian gravitational potential, $\Phi$. The~equations for~linear perturbations then read
 \eq{
 	\label{eq:lin_per_a}
 	\dot\delta + \nabla\cdot\mb v &= 0, \\
@@ -43,25 +45,13 @@ where $\dd D/\dd a = 1$ in~the~Einstein--de Sitter universe (hereafter EdS) and~
 	\label{eq:motion_LCDM}
 	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u\left(1+\Omega_\Lambda\right) + \mu\nabla\Phi\left(1-\Omega_\Lambda\right)\right]
 }
-in~the~\LCDM\ universe. The~omega factor of~the~cosmological constant
-\eq{
-	\Omega_\Lambda(a) = \frac{\Omega_{\Lambda,0}a^3}{\Omega_{m,0} + \Omega_{\Lambda,0}a^3}
-}
-rises from $0$ to~$\Omega_{\Lambda,0}$ and~becomes significant $(>5\%)$ around redshift $z\approx2.5$. The~transformation \eqref{eins_trans} from the~Jordan frame to~the~Einstein frame introduces non-standard coupling of~the~chameleon field to~standard matter resulting in~the~fifth force \eqref{cham_force}. Using our new variables, this equation reads
-\eq{
-	\label{eq:cham_force}
-	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
-}
-Equation \eqref{eq:lin_per_c} expressed with~the~growth factor reads
-\eq{
-\label{eq:poisson_a}
-	\Delta\Phi(\mb x, a) = \mu^{-1}\frac D a \delta_0(\mb x)\,.
-}
-
+in~the~\LCDM\ universe.
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
+%% TODO? remove?
+\clearpage
 \input{chapters/cosmo_evol/cosmo_observ}
 
 %%%%%%%%%%%%%%%%%%%%%%%
