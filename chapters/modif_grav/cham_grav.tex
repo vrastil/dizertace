@@ -16,12 +16,16 @@ In~the~Jordan frame the~matter fields are minimally coupled to~the~metric and~fo
 \label{eq:S_ein_fr}
 S=\int\dd^4x\dgt\left[\frac{\Mpl^2}{2}\tilde{R} - \frac12(\partial\chi)^2-V(\chi)\right]+S_m[\psi_m;A^2(\chi)\tilde{g}_\uv],
 }
-where tildes denote quantities in~the~Einstein frame. This action looks like the~Einstein-Hilbert action with~minimally coupled scalar but now the~matter fields are also coupled with~the~scalar field via factor $A(\chi)$. Varying the~action with~respect to~the~field $\chi$ one can obtain the~equation of~motion
+where tildes denote quantities in~the~Einstein frame. This action looks like the~Einstein-Hilbert action with~minimally coupled scalar but now the~matter fields are also coupled with~the~scalar field via factor
+\eq{
+	A(\chi)\equiv (1+f\R)^{-1/2}=\exp(\beta\chi/\Mpl)\,,
+}
+where $\beta=\sqrt{1/6}$. Varying the~action with~respect to~the~field $\chi$ one can obtain the~equation of~motion
 \eq{
 	\label{eom:cham}
 	\Box\chi=V_{,\chi}-\sum_i\frac{\beta_i}{\Mpl}e^{4\beta_i\chi/\Mpl}g^\uv_{(i)}T^{(i)}_\uv,
 }
-where $T^{(i)}_\uv$ is the~stress-energy tensor for~the~$i$-th matter component. The~transformation from the~Jordan frame to~the~Einstein frame introduces non-standard coupling of~the~chameleon field to~standard matter resulting in~the~fifth force \eqref{cham_force}. Using our variables, this equation reads
+where $T^{(i)}_\uv$ is the~stress-energy tensor for~the~$i$-th matter component. The~transformation from the~Jordan frame to~the~Einstein frame introduces non-standard coupling of~the~chameleon field to~standard matter resulting in~the~fifth force
 \eq{
 	\label{eq:cham_force}
 	\dddd{\mb u_{\chi}}{a} = -\frac{3\mu}{2a}\frac{\beta}{\Mpl}\mb{\nabla}\chi \,.
@@ -214,7 +218,7 @@ The~Hu-Sawicki models correspond to~chameleon gravity with~the~potential
 	V(\chi) &= \Mpl^2\Lambda-\frac{\beta\bar\rho_0}{n\Mpl}\left(2\beta\Mpl\Phiscrz\right)^{1-n}\chi^n\,, \\
     V_{,\chi}(\chi) &= -\frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}\,,
 }
-where $\beta=\sqrt{1/6}$ and~the~power-law exponent $n$ and~screening potential $\Phiscrz$ are now the~free parameters of~the~theory.% The~screening potential has the~following relation to~the~present scalaron value in~$f(R)$-gravity:
+where the~power-law exponent $n$ and~screening potential $\Phiscrz$ are now the~free parameters of~the~theory.% The~screening potential has the~following relation to~the~present scalaron value in~$f(R)$-gravity:
 % \eq{
 %     \Phiscrz=\frac{3}{2}\ln{(1+f_{R0})}\approx\frac{3}{2}f_{R0}.
 % }
@@ -297,12 +301,12 @@ The~chameleon obeys the~equation of~motion \eqref{eom:cham} which reduces for~ou
 % The~background value of~the~Compton wavelength informs us about the~global behavior of~the~chameleon field whereas the~screening potential describes its behavior locally. At~high redshifts, the~chameleon's Compton wavelength is too short to~have any effects -- on~large scales, due to~its low background value, and~on~small scales due to~a~low value of~the~screening potential. At~lower redshifts, the~chameleon field starts to~affect matter, initially only on~small scales but with~the~passage of~time also on~large scales. We thus expect the~strongest effects to~be on~small scales.
 \subsection{Numerical solutions}
 \label{sec:num_cham}
-In~this section, we will show the~results of~numerical solutions of~the~chameleon profile. We will solve the~equations for~the~Hu-Sawicki \fR\ model, \eqref{eq:cham_husa}. In~this section we will focus only on~systems with~spherical symmetry, i.e. we will solve the~following equation
+We will solve the~equations for~the~Hu-Sawicki \fR\ model, \eqref{eq:cham_husa}. In~this section we will focus only on~systems with~spherical symmetry, i.e. we will solve the~following equation
 \eq{
 	\label{eq:cham_husa_r}
 	\frac{\dd^2\chi}{\dd r^2}+\frac{2}{r}\dddd{\chi}{r} = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{\chi_0}{\chi}\right)^{1-n}
 }
-Our algorithm for~finding solutions to~\eqref{eq:cham_husa_r} uses the~shooting method \parencite{10.5555/42249} and~is based on~the~original algorithm of~\textcite{mastersthesis_vrastil}. We further improved the~code applicability, readability, and~its parametrization. The~code is publicly available at~\code{\url{https://github.com/vrastil/chi_r_solver}}. We will denote $\Req$ the~\textit{equivalence radius} -- radius at~which the~Newtonian potential equals the~screening potential $|\Phi_G(\Req)|=\Phi_s$. By letting the~equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_G(0)|=\Phi_s$ we can clearly distinguish between the~linear $(\Req<0)$ and~the~screening $(\Req>0)$ regime.
+Our algorithm for~finding solutions to~\eqref{eq:cham_husa_r} uses the~shooting method \parencite{10.5555/42249} and~is based on~the~original algorithm of~\textcite{mastersthesis_vrastil}. We further improved the~code applicability, readability, and~its parametrization. The~code is publicly available at~\code{\url{https://github.com/vrastil/chi_r_solver}}. We will denote $\Req$ the~\textit{equivalence radius} -- radius at~which the~Newtonian potential equals the~screening potential $|\Phi_G(\Req)|=\Phiscr$. By letting the~equivalence radius posses also negative values such as $(1+|\Req|/R_s)|\Phi_G(0)|=\Phi_s$ we can clearly distinguish between the~linear $(\Req<0)$ and~the~non-linear screening $(\Req>0)$ regime.
 
 % \subsubsection{Stars}
 % {\itshape
@@ -334,23 +338,23 @@ The~Navarro-Frenk-White (NFW) profile proposed by \textcite{1996ApJ...462..563N}
 	\label{NFW_rho}
 	\delta\rho_{\rm NFW}(r)=\frac{\rho_c}{r/r_s\left(1+r/r_s\right)^2},
 }
-where $\rho_c$ is the~density scale and~$r_s$ is the~scale radius. We will also be using the~dimensionless radius $x\equiv r/r_s$. The~total mass of~the~halo is divergent (logarithmically) so we take a~cut-off at~the~radius $r_{200}$, which is defined as the~radius at~which the~density is 200 times the~critical density. Then the~mass of~the~halo is
+where $\rho_c$ is the~density scale and~$r_s$ is the~scale radius. The~total mass of~the~halo is divergent (logarithmically) so we take a~cut-off at~the~radius $r_{200}$, which is defined as the~radius at~which the~density is 200 times the~critical density. Then the~mass of~the~halo is
 \eq{
 	M_{200}=\int_0^{r_{200}}4\pi r^2\rho(r)\dd r=4\pi\rho_cr_s^3\left(\ln(1+c)-\frac{c}{c+1}\right),
 }
 where $c\equiv r_{200}/r_s$ is the~concentration of~the~halo. For~a~given mass the~halo is fully characterized by the~concentration.
 
 % For~NFW halo the~density is not constant as in~the~case of~compact spherical objects (stars). The~chameleon mass and~the~screened solution are therefore also not constant and~one does not have analytical solutions as in~the~case of~stars. However, for~realistic halo, the~density varies on~scales much larger than the~Compton wavelength of~the~chameleon. In~such cases, we can treat the~field as frozen in~the~same sense as in~the~case of~stars. Therefore we expect the~chameleon field to~behave in~a~similar way as in~the~case of~stars, i.e. to~follow the~Newtonian potential in~the~linear case and~to~have screened behavior for~more massive halos.
-
-In~\autoref{fig:nfwlike_forces} we show the~chameleon fifth force. We see that the~behavior is indeed similar to~stars although the~field catches up much later. This is because there is no sudden drop in~density (and~mass of~the~field) where the~chameleon can start to~behave as free but rather the~mass is slowly dropping. This indicates that it will be much harder to~detect the~chameleon fifth force on~scales of~galaxies than for~star-like objects. This is of~course true only assuming the~screening potential is the~same on~all scales.
+\subsubsection{Fifth force}
+In~\autoref{fig:nfwlike_forces} we show the~chameleon fifth force. We see that the~chameleon is greatly suppressed inside the~equivalence radius and~only slowly rises to~the~linear regime.% This indicates that it will be hard to~detect the~chameleon fifth force on~scales of~galaxies. This is of~course true only assuming the~screening potential is the~same on~all scales.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{{spherical_cham/nfwlike_forces}.png}
 	\caption{Chameleon force relative to~the~standard gravitational force for~several screening potentials (given through the~equivalence radius). For~$\Req\ll R_S$ there is no screening outside the~object. As the~$\Req$ grows the~chameleon enters the~screened regime.}
 	\label{fig:nfwlike_forces}
 \end{figure}
-
-The~meaning of~the~screening potential and~its connection to~the~Newtonian potential in~\eqref{eq:chi__scr_mean} is given by the~value of~the~field at~the~background, i.e. value that minimizes right side of~\eqref{eq:cham_u}. However, objects like stars or galaxy halos do not sit directly in~the~overall average density of~the~universe but rather in~galaxy halo or halo of~the~cluster of~galaxies. Therefore the~value of~the~effective screening potential is given by the~density of~the~background object we can consider as being in~infinity relative to~the~scale of~the~studied object. In~\autoref{fig:nfwlike_pot_eff} we show the~value of~this effective screening potential for~a~cluster of~galaxies of~a~typical size -- $M=10^{14} M_\odot, c=4$. We see that the~screening potential is greatly reduced in~inner parts of~the~galaxy cluster halo. For~this reason, we do not think it much likely to~observe the~effects of~the~chameleon field on~scales smaller than Mpc.
+\subsubsection{Effective screening potential}
+The~meaning of~the~screening potential is given by the~value of~the~field at~the~background, i.e. value that minimizes right side of~\eqref{eq:cham_husa}. Therefore the~value of~the~effective screening potential is given by the~density of~the~background. In~\autoref{fig:nfwlike_pot_eff} we show the~value of~this effective screening potential for~a~cluster of~galaxies of~a~typical size -- $M=10^{14} M_\odot, c=4$. We see that the~screening potential is greatly reduced in~inner parts of~the~galaxy cluster halo. For~this reason, we do not think it much likely to~observe the~effects of~the~chameleon field on~scales smaller than Mpc.
 
 \begin{figure*}
 	\centering
@@ -363,8 +367,8 @@ The~meaning of~the~screening potential and~its connection to~the~Newtonian poten
 		\caption{Effective screening potential relative to~the~screening potential for~a~cluster of~galaxies, $M=10^{14} M_\odot, c=4$. The~top Figure is shown for~several screening potentials (given through the~equivalence radius) while the~bottom for~different chameleon parameter $n$.}
 		\label{fig:nfwlike_pot_eff}
 \end{figure*}
-
-As the~chameleon affects only non-relativistic matter it can be detected using a~combination of~dynamical measurements and~lensing measurements. Therefore, we considered what would be the~difference between the~mass distribution of~a~galaxy cluster measured via lensing (true mass) and~via dynamics of~enclosed galaxies. In~\autoref{fig:clustersYs} we plot this ratio for~five real clusters (simulated as having ideal NFW profile), see their parameters in~\autoref{tab:clusters}, and~for~four different values of~the~screening potential. We see that except for~the~case $\Phiscr=1$ one would need very precise (and~nowadays unrealistic) measurements of~the~mass distribution. We are therefore left with~only cosmological scales of~tens of~Mpc and~larger to~study the~chameleon. We will study this case in~\autoref{chpt:app_sims}.
+\subsubsection{Dynamical mass}
+As the~chameleon affects only non-relativistic matter, it can be detected using a~combination of~dynamical measurements and~lensing measurements to~determine the~mass distribution of~a~galaxy cluster. In~\autoref{fig:clustersYs} we plot the ratio of~these two distributions for~five real clusters (simulated as having ideal NFW profile), see their parameters in~\autoref{tab:clusters}, and~for~four different values of~the~screening potential. We see that except for~the~case $\Phiscr=1$ one would need very precise (and~nowadays unrealistic) measurements of~the~mass distribution. We are therefore left with~only cosmological scales of~tens of~Mpc and~larger to~study the~chameleon. We will study this case in~\autoref{chpt:app_sims}.
 \begin{table}[hbt]
 	\centering
 	\begin{tabular}{lcc|lcc}
