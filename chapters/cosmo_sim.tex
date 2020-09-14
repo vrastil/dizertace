@@ -25,13 +25,13 @@ In~this chapter, we will describe methods and~techniques that we use for~studyin
 % \end{table}
 % 
 % 
-\section{\nbody\ problem}
-Many problems in~physics, including cosmology, involve particle systems with~each particle interacting with~all other particles present. In~astronomy, there is a~gravitational interaction between stars, galaxies, and~cluster of~galaxies, depending on~the~scale which we are studying. The~challenge of~efficiently carrying out the~related calculations is generally known as the~\nbody\ problem.
+% \section{\nbody\ problem}
+% Many problems in~physics, including cosmology, involve particle systems with~each particle interacting with~all other particles present. In~astronomy, there is a~gravitational interaction between stars, galaxies, and~cluster of~galaxies, depending on~the~scale which we are studying. The~challenge of~efficiently carrying out the~related calculations is generally known as the~\nbody\ problem.
 
 % The~main problem is the~following -- we have $N_p$ particles all interacting gravitationally with~each other. To~compute a~trajectory of~even a~single particle involves computing trajectories of~all other particles as the~gravitational force is dependent the~on~time-varying positions of~other particles. That means that at~each time-step we have to~compute forces from all other $N_p$ particles and~we need to~compute these forces for~each of~$N_p$ particles. This leaves us with~complexity of~\(\OO(N_p^2)\). This brute force approach can be used only for~small systems and~is computationally unimaginable for~large systems in~cosmology which typically involve \(N_p\sim10^{9}\) particles.
 
 % This direct approach is generally referred to~as the~Particle-Particle (PP) method \parencite{Hockney:1988:CSU:62815}. Although computationally expensive the~accuracy in~the~force calculation is of~machine precision. To~be able to~simulate large systems of~particles we need to~drop the~accuracy of~continuous positions and~use discrete positions for~force calculations. In~our code, we use two main methods for~force calculations -- the~Particle-Mesh algorithm (PM) and~grid-based methods, both of~them we describe in~more detail below.
-\subsection{Time integration}
+\section{Time integration}
 % Accurate time integration is a~very important part of~any \nbodysim. While there are many different methods to~integrate particle trajectories \parencite[see e.g.][]{Hockney:1988:CSU:62815} we describe here one of~the~most used ones in~collisionless simulations -- the~Leapfrog integrator.
 
 The~leapfrog integrator belongs to a~class of~symplectic integrators \parencite{2011EPJP..126...55D}. Symplectic integrators are canoncial transformations and as such, they conserve certain quantities such as the~total angular momentum, the~phase-space volume, and~the~Jacobi constants. Instead of solving the~exact Hamiltonian approximately, the~leapfrog integrator tries to solve an approximate Hamiltonian exactly. 
@@ -39,47 +39,49 @@ The~leapfrog integrator belongs to a~class of~symplectic integrators \parencite{
 %     \tilde H=H+H\err\,,
 % }
 % where \(H\err\) is the~error Hamiltonian. If \(\tilde H\) and~\(H\) do not dependent explicitly on time, the~error in~energy is bounded at~all times. We want to find such a \(\tilde H\) that can be solved easily by numerical methods and~simultaneously and~minimizes \(H\err\).
-The~Hamilton's equations are
-\eq{
-    \dot w=\HH w\,,
-}
-where \(w\equiv(x,p)\) are combined phase-space coordinates and \(\HH\equiv\{\cdot,H\}\) is an~operator acting on~\(w\) through Poisson bracket. Hamilton’s equations have then the~formal solution
-\eq{
-    w(t+\Delta t)=e^{\Delta t\HH}w(t)\,.
-}
-\begin{sloppypar}
-We want~to split the~operator \(e^{\Delta t\HH}\) (approximately) into steps that, individually, can be integrated exactly. This is usually done by separating the Hamiltonian into the~kinetic and~potential energies, \({H=T(p)+V(x)}\). That we can write
-\end{sloppypar}
-\eq{
-    \label{eq:kdk}
-    e^{\Delta t\HH}= e^{\Delta t(\TT+\VV)}\approx e^{\frac12\Delta t\VV}e^{\Delta t\TT}e^{\frac12\Delta t\VV}\,,
-}
-where operators \(\TT\equiv\{\cdot,T\}\) and~\(\VV\equiv\{\cdot,V\}\) are known as drift and~kick, as they only change either the~positions (drift) or velocities (kick). Because these operators are non-commutative, the~central relation in~\eqref{eq:kdk} is only approximately true. This operator splitting is extremely useful because the~new equations have a~simple solution:
-\eq{
-    e^{\Delta t\TT}
-    \begin{pmatrix}
-        x \\
-        p \\
-    \end{pmatrix}=
-    \begin{pmatrix}
-        x+\Delta t\ p \\
-        p \\
-    \end{pmatrix}
-    \mspace{20mu}\rm{and}\mspace{20mu}
-    e^{\Delta t\VV}
-    \begin{pmatrix}
-        x \\
-        p \\
-    \end{pmatrix}=
-    \begin{pmatrix}
-        x \\
-        p-\Delta t\ \nabla V \\
-    \end{pmatrix}\,.
-}
-The~splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second-order accurate, whereas simpler splitting only into one kick and~one drift is first-order accurate. The~same accuracy and~results have also similar splitting into drift-kick-drift which we use in~our integrator.
+% The~Hamilton's equations are
+% \eq{
+%     \dot w=\HH w\,,
+% }
+% where \(w\equiv(x,p)\) are combined phase-space coordinates and \(\HH\equiv\{\cdot,H\}\) is an~operator acting on~\(w\) through Poisson bracket. Hamilton’s equations have then the~formal solution
+% \eq{
+%     w(t+\Delta t)=e^{\Delta t\HH}w(t)\,.
+% }
+% \begin{sloppypar}
+% We want~to split the~operator \(e^{\Delta t\HH}\) (approximately) into steps that, individually, can be integrated exactly.
+This is usually done by separating the Hamiltonian into the~kinetic and~potential energies, \({H=T(p)+V(x)}\), the~drift and~the~kick, as they only change either the~positions (drift) or velocities (kick). Because operators associated with $T$ and $V$ are non-commutative, this splitting is only approximately true (second-order accurate).
+%That we can write
+% \end{sloppypar}
+% \eq{
+%     \label{eq:kdk}
+%     e^{\Delta t\HH}= e^{\Delta t(\TT+\VV)}\approx e^{\frac12\Delta t\VV}e^{\Delta t\TT}e^{\frac12\Delta t\VV}\,,
+% }
+% where operators \(\TT\equiv\{\cdot,T\}\) and~\(\VV\equiv\{\cdot,V\}\) are known as drift and~kick, as they only change either the~positions (drift) or velocities (kick). Because these operators are non-commutative, the~central relation in~\eqref{eq:kdk} is only approximately true. This operator splitting is extremely useful because the~new equations have a~simple solution:
+% \eq{
+%     e^{\Delta t\TT}
+%     \begin{pmatrix}
+%         x \\
+%         p \\
+%     \end{pmatrix}=
+%     \begin{pmatrix}
+%         x+\Delta t\ p \\
+%         p \\
+%     \end{pmatrix}
+%     \mspace{20mu}\rm{and}\mspace{20mu}
+%     e^{\Delta t\VV}
+%     \begin{pmatrix}
+%         x \\
+%         p \\
+%     \end{pmatrix}=
+%     \begin{pmatrix}
+%         x \\
+%         p-\Delta t\ \nabla V \\
+%     \end{pmatrix}\,.
+% }
+% The~splitting \eqref{eq:kdk}, also known as kick-drift-kick (KDK), is second-order accurate, whereas simpler splitting only into one kick and~one drift is first-order accurate. The~same accuracy and~results have also similar splitting into drift-kick-drift which we use in~our integrator.
 \section{Particle-Mesh algorithm}
 \label{sec:PM}
-As we mentioned in~the~introduction, in~order to~effectively compute forces on~particles one has to~abandon the~continuous position and~solve the~forces using discretized positions. The~idea of~the~PM method is that we set up a~mesh (grid) over the~computational box, and~then we solve the~gravitational potential (i.e. Poisson’s equation \eqref{eq:poisson_lin}) at~the~mesh-points \parencite{n_body_Lindholm}. Forces at~the~mesh-points can then be obtained by calculating the~gradient of~the~potential. The~four principal steps of~the~particle-mesh calculation are \parencite{Hockney:1988:CSU:62815}:
+In~order to~effectively compute forces on~particles one has to~abandon the~continuous position and~solve the~forces using discretized positions. The~idea of~the~PM method is that we set up a~mesh (grid) over the~computational box, and~then we solve the~gravitational potential at~the~mesh-points \parencite{n_body_Lindholm}. The~four principal steps of~the~particle-mesh calculation are \parencite{Hockney:1988:CSU:62815}:
 \begin{enumerate}
     \item assign mass to~the~mesh,
     \label{it:pm_1}
@@ -87,10 +89,10 @@ As we mentioned in~the~introduction, in~order to~effectively compute forces on~p
     \label{it:pm_2}
     \item calculate the~mesh-defined force field,
     \label{it:pm_3}
-    \item interpolate to~find forces on~the~particles,
+    \item interpolate to~find forces on~the~particles.
     \label{it:pm_4}
 \end{enumerate}
-where the~forces found at~the~last step are used to~integrate the~equations of~motion.
+% where the~forces found at~the~last step are used to~integrate the~equations of~motion.
 % \subsection{Assignment schemes}
 % In~step \ref{it:pm_1} and~\ref{it:pm_4} we make a~connection between discrete mesh and~continuous positions of~the~particles. In~the~first, we need to~distribute the~mass of~all particles onto the~mesh and~in~the~last step, on~the~contrary, we need to~interpolate forces known on~the~discrete mesh onto particles with~continuous positions. We can assign the~masses of particles to~the~discrete density function $\delta$ and~the~discrete force $-\nabla\Phi$ to~the~particles in several ways:
 
@@ -109,11 +111,11 @@ where the~forces found at~the~last step are used to~integrate the~equations of~m
 % where $x$ is the~position of~a~mesh point, $x_p$ position of~the~particle, and~$H$ the~distance between mesh points. The~three-dimensional interpolation function is \(W(\mathbf x)=w(x_1)w(x_2)w(x_3)\). The~CIC scheme is somewhere in~the~middle between oversimplistic NGP and~higher-order interpolations which offer greater accuracy and~smoother transitions but at~the~cost of~much greater computational resources -- second-order interpolation (triangular shaped cloud, TSC) involves 27 cells, third-order 64, etc. The piecewise linear force of the CIC is much smoother than that of the~NGP scheme. It~also reduces the~amplitude of~fluctuations in~the~interparticle forces when the~particles are displaced with~respect to~the~mesh. In~our code, we use the~CIC scheme.
 % % \subsubsection{Mixed schemes}
 % % The~NGP and~CIC schemes both employ mass assignment functions which are the~same as their force interpolation functions. A~result of~this symmetry is that they conserve momentum, i.e., the~forces between a~pair of~particles are equal and~opposite, and~the~force of~a~particle upon itself (the~self-force) is zero. A~possible variation is to~use a~mass assignment function which is different from the~force interpolation function. In~such cases, symmetry still causes the~force between pairs of~particles to~be equal and~opposite, but no longer ensures that the~self-force is zero. At~best, the~presence of~the~self-force presents a~nonphysical restriction on~the~timestep and, at~worst, it is disastrous.
+% 
+% \subsection{Solution of~the~field equations}
+For~the~solution of~the~field equations on~the~mesh, usually the~Fast Fourier Transformation (FFT) is used. FFT can compute convolutions involve in~the~force computation rapidly with~the~complexity of~$\OO(N_m\log N_m)$. The~FFT also automatically solves periodic boundary conditions usually incorporated in~cosmological simulations to~enforce homogeneity and~isotropy of~the~Universe. Therefore, FFT-based methods are predominantly used with~cosmological simulations.
 
-\subsection{Solution of~the~field equations}
-An~efficient method for~the~solution of~the~field equations is a~necessary requirement for~the~practical implementation of~the~particle simulation algorithms that have been described. For~linear Poisson’s equation \eqref{eq:poisson_lin} the~most used method is the~Fast Fourier Transformation which can compute convolutions involve in~the~force computation rapidly with~the~complexity of~$\OO(N_m\log N_m)$. The~FFT also automatically solves periodic boundary conditions usually incorporated in~cosmological simulations to~enforce homogeneity and~isotropy of~the~Universe. Therefore, FFT-based methods are predominantly used with~cosmological simulations.
-
-The~Green's function $G(k)$ of~\eqref{eq:poisson_lin} is not the~expected one, $-1/k^2$, but we have the~freedom to~choose such a~Green's function which will minimize errors introduced by all the~steps involve in~force calculation -- mass assignment, potential solver, finite difference and~force interpolation. This topic is in~great detail studied in~\textcite{Hockney:1988:CSU:62815}.
+% The~Green's function $G(k)$ of~\eqref{eq:poisson_lin} is not the~expected one, $-1/k^2$, but we have the~freedom to~choose such a~Green's function which will minimize errors introduced by all the~steps involve in~force calculation -- mass assignment, potential solver, finite difference and~force interpolation. This topic is in~great detail studied in~\textcite{Hockney:1988:CSU:62815}.
 % \subsection{Particle-Particle Particle-Mesh algorithm}
 % The~PM methods are excellent for~solving long-range forces between particles as these methods are very fast and~accurate. However, this accuracy is limited by the~mesh size $H$, and~PM algorithms cannot truly describe anything below this scale. The~accuracy is given by the~Nyquist wavelength $\lambda_N=2H$, which is the~shortest spatial wavelength that can be accurately recovered. Similarly, power on~wavenumbers larger than the~Nyquist wavenumber $k_N=2\pi/\lambda_N=N_m\pi/L$ will be aliased into longer waves. To~overcome these limitations Particle-Particle Particle Mesh algorithms (P$^3$M) have been proposed \textcite{hockney_10000_1973}.
 
@@ -192,29 +194,25 @@ The~basic principle of the multigrid methods is based on the~fact, than on a~sma
 \section{Initial conditions}
 % So far we have described how the~particles evolve under their mutual gravity. However, in~a~cosmological simulation, we must first place these particles into the~simulation box -- we must specify the~initial conditions (IC). The~particles cannot be placed arbitrarily but they must represent the~real Universe. Among the~properties we want is the~particles to~simulate our homogeneous, isotropic, and~infinite Universe. As we described in~\autoref{chpt:cosmo_evol} the~particles evolve and~the~resulting density field $\delta$ is not perfectly homogeneous. Statistical properties of~the~Gaussian density field, which is predicted by simple inflation models and~supported by observation, can be entirely described by the~matter power spectrum $P(k)$. Any procedure for~generating the~IC must be able to~place the~particles in~the~simulation box such as the~resulting density field retains all of~these properties.
 
-Our code for~generating the~initial conditions (IC) is based on~a~convolution method described by \textcite{1997ApJ...490L.127P}. We first create a~random uncorrelated Gaussian density field $n(x)$ of~unit variance. This white noise has a~constant power spectrum $\left\langle|\hat n(k)|^2\right\rangle=1$. We then convolve this field with~a~correlation kernel $W(k)=\sqrt{P(k)}$ to~obtain the~initial  density field
-\eq{
-    \delta(k)=n(k)W(k)\,.
-}
-This density field is then used to~compute the~gravitation potential and~forces in~the~simulation box. The~actual positions and~velocities of~the~particles are found using the~linear perturbation theory, the~Zel'dovich approximation \parencite{1970A&A.....5...84Z},
-\eq{
-    \mb x = \mb q + D(t)\mb S(\mb q)\,,
-}
-\begin{sloppypar}
-where $D$ is the~growth function at~the~start of~the~simulation (typically ${z\sim20-200}$). The~displacement field $S$ is computed from the~linear theory and~satisfies
-\end{sloppypar}
-\eq{
-    \nabla\cdot \mb S = -\delta\,.
-}
-The~initial positions $\mb q$ of~particles are chosen to~be grid points of~the~simulation box to~satisfy homogeneity and~isotropy. We use these grid-based IC but the~so-called glass IC can also be employed. In~the~glass IC, the~particles are placed at~random positions across the~box and~then evolved with~repulsive gravity until they reach an~equilibrium state. These IC look more natural but contain lots of~white noise power.
-
+Our code for~generating the~initial conditions (IC) is based on~a~convolution method described by \textcite{1997ApJ...490L.127P}. We first create a~random uncorrelated Gaussian density field $n(x)$ of~unit variance. We then convolve this field with~a~correlation kernel $W(k)=\sqrt{P(k)}$ to~obtain the~initial  density field. This density field is then used to~compute the~gravitation potential and~forces in~the~simulation box. The~actual positions and~velocities of~the~particles are found using the~linear perturbation theory, the~Zel'dovich approximation \parencite{1970A&A.....5...84Z}.
+% \eq{
+%     \mb x = \mb q + D(t)\mb S(\mb q)\,,
+% }
+% \begin{sloppypar}
+% where $D$ is the~growth function at~the~start of~the~simulation (typically ${z\sim20-200}$). The~displacement field $S$ is computed from the~linear theory and~satisfies
+% \end{sloppypar}
+% \eq{
+%     \nabla\cdot \mb S = -\delta\,.
+% }
+% The~initial positions $\mb q$ of~particles are chosen to~be grid points of~the~simulation box to~satisfy homogeneity and~isotropy. We use these grid-based IC but the~so-called glass IC can also be employed. In~the~glass IC, the~particles are placed at~random positions across the~box and~then evolved with~repulsive gravity until they reach an~equilibrium state. These IC look more natural but contain lots of~white noise power.
+% 
 % In~order to~have reliable results, one has to~run the~cosmological simulation many times with~different IC to~lower the~sampling variance. To~accelerate the~convergence, we use each IC twice, the~second time with~opposite phases \parencite{PhysRevD.93.103519}. Opposite phases of~the~density field in~the~Fourier space correspond to~switched minima and~maxima of~the~gravitation potential in~the~real space, $n_2(\mb x)=-n_1(\mb x)$
 
 \section{Core Cosmology Library}
-The~Core Cosmology Library (\code{CCL}, \textcite{2019ApJS..242....2C}) is an~open-source software package written in~\code{C}, with~a~\code{python} interface. The~\code{CCL} provides routines to~compute basic cosmological observables such as various distances, power spectra, correlation functions, and~many others. The~accuracy of~all quantities has been extensively tested and~compared with~many other independent software packages. This allows establishing a~well-defined numerical accuracy for~each predicted quantity. The~\code{CCL} was developed for~the~needs of~the~DESC of~the~LSST which needs very precise predictions for~the~next generation of~cosmological analysis. The~author contributed to~the~development of~this library, mainly by writing documentation, examples of~usage and~helping with~automatization process and~improving its compatibility.
+The~Core Cosmology Library (\code{CCL}, \textcite{2019ApJS..242....2C}) is an~open-source software package written in~\code{C}, with~a~\code{python} interface. The~\code{CCL} provides routines to~compute basic cosmological observables such as various distances, power spectra, correlation functions, and~many others. The~\code{CCL} was developed for~the~needs of~the~DESC of~the~LSST which needs very precise predictions for~the~next generation of~cosmological analysis. The~author contributed to~the~development of~this library, mainly by writing documentation, examples of~usage and~helping with~automatization process and~improving its compatibility.
 
-We use \code{CCL} for~quantities such as linear and~non-linear power spectra or growth functions. Internally, \code{CCL} calculates the~matter power spectrum  $P(k)$ using various methods including common approximations, by calling external software such as Cosmic Linear Anisotropy Solving System (\code{CLASS}, \textcite{class}), or emulators, such as the~CosmicEmu emulator \parencite{Heitmann:2015xma}.
-
+% We use \code{CCL} for~quantities such as linear and~non-linear power spectra or growth functions. Internally, \code{CCL} calculates the~matter power spectrum  $P(k)$ using various methods including common approximations, by calling external software such as Cosmic Linear Anisotropy Solving System (\code{CLASS}, \textcite{class}), or emulators, such as the~CosmicEmu emulator \parencite{Heitmann:2015xma}.
+% 
 % \section{Other methods}
 % \subsection{TreePM}
 % The~tree code was pioneered by \textcite{1986Natur.324..446B} and~uses a~hierarchical spatial tree to~define localized groups of~particles. This has an~advantage over an~equidistant mesh when dealing with~highly inhomogeneous systems like stellar dynamics when few cells can contain most of~the~particles in the system. When using the~oct-tree, each cubic cell containing more than some maximum number of~particles is split into eight child cells of~half their parent's size. In~this way, a~tree-like hierarchy of~cubic nodes is created. The~particles within each of~the~tree nodes constitute a~well-defined and~localized group. The~potential of~a~cell is obtained by multipole expansion around some center of~the~group of~particles (usually center of~mass). The~gravity at~any point is then approximated by the~summation of~potentials from all other cells while considering only cells with~a~sufficiently small opening angle (size of~the~cell over the~distance). If the~opening angle is big the~same algorithm is applied to~the~daughter cells \parencite{2011EPJP..126...55D}.
