@@ -1,47 +1,47 @@
-\section{Standard $\Lambda$CDM model -- successes and~issues}
+% \section{Standard $\Lambda$CDM model -- successes and~issues}
+\section{Cosmological constant problem}
 The~standard cosmological model, the~\LCDM\ model or the~concordance model, assumes that the~Universe originated in~the~Big Bang from infinitely hot and dense energy, and~now is the~Universe composed of~about 5\% ordinary matter, 27\% dark matter, and~68\% dark energy \parencite{redefineLCDM}. The~\LCDM\ model depends on two theoretical models -- the~Standard Model of~Particle Physics and~ the~General Theory of~Relativity. The~model also assumes that the~universe is homogeneous and~isotropic on~sufficiently large (cosmic) scales. The~model is mathematically described above in~\autoref{chpt:cosmo_evol}.
 
 The~\LCDM\ model represents the Universe with~a~cosmological constant \(\Lambda\) described by general relativity. This cosmological constant is now associated with~dark energy. The other requirement of this model is the presence of sufficiently massive dark matter particles -- the cold dark matter. However, the~nature of~both dark energy and~dark matter is unknown.
 
-In~1948, \textcite{PhysRev.74.505.2} suggested that the~elements could have been made during the~early hot matter-energy phase associated with~the~Big Bang and~predicted their representation -- hydrogen about 75\%, helium about 25\%, and~small amounts of~deuterium, lithium, and~other light elements.
+% In~1948, \textcite{PhysRev.74.505.2} suggested that the~elements could have been made during the~early hot matter-energy phase associated with~the~Big Bang and~predicted their representation -- hydrogen about 75\%, helium about 25\%, and~small amounts of~deuterium, lithium, and~other light elements.
 
-The~other success of~the~Big bang model is the~prediction of~the~Cosmic Microwave Background (CMB) radiation and~its temperature. \textcite{1948Natur.162..774A} predicted the~temperature of~the~CMB to~be approximately 5 K, very close to~the~current value of~2.73 K, determined by the~COBE satellite. Besides, the~COBE results showed that the CMB is extremely isotropic and homogeneous. These smooth properties of the CMB are not easily explainable in the original Big Bang model and they have led to the~theory of~inflation \parencite{1981PhRvD..23..347G}. This model predicts strongly accelerated expansion of the Universe during its very early stage.
+% The~other success of~the~Big bang model is the~prediction of~the~Cosmic Microwave Background (CMB) radiation and~its temperature. \textcite{1948Natur.162..774A} predicted the~temperature of~the~CMB to~be approximately 5 K, very close to~the~current value of~2.73 K, determined by the~COBE satellite. Besides, the~COBE results showed that the CMB is extremely isotropic and homogeneous. These smooth properties of the CMB are not easily explainable in the original Big Bang model and they have led to the~theory of~inflation \parencite{1981PhRvD..23..347G}. This model predicts strongly accelerated expansion of the Universe during its very early stage.
 
-The~\LCDM\ model has an~additional major assumption about the~existence of~dark matter. The original need of~dark matter came from observations of galaxy clusters \parencite{zwicky} and, later, from observations of~galaxy rotation curves \parencite{1980ApJ...238..471R} and 21 cm rotation curves for~neutral hydrogen gas \parencite{1978PhDT.......195B}. All these objects moved under gravitational forces that could not be caused only by the~visible matter. Considerably more gravitational mass was needed to explain these anomalous movements. This missing matter was called dark matter. Up-to-date, no experiment searching for direct evidence of the dark matter has confirmed its existence and its nature remains unexplained.
+% The~\LCDM\ model has an~additional major assumption about the~existence of~dark matter. The original need of~dark matter came from observations of galaxy clusters \parencite{zwicky} and, later, from observations of~galaxy rotation curves \parencite{1980ApJ...238..471R} and 21 cm rotation curves for~neutral hydrogen gas \parencite{1978PhDT.......195B}. All these objects moved under gravitational forces that could not be caused only by the~visible matter. Considerably more gravitational mass was needed to explain these anomalous movements. This missing matter was called dark matter. Up-to-date, no experiment searching for direct evidence of the dark matter has confirmed its existence and its nature remains unexplained.
 
-Two sets of~observations of~supernovae of~Type Ia by \textcite{riess} and~\textcite{1999ApJ...517..565P} suggested that the~expansion of~the~universe is accelerating. As standard forms of matter cause only attractive gravitational forces, which decelerate the expansion, some new kind of matter-energy is needed to overcome the gravity. This mysterious energy was named dark energy.
+% Two sets of~observations of~supernovae of~Type Ia by \textcite{riess} and~\textcite{1999ApJ...517..565P} suggested that the~expansion of~the~universe is accelerating. As standard forms of matter cause only attractive gravitational forces, which decelerate the expansion, some new kind of matter-energy is needed to overcome the gravity. This mysterious energy was named dark energy.
 
-\subsection{Cosmological constant problem}
 \label{ssec:lambda}
-The~standard cosmological \LCDM\ model described above is in~a~good agreement with~all measurements of~CMB \parencite{planck_cosm}, type Ia supernovae \parencite{Abbott_2019}, or BAO \parencite{BAO_results}. However, this concordance model, and~namely the~cosmological constant, has some significant fundamental problems. Usually, the~fine-tuning of~the~cosmological constant is presented as the~main issue but the~real issue with~the~cosmological constant is radiative instability, and~the~need to~\textbf{repeatedly} fine-tune whenever the~higher loop corrections are included. We will describe here only the~main idea behind these problems, for~a~more detailed overview see e.g. \textcite{2015arXiv150205296P,2012CRPhy..13..566M}.
+The~standard cosmological \LCDM\ model described above is in~a~good agreement with~all measurements of~CMB \parencite{planck_cosm}, type Ia supernovae \parencite{Abbott_2019}, or BAO \parencite{BAO_results}. However, this concordance model, and~namely the~cosmological constant, has some significant fundamental problems. Usually, the~fine-tuning of~the~cosmological constant is presented as the~main issue but the~real issue with~the~cosmological constant is radiative instability, and~the~need to~\textbf{repeatedly} fine-tune whenever the~higher loop corrections are included.% We will describe here only the~main idea behind these problems, for~a~more detailed overview see e.g. \textcite{2015arXiv150205296P,2012CRPhy..13..566M}.
 
-The~action of~the~general relativity, together with~the~action describing matter, is
-\eq{
-	\label{eq:S_GR}
-	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left(R-2\Lambda_B\right)+S_m[\psi_m;g_\uv]\,,
-}
-where $\Mpl\equiv(\sqrt{8\pi G})^{-1}$ is the~reduced Planck mass, $R$ is the~Ricci scalar (curvature), $\Lambda_B$ the~bare cosmological constant and~$S_m[\psi_m;g_\uv]$ represents the~action of~matter fields. The~first term $(R)$ is the~standard Einstein-Hilbert action. The~second term consists of the~\textit{bare} cosmological constant and~it is just a~new parameter of~the~total action. The cosmology constant in the action above is compatible with~the~principle of~general covariance and it is natural from the~relativistic point of view. The~third term in~the~action denotes the~generic matter action. Variation of~the~action \eqref{eq:S_GR} with~respect to~the~metric tensor $g\uv$ leads to~the~Einstein equations
-\eq{
-    R_\uv-\frac12Rg_\uv+\Lambda_Bg_\uv=\frac{1}{\Mpl^2}T_\uv\,,
-}
-where the~stress-energy tensor is defined by
-\eq{
-    T_\uv=-\frac{2}{\dg}\frac{\delta S_m}{\delta g^\uv}\,.
-}
-As shown by \textcite{1968SPhD...12.1040S}, the quantum field theory changes the~situation. The~stress-energy tensor of~a~field placed in~the~vacuum is given by
-\eq{
-    \left\langle0\left|T_\uv\right|0\right\rangle=-\rho\vac g_\uv\,,
-}
-where $\rho\vac$ is the~constant energy density of~the~vacuum. The~vacuum fluctuations are, therefore, just another form of~energy and as such, they must gravitate. If we take them into account,  the~Einstein equations read
-\eq{
-    R_\uv-\frac12Rg_\uv+\Lambda\eff g_\uv=\frac{1}{\Mpl^2}T_\uv\,,
-}
-where
-\eq{
-    \Lambda\eff=\Lambda_B+\frac{1}{\Mpl^2}\rho\vac\,.
-}
-The~effective cosmological constant $\Lambda\eff$ is the~sum of the~bare cosmological constant and~a~contribution from the~vacuum fluctuations. When making observations using the~Einstein equations, it is this effective cosmological constant that governs the results. Another~problem is that $\rho\vac$ includes several different terms, each of them huge in~comparison with~the~observed value of~$\Lambda\eff$ and~need to~be fine-tuned.
-\subsubsection{Phase Transitions}
+% The~action of~the~general relativity, together with~the~action describing matter, is
+% \eq{
+% 	\label{eq:S_GR}
+% 	S=\frac{\Mpl^2}{2}\int\dd^4x\dg\left(R-2\Lambda_B\right)+S_m[\psi_m;g_\uv]\,,
+% }
+% where $\Mpl\equiv(\sqrt{8\pi G})^{-1}$ is the~reduced Planck mass, $R$ is the~Ricci scalar (curvature), $\Lambda_B$ the~bare cosmological constant and~$S_m[\psi_m;g_\uv]$ represents the~action of~matter fields. The~first term $(R)$ is the~standard Einstein-Hilbert action. The~second term consists of the~\textit{bare} cosmological constant and~it is just a~new parameter of~the~total action. The cosmology constant in the action above is compatible with~the~principle of~general covariance and it is natural from the~relativistic point of view. The~third term in~the~action denotes the~generic matter action. Variation of~the~action \eqref{eq:S_GR} with~respect to~the~metric tensor $g\uv$ leads to~the~Einstein equations
+% \eq{
+%     R_\uv-\frac12Rg_\uv+\Lambda_Bg_\uv=\frac{1}{\Mpl^2}T_\uv\,,
+% }
+% where the~stress-energy tensor is defined by
+% \eq{
+%     T_\uv=-\frac{2}{\dg}\frac{\delta S_m}{\delta g^\uv}\,.
+% }
+% As shown by \textcite{1968SPhD...12.1040S}, the quantum field theory changes the~situation. The~stress-energy tensor of~a~field placed in~the~vacuum is given by
+% \eq{
+%     \left\langle0\left|T_\uv\right|0\right\rangle=-\rho\vac g_\uv\,,
+% }
+% where $\rho\vac$ is the~constant energy density of~the~vacuum. The~vacuum fluctuations are, therefore, just another form of~energy and as such, they must gravitate. If we take them into account,  the~Einstein equations read
+% \eq{
+%     R_\uv-\frac12Rg_\uv+\Lambda\eff g_\uv=\frac{1}{\Mpl^2}T_\uv\,,
+% }
+% where
+% \eq{
+%     \Lambda\eff=\Lambda_B+\frac{1}{\Mpl^2}\rho\vac\,.
+% }
+% The~effective cosmological constant $\Lambda\eff$ is the~sum of the~bare cosmological constant and~a~contribution from the~vacuum fluctuations. When making observations using the~Einstein equations, it is this effective cosmological constant that governs the results. Another~problem is that $\rho\vac$ includes several different terms, each of them huge in~comparison with~the~observed value of~$\Lambda\eff$ and~need to~be fine-tuned.
+% \subsubsection{Phase Transitions}
 \begin{sloppypar}
 Another problem with~fine-tuning of~the~cosmological constant comes from changes in~the~vacuum energy during phase transitions such as was the~electroweak phase transition. The~contribution to~the~vacuum energy coming from the~minimum of~a~potential of~some field, in~this case, the~Higgs field, changes as the~field takes its new position after the~transition. One can calculate this contribution \parencite{2012CRPhy..13..566M} and~for~the~mass of~the~Higgs boson $m_H=125$ GeV arrives at
 \end{sloppypar}
@@ -53,27 +53,27 @@ For~the~quantum chromodynamics transition, one can compute
     \rho\vac^{EW}\simeq10^{45}\rho\crit\,.
 }
 If we fine-tune the~vacuum energy to~be zero today it had to~be non-zero (and~huge) before each of~these transitions.
-\subsubsection{Zero-Point Energy Density}
-When we consider a~simple real free scalar field with~the~potential $V(\Phi)=2m^2\Phi^2/2)$ we will arrive at~the~vacuum energy
-\eq{
-    \left\langle \rho \right\rangle = \left\langle0\left|T_{00}\right|0\right\rangle=\frac{1}{2\pi^3}\frac12\int\dd^3k\sqrt{k^2+m^2}\,.
-}
-This contribution to~the~cosmological constant blows up in~the~ultra-violet regime and~is infinite. But this is nothing new in~the~quantum field theory. If we apply the~dimensional regularization \parencite{tHooft:1972tcz} and~subtract the~pole, as usual, one is left with~a~finite energy density of~the~vacuum
-\eq{
-    \left\langle \rho \right\rangle = \frac{m^4}{64\pi^2}\ln{\left(\frac{m^2}{\mu^2}\right)}\,,
-}
-where $\mu$ is a~regularization scale. We see that the~contribution is proportional to~the~fourth power of~the~mass of~the~particle and~therefore, e.g., the~photon does not contribute to~the~vacuum energy density. The~equation was derived for~the~free scalar field but similar contributions with~different pre-factors can be computed for~all other fields. The~overall vacuum energy density is then
-\eq{
-    \label{eq:vac_all}
-    \rho\vac=\sum_in_i\frac{m_i^4}{64\pi^4}\ln{\left(\frac{m_i^2}{\mu^2}\right)} + \rho_B + \rho\vac^{EW} + \rho\vac^{QCD}\,,
-}
-where $n_H=1$ stands for~the~Higgs boson, $n_f=4$ for~fermions and~$n_V=3$ for~massive vector fields. For~the~renormalization scale $\mu\simeq3\times10^{-25}$, as discussed in~\textcite{2011arXiv1105.6296K}, one calculates the~contribution from the~zero-point energy of~particles to~be  $\rho\vac\simeq-2\times10^8$ GeV$^4$
-\subsubsection{Radiative instability}
+% \subsubsection{Zero-Point Energy Density}
+% When we consider a~simple real free scalar field with~the~potential $V(\Phi)=2m^2\Phi^2/2)$ we will arrive at~the~vacuum energy
+% \eq{
+%     \left\langle \rho \right\rangle = \left\langle0\left|T_{00}\right|0\right\rangle=\frac{1}{2\pi^3}\frac12\int\dd^3k\sqrt{k^2+m^2}\,.
+% }
+% This contribution to~the~cosmological constant blows up in~the~ultra-violet regime and~is infinite. But this is nothing new in~the~quantum field theory. If we apply the~dimensional regularization \parencite{tHooft:1972tcz} and~subtract the~pole, as usual, one is left with~a~finite energy density of~the~vacuum
+% \eq{
+%     \left\langle \rho \right\rangle = \frac{m^4}{64\pi^2}\ln{\left(\frac{m^2}{\mu^2}\right)}\,,
+% }
+% where $\mu$ is a~regularization scale. We see that the~contribution is proportional to~the~fourth power of~the~mass of~the~particle and~therefore, e.g., the~photon does not contribute to~the~vacuum energy density. The~equation was derived for~the~free scalar field but similar contributions with~different pre-factors can be computed for~all other fields. The~overall vacuum energy density is then
+% \eq{
+%     \label{eq:vac_all}
+%     \rho\vac=\sum_in_i\frac{m_i^4}{64\pi^4}\ln{\left(\frac{m_i^2}{\mu^2}\right)} + \rho_B + \rho\vac^{EW} + \rho\vac^{QCD}\,,
+% }
+% where $n_H=1$ stands for~the~Higgs boson, $n_f=4$ for~fermions and~$n_V=3$ for~massive vector fields. For~the~renormalization scale $\mu\simeq3\times10^{-25}$, as discussed in~\textcite{2011arXiv1105.6296K}, one calculates the~contribution from the~zero-point energy of~particles to~be  $\rho\vac\simeq-2\times10^8$ GeV$^4$
+% \subsubsection{Radiative instability}
 The~one-loop contributions \eqref{eq:vac_all} to~the~vacuum energy can be fine-tuned via the~bare cosmological constant and~associated $\rho_B$. Even though the~cancellation has to~be very precise (one part in~$\sim10^{60}$) we can be fine with~this solution. Problems come with~two-loops correction which is not significantly suppressed with~respect to~the~one-loop contribution \parencite{2012CRPhy..13..566M}. The~cancellation imposed at~one-loop is spoilt and~one must retune the~finite contributions in~the~counterterm to~similar degree of~accuracy. If we go further, to~the~three loops, four loops, and~so on, we are required to~fine-tune each time to~extreme accuracy. This is radiative instability and~the~main cosmological constant problem.
 
-As we know that vacuum energy really does exist, as evidenced by the~Lamb shift \parencite{2020Physi...2..105M} or the~Casimir effect \parencite{2006BrJPh..36.1137F}, and~that this energy does gravitate, as indicated by measurements of~the~ratio of~gravitational mass to~inertial mass for~heavy nuclei \parencite{Braginskii:1971tn}, we should take the~radiative instability as a~serious problem regarding the~cosmological constant and~be willing to~look for~alternatives. Other reasons for~studying the~modifications of~gravity may include the~following \parencite{2006hep.th....1213N}. Modified gravity:
-\begin{itemize}
-	\item can provide natural unification of~the~early-time inflation and~late-time acceleration
-	\item can serve as the~basis for~a~unified explanation of~dark energy and~dark matter
-	\item is expected to~be useful in~high energy physics (e.g. for~the~explanation of~hierarchy problem or unification of~GUTs with~gravity)
-\end{itemize}
+As we know that vacuum energy really does exist, as evidenced by the~Lamb shift \parencite{2020Physi...2..105M} or the~Casimir effect \parencite{2006BrJPh..36.1137F}, and~that this energy does gravitate, as indicated by measurements of~the~ratio of~gravitational mass to~inertial mass for~heavy nuclei \parencite{Braginskii:1971tn}, we should take the~radiative instability as a~serious problem regarding the~cosmological constant and~be willing to~look for~alternatives.% Other reasons for~studying the~modifications of~gravity may include the~following \parencite{2006hep.th....1213N}. Modified gravity:
+% \begin{itemize}
+% 	\item can provide natural unification of~the~early-time inflation and~late-time acceleration
+% 	\item can serve as the~basis for~a~unified explanation of~dark energy and~dark matter
+% 	\item is expected to~be useful in~high energy physics (e.g. for~the~explanation of~hierarchy problem or unification of~GUTs with~gravity)
+% \end{itemize}
