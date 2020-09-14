@@ -27,7 +27,7 @@
 \renewcommand{\arraystretch}{1.5}
 
 %% Settings for~two-sided (duplex) printing
-\documentclass[12pt,a4paper,twoside,openright]{report}
+\documentclass[12pt,a4paper,twoside,openany]{report}
 \setlength\textwidth{145mm}
 \setlength\textheight{247mm}
 \setlength\oddsidemargin{14.2mm}
@@ -37,13 +37,13 @@
 \setlength\headheight{0mm}
 \let\openright=\cleardoublepage
 
-\let\cleardoublepage\relax
-\let\clearpage\relax
+% \let\cleardoublepage\relax
+% \let\clearpage\relax
 
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
-\makeatother
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+% \makeatother
 
 %% Character encoding: usually latin2, cp1250 or utf8:
 \usepackage[utf8]{inputenc}
@@ -193,17 +193,16 @@ Discovery of~the~accelerated expansion of~the~Universe poses a~major theoretical
 %%% Each chapter is kept in~a~separate file
 \include{chapters/preface}
 \include{chapters/cosmo_evol}
-% \include{chapters/modif_grav}
-% \include{chapters/cosmo_sim}
-% \include{chapters/approx_schemes}
-% \include{chapters/simulations_approx}
-% \include{chapters/cosmo_surveys}
-% \include{chapters/outlook}
-% \include{chapters/epilog}
+\include{chapters/modif_grav}
+\include{chapters/cosmo_sim}
+\include{chapters/approx_schemes}
+\include{chapters/simulations_approx}
+\include{chapters/outlook}
+\include{chapters/epilog}
 
 
 %%% Bibliography
-\cleardoublepage
+\clearpage
 \phantomsection
 \renewcommand{\bibname}{Bibliography}
 \addcontentsline{toc}{chapter}{\bibname}
@@ -220,7 +219,7 @@ Discovery of~the~accelerated expansion of~the~Universe poses a~major theoretical
 %\listoftables
 
 %%% Doctoral theses must contain a~list of~author's publications
-\cleardoublepage
+\clearpage
 \phantomsection
 \renewcommand{\bibname}{List of~publications}
 \addcontentsline{toc}{chapter}{\bibname}

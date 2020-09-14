@@ -2,105 +2,105 @@
 \label{chpt:app_sims}
 In~this chapter we present main results of~our research regarding approximation techniques and~the~possibility to~use these techniques in~studies of~modified gravity. Parts of~this chapter have been published in~\textcite{2020MNRAS.493.2085V}.
 
-% \section{Simulation parameters}
-We ran our simulations with~the~Planck \LCDM\ cosmology \parencite{planck_cosm}; its parameters are summarized in~\autoref{tab:cosmo_param}. We expect our results to~apply generically to~cosmologies that are not too far from this set of~parameter values.
-\begin{table}[!b]
-\centering
-% \vspace{-10mm}
-\begin{tabular}{ l c l }
-  \hline \hline
-  Hubble constant  [km s$^{-1}$ Mpc$^{-1}$] & $H_0$ & $67.74$ \\
-  Baryon density parameter & $\Omega_b$ & $0.0486$ \\
-  Matter density parameter & $\Omega_m$ & $0.3089$ \\
-  Total density parameter & $\Omega_{tot}$ & $1$ \\
-  Scalar spectral index & $n_s$ & $0.9667$ \\
-  Fluctuation amplitude at~$8\Mpch$ & $\sigma_8$ & $0.8159$ \\
-  \hline \hline
-\end{tabular}
-\caption{Planck Collaboration cosmological parameters \parencite{planck_cosm} used in~the~simulations.}
-\label{tab:cosmo_param}
-\end{table}
-The non-linear scale \eqref{eq:k_nl} for our chosen power spectrum is $k_{nl}=0.32~\hMpc$. The smoothing scale for TZA is suggested to be in the range from 1 to 1.5 times $k_{nl}$ so we ran the TZA simulations twice, once with $k_G=0.3~\hMpc$ and once with $k_G=0.5~\hMpc$. The results using $k_G=0.5~\hMpc$ proved to be better in terms of predicting the BAO features so we show only those results.
+% % \section{Simulation parameters}
+% We ran our simulations with~the~Planck \LCDM\ cosmology \parencite{planck_cosm}; its parameters are summarized in~\autoref{tab:cosmo_param}. We expect our results to~apply generically to~cosmologies that are not too far from this set of~parameter values.
+% \begin{table}[!b]
+% \centering
+% % \vspace{-10mm}
+% \begin{tabular}{ l c l }
+%   \hline \hline
+%   Hubble constant  [km s$^{-1}$ Mpc$^{-1}$] & $H_0$ & $67.74$ \\
+%   Baryon density parameter & $\Omega_b$ & $0.0486$ \\
+%   Matter density parameter & $\Omega_m$ & $0.3089$ \\
+%   Total density parameter & $\Omega_{tot}$ & $1$ \\
+%   Scalar spectral index & $n_s$ & $0.9667$ \\
+%   Fluctuation amplitude at~$8\Mpch$ & $\sigma_8$ & $0.8159$ \\
+%   \hline \hline
+% \end{tabular}
+% \caption{Planck Collaboration cosmological parameters \parencite{planck_cosm} used in~the~simulations.}
+% \label{tab:cosmo_param}
+% \end{table}
+% The non-linear scale \eqref{eq:k_nl} for our chosen power spectrum is $k_{nl}=0.32~\hMpc$. The smoothing scale for TZA is suggested to be in the range from 1 to 1.5 times $k_{nl}$ so we ran the TZA simulations twice, once with $k_G=0.3~\hMpc$ and once with $k_G=0.5~\hMpc$. The results using $k_G=0.5~\hMpc$ proved to be better in terms of predicting the BAO features so we show only those results.
 
-In the plots we use various abbreviations for compactness, while discussing the results of the simulations and the linear and non-linear predictions. These are summarized in \autoref{tab:plots_not}.
-\begin{table}[!b]
-\centering
-% \vspace{-10mm}
-\begin{tabular}{ll}
-  \hline \hline
-  \LCDM\ (lin) & prediction of the linear theory with standard gravity\\
-  \LCDM\ (nl) & prediction of the emulator with standard gravity\\
-  ZA, TZA, FFA, FPA & simulation run with given approximation and standard gravity\\
-  $\chi$ (psl) & simulation run with pseudo-linear prediction of modified gravity\\
-  $\chi$ (nl) & simulation run with non-linear solution of modified gravity\\
-  \hline \hline
-\end{tabular}
-\caption{Abbreviations used in the plots.}
-\label{tab:plots_not}
-\end{table}
+% In the plots we use various abbreviations for compactness, while discussing the results of the simulations and the linear and non-linear predictions. These are summarized in \autoref{tab:plots_not}.
+% \begin{table}[!b]
+% \centering
+% % \vspace{-10mm}
+% \begin{tabular}{ll}
+%   \hline \hline
+%   \LCDM\ (lin) & prediction of the linear theory with standard gravity\\
+%   \LCDM\ (nl) & prediction of the emulator with standard gravity\\
+%   ZA, TZA, FFA, FPA & simulation run with given approximation and standard gravity\\
+%   $\chi$ (psl) & simulation run with pseudo-linear prediction of modified gravity\\
+%   $\chi$ (nl) & simulation run with non-linear solution of modified gravity\\
+%   \hline \hline
+% \end{tabular}
+% \caption{Abbreviations used in the plots.}
+% \label{tab:plots_not}
+% \end{table}
 
-In~total, we ran and~analyzed 7117 simulations using different approximations, parameters of~the~simulation volume and~chameleon parameters. Their properties are described in~\autoref{tab:sim_param_ZA_TZA} -- \autoref{tab:cham_param_CHI_nl}.
+% In~total, we ran and~analyzed 7117 simulations using different approximations, parameters of~the~simulation volume and~chameleon parameters. Their properties are described in~\autoref{tab:sim_param_ZA_TZA} -- \autoref{tab:cham_param_CHI_nl}.
 
-\begin{landscape}
-\input{chapters/simulations_approx/params}
-\input{chapters/simulations_approx/params_chi}
-\end{landscape}
+% \begin{landscape}
+% \input{chapters/simulations_approx/params}
+% \input{chapters/simulations_approx/params_chi}
+% \end{landscape}
 
-\section{Results for~standard gravity}
-%%%%%%%%%%%%%%%%%%%%%%%
-% Matter power spectrum
-%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/simulations_approx/pwr_spec}
+% \section{Results for~standard gravity}
+% %%%%%%%%%%%%%%%%%%%%%%%
+% % Matter power spectrum
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \input{chapters/simulations_approx/pwr_spec}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-% Effective redshift
-%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/simulations_approx/z_eff}
+% %%%%%%%%%%%%%%%%%%%%%%%
+% % Effective redshift
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \input{chapters/simulations_approx/z_eff}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-% Correlation function
-%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/simulations_approx/corr_func}
+% %%%%%%%%%%%%%%%%%%%%%%%
+% % Correlation function
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \input{chapters/simulations_approx/corr_func}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-% Chameleon gravity
-%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/simulations_approx/chameleon}
+% %%%%%%%%%%%%%%%%%%%%%%%
+% % Chameleon gravity
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \input{chapters/simulations_approx/chameleon}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-% Discussion
-%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion}
-\label{sec:disc}
-In this chapter, we studied different approximation schemes and tested their usefulness as fast alternatives to full \nbodysim s. The results for ZA and TZA are as expected. Both of these approximations may be used to make very fast predictions (no need for trajectory integration). Speed (and other computation resources) is the main advantage of ZA and TZA but at the cost of reduced accuracy. We saw that they predict very good results on large scales $(k<10^{-2}~\hMpc)$ but structures on smaller scales are smeared out due to the line-crossing. TZA proved to work better on these smaller scales but at the cost of loss of sub-structures.
+% %%%%%%%%%%%%%%%%%%%%%%%
+% % Discussion
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \section{Discussion}
+% \label{sec:disc}
+% In this chapter, we studied different approximation schemes and tested their usefulness as fast alternatives to full \nbodysim s. The results for ZA and TZA are as expected. Both of these approximations may be used to make very fast predictions (no need for trajectory integration). Speed (and other computation resources) is the main advantage of ZA and TZA but at the cost of reduced accuracy. We saw that they predict very good results on large scales $(k<10^{-2}~\hMpc)$ but structures on smaller scales are smeared out due to the line-crossing. TZA proved to work better on these smaller scales but at the cost of loss of sub-structures.
 
-FFA and FPA have better results on our scales of interest -- they predict better location and width of the BAO peak for redshifts $z\gtrsim0.5$ than ZA or TZA. Their main disadvantage compared to the ZA or TZA is speed because we need to integrate the whole trajectory through the frozen field (velocity or gravitational potential). Although they are slower than ZA and TZA, they are still much faster than full \nbodysim s. Because we do not need to compute the short range force and the density field at each time-step and the surrounding field remains (almost) constant, we can use much larger time-steps than in full \nbodysim s. Because particles do not \textit{see} each other, we can integrate their paths independently -- from the starting redshift to the final one with adaptive time-step which can further improve the overall speed and accuracy.
+% FFA and FPA have better results on our scales of interest -- they predict better location and width of the BAO peak for redshifts $z\gtrsim0.5$ than ZA or TZA. Their main disadvantage compared to the ZA or TZA is speed because we need to integrate the whole trajectory through the frozen field (velocity or gravitational potential). Although they are slower than ZA and TZA, they are still much faster than full \nbodysim s. Because we do not need to compute the short range force and the density field at each time-step and the surrounding field remains (almost) constant, we can use much larger time-steps than in full \nbodysim s. Because particles do not \textit{see} each other, we can integrate their paths independently -- from the starting redshift to the final one with adaptive time-step which can further improve the overall speed and accuracy.
 
-In FFA and FPA, structures grow more slowly than in the case of the linear theory. This feature of the approximations can be fixed through mapping of the simulation time and real time. With this fix, structures grow on all scales (there is no smearing on small scales as in the case of ZA/TZA) and there are even non-linear features in the power spectrum. We also showed that this slower growth is not due to the insufficient number of time-steps as may be the case for standard PM simulations. Summary of the achieved accuracy is shown in \autoref{tab:err}.
+% In FFA and FPA, structures grow more slowly than in the case of the linear theory. This feature of the approximations can be fixed through mapping of the simulation time and real time. With this fix, structures grow on all scales (there is no smearing on small scales as in the case of ZA/TZA) and there are even non-linear features in the power spectrum. We also showed that this slower growth is not due to the insufficient number of time-steps as may be the case for standard PM simulations. Summary of the achieved accuracy is shown in \autoref{tab:err}.
 
-All approximations can predict the BAO peak location to a 1\% accuracy at $z=0.5$, comparing to a non-linear theory. However, ZA and TZA predict the smoothing of the peak stronger than non-linear evolution \parencite[see, e.g.,][]{2007ApJ...664..660E, 2014JCAP...02..042S} whereas FFA and FPA weaker. All approximations predict lower amplitude and narrower width of the peak than linear theory (smoothing). ZA and TZA predict a wider peak, while FPA and FFA a narrower one, as compared to the $N$-body prediction. Compared to the amplitude of the BAO peak of the $N$-body prediction ZA and TZA give the best results for low $z$. However, for higher redshifts $z>1$, FFA and FPA give better amplitude, location and width.
-\begin{table}
-\centering
-\input{img/simulations_approx/data/precision}
-\caption
-{Errors of different approximation schemes at the redshift $z=0.5$. $P_1(k)$ corresponds to an error at scale $k = 0.1~\hMpc$ and $P_2(k)$ at scale $k = 0.2~\hMpc$. Amp, loc and width are errors of the BAO peak.}
-\label{tab:err}
-\end{table}
+% All approximations can predict the BAO peak location to a 1\% accuracy at $z=0.5$, comparing to a non-linear theory. However, ZA and TZA predict the smoothing of the peak stronger than non-linear evolution \parencite[see, e.g.,][]{2007ApJ...664..660E, 2014JCAP...02..042S} whereas FFA and FPA weaker. All approximations predict lower amplitude and narrower width of the peak than linear theory (smoothing). ZA and TZA predict a wider peak, while FPA and FFA a narrower one, as compared to the $N$-body prediction. Compared to the amplitude of the BAO peak of the $N$-body prediction ZA and TZA give the best results for low $z$. However, for higher redshifts $z>1$, FFA and FPA give better amplitude, location and width.
+% \begin{table}
+% \centering
+% \input{img/simulations_approx/data/precision}
+% \caption
+% {Errors of different approximation schemes at the redshift $z=0.5$. $P_1(k)$ corresponds to an error at scale $k = 0.1~\hMpc$ and $P_2(k)$ at scale $k = 0.2~\hMpc$. Amp, loc and width are errors of the BAO peak.}
+% \label{tab:err}
+% \end{table}
 
-The broadening and shift of the acoustic peak due to the non-linear evolution of structures can be reduced by reconstruction techniques \parencite{2007ApJ...664..675E}. A widely used technique is based on ZA, as described in \textcite{10.1111/j.1365-2966.2012.21888.x}. As FFA and FPA are closer to the non-linear evolution than ZA or TZA, they could potentially be used for similar purposes.
+% The broadening and shift of the acoustic peak due to the non-linear evolution of structures can be reduced by reconstruction techniques \parencite{2007ApJ...664..675E}. A widely used technique is based on ZA, as described in \textcite{10.1111/j.1365-2966.2012.21888.x}. As FFA and FPA are closer to the non-linear evolution than ZA or TZA, they could potentially be used for similar purposes.
 
-Different approximation methods -- Lagrangian perturbation theory (LPT) up to third order (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{1993MNRAS.260..765C}), Augumented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) and COLA -- have been tested in \textcite{2017JCAP...07..050M}, see \autoref{fig:app_compare}. Our results for ZA and TZA match theirs (on the basis of matter power spectrum accuracy at the scale $k=0.1~\Mpch$ and $k=0.2~\Mpch$, see \autoref{tab:err}). Our results for FFA and FPA show that they do better than 2LPT ($\sim5\%$ error of $P(k)$ at $k=0.1~\Mpch$ at $z=0.5$) and T2LPT $(\sim10\%)$, while having a similar accuracy as compared to 3LPT $(\sim1\%)$, A2LPT $(\sim1\%)$, A3LPT $(\sim2\%)$ and MUSCLE 2LPT $(\sim1\%)$. As expected, the particle-mesh code COLA gives the best results, especially at later time $(z=0)$.
+% Different approximation methods -- Lagrangian perturbation theory (LPT) up to third order (\cite{10.1093/mnras/264.2.375}), Truncated LPT (\cite{1993MNRAS.260..765C}), Augumented LPT (\cite{10.1093/mnrasl/slt101}), MUSCLE (\cite{10.1093/mnrasl/slv141}) and COLA -- have been tested in \textcite{2017JCAP...07..050M}, see \autoref{fig:app_compare}. Our results for ZA and TZA match theirs (on the basis of matter power spectrum accuracy at the scale $k=0.1~\Mpch$ and $k=0.2~\Mpch$, see \autoref{tab:err}). Our results for FFA and FPA show that they do better than 2LPT ($\sim5\%$ error of $P(k)$ at $k=0.1~\Mpch$ at $z=0.5$) and T2LPT $(\sim10\%)$, while having a similar accuracy as compared to 3LPT $(\sim1\%)$, A2LPT $(\sim1\%)$, A3LPT $(\sim2\%)$ and MUSCLE 2LPT $(\sim1\%)$. As expected, the particle-mesh code COLA gives the best results, especially at later time $(z=0)$.
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.9\textwidth]{cosmo_evol/app_compare.png}
-  \caption{Power spectrum at~$z = 0,\ 0.5$, and~$1$ (top, middle, and~bottom panels, respectively) in~real space and~ratio with~the~\nbody’s one for~the~matter field (left panels) and~the~halo catalogs (right panels). The~vertical dashed line locates the~$k = 0.5\hMpc$ where the~one-halo term becomes significant. The~vertical shaded area locates the~region of~the~BAO peak, while the~horizontal one locates the~1\% accuracy region.  \textit{Note:} Reprinted from \textcite{2017JCAP...07..050M}.}
-  \label{fig:app_compare}
-\end{figure}
-When we applied the FPA to chameleon gravity we saw that the spatial resolution of simulations has a great impact on the resulting power spectra (on small scales). In our code, we used a fixed-size mesh. However, when entering the screening regime where high resolution is key, the use of an adaptive mesh would be a better approach. Note that the limitations of the approximations on small scales must be taken into account. This limits the highest possible resolution to $k\sim1~\Mpch$ that is still reasonable to use.
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{cosmo_evol/app_compare.png}
+%   \caption{Power spectrum at~$z = 0,\ 0.5$, and~$1$ (top, middle, and~bottom panels, respectively) in~real space and~ratio with~the~\nbody’s one for~the~matter field (left panels) and~the~halo catalogs (right panels). The~vertical dashed line locates the~$k = 0.5\hMpc$ where the~one-halo term becomes significant. The~vertical shaded area locates the~region of~the~BAO peak, while the~horizontal one locates the~1\% accuracy region.  \textit{Note:} Reprinted from \textcite{2017JCAP...07..050M}.}
+%   \label{fig:app_compare}
+% \end{figure}
+% When we applied the FPA to chameleon gravity we saw that the spatial resolution of simulations has a great impact on the resulting power spectra (on small scales). In our code, we used a fixed-size mesh. However, when entering the screening regime where high resolution is key, the use of an adaptive mesh would be a better approach. Note that the limitations of the approximations on small scales must be taken into account. This limits the highest possible resolution to $k\sim1~\Mpch$ that is still reasonable to use.
 
-For studying large scales $(k\lesssim0.1~\hMpc)$ both pseudo-linear and non-linear prediction had very similar results. We saw that the pseudo-linear solution to chameleon equations generally predicts a greater effect of the fifth force than the non-linear solution on smaller scales. On small scales $(k\gtrsim1~\hMpc)$ the difference between the pseudo-linear and non-linear solutions became more apparent in the screening regime. The scale when this transition happens tells us where the results of linear prediction are still sufficient and when the linear prediction breaks down.
+% For studying large scales $(k\lesssim0.1~\hMpc)$ both pseudo-linear and non-linear prediction had very similar results. We saw that the pseudo-linear solution to chameleon equations generally predicts a greater effect of the fifth force than the non-linear solution on smaller scales. On small scales $(k\gtrsim1~\hMpc)$ the difference between the pseudo-linear and non-linear solutions became more apparent in the screening regime. The scale when this transition happens tells us where the results of linear prediction are still sufficient and when the linear prediction breaks down.
 
-The overall success of FFA and FPA when predicting the movement of particles reveals that linear predictions of potentials can lead to good results. This could also be applied to a non-linear solver for the chameleon equations where the linear prediction is relatively close to the non-linear one on large scales and at early times. For now, at each time-step we recomputed the chameleon field. But in principle we can compute the chameleon field only once in a while -- depending on the background chameleon values and the number of regions in the screened regime -- and evolve the chameleon field according to the linear theory in between.
+% The overall success of FFA and FPA when predicting the movement of particles reveals that linear predictions of potentials can lead to good results. This could also be applied to a non-linear solver for the chameleon equations where the linear prediction is relatively close to the non-linear one on large scales and at early times. For now, at each time-step we recomputed the chameleon field. But in principle we can compute the chameleon field only once in a while -- depending on the background chameleon values and the number of regions in the screened regime -- and evolve the chameleon field according to the linear theory in between.
 
-To sum up, we showed that simple methods like FFA and FPA, which are very easy to implement even for modified theories of gravity, can predict results at BAO scales that are comparable with significantly more complex methods such as second-order Lagrangian perturbation theory. This makes their further study worthwhile, including implementations for other modified gravity models.
+% To sum up, we showed that simple methods like FFA and FPA, which are very easy to implement even for modified theories of gravity, can predict results at BAO scales that are comparable with significantly more complex methods such as second-order Lagrangian perturbation theory. This makes their further study worthwhile, including implementations for other modified gravity models.
