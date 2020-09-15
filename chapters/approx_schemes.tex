@@ -1,13 +1,13 @@
 \chapter{Approximation Schemes}
 \label{chpt:app_schemes}
-In~this chapter we introduce different approximation methods that we use in~our numerical simulations.% We will go over equations governing their behavior and~we also briefly mention some other approximations that were used in~the~past.
+% In~this chapter we introduce different approximation methods that we use in~our numerical simulations.% We will go over equations governing their behavior and~we also briefly mention some other approximations that were used in~the~past.
 
 \section{Motivation}
-Various approximations in~different scientific fields have always been studied in~detail. Many non-linear equations cannot be solved analytically and~one can hope to~achieve at~least some results using linearization or other perturbation theories of~higher-order. Cosmological simulations are no exception. From the~beginning of~first attempts to~simulate clustering of~matter on~large scales in~the~late '60s the~approximate methods were developed to~help understand the~dynamics of~the~Universe. The~greatest pioneering efforts to~improve and~validate these approximate methods have been undertaken in~the~'90s.
+% Various approximations in~different scientific fields have always been studied in~detail.
+Many non-linear equations cannot be solved analytically and~one can hope to~achieve at~least some results using linearization or other perturbation theories of~higher-order and~cosmological simulations are no exception. %From the~beginning of~first attempts to~simulate clustering of~matter on~large scales in~the~late '60s the~approximate methods were developed to~help understand the~dynamics of~the~Universe. The~greatest pioneering efforts to~improve and~validate these approximate methods have been undertaken in~the~'90s.
+These analytic or semi-analytic methods can be used to~understand the~otherwise very complicated problem of~structure formation. %Instead of~running a~simulation ``blindly'' and~trying to~analyze them phenomenologically one can compare these simulations with~much better understood approximate methods.
 
-These analytic or semi-analytic methods can be used to~understand the~otherwise very complicated problem of~structure formation. Instead of~running a~simulation ``blindly'' and~trying to~analyze them phenomenologically one can compare these simulations with~much better understood approximate methods.
-
-Besides the~usefulness of~approximations in~getting an~insight into gravitational evolution, they are very helpful in~getting a~large number of~simulations quickly. In~order to~study BAO, one needs a~high number of~simulations with~very large volume and~a~high number of~particles which requires demanding resources. The~BAO scale is of~particular interest to~us as it lies between the~linear regime which can be studied analytically and~the~highly non-linear regime of~halo formation which requires precise \nbodysim s. The~semi-analytical methods are expected to~work very well in~this regime.
+Besides the~usefulness of~approximations in~getting an~insight into gravitational evolution, they are very helpful in~getting a~large number of~simulations quickly. In~order to~study BAO, one needs a~high number of~simulations with~very large volume and~a~high number of~particles which requires demanding resources. The~BAO scale is of~particular interest to~us as it lies between the~linear regime which can be studied analytically and~the~highly non-linear regime of~halo formation which requires precise \nbodysim s. %The~semi-analytical methods are expected to~work very well in~this regime.
 
 % In~this chapter, we describe several approximations that have been studied in~the~past -- Zel'dovich approximation and~its \textit{truncated} extension, frozen-flow approximation, and~frozen-potential approximation. The~Zel'dovich approximation has been studied extensively in~the~past and~here we use it mainly as a~reference for~comparison in~the~context of~the~other approximations.
 % 
@@ -57,9 +57,7 @@ Besides the~usefulness of~approximations in~getting an~insight into gravitationa
 % % Zel'dovich Approximation
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zel'dovich approximation}
-The~Zel'dovich approximation \parencite[hereafter ZA;][]{1970A&A.....5...84Z} bears its name after a~pioneer in~the~study of~large-scale structure, a~Soviet physicist Yakov Zel'dovich. The~ZA provides an~intuitive way to~understand the~emergence of~filamentary structures (cosmic web) and~can realize the~model of~non-linear structure formation even though it is based only on~linear approximations \parencite{2014MNRAS.439.3630W}. The~Zel’dovich approximation predicts the~rich structure of~voids, clusters, sheets, and~filaments observed in~the~Universe.
-
-The~ZA is based on~an~ansatz that particles move in~straight lines in~the~Lagrangian frame
+The~Zel'dovich approximation \parencite[hereafter ZA;][]{1970A&A.....5...84Z} provides an~intuitive way to~understand the~emergence of~filamentary structures and~can realize the~model of~non-linear structure formation \parencite{2014MNRAS.439.3630W}. The~ZA is based on~an~ansatz that particles move in~straight lines in~the~Lagrangian frame
 \eq{
 	\mb x(\mb q, a) = \mb q - D(a)\mb\nabla \phi_V(\mb q)\,.
 }
@@ -134,16 +132,7 @@ where $\mb q$ are the~initial positions (Eulerian coordinates) of~a~particle and
 % % Truncated Zel'dovich Approximation
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Truncated Zel'dovich approximation}
-The~shell-crossing and~diffusion of~particles on~small scales in~ZA happens the~sooner the~more power there is on~small scales. \textcite{1993MNRAS.260..765C} suggested an~improvement of~the~ZA by removing power on~these small non-linear scales, i.e. to~set the~initial power spectrum to~zero for~wave-numbers $k$ greater than a~non-linear scale $k_{nl}$ defined as
-\eq{
-\label{eq:k_nl}
-    \frac{a^2(t)}{2\pi^2}\int_0^{k_{nl}}P(k)\dd k=1\,,
-}
-where the~power spectrum $P(k)$ was defined in~\eqref{eq:pk}. \textcite{doi:10.1093/mnras/269.3.626} further improved this truncation by applying a~Gaussian window instead of~an~abrupt cutoff
-\eq{
-W(k)=e^{-k^2/2k^2_{G}}\,,
-}
-where the~smoothing scale $k_{G}$ is 1 to~1.5 times $k_{nl}$. This filtering leads to~the~so-called truncated Zel'dovich approximation (TZA). This removes most of~the~strongly non-linear behavior and~allows the~Zel’dovich pancakes to~be seen.
+The~shell-crossing and~diffusion of~particles on~small scales in~ZA happens the~sooner the~more power there is on~small scales. \textcite{1993MNRAS.260..765C} suggested an~improvement of~the~ZA by removing power on~these small non-linear scales, i.e. to~set the~initial power spectrum to~zero for~wave-numbers $k$ greater than some non-linear scale $k_{nl}$. \textcite{doi:10.1093/mnras/269.3.626} further improved this truncation by applying a~Gaussian window instead of~an~abrupt cutoff. This filtering leads to~the~so-called truncated Zel'dovich approximation (TZA). This removes most of~the~strongly non-linear behavior and~allows the~Zel’dovich pancakes to~be seen.
 
 % In~\autoref{fig:slice_dens_TZA} we show a~comparison of~the~simulations with~TZA at~four different redshifts through the~projected density field. We see clear differences in~comparison with~ZA. Large-scale structures evolve similarly to~ZA but we see clear artifacts on~small scales given by artificial cutoff at~these scales. These small-scale structures in~filaments are not so diluted as in~the~case of~ZA, however, a~lot of~particles remain in~voids where they are frozen due to~the~lack of~the~initial kick.
 
@@ -194,14 +183,15 @@ The~velocity field $\tilde{\mb u}$ is frozen at~each point to~its initial value,
 % \end{itemize}
 % }
 
-The~definition \eqref{eq:FFA_orig} is, however, no longer valid in~the~general \LCDM\ cosmology where even in~the~linear regime both gravitational potential and~velocity field undergo evolution. We generalize FFA for~the~\LCDM\ cosmology by adding an~extra time dependence in~equation \eqref{eq:FFA_orig}
-\eq{
-	\label{eq:FFA}
-	\mb u\FFA(\mb x, a) = -\dddd D a(a)\nabla\phi_V(\mb x)\,.
-}
-This velocity field solves \eqref{eq:motion_LCDM} exactly, due to~the~definition of~the~growth factor and~its relation to~the~velocity field in~the~linear regime (see equation \eqref{eq:continuity_a}).
+% The~definition \eqref{eq:FFA_orig} is, however, no longer valid in~the~general \LCDM\ cosmology where even in~the~linear regime both gravitational potential and~velocity field undergo evolution. We generalize FFA for~the~\LCDM\ cosmology by adding an~extra time dependence in~equation \eqref{eq:FFA_orig}
+% \eq{
+% 	\label{eq:FFA}
+% 	\mb u\FFA(\mb x, a) = -\dddd D a(a)\nabla\phi_V(\mb x)\,.
+% }
+% This velocity field solves \eqref{eq:motion_LCDM} exactly, due to~the~definition of~the~growth factor and~its relation to~the~velocity field in~the~linear regime (see equation \eqref{eq:continuity_a}).
 
-Although equation \eqref{eq:FFA} now does not represent a~\textit{frozen} flow, particles still move along the~same characteristic curves as in~EdS, just with~different velocities. The~particle trajectories are described by the~integral equation
+% Although equation \eqref{eq:FFA} now does not represent a~\textit{frozen} flow, particles still move along the~same characteristic curves as in~EdS, just with~different velocities.
+The~particle trajectories are described by the~integral equation
 \eq{
 	\label{eq:FFA_int}
 	\mb x(a) = \mb q + \int_0^a\dd \tilde a\mb u\FFA(\mb x(\tilde a), \tilde a)\,.
@@ -235,16 +225,16 @@ Although equation \eqref{eq:FFA} now does not represent a~\textit{frozen} flow, 
 % % Frozen-potential Approximation
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Frozen potential approximation}
-The~frozen-potential approximation (FPA) was introduced by \textcite{1994MNRAS.266..227B}. They exploit the~fact that the~gravitational potential changes much more slowly than the~density contrast, and~hence may be viewed as essentially frozen. Moreover, like the~velocity potential in~FFA is more sensitive to~large wavelength modes, this is doubly true for~gravitational potential. They solved equation \eqref{eq:motion_EdS} at~each time-step with~the~initial (constant) gravitational potential. In~\LCDM
+The~frozen-potential approximation (FPA) was introduced by \textcite{1994MNRAS.266..227B}. They use the~fact that the~gravitational potential changes much more slowly than the~density contrast, and~hence may be viewed as essentially frozen. They solved equation \eqref{eq:motion_EdS} at~each time-step with~the~initial (constant) gravitational potential. In~\LCDM
 \eq{
 	\label{eq:FPA}
-	\dddd{\mb u\FPA}{a} &= -\frac{3}{2a}\left[\mb u\FPA(\mb x,a)\left(1+\Omega_\Lambda(a)\right) + \frac D a \nabla\phi_V(\mb x)\left(1-\Omega_\Lambda(a)\right)\right]
+	\dddd{\mb u\FPA}{a} &= -\frac{3}{2a}\left[\mb u\FPA(\mb x,a)\left(1+\Omega_\Lambda(a)\right) + \frac D a \nabla\phi_V(\mb x)\left(1-\Omega_\Lambda(a)\right)\right]\,.
 }
-and~the~particle trajectories are given as in~the~case of~FFA\,
-\eq{
-	\mb x(a) = \mb q + \int_0^a\dd \tilde a\mb u\FPA(\mb x(\tilde a), \tilde a)~.
-}
-Particles now follow the~linear \textit{gravitational} potential (which evolves slightly in~\LCDM) instead of~the~initial \textit{velocity} potential as in~the~case of~FFA. Equation \eqref{eq:FPA} drives the~particle velocities (approximately) to~the~velocities of~FFA but unlike in~the~FFA, particles now keep their inertia. Same as in~the~case of~FFA, the~particles tend to~move along the~pancakes towards regions of~lower potential. The~acceleration used in~FPA is largest in~regions where the~instantaneous velocity vector points along the~gradient of~the~potential, as happen for~particles after they cross the~pancake. In~FFA the~inertia of~particles is ignored, whereas in~the~Zel'dovich approximation inertia is assumed to~dominate over the~change in~the~force field. FPA takes into consideration both factors but assumes a~constant potential.
+% and~the~particle trajectories are given as in~the~case of~FFA\,
+% \eq{
+% 	\mb x(a) = \mb q + \int_0^a\dd \tilde a\mb u\FPA(\mb x(\tilde a), \tilde a)~.
+% }
+Particles now follow the~linear \textit{gravitational} potential (which evolves slightly in~\LCDM) instead of~the~initial \textit{velocity} potential as in~the~case of~FFA. Unlike in~the~FFA, particles now keep their inertia.% Same as in~the~case of~FFA, the~particles tend to~move along the~pancakes towards regions of~lower potential. The~acceleration used in~FPA is largest in~regions where the~instantaneous velocity vector points along the~gradient of~the~potential, as happen for~particles after they cross the~pancake. In~FFA the~inertia of~particles is ignored, whereas in~the~Zel'dovich approximation inertia is assumed to~dominate over the~change in~the~force field. FPA takes into consideration both factors but assumes a~constant potential.
 
 % In~\autoref{fig:slice_dens_FPA} we show a~comparison of~the~simulations with~FPA at~four different redshifts through the~projected density field. At~the~first sight, it looks similarly as in~the~case of~FFA, especially at~early times. For~$z=\zthree, \zfour$ we can see the~differences due to~the~fact that particles have an~inertia and~resulting structures are not so elongated as in~the~case of~FFA.
 % \begin{figure*}[!htbp]
@@ -275,9 +265,7 @@ Particles now follow the~linear \textit{gravitational} potential (which evolves 
 % % Particle-mesh simulation
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle-mesh simulation}
-For~comparison with~other approximations, we also implemented the~particle-mesh code, i.e. a~simulation where the~gravitation potential evolves according to~the~current position of~particles but the~particles feel only this long-range force without any short-range forces (for~details see \autoref{sec:PM}). The~particles move according to~the~equation of~motion \eqref{eq:motion_LCDM} and~the~gravitational potential evolve according to~Poisson equation \eqref{eq:lin_per_c}.
-
-In~\autoref{fig:slice_dens_all} we show a~comparison of~all approximation methods with~PM at~$z=0$ through the~projected density field. Here we can see side-by-side the~main differences between individual approximation methods: ZA with~diluted small-scale structures, TZA with~(almost) frozen small-scale structures, FFA and~FPA with~elongated structures. We see that PM simulation has more concentrated filaments but also more particles in~voids than ZA, FFA, and~FPA.
+For~comparison with~other approximations, we also implemented the~particle-mesh code. In~\autoref{fig:slice_dens_all} we show a~comparison of~all approximation methods with~PM at~$z=0$ through the~projected density field. Here we can see side-by-side the~main differences between individual approximation methods: ZA with~diluted small-scale structures, TZA with~(almost) frozen small-scale structures, FFA and~FPA with~elongated structures. We see that PM simulation has more concentrated filaments but also more particles in~voids than ZA, FFA, and~FPA.
 % \afterpage{%
 \begin{figure*}[!htbp]
 	\thisfloatpagestyle{empty}
@@ -314,33 +302,33 @@ In~\autoref{fig:slice_dens_all} we show a~comparison of~all approximation method
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Approximation methods in~modified gravity
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Approximation methods in~modified gravity}
-Here we remind the~basic chameleon equations we want to~solve numerically. The~non-linear Poisson equation
-\eq{
-\label{eq:cham_u_cp}
-	\Delta\left(\chi/\chi_a\right)= C_\chi(a)\left[1+\delta-\left(\frac{\chi_a}{\chi}\right)^{1-n}\right]\,,
-}
-where
-\eq{
-	C_\chi(a)\equiv\frac{3H_0^2\Omega_m}{2\Phiscrz}a^{-3\frac{2-n}{1-n}}=\left(a\mu\Phiscra\right)^{-1}\,,
-}
-the~linear solution in~$k-$space
-\eq
-{
-\label{eq:chi_lin_k_cp}
-	\hat{\chi}(k)=-\frac{\chi_a}{1-n}\frac{m^2}{m^2+k^2}\hat{\delta}(k) = -\frac{\beta\bar\rho_m}{\Mpl}\frac{\hat{\delta}(k)}{k^2+m^2}\,.
-}
-where the~mass of~the~chameleon field is
-\eq{
-    \label{eq:chi_m_cp}
-	m^2(a)\equiv\frac{1-n}{a\mu\Phiscra}\,,
-}
-and~the~screened solution inside massive objects
-\eq{
-	\chi=\frac{\chi_a}{\left(1+\delta\right)^{1/(1-n)}}\,.
-	\label{eq:chi_bulk_cp}
-}
-We use the linear prediction in~$(\mb k, a)$-space \eqref{eq:chi_lin_k_cp} to get a pseudo-linear solution since it can address some effects of~the~screening mechanism. The~non-linear solution \eqref{eq:cham_u_cp} is an~expensive choice but, unlike other methods, this one can address the~screening regime inside and~near massive objects.
+% \section{Approximation methods in~modified gravity}
+% Here we remind the~basic chameleon equations we want to~solve numerically. The~non-linear Poisson equation
+% \eq{
+% \label{eq:cham_u_cp}
+% 	\Delta\left(\chi/\chi_a\right)= C_\chi(a)\left[1+\delta-\left(\frac{\chi_a}{\chi}\right)^{1-n}\right]\,,
+% }
+% where
+% \eq{
+% 	C_\chi(a)\equiv\frac{3H_0^2\Omega_m}{2\Phiscrz}a^{-3\frac{2-n}{1-n}}=\left(a\mu\Phiscra\right)^{-1}\,,
+% }
+% the~linear solution in~$k-$space
+% \eq
+% {
+% \label{eq:chi_lin_k_cp}
+% 	\hat{\chi}(k)=-\frac{\chi_a}{1-n}\frac{m^2}{m^2+k^2}\hat{\delta}(k) = -\frac{\beta\bar\rho_m}{\Mpl}\frac{\hat{\delta}(k)}{k^2+m^2}\,.
+% }
+% where the~mass of~the~chameleon field is
+% \eq{
+%     \label{eq:chi_m_cp}
+% 	m^2(a)\equiv\frac{1-n}{a\mu\Phiscra}\,,
+% }
+% and~the~screened solution inside massive objects
+% \eq{
+% 	\chi=\frac{\chi_a}{\left(1+\delta\right)^{1/(1-n)}}\,.
+% 	\label{eq:chi_bulk_cp}
+% }
+% We use the linear prediction in~$(\mb k, a)$-space \eqref{eq:chi_lin_k_cp} to get a pseudo-linear solution since it can address some effects of~the~screening mechanism. The~non-linear solution \eqref{eq:cham_u_cp} is an~expensive choice but, unlike other methods, this one can address the~screening regime inside and~near massive objects.
 
 % When applying the~approximation methods to~the~chameleon equations, we have three choices on~how to~arrive at~an~approximate solution:
 % \begin{enumerate}

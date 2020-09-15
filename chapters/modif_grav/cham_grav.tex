@@ -227,6 +227,27 @@ The~chameleon obeys the~equation of~motion \eqref{eom:cham} which reduces for~ou
 \label{eq:cham_husa}
 	\Delta \chi = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}
 }
+Equation \eqref{eq:cham_husa} has a~linear solution in~$k-$space
+\eq
+{
+\label{eq:chi_lin_k_cp}
+	\hat{\chi}(k) = -\frac{\beta\bar\rho_m}{\Mpl}\frac{\hat{\delta}(k)}{k^2+m^2}\,.
+}
+where the~mass of~the~chameleon field is
+\eq{
+    \label{eq:chi_m_cp}
+	m^2(a)\equiv\frac{1-n}{a\mu\Phiscra}\,,
+}
+the~background value at~a~given time (for~a~matter-dominated universe)
+\eq{
+	\chi_a(a)\equiv \chi_0 a^{3/(1-n)}
+}
+and~the~screened solution inside massive objects
+\eq{
+	\chi=\frac{\chi_a}{\left(1+\delta\right)^{1/(1-n)}}\,.
+	\label{eq:chi_bulk_cp}
+}
+In~our cosmological simulations, we use the linear prediction in~$(\mb k, a)$-space \eqref{eq:chi_lin_k_cp} to get a pseudo-linear solution since it can address some effects of~the~screening mechanism. The~non-linear solution of \eqref{eq:cham_husa} is expensive, but, unlike other methods, can address the~screening regime inside and~near massive objects.
 % We rescale the~equations to~units in~which we can clearly see the~role of~the~screening potential $\Phiscr$ and~its relation to~the~gravitational potential $\Phi_G$. We start by defining a~few special values of~the~chameleon potential -- the~current background value
 % \eq{
 % 	\chi_0\equiv2\beta\Mpl\Phiscrz\,,
