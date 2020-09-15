@@ -18,7 +18,7 @@
 \section{Formation and~evolution of~LSS}
 The~background cosmological evolution is obtained by solving the~zeroth order Einstein equations and~is given by the~Friedmann equations. The~first-order equations are given by the~perturbation of~the~Einstein tensor and~by the~perturbed energy-momentum tensor.
 
-We will be working in~comoving coordinates -- the~comoving position $\mb x$ is defined in~terms of~the~proper position coordinate $\mb r = a\mb x$. The~comoving velocity $\mb v$ is then defined as a~derivative with~respect to~cosmic time $t$, $\mb v = \dot{\mb x}$, where the~overdot denotes a~time derivative. Particles move in~the~Newtonian gravitational potential, $\Phi$. The~equations for~linear perturbations then read
+The~comoving position $\mb x$ is defined in~terms of~the~proper position coordinate $\mb r = a\mb x$. The~comoving velocity $\mb v$ is then defined as a~derivative with~respect to~cosmic time $t$, $\mb v = \dot{\mb x}$, where the~overdot denotes a~time derivative. Particles move in~the~Newtonian gravitational potential, $\Phi$. The~equations for~linear perturbations then read  \parencite{2002col.luc..cosmology}
 \eq{
 	\label{eq:lin_per_a}
 	\dot\delta + \nabla\cdot\mb v &= 0, \\
@@ -30,14 +30,12 @@ We will be working in~comoving coordinates -- the~comoving position $\mb x$ is d
     			&= \frac32 H_0^2\Omega_{m, 0}\frac\delta a \equiv \mu^{-1}\frac\delta a\,,
 \end{split}
 }
-where we defined the~constant $\mu\equiv\left(\frac32 H_0^2\Omega_{m, 0}\right)^{-1}$. In~this linear regime, the~time and~space dependence of~the~overdensity evolution are separable and~we can write $\delta(a, \mb x)=D(a)\delta_0(\mb x)$ where the~growth factor $D$ represents the~growing solution (we neglect the~decaying mode) and~is normalized to~unity at~the~present time.
-
-It is often useful to~rewrite these equations with~a~different time variable, namely the~scale factor $a$. This is convenient both from the~numerical and~theoretical points of~view because the~quantities are ``more constant''. With~the~new time-variable $a$ and~comoving velocity $\mb u = \dd \mb x/\dd a$, equation \eqref{eq:lin_per_a} becomes
+where we defined the~constant $\mu\equiv\left(\frac32 H_0^2\Omega_{m, 0}\right)^{-1}$. In~this linear regime, the~time and~space dependence of~the~overdensity evolution are separable and~we can write $\delta(a, \mb x)=D(a)\delta_0(\mb x)$ where the~growth factor $D$ represents the~growing solution and~is normalized to~unity at~the~present time. We will rewrite these equations using the~scale factor $a$ as a time variable. With~the~comoving velocity $\mb u = \dd \mb x/\dd a$, equation \eqref{eq:lin_per_a} becomes
 \eq{
 \label{eq:continuity_a}
 	\dddd D a \delta_0 + \nabla\cdot\mb u = 0\,,
 }
-where $\dd D/\dd a = 1$ in~the~Einstein--de Sitter universe (hereafter EdS) and~so the~divergence of~the~velocity field remains constant in~both time and~space. Equation \eqref{eq:lin_per_b} then becomes
+where $\dd D/\dd a = 1$ in~the~Einstein--de Sitter universe (EdS). Equation \eqref{eq:lin_per_b} then becomes
 \seq{
 	\label{eq:motion_EdS}
 	\dddd{\mb u}{a} &= -\frac{3}{2a}\left[\mb u + \mu\nabla\Phi \right] \\
@@ -50,8 +48,6 @@ in~the~\LCDM\ universe.
 %%%%%%%%%%%%%%%%%%%%%%%
 % Cosmological observables
 %%%%%%%%%%%%%%%%%%%%%%%
-%% TODO? remove?
-\clearpage
 \input{chapters/cosmo_evol/cosmo_observ}
 
 %%%%%%%%%%%%%%%%%%%%%%%

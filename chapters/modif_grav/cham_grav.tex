@@ -11,7 +11,7 @@ where~$f(R)$ has a~broken power-law form
 }
 where the~mass scale $M^2\equiv\bar\rho_0/3\Mpl^2$, $m>0$, and~$c_1$ and~$c_2$ are dimensionless parameters such that at~high redshifts \LCDM\ cosmology is restored. This \fR\ gravity exhibits the~so-called chameleon mechanism. This mechanism uses the~large mass of~the~chameleon field in~high-density regions and~chameleon gravity can satisfy tests of~the~equivalence principle in~the~Solar System.
 
-In~the~Jordan frame the~matter fields are minimally coupled to~the~metric and~follow geodesics. We can also describe the~action in~the~Einstein frame, where ``standard'' gravity is restored. Using the~conformal transformations of the metric, we can rewrite the~action \eqref{eq:S_fr} as
+In~the~Jordan frame the~matter fields are minimally coupled to~the~metric and~follow geodesics. We can also describe the~action in~the~Einstein frame, where ``standard'' gravity is restored. Using the~conformal transformations of the metric \parencite{Faraoni:1998qx}, we can rewrite the~action \eqref{eq:S_fr} as
 \eq{
 \label{eq:S_ein_fr}
 S=\int\dd^4x\dgt\left[\frac{\Mpl^2}{2}\tilde{R} - \frac12(\partial\chi)^2-V(\chi)\right]+S_m[\psi_m;A^2(\chi)\tilde{g}_\uv],
@@ -227,6 +227,18 @@ The~chameleon obeys the~equation of~motion \eqref{eom:cham} which reduces for~ou
 \label{eq:cham_husa}
 	\Delta \chi = \frac{\beta}{\Mpl}\rho - \frac{\beta}{\Mpl}\bar\rho_0\left(\frac{2\beta\Mpl\Phiscrz}{\chi}\right)^{1-n}
 }
+We define few special values; the~current background value of~the~chameleon field
+\eq{
+	\chi_0\equiv2\beta\Mpl\Phiscrz\,,
+}
+the~background value at~a~given time (for~a~matter-dominated universe)
+\eq{
+	\chi_a(a)\equiv \chi_0 a^{3/(1-n)}
+}
+and~the~value of~the~screening potential at~a~given time
+\eq{
+	\Phiscra\equiv\Phiscrz a^{\frac{5-2n}{1-n}}\,.
+}
 Equation \eqref{eq:cham_husa} has a~linear solution in~$k-$space
 \eq
 {
@@ -237,10 +249,6 @@ where the~mass of~the~chameleon field is
 \eq{
     \label{eq:chi_m_cp}
 	m^2(a)\equiv\frac{1-n}{a\mu\Phiscra}\,,
-}
-the~background value at~a~given time (for~a~matter-dominated universe)
-\eq{
-	\chi_a(a)\equiv \chi_0 a^{3/(1-n)}
 }
 and~the~screened solution inside massive objects
 \eq{
